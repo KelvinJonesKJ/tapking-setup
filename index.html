@@ -206,6 +206,13 @@
       background: rgba(200,168,75,.07);
     }
 
+    /* ── Subsection titles ── */
+    .subsection-title {
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.08em; color: var(--brand); border-bottom: 1px solid var(--border);
+      padding-bottom: 6px; margin: 20px 0 14px;
+    }
+
     /* ── Provider cards ── */
     .provider-grid {
       display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px;
@@ -1373,29 +1380,173 @@
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
+
+        <!-- KYC -->
+        <div class="subsection-title">KYC — Kimlik Doğrulama</div>
         <div class="grid2">
           <div class="field">
-            <label>KYC (kimlik doğrulama) gerekli mi?</label>
+            <label>KYC zorunlu mu? <span class="req">*</span></label>
             <div class="radio-group">
-              <label><input type="radio" name="kyc_required" value="yes" /> Evet</label>
-              <label><input type="radio" name="kyc_required" value="no" /> Hayır</label>
+              <label><input type="radio" name="kyc_required" value="yes" onchange="toggleSub('kyc_details','yes','kyc_required')" /> Evet</label>
+              <label><input type="radio" name="kyc_required" value="no" onchange="toggleSub('kyc_details','yes','kyc_required')" /> Hayır</label>
             </div>
           </div>
           <div class="field">
-            <label>AML / Fraud önleme araçları gerekli mi?</label>
+            <label>KYC Seviyesi</label>
+            <select name="kyc_level">
+              <option value="">Seçiniz</option>
+              <option value="basic">Temel (isim + doğum tarihi)</option>
+              <option value="advanced">Gelişmiş (kimlik belgesi)</option>
+              <option value="full">Tam (kimlik + adres + selfie)</option>
+            </select>
+          </div>
+        </div>
+        <div id="kyc_details" style="display:none">
+          <div class="field">
+            <label>KYC Sağlayıcısı</label>
+            <div class="check-group">
+              <label><input type="checkbox" name="kyc_jumio" /> Jumio</label>
+              <label><input type="checkbox" name="kyc_onfido" /> Onfido</label>
+              <label><input type="checkbox" name="kyc_veriff" /> Veriff</label>
+              <label><input type="checkbox" name="kyc_sumsub" /> Sum&amp;Substance</label>
+              <label><input type="checkbox" name="kyc_manual" /> Manuel (dahili)</label>
+              <label><input type="checkbox" name="kyc_other" /> Diğer</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Kabul Edilen Belgeler</label>
+            <div class="check-group">
+              <label><input type="checkbox" name="doc_id" /> Kimlik Kartı</label>
+              <label><input type="checkbox" name="doc_passport" /> Pasaport</label>
+              <label><input type="checkbox" name="doc_license" /> Ehliyet</label>
+              <label><input type="checkbox" name="doc_address" /> Adres Belgesi</label>
+              <label><input type="checkbox" name="doc_selfie" /> Selfie / Canlı Yüz</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- AML -->
+        <div class="subsection-title">AML — Kara Para Aklamayı Önleme</div>
+        <div class="grid2">
+          <div class="field">
+            <label>AML sistemi gerekli mi?</label>
             <div class="radio-group">
               <label><input type="radio" name="aml_required" value="yes" /> Evet</label>
               <label><input type="radio" name="aml_required" value="no" /> Hayır</label>
             </div>
           </div>
-        </div>
-        <div class="field">
-          <label>2FA (İki Faktörlü Kimlik Doğrulama) admin paneli için?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="two_fa" value="yes" /> Evet</label>
-            <label><input type="radio" name="two_fa" value="no" /> Hayır</label>
+          <div class="field">
+            <label>PEP &amp; Yaptırım Taraması</label>
+            <div class="radio-group">
+              <label><input type="radio" name="pep_screening" value="yes" /> Evet</label>
+              <label><input type="radio" name="pep_screening" value="no" /> Hayır</label>
+            </div>
           </div>
         </div>
+        <div class="field">
+          <label>Şüpheli İşlem Bildirimi (STR) aktif mi?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="str_active" value="yes" /> Evet</label>
+            <label><input type="radio" name="str_active" value="no" /> Hayır</label>
+            <label><input type="radio" name="str_active" value="later" /> Sonra Eklenecek</label>
+          </div>
+        </div>
+
+        <!-- Sorumlu Oyun -->
+        <div class="subsection-title">Sorumlu Oyun (Responsible Gambling)</div>
+        <div class="field">
+          <label>Hangi sorumlu oyun araçları gerekiyor?</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="rg_self_exclusion" /> Self-exclusion (kendi kendini dışlama)</label>
+            <label><input type="checkbox" name="rg_deposit_limit" /> Para yatırma limiti</label>
+            <label><input type="checkbox" name="rg_loss_limit" /> Kayıp limiti</label>
+            <label><input type="checkbox" name="rg_session_limit" /> Oturum süresi limiti</label>
+            <label><input type="checkbox" name="rg_cooling_off" /> Soğuma dönemi (cooling-off)</label>
+            <label><input type="checkbox" name="rg_reality_check" /> Reality check bildirimleri</label>
+          </div>
+        </div>
+
+        <!-- Yaş & Ülke Kısıtlamaları -->
+        <div class="subsection-title">Yaş &amp; Ülke Kısıtlamaları</div>
+        <div class="grid2">
+          <div class="field">
+            <label>Minimum Oyuncu Yaşı</label>
+            <select name="min_age">
+              <option value="">Seçiniz</option>
+              <option value="18">18</option>
+              <option value="21">21</option>
+              <option value="other">Diğer</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Yaş Doğrulama Yöntemi</label>
+            <select name="age_verification">
+              <option value="">Seçiniz</option>
+              <option value="kyc">KYC belgesi ile</option>
+              <option value="declaration">Kullanıcı beyanı</option>
+              <option value="third_party">Üçüncü taraf servis</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Yasaklı Ülkeler</label>
+          <textarea name="blocked_countries" placeholder="örn. ABD, İsrail, İngiltere (lisans kısıtlamaları), Fransa..." style="min-height:80px;"></textarea>
+        </div>
+        <div class="field">
+          <label>IP Engelleme Aktif mi?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="ip_blocking" value="yes" /> Evet</label>
+            <label><input type="radio" name="ip_blocking" value="no" /> Hayır</label>
+          </div>
+        </div>
+
+        <!-- Teknik Güvenlik -->
+        <div class="subsection-title">Teknik Güvenlik</div>
+        <div class="field">
+          <label>Güvenlik önlemleri</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="sec_ssl" /> SSL Sertifikası (HTTPS)</label>
+            <label><input type="checkbox" name="sec_2fa" /> 2FA — Admin panel için zorunlu</label>
+            <label><input type="checkbox" name="sec_ddos" /> DDoS koruması</label>
+            <label><input type="checkbox" name="sec_waf" /> Web Application Firewall (WAF)</label>
+            <label><input type="checkbox" name="sec_pentest" /> Penetrasyon testi</label>
+            <label><input type="checkbox" name="sec_ip_whitelist" /> IP whitelist (admin erişimi)</label>
+          </div>
+        </div>
+
+        <!-- GDPR / Veri Koruma -->
+        <div class="subsection-title">GDPR &amp; Veri Koruma</div>
+        <div class="grid2">
+          <div class="field">
+            <label>GDPR uyumu gerekli mi?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="gdpr_required" value="yes" /> Evet</label>
+              <label><input type="radio" name="gdpr_required" value="no" /> Hayır</label>
+              <label><input type="radio" name="gdpr_required" value="unknown" /> Bilmiyorum</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Veri Saklama Süresi</label>
+            <select name="data_retention">
+              <option value="">Seçiniz</option>
+              <option value="1y">1 Yıl</option>
+              <option value="2y">2 Yıl</option>
+              <option value="5y">5 Yıl</option>
+              <option value="7y">7 Yıl (yasal minimum)</option>
+              <option value="custom">Özel</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Veri &amp; Gizlilik gereksinimleri</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="priv_cookie_policy" /> Çerez politikası sayfası</label>
+            <label><input type="checkbox" name="priv_privacy_policy" /> Gizlilik politikası sayfası</label>
+            <label><input type="checkbox" name="priv_consent" /> Kullanıcı veri işleme onayı (consent banner)</label>
+            <label><input type="checkbox" name="priv_right_delete" /> Kullanıcı verisi silme talebi hakkı</label>
+          </div>
+        </div>
+
       </div>
     </div>
 
