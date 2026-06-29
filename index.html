@@ -797,12 +797,91 @@
             <input type="text" name="logo_link" placeholder="Dropbox / Drive linki veya 'Sonra göndereceğim'" />
           </div>
         </div>
+
+        <!-- Figma -->
+        <div class="field">
+          <label>Figma Dosyası Linki <span class="req">*</span></label>
+          <input type="url" name="figma_link" placeholder="https://figma.com/file/..." required />
+          <p style="margin-top:6px;font-size:13px;color:var(--muted);line-height:1.5;">
+            ⚠️ Figma dosyası olmadan tasarım süreci başlatılamaz. Henüz hazır değilse taslak bir dosya paylaşmanız yeterlidir.
+          </p>
+        </div>
+
+        <hr class="divider" />
+
         <div class="field">
           <label>Tercih Edilen Renkler <span class="hint">(HEX veya renk adı)</span></label>
           <input type="text" name="brand_colors" placeholder="örn. #E8491D (turuncu), #0d0d12 (siyah)" />
         </div>
+
         <div class="field">
-          <label>Referans Site <span class="hint">(opsiyonel)</span></label>
+          <label>Slogan / Tagline <span class="hint">(varsa)</span></label>
+          <input type="text" name="brand_slogan" placeholder="örn. 'Play Smart, Win Big'" />
+        </div>
+
+        <div class="field">
+          <label>Marka tonu nasıl olsun?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="brand_tone" value="serious" /> Ciddi &amp; Profesyonel</label>
+            <label><input type="radio" name="brand_tone" value="friendly" /> Samimi &amp; Yakın</label>
+            <label><input type="radio" name="brand_tone" value="exciting" /> Heyecanlı &amp; Enerjik</label>
+            <label><input type="radio" name="brand_tone" value="luxury" /> Lüks &amp; Premium</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Genel stil tercihi</label>
+          <div class="radio-group">
+            <label><input type="radio" name="design_style" value="minimalist" /> Minimalist</label>
+            <label><input type="radio" name="design_style" value="bold" /> Bold &amp; Agresif</label>
+            <label><input type="radio" name="design_style" value="luxury" /> Lüks &amp; Zarif</label>
+            <label><input type="radio" name="design_style" value="fun" /> Eğlenceli &amp; Renkli</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Tema tercihi</label>
+          <div class="radio-group">
+            <label><input type="radio" name="theme_preference" value="dark" /> Karanlık tema</label>
+            <label><input type="radio" name="theme_preference" value="light" /> Açık tema</label>
+            <label><input type="radio" name="theme_preference" value="both" /> Her ikisi de olsun</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Öncelik</label>
+          <div class="radio-group">
+            <label><input type="radio" name="device_priority" value="mobile" /> Mobil öncelikli</label>
+            <label><input type="radio" name="device_priority" value="desktop" /> Masaüstü öncelikli</label>
+            <label><input type="radio" name="device_priority" value="equal" /> İkisi de eşit</label>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <div class="field">
+          <label>Favicon var mı?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="has_favicon" value="yes" /> Evet, paylaşacağım</label>
+            <label><input type="radio" name="has_favicon" value="no" /> Hayır, sizden bekliyorum</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Sosyal medya görselleri gerekiyor mu? <span class="hint">(OG image, Twitter card vb.)</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="social_images" value="yes" /> Evet</label>
+            <label><input type="radio" name="social_images" value="no" /> Hayır</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Yasaklı renkler veya görseller <span class="hint">(rakip markayla karışmaması için)</span></label>
+          <input type="text" name="forbidden_colors" placeholder="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." />
+        </div>
+
+        <div class="field">
+          <label>Referans Site <span class="hint">(beğendiğiniz tasarım örneği)</span></label>
           <input type="url" name="reference_site" placeholder="https://..." />
         </div>
       </div>
