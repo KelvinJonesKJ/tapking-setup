@@ -681,6 +681,98 @@
           <label>Ek Diller <span class="hint">(varsa belirtin)</span></label>
           <input type="text" name="extra_languages" placeholder="örn. İngilizce, Almanca" />
         </div>
+
+        <hr class="divider" />
+
+        <!-- Para birimi & Zaman dilimi -->
+        <div class="grid2">
+          <div class="field">
+            <label>Para Birimi <span class="req">*</span></label>
+            <select name="currency" required>
+              <option value="">Seçiniz...</option>
+              <option>TRY — Türk Lirası</option>
+              <option>EUR — Euro</option>
+              <option>USD — Amerikan Doları</option>
+              <option>GBP — İngiliz Sterlini</option>
+              <option>BRL — Brezilya Reali</option>
+              <option>AZN — Azerbaycan Manatı</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Zaman Dilimi <span class="req">*</span></label>
+            <select name="timezone" required>
+              <option value="">Seçiniz...</option>
+              <option>UTC+3 — İstanbul / Ankara</option>
+              <option>UTC+0 — Londra (GMT)</option>
+              <option>UTC+1 — Berlin / Paris</option>
+              <option>UTC+2 — Kahire / Atina</option>
+              <option>UTC+4 — Bakü / Dubai</option>
+              <option>UTC+5 — Karaçi / Taşkent</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Düzenleyici kısıtlamalar -->
+        <div class="field">
+          <label>Hedef pazarda lisans / düzenleyici kısıtlama var mı?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="regulatory_restrictions" value="yes" onchange="toggleSub('regulatory_details','yes')" /> Evet</label>
+            <label><input type="radio" name="regulatory_restrictions" value="no" onchange="toggleSub('regulatory_details','no')" /> Hayır</label>
+            <label><input type="radio" name="regulatory_restrictions" value="unknown" onchange="toggleSub('regulatory_details','no')" /> Bilmiyorum</label>
+          </div>
+        </div>
+        <div class="sub-fields" id="regulatory_details">
+          <div class="field">
+            <label>Kısıtlama detayları</label>
+            <textarea name="regulatory_details_text" placeholder="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..."></textarea>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Dil & İçerik -->
+        <div class="field">
+          <label>Sağdan sola (RTL) dil desteği gerekiyor mu? <span class="hint">(Arapça, Farsça vb.)</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="rtl_support" value="yes" /> Evet</label>
+            <label><input type="radio" name="rtl_support" value="no" /> Hayır</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Çeviri nasıl sağlanacak?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="translation_provider" value="self" /> Kendimiz sağlayacağız</label>
+            <label><input type="radio" name="translation_provider" value="tapking" /> Tap King sağlasın</label>
+            <label><input type="radio" name="translation_provider" value="both" /> Birlikte halledelim</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Müşteri hizmetleri dili / dilleri</label>
+          <input type="text" name="support_languages" placeholder="örn. Türkçe, İngilizce" />
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Pazarlama -->
+        <div class="field">
+          <label>Hedef kullanıcı kitlesi</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="audience_sports" /> Spor Bahisleri</label>
+            <label><input type="checkbox" name="audience_casino" /> Casino / Slot</label>
+            <label><input type="checkbox" name="audience_live" /> Canlı Casino</label>
+            <label><input type="checkbox" name="audience_poker" /> Poker</label>
+            <label><input type="checkbox" name="audience_virtual" /> Sanal Sporlar</label>
+            <label><input type="checkbox" name="audience_esports" /> E-Sports</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Rakip / referans siteler <span class="hint">(pazarda neyle rekabet edeceksiniz?)</span></label>
+          <textarea name="competitor_sites" placeholder="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..."></textarea>
+        </div>
       </div>
     </div>
 
