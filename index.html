@@ -273,6 +273,19 @@
     .btn-submit:active { transform: translateY(0); }
     .submit-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
 
+    /* ── Lang toggle ── */
+    #langBtn {
+      position: absolute; top: 20px; right: 24px;
+      background: var(--surface2); border: 1px solid var(--border);
+      color: var(--text); padding: 6px 14px; border-radius: 20px;
+      cursor: pointer; font-size: 13px; font-weight: 600;
+      transition: all 0.2s; z-index: 10;
+    }
+    #langBtn:hover { border-color: var(--brand); color: var(--brand); }
+
+    /* ── Info note ── */
+    .info-note { background: rgba(255,107,53,0.08); border-left: 3px solid var(--brand); padding: 12px 16px; border-radius: 8px; font-size: 13px; color: var(--muted); margin: 0 auto 16px; max-width: 860px; }
+
     /* ── Success overlay ── */
     .success-overlay {
       display: none;
@@ -301,12 +314,13 @@
 
 <!-- ── Header ── -->
 <div class="header">
+  <button id="langBtn" onclick="toggleLang()">🇬🇧 EN</button>
   <div class="header-logo">
     <img src="https://raw.githubusercontent.com/KelvinJonesKJ/tapking-setup/main/logo.png" alt="Tap King" style="width:44px;height:44px;border-radius:12px;object-fit:cover;" />
     <div class="logo-text">Tap <span>King</span></div>
   </div>
-  <h1>Site Kurulum Formu</h1>
-  <p>Lütfen aşağıdaki bilgileri eksiksiz doldurunuz</p>
+  <h1 data-i18n="form_title">Site Kurulum Formu</h1>
+  <p data-i18n="form_sub">Lütfen aşağıdaki bilgileri eksiksiz doldurunuz</p>
 </div>
 
 <!-- ── Progress ── -->
@@ -322,13 +336,15 @@
     <input type="hidden" name="form-name" value="site-kurulum-formu" />
     <p style="display:none"><input name="bot-field" /></p>
 
+    <div class="info-note" data-i18n="info_note">💡 Tüm alanları doldurmak zorunlu değilsiniz — bildiğiniz kadarını doldurun, gerisini ekibimiz sizinle görüşerek tamamlar.</div>
+
     <!-- 1. Şirket & Lisans -->
     <div class="section" data-section="1">
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">1</div>
         <div class="section-title">
-          <h2>Şirket &amp; Lisans Bilgileri</h2>
-          <p>Yasal kimlik ve lisans durumunuz</p>
+          <h2 data-i18n="sec1_title">Şirket &amp; Lisans Bilgileri</h2>
+          <p data-i18n="sec1_sub">Yasal kimlik ve lisans durumunuz</p>
         </div>
         <div class="section-chevron open">▾</div>
       </div>
@@ -436,8 +452,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">2</div>
         <div class="section-title">
-          <h2>Domain &amp; Hosting</h2>
-          <p>Alan adı ve erişim bilgileri</p>
+          <h2 data-i18n="sec2_title">Alan Adı &amp; Hosting</h2>
+          <p data-i18n="sec2_sub">Teknik altyapı bilgileri</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -545,8 +561,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">3</div>
         <div class="section-title">
-          <h2>Ödeme Yöntemleri</h2>
-          <p>Desteklemek istediğiniz ödeme kanalları</p>
+          <h2 data-i18n="sec3_title">Ödeme Yöntemleri</h2>
+          <p data-i18n="sec3_sub">Ödeme altyapısı ve entegrasyonları</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -657,8 +673,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">4</div>
         <div class="section-title">
-          <h2>Hedef Pazar &amp; Diller</h2>
-          <p>Coğrafi hedef ve dil tercihleri</p>
+          <h2 data-i18n="sec4_title">Hedef Pazar &amp; Diller</h2>
+          <p data-i18n="sec4_sub">Pazarlama ve dil gereksinimleri</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -788,8 +804,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">5</div>
         <div class="section-title">
-          <h2>Marka &amp; Tasarım</h2>
-          <p>Görsel kimlik ve marka bilgileri</p>
+          <h2 data-i18n="sec5_title">Marka &amp; Tasarım</h2>
+          <p data-i18n="sec5_sub">Görsel kimlik ve tasarım gereksinimleri</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -807,8 +823,8 @@
 
         <!-- Figma -->
         <div class="field">
-          <label>Figma Dosyası Linki <span class="req">*</span></label>
-          <input type="url" name="figma_link" placeholder="https://figma.com/file/..." required />
+          <label>Figma Dosyası Linki</label>
+          <input type="url" name="figma_link" placeholder="https://figma.com/file/..." />
           <p style="margin-top:6px;font-size:13px;color:var(--muted);line-height:1.5;">
             ⚠️ Figma dosyası olmadan tasarım süreci başlatılamaz. Henüz hazır değilse taslak bir dosya paylaşmanız yeterlidir.
           </p>
@@ -899,8 +915,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">6</div>
         <div class="section-title">
-          <h2>Site İçerikleri</h2>
-          <p>Yasal ve tanıtım metin durumu</p>
+          <h2 data-i18n="sec6_title">Site İçerikleri</h2>
+          <p data-i18n="sec6_sub">İçerik yapısı ve sayfalar</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -1025,8 +1041,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">7</div>
         <div class="section-title">
-          <h2>Oyun Sağlayıcılar &amp; Ürünler</h2>
-          <p>Platforma eklemek istediğiniz oyun kategorileri</p>
+          <h2 data-i18n="sec7_title">Oyun Sağlayıcıları</h2>
+          <p data-i18n="sec7_sub">İstenen oyun içerikleri</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -1188,8 +1204,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">8</div>
         <div class="section-title">
-          <h2>Backoffice &amp; Operasyon</h2>
-          <p>Admin erişimi ve operasyonel ayarlar</p>
+          <h2 data-i18n="sec8_title">Backoffice &amp; Yönetim</h2>
+          <p data-i18n="sec8_sub">Admin panel ve operasyon gereksinimleri</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -1296,8 +1312,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">9</div>
         <div class="section-title">
-          <h2>SMS Sağlayıcı</h2>
-          <p>OTP, bildirim ve kampanya SMS entegrasyonu</p>
+          <h2 data-i18n="sec9_title">SMS Sağlayıcı</h2>
+          <p data-i18n="sec9_sub">SMS entegrasyonu</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -1356,15 +1372,20 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">10</div>
         <div class="section-title">
-          <h2>E-posta Sağlayıcı</h2>
-          <p>Transactional ve pazarlama e-posta entegrasyonu</p>
+          <h2 data-i18n="sec10_title">E-posta Sağlayıcı</h2>
+          <p data-i18n="sec10_sub">Transactional ve pazarlama e-posta entegrasyonu</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
         <div class="field">
-          <label>E-posta Sağlayıcı Seçimi</label>
-          <p style="color:var(--text-muted);font-size:0.85rem;margin-top:4px;">Yakında eklenecek — sağlayıcı listesi güncelleniyor.</p>
+          <label data-i18n="email_provider_label">E-posta Sağlayıcı</label>
+          <select name="email_provider_status">
+            <option value="">—</option>
+            <option value="undecided">Henüz karar verilmedi</option>
+            <option value="own">Kendi sağlayıcımız var</option>
+            <option value="suggest">Tap King önersin</option>
+          </select>
         </div>
       </div>
     </div>
@@ -1374,8 +1395,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">11</div>
         <div class="section-title">
-          <h2>Uyumluluk &amp; Güvenlik</h2>
-          <p>KYC, AML ve dolandırıcılık önleme</p>
+          <h2 data-i18n="sec11_title">Uyumluluk &amp; Güvenlik</h2>
+          <p data-i18n="sec11_sub">KYC, AML ve dolandırıcılık önleme</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -1555,8 +1576,8 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">12</div>
         <div class="section-title">
-          <h2>Ek Talepler</h2>
-          <p>Özel istek ve notlarınız</p>
+          <h2 data-i18n="sec12_title">Ek Talepler</h2>
+          <p data-i18n="sec12_sub">Özel istek ve notlarınız</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -1682,8 +1703,8 @@
 
     <!-- Submit -->
     <div class="submit-area">
-      <button type="submit" class="btn-submit">Formu Gönder →</button>
-      <p class="submit-note">Bilgileriniz ekibimize iletilecek ve en kısa sürede geri dönüş yapılacaktır.</p>
+      <button type="submit" class="btn-submit" data-i18n="submit_btn">Formu Gönder →</button>
+      <p class="submit-note" data-i18n="submit_note">Bilgileriniz ekibimize iletilecek ve en kısa sürede geri dönüş yapılacaktır.</p>
     </div>
 
   </form>
@@ -1693,8 +1714,8 @@
 <div class="success-overlay" id="successOverlay">
   <div class="success-card">
     <div class="success-icon">✅</div>
-    <h2>Form Başarıyla Gönderildi!</h2>
-    <p>Bilgileriniz ekibimize ulaştı. Proje takviminiz hazırlandıktan sonra en kısa sürede sizinle iletişime geçeceğiz.</p>
+    <h2 data-i18n="success_title">Form Başarıyla Gönderildi!</h2>
+    <p data-i18n="success_msg">Bilgileriniz ekibimize ulaştı. Proje takviminiz hazırlandıktan sonra en kısa sürede sizinle iletişime geçeceğiz.</p>
   </div>
 </div>
 
@@ -1815,6 +1836,90 @@
   document.getElementById('successOverlay').addEventListener('click', function() {
     this.classList.remove('show');
   });
+
+  /* ── i18n Language Toggle ── */
+  let currentLang = 'tr';
+  const i18n = {
+    tr: {
+      info_note: '💡 Tüm alanları doldurmak zorunlu değilsiniz — bildiğiniz kadarını doldurun, gerisini ekibimiz sizinle görüşerek tamamlar.',
+      // section titles
+      sec1_title: 'Şirket & Lisans Bilgileri', sec1_sub: 'Yasal kimlik ve lisans durumunuz',
+      sec2_title: 'Alan Adı & Hosting', sec2_sub: 'Teknik altyapı bilgileri',
+      sec3_title: 'Ödeme Yöntemleri', sec3_sub: 'Ödeme altyapısı ve entegrasyonları',
+      sec4_title: 'Hedef Pazar & Diller', sec4_sub: 'Pazarlama ve dil gereksinimleri',
+      sec5_title: 'Marka & Tasarım', sec5_sub: 'Görsel kimlik ve tasarım gereksinimleri',
+      sec6_title: 'Site İçerikleri', sec6_sub: 'İçerik yapısı ve sayfalar',
+      sec7_title: 'Oyun Sağlayıcıları', sec7_sub: 'İstenen oyun içerikleri',
+      sec8_title: 'Backoffice & Yönetim', sec8_sub: 'Admin panel ve operasyon gereksinimleri',
+      sec9_title: 'SMS Sağlayıcı', sec9_sub: 'SMS entegrasyonu',
+      sec10_title: 'E-posta Sağlayıcı', sec10_sub: 'Transactional ve pazarlama e-posta entegrasyonu',
+      sec11_title: 'Uyumluluk & Güvenlik', sec11_sub: 'KYC, AML ve dolandırıcılık önleme',
+      sec12_title: 'Ek Talepler', sec12_sub: 'Özel istek ve notlarınız',
+      // form header
+      form_title: 'Site Kurulum Formu', form_sub: 'Lütfen aşağıdaki bilgileri eksiksiz doldurunuz',
+      // submit
+      submit_btn: 'Formu Gönder →', submit_note: 'Bilgileriniz ekibimize iletilecek ve en kısa sürede geri dönüş yapılacaktır.',
+      // success
+      success_title: 'Form Başarıyla Gönderildi!', success_msg: 'Bilgileriniz ekibimize ulaştı. Proje takviminiz hazırlandıktan sonra en kısa sürede sizinle iletişime geçeceğiz.',
+      // email provider
+      email_provider_label: 'E-posta Sağlayıcı',
+      // progress
+      progress_label: 'Bölüm', progress_open: 'açık',
+    },
+    en: {
+      info_note: '💡 You don\'t need to fill in every field — complete what you know, and our team will work through the rest with you.',
+      // section titles
+      sec1_title: 'Company & License Information', sec1_sub: 'Your legal identity and license status',
+      sec2_title: 'Domain & Hosting', sec2_sub: 'Technical infrastructure details',
+      sec3_title: 'Payment Methods', sec3_sub: 'Payment infrastructure and integrations',
+      sec4_title: 'Target Market & Languages', sec4_sub: 'Market and language requirements',
+      sec5_title: 'Brand & Design', sec5_sub: 'Visual identity and design requirements',
+      sec6_title: 'Site Content', sec6_sub: 'Content structure and pages',
+      sec7_title: 'Game Providers', sec7_sub: 'Requested game content',
+      sec8_title: 'Backoffice & Management', sec8_sub: 'Admin panel and operations requirements',
+      sec9_title: 'SMS Provider', sec9_sub: 'SMS integration',
+      sec10_title: 'Email Provider', sec10_sub: 'Transactional and marketing email integration',
+      sec11_title: 'Compliance & Security', sec11_sub: 'KYC, AML and fraud prevention',
+      sec12_title: 'Additional Requirements', sec12_sub: 'Your special requests and notes',
+      // form header
+      form_title: 'Platform Setup Form', form_sub: 'Please fill in the details below as completely as possible',
+      // submit
+      submit_btn: 'Submit Form →', submit_note: 'Your information will be sent to our team and we will get back to you as soon as possible.',
+      // success
+      success_title: 'Form Submitted Successfully!', success_msg: 'Your information has reached our team. We will contact you as soon as your project timeline is prepared.',
+      // email provider
+      email_provider_label: 'Email Provider',
+      // progress
+      progress_label: 'Section', progress_open: 'open',
+    }
+  };
+
+  function toggleLang() {
+    currentLang = currentLang === 'tr' ? 'en' : 'tr';
+    applyLang(currentLang);
+  }
+
+  function applyLang(lang) {
+    // Update button
+    document.getElementById('langBtn').textContent = lang === 'tr' ? '🇬🇧 EN' : '🇹🇷 TR';
+    // Update all data-i18n elements
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (i18n[lang][key]) el.textContent = i18n[lang][key];
+    });
+    // Update placeholders
+    document.querySelectorAll('[data-ph-tr]').forEach(el => {
+      el.placeholder = lang === 'tr' ? el.dataset.phTr : (el.dataset.phEn || el.dataset.phTr);
+    });
+    // Update progress label
+    const pill = document.querySelector('.progress-info');
+    if (pill) {
+      const open = document.querySelectorAll('.section-body.open').length;
+      pill.textContent = `${i18n[lang].progress_label} ... / 12 ${i18n[lang].progress_open}`;
+    }
+    // Update html lang attribute
+    document.documentElement.lang = lang;
+  }
 </script>
 </body>
 </html>
