@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Site Kurulum Formu</title>
+  <!--
+    ═══════════════════════════════════════════════
+    NETLIFY KURULUM (3 adım, tamamen ücretsiz)
+    ═══════════════════════════════════════════════
+    1. https://netlify.com → ücretsiz hesap açın
+    2. "Sites" → "Add new site" → "Deploy manually"
+       Bu HTML dosyasını sayfaya drag & drop yapın
+    3. Netlify size otomatik bir link verir:
+       örn. https://tapking-setup.netlify.app
+       Bu linki müşterilere gönderin — bitti!
+
+    FORM GÖNDERİMLERİ:
+    Netlify → Sites → [siteniz] → Forms sekmesinden
+    tüm gönderimleri görebilir, e-posta bildirimi
+    kurabilirsiniz (Settings → Forms → Email notifications)
+    ═══════════════════════════════════════════════
+  -->
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --brand: #c8a84b;
+      --brand-dark: #a8872d;
+      --bg: #0d0d12;
+      --surface: #16161e;
+      --surface2: #1e1e2a;
+      --border: #2a2a3a;
+      --text: #f0f0f5;
+      --muted: #8888aa;
+      --danger: #e05c5c;
+      --success: #4caf7d;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 0 0 60px;
+    }
+
+    /* ── Header ── */
+    .header {
+      background: linear-gradient(135deg, #0d0d12 0%, #1a1428 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 32px 24px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 80% at 50% -20%, rgba(200,168,75,.18), transparent);
+      pointer-events: none;
+    }
+    .header-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .logo-mark {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800; color: #0d0d12; letter-spacing: -1px;
+    }
+    .logo-text { font-size: 26px; font-weight: 700; letter-spacing: .5px; }
+    .logo-text span { color: var(--brand); }
+    .header h1 { font-size: 18px; font-weight: 400; color: var(--muted); margin-bottom: 4px; }
+    .header p { font-size: 13px; color: #55556a; }
+
+    /* ── Progress bar ── */
+    .progress-wrap {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 24px;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .progress-steps {
+      display: flex; gap: 4px; max-width: 860px; margin: 0 auto;
+      overflow-x: auto; padding-bottom: 2px;
+      scrollbar-width: none;
+    }
+    .progress-steps::-webkit-scrollbar { display: none; }
+    .step-pill {
+      flex: 1; min-width: 60px;
+      height: 6px; border-radius: 99px;
+      background: var(--border);
+      transition: background .3s;
+      cursor: pointer;
+      position: relative;
+    }
+    .step-pill.active { background: var(--brand); }
+    .step-pill.done { background: var(--success); }
+    .progress-label {
+      text-align: center; font-size: 12px; color: var(--muted);
+      margin-top: 8px; max-width: 860px; margin-left: auto; margin-right: auto;
+    }
+
+    /* ── Layout ── */
+    .container { max-width: 860px; margin: 0 auto; padding: 32px 16px 0; }
+
+    /* ── Section cards ── */
+    .section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .section-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 20px 24px;
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      user-select: none;
+    }
+    .section-number {
+      width: 32px; height: 32px; border-radius: 8px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; font-weight: 700; color: #0d0d12;
+    }
+    .section-title { flex: 1; }
+    .section-title h2 { font-size: 15px; font-weight: 600; }
+    .section-title p { font-size: 12px; color: var(--muted); margin-top: 2px; }
+    .section-chevron {
+      font-size: 18px; color: var(--muted);
+      transition: transform .2s;
+    }
+    .section-chevron.open { transform: rotate(180deg); }
+    .section-body { padding: 24px; display: none; }
+    .section-body.open { display: block; }
+
+    /* ── Form elements ── */
+    .field { margin-bottom: 20px; }
+    .field:last-child { margin-bottom: 0; }
+    label { display: block; font-size: 13px; font-weight: 500; color: #ccccdd; margin-bottom: 7px; }
+    label .req { color: var(--brand); margin-left: 2px; }
+    label .hint { font-weight: 400; color: var(--muted); margin-left: 6px; font-size: 12px; }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="url"],
+    input[type="tel"],
+    select,
+    textarea {
+      width: 100%;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text);
+      font-size: 14px;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      font-family: inherit;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(200,168,75,.12);
+    }
+    select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238888aa' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+    textarea { resize: vertical; min-height: 90px; line-height: 1.5; }
+
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media(max-width: 600px) { .grid2 { grid-template-columns: 1fr; } }
+
+    /* ── Radio / Checkbox groups ── */
+    .radio-group, .check-group {
+      display: flex; flex-wrap: wrap; gap: 10px;
+    }
+    .radio-group label, .check-group label {
+      margin: 0;
+      display: flex; align-items: center; gap: 8px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 9px 16px;
+      cursor: pointer;
+      font-size: 13px; color: var(--text);
+      transition: border-color .15s, background .15s;
+      font-weight: 400;
+    }
+    .radio-group input[type="radio"],
+    .check-group input[type="checkbox"] {
+      width: 16px; height: 16px;
+      accent-color: var(--brand);
+      flex-shrink: 0;
+    }
+    .radio-group label:has(input:checked),
+    .check-group label:has(input:checked) {
+      border-color: var(--brand);
+      background: rgba(200,168,75,.07);
+    }
+
+    /* ── Provider cards ── */
+    .provider-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px;
+    }
+    .provider-card {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 14px 12px;
+      cursor: pointer;
+      transition: border-color .15s, background .15s;
+      position: relative;
+    }
+    .provider-card:has(input:checked) {
+      border-color: var(--brand);
+      background: rgba(200,168,75,.07);
+    }
+    .provider-card input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .provider-card-inner { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+    .provider-icon { font-size: 24px; }
+    .provider-name { font-size: 12px; font-weight: 600; text-align: center; }
+    .provider-desc { font-size: 11px; color: var(--muted); text-align: center; }
+
+    /* ── Conditional sub-fields ── */
+    .sub-fields {
+      margin-top: 16px;
+      padding: 16px;
+      background: rgba(200,168,75,.04);
+      border: 1px dashed rgba(200,168,75,.3);
+      border-radius: var(--radius);
+      display: none;
+    }
+    .sub-fields.visible { display: block; }
+    .sub-fields .field:last-child { margin-bottom: 0; }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+    /* ── Submit ── */
+    .submit-area {
+      text-align: center;
+      padding: 32px 0 0;
+    }
+    .btn-submit {
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      color: #0d0d12;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 56px;
+      cursor: pointer;
+      letter-spacing: .3px;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 4px 24px rgba(200,168,75,.25);
+    }
+    .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(200,168,75,.35); }
+    .btn-submit:active { transform: translateY(0); }
+    .submit-note { font-size: 12px; color: var(--muted); margin-top: 12px; }
+
+    /* ── Success overlay ── */
+    .success-overlay {
+      display: none;
+      position: fixed; inset: 0; z-index: 999;
+      background: rgba(13,13,18,.92);
+      align-items: center; justify-content: center;
+      backdrop-filter: blur(6px);
+    }
+    .success-overlay.show { display: flex; }
+    .success-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      max-width: 420px;
+      animation: popIn .3s cubic-bezier(.34,1.56,.64,1);
+    }
+    @keyframes popIn { from { transform: scale(.85); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .success-icon { font-size: 56px; margin-bottom: 16px; }
+    .success-card h2 { font-size: 22px; margin-bottom: 8px; }
+    .success-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<div class="header">
+  <div class="header-logo">
+    <div class="logo-mark">T</div>
+    <div class="logo-text">Tap <span>King</span></div>
+  </div>
+  <h1>Site Kurulum Formu</h1>
+  <p>Lütfen aşağıdaki bilgileri eksiksiz doldurunuz</p>
+</div>
+
+<!-- ── Progress ── -->
+<div class="progress-wrap">
+  <div class="progress-steps" id="progressSteps">
+    <!-- filled by JS -->
+  </div>
+  <div class="progress-label" id="progressLabel">Bölüm 1 / 10</div>
+</div>
+
+<div class="container">
+  <form id="setupForm" name="site-kurulum-formu" netlify netlify-honeypot="bot-field" novalidate>
+    <input type="hidden" name="form-name" value="site-kurulum-formu" />
+    <p style="display:none"><input name="bot-field" /></p>
+
+    <!-- 1. Şirket & Lisans -->
+    <div class="section" data-section="1">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">1</div>
+        <div class="section-title">
+          <h2>Şirket &amp; Lisans Bilgileri</h2>
+          <p>Yasal kimlik ve lisans durumunuz</p>
+        </div>
+        <div class="section-chevron open">▾</div>
+      </div>
+      <div class="section-body open">
+
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Şirket Bilgileri</p>
+        <div class="grid2">
+          <div class="field">
+            <label>Şirket Adı <span class="req">*</span></label>
+            <input type="text" name="company_name" placeholder="örn. Acme Gaming Ltd." required />
+          </div>
+          <div class="field">
+            <label>Kayıtlı Olduğu Ülke <span class="req">*</span></label>
+            <input type="text" name="company_country" placeholder="örn. Malta, Curacao, İngiltere" required />
+          </div>
+        </div>
+        <div class="field">
+          <label>Şirket Kayıt Numarası <span class="hint">(varsa)</span></label>
+          <input type="text" name="company_reg_number" placeholder="örn. C-12345" />
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Yetkili Kişi</p>
+        <div class="grid2">
+          <div class="field">
+            <label>Ad Soyad <span class="req">*</span></label>
+            <input type="text" name="contact_name" placeholder="örn. Ahmet Yılmaz" required />
+          </div>
+          <div class="field">
+            <label>Pozisyon / Unvan</label>
+            <input type="text" name="contact_title" placeholder="örn. CEO, Operasyon Müdürü" />
+          </div>
+        </div>
+        <div class="field">
+          <label>İletişim E-postası <span class="req">*</span></label>
+          <input type="email" name="contact_email" placeholder="ornek@sirket.com" required />
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Lisans</p>
+        <div class="field">
+          <label>Mevcut oyun lisansınız var mı? <span class="req">*</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="has_license" value="yes" onchange="toggleSub('license_details','yes')" /> Evet</label>
+            <label><input type="radio" name="has_license" value="no" onchange="toggleSub('license_details','no')" /> Hayır</label>
+          </div>
+        </div>
+        <div class="sub-fields" id="license_details">
+          <div class="grid2">
+            <div class="field">
+              <label>Lisans Türü</label>
+              <input type="text" name="license_type" placeholder="örn. MGA, UKGC, Curacao" />
+            </div>
+            <div class="field">
+              <label>Lisans Sağlayıcısı</label>
+              <input type="text" name="license_provider" placeholder="örn. Malta Gaming Authority" />
+            </div>
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label>Lisans Numarası</label>
+              <input type="text" name="license_number" placeholder="örn. MGA/B2C/123/2020" />
+            </div>
+            <div class="field">
+              <label>Lisans Geçerlilik Tarihi</label>
+              <input type="text" name="license_expiry" placeholder="örn. 31/12/2026" />
+            </div>
+          </div>
+          <div class="field" id="license_support_wrap" style="display:none">
+            <label>Lisans süreci için destek almak ister misiniz?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="license_support" value="yes" /> Evet, destek istiyorum</label>
+              <label><input type="radio" name="license_support" value="no" /> Hayır, teşekkürler</label>
+            </div>
+          </div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
+        <div class="field">
+          <label>Daha önce aktif bir platform işlettiniz mi?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="prev_platform" value="yes" onchange="toggleSub('prev_platform_details','yes')" /> Evet</label>
+            <label><input type="radio" name="prev_platform" value="no" onchange="toggleSub('prev_platform_details','no')" /> Hayır, sıfırdan başlıyoruz</label>
+          </div>
+        </div>
+        <div class="sub-fields" id="prev_platform_details">
+          <div class="field">
+            <label>Platform Adı / URL <span class="hint">(eski platform)</span></label>
+            <input type="text" name="prev_platform_name" placeholder="örn. eskisite.com" />
+          </div>
+          <div class="field">
+            <label>Veri / Oyuncu taşıması gerekiyor mu?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="migration_needed" value="yes" /> Evet</label>
+              <label><input type="radio" name="migration_needed" value="no" /> Hayır</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 2. Domain & Hosting -->
+    <div class="section" data-section="2">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">2</div>
+        <div class="section-title">
+          <h2>Domain &amp; Hosting</h2>
+          <p>Alan adı ve erişim bilgileri</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Alan Adı</p>
+        <div class="grid2">
+          <div class="field">
+            <label>Ana Domain <span class="req">*</span></label>
+            <input type="url" name="domain" placeholder="https://www.siteadi.com" required />
+          </div>
+          <div class="field">
+            <label>Domain Sağlayıcı</label>
+            <input type="text" name="domain_provider" placeholder="örn. GoDaddy, Namecheap, Cloudflare" />
+          </div>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label>Domain size mi ait?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="domain_owned" value="yes" /> Evet</label>
+              <label><input type="radio" name="domain_owned" value="no" /> Hayır</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>DNS erişimi sağlayabilir misiniz?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="dns_access" value="yes" /> Evet</label>
+              <label><input type="radio" name="dns_access" value="no" /> Hayır</label>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>Yedek Domain(ler) <span class="hint">(mirror — varsa)</span></label>
+          <input type="text" name="backup_domains" placeholder="örn. siteadi2.com, siteadi3.net" />
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Cloudflare</p>
+        <div class="grid2">
+          <div class="field">
+            <label>Cloudflare hesabınız var mı?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="cloudflare" value="yes" onchange="toggleSub('cloudflare_details','yes')" /> Evet</label>
+              <label><input type="radio" name="cloudflare" value="no" onchange="toggleSub('cloudflare_details','no')" /> Hayır</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Cloudflare'e geçiş yapılabilir mi?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="cloudflare_migrate" value="yes" /> Evet</label>
+              <label><input type="radio" name="cloudflare_migrate" value="no" /> Hayır</label>
+              <label><input type="radio" name="cloudflare_migrate" value="already" /> Zaten kullanıyoruz</label>
+            </div>
+          </div>
+        </div>
+        <div class="sub-fields" id="cloudflare_details">
+          <div class="field">
+            <label>Cloudflare Hesap E-postası</label>
+            <input type="email" name="cloudflare_email" placeholder="cloudflare@sirket.com" />
+          </div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Hosting</p>
+        <div class="grid2">
+          <div class="field">
+            <label>Hosting Sağlayıcı</label>
+            <input type="text" name="hosting_provider" placeholder="örn. AWS, Hetzner, DigitalOcean" />
+          </div>
+          <div class="field">
+            <label>Sunucu Lokasyonu</label>
+            <select name="server_location">
+              <option value="">Seçiniz...</option>
+              <option>Avrupa (AB)</option>
+              <option>İngiltere</option>
+              <option>Amerika (US)</option>
+              <option>Asya</option>
+              <option>Orta Doğu</option>
+              <option>Fark etmez / Önerim yok</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Mevcut hosting planı / kaynaklar <span class="hint">(varsa)</span></label>
+          <input type="text" name="hosting_plan" placeholder="örn. 4 vCPU, 8GB RAM, 100GB SSD" />
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">SSL & Güvenlik</p>
+        <div class="field">
+          <label>SSL sertifikanız var mı?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="ssl" value="yes" /> Evet, mevcut</label>
+            <label><input type="radio" name="ssl" value="no" /> Hayır, kurulum gerekiyor</label>
+            <label><input type="radio" name="ssl" value="cloudflare" /> Cloudflare üzerinden</label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 3. Ödeme Yöntemleri -->
+    <div class="section" data-section="3">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">3</div>
+        <div class="section-title">
+          <h2>Ödeme Yöntemleri</h2>
+          <p>Desteklemek istediğiniz ödeme kanalları</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="field">
+          <label>Sunmak istediğiniz ödeme yöntemleri</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="payment_crypto" /> Kripto Para</label>
+            <label><input type="checkbox" name="payment_bank" /> Banka Transferi</label>
+            <label><input type="checkbox" name="payment_card" /> Kredi / Banka Kartı</label>
+            <label><input type="checkbox" name="payment_ewallet" /> e-Cüzdan</label>
+            <label><input type="checkbox" name="payment_local" /> Lokal Ödeme</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Lokal ödeme yöntemleri <span class="hint">(varsa belirtin)</span></label>
+          <input type="text" name="local_payments" placeholder="örn. Papara, Payfix, Havale" />
+        </div>
+        <hr class="divider" />
+        <div class="field">
+          <label>Mevcut bir ödeme sağlayıcınız (PSP) var mı?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="has_psp" value="yes" onchange="toggleSub('psp_details','yes')" /> Evet</label>
+            <label><input type="radio" name="has_psp" value="no" onchange="toggleSub('psp_details','no')" /> Hayır</label>
+          </div>
+        </div>
+        <div class="sub-fields" id="psp_details">
+          <div class="field">
+            <label>Sağlayıcı Adı</label>
+            <input type="text" name="psp_name" placeholder="örn. Stripe, Payguru, Praxis" />
+          </div>
+          <div class="field">
+            <label>API Dokümantasyonu / Erişim Bilgileri</label>
+            <textarea name="psp_api_info" placeholder="API endpoint, dokümantasyon linki veya erişim notu..."></textarea>
+          </div>
+          <div id="psp_use_ours" style="display:none">
+            <div class="field">
+              <label>Bizim ödeme çözümlerimizi kullanmak ister misiniz?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="use_our_psp" value="yes" /> Evet</label>
+                <label><input type="radio" name="use_our_psp" value="no" /> Hayır</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. Hedef Pazar & Diller -->
+    <div class="section" data-section="4">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">4</div>
+        <div class="section-title">
+          <h2>Hedef Pazar &amp; Diller</h2>
+          <p>Coğrafi hedef ve dil tercihleri</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="grid2">
+          <div class="field">
+            <label>Hedef Ülke / Ülkeler <span class="req">*</span></label>
+            <input type="text" name="target_countries" placeholder="örn. Türkiye, Almanya, Hollanda" required />
+          </div>
+          <div class="field">
+            <label>Ana Dil <span class="req">*</span></label>
+            <select name="primary_language" required>
+              <option value="">Seçiniz...</option>
+              <option>Türkçe</option>
+              <option>İngilizce</option>
+              <option>Almanca</option>
+              <option>Fransızca</option>
+              <option>İspanyolca</option>
+              <option>Rusça</option>
+              <option>Arapça</option>
+              <option>Portekizce</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Ek Diller <span class="hint">(varsa belirtin)</span></label>
+          <input type="text" name="extra_languages" placeholder="örn. İngilizce, Almanca" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Marka & Tasarım -->
+    <div class="section" data-section="5">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">5</div>
+        <div class="section-title">
+          <h2>Marka &amp; Tasarım</h2>
+          <p>Görsel kimlik ve marka bilgileri</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="grid2">
+          <div class="field">
+            <label>Site Adı / Marka Adı <span class="req">*</span></label>
+            <input type="text" name="brand_name" placeholder="örn. OnlySpin" required />
+          </div>
+          <div class="field">
+            <label>Logo <span class="hint">(PNG veya SVG)</span></label>
+            <input type="text" name="logo_link" placeholder="Dropbox / Drive linki veya 'Sonra göndereceğim'" />
+          </div>
+        </div>
+        <div class="field">
+          <label>Tercih Edilen Renkler <span class="hint">(HEX veya renk adı)</span></label>
+          <input type="text" name="brand_colors" placeholder="örn. #c8a84b (altın), #0d0d12 (siyah)" />
+        </div>
+        <div class="field">
+          <label>Referans Site <span class="hint">(opsiyonel)</span></label>
+          <input type="url" name="reference_site" placeholder="https://..." />
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. Site İçerikleri -->
+    <div class="section" data-section="6">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">6</div>
+        <div class="section-title">
+          <h2>Site İçerikleri</h2>
+          <p>Yasal ve tanıtım metin durumu</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Her içerik için mevcut durumu seçiniz:</p>
+        <div class="grid2">
+          <div class="field">
+            <label>Hakkımızda</label>
+            <div class="radio-group">
+              <label><input type="radio" name="content_about" value="ready" /> Hazır</label>
+              <label><input type="radio" name="content_about" value="need" /> Destek İstiyorum</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Şartlar &amp; Koşullar</label>
+            <div class="radio-group">
+              <label><input type="radio" name="content_terms" value="ready" /> Hazır</label>
+              <label><input type="radio" name="content_terms" value="need" /> Destek İstiyorum</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Gizlilik Politikası</label>
+            <div class="radio-group">
+              <label><input type="radio" name="content_privacy" value="ready" /> Hazır</label>
+              <label><input type="radio" name="content_privacy" value="need" /> Destek İstiyorum</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>Bonus Kuralları</label>
+            <div class="radio-group">
+              <label><input type="radio" name="content_bonus" value="ready" /> Hazır</label>
+              <label><input type="radio" name="content_bonus" value="need" /> Destek İstiyorum</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. Oyun Sağlayıcılar -->
+    <div class="section" data-section="7">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">7</div>
+        <div class="section-title">
+          <h2>Oyun Sağlayıcılar &amp; Ürünler</h2>
+          <p>Platforma eklemek istediğiniz oyun kategorileri</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="field">
+          <label>Ürün Kategorileri</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="game_slots" /> 🎰 Slot Oyunları</label>
+            <label><input type="checkbox" name="game_live" /> 🃏 Canlı Casino</label>
+            <label><input type="checkbox" name="game_sports" /> ⚽ Spor Bahisleri</label>
+            <label><input type="checkbox" name="game_virtual" /> 🎮 Sanal Oyunlar</label>
+            <label><input type="checkbox" name="game_esports" /> 🏆 E-Sports</label>
+            <label><input type="checkbox" name="game_poker" /> ♠️ Poker</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Belirli bir oyun sağlayıcısı tercihiniz var mı? <span class="hint">(opsiyonel)</span></label>
+          <input type="text" name="game_providers_pref" placeholder="örn. Pragmatic, Evolution, NetEnt, Betsoft" />
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Backoffice & Operasyon -->
+    <div class="section" data-section="8">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">8</div>
+        <div class="section-title">
+          <h2>Backoffice &amp; Operasyon</h2>
+          <p>Admin erişimi ve operasyonel ayarlar</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="grid2">
+          <div class="field">
+            <label>Admin Panel E-posta <span class="req">*</span></label>
+            <input type="email" name="admin_email" placeholder="admin@siteadi.com" required />
+          </div>
+          <div class="field">
+            <label>Para Birimi <span class="req">*</span></label>
+            <select name="currency" required>
+              <option value="">Seçiniz...</option>
+              <option>TRY — Türk Lirası</option>
+              <option>EUR — Euro</option>
+              <option>USD — Amerikan Doları</option>
+              <option>GBP — İngiliz Sterlini</option>
+              <option>BTC — Bitcoin</option>
+              <option>ETH — Ethereum</option>
+              <option>USDT — Tether</option>
+              <option>Diğer</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Zaman Dilimi</label>
+          <select name="timezone">
+            <option value="">Seçiniz...</option>
+            <option>UTC+3 — İstanbul / Moskova</option>
+            <option>UTC+0 — Londra</option>
+            <option>UTC+1 — Berlin / Paris</option>
+            <option>UTC+2 — Kahire / Atina</option>
+            <option>UTC+4 — Dubai</option>
+            <option>UTC-5 — New York</option>
+            <option>UTC-8 — Los Angeles</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. SMS Sağlayıcı -->
+    <div class="section" data-section="9">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">9</div>
+        <div class="section-title">
+          <h2>SMS Sağlayıcı</h2>
+          <p>OTP, bildirim ve kampanya SMS entegrasyonu</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="field">
+          <label>SMS Sağlayıcı Seçimi</label>
+          <div class="provider-grid">
+            <label class="provider-card">
+              <input type="radio" name="sms_provider" value="twilio" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Twilio</div>
+                <div class="provider-desc">Global lider</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="sms_provider" value="vonage" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">🌐</div>
+                <div class="provider-name">Vonage</div>
+                <div class="provider-desc">Nexmo / API</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="sms_provider" value="aws_sns" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">☁️</div>
+                <div class="provider-name">AWS SNS</div>
+                <div class="provider-desc">Amazon Cloud</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="sms_provider" value="messagebird" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">🐦</div>
+                <div class="provider-name">MessageBird</div>
+                <div class="provider-desc">Bird.com</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="sms_provider" value="iletimerkezi" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">🇹🇷</div>
+                <div class="provider-name">İletimerkezi</div>
+                <div class="provider-desc">Türkiye lokal</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="sms_provider" value="netgsm" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📡</div>
+                <div class="provider-name">NetGSM</div>
+                <div class="provider-desc">Türkiye lokal</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="sms_provider" value="other_sms" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">⚙️</div>
+                <div class="provider-name">Diğer</div>
+                <div class="provider-desc">Belirtin</div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="field" id="sms_other_wrap" style="display:none">
+          <label>SMS Sağlayıcı Adı (Diğer)</label>
+          <input type="text" name="sms_provider_other" placeholder="Sağlayıcı adını giriniz" />
+        </div>
+        <div class="field">
+          <label>SMS API Anahtarı / Erişim Bilgileri <span class="hint">(opsiyonel — sonra paylaşılabilir)</span></label>
+          <textarea name="sms_api_key" placeholder="API Key, Account SID veya ilgili erişim notları..."></textarea>
+        </div>
+        <div class="field">
+          <label>SMS Kullanım Amaçları</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="sms_use_otp" /> OTP / Doğrulama</label>
+            <label><input type="checkbox" name="sms_use_promo" /> Kampanya / Promosyon</label>
+            <label><input type="checkbox" name="sms_use_transactional" /> İşlem Bildirimi</label>
+            <label><input type="checkbox" name="sms_use_support" /> Müşteri Destek</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. E-posta Sağlayıcı -->
+    <div class="section" data-section="10">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">10</div>
+        <div class="section-title">
+          <h2>E-posta Sağlayıcı</h2>
+          <p>Transactional ve pazarlama e-posta entegrasyonu</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="field">
+          <label>E-posta Sağlayıcı Seçimi</label>
+          <div class="provider-grid">
+            <label class="provider-card">
+              <input type="radio" name="email_provider" value="sendgrid" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📧</div>
+                <div class="provider-name">SendGrid</div>
+                <div class="provider-desc">Twilio / API</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="email_provider" value="mailgun" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">🔫</div>
+                <div class="provider-name">Mailgun</div>
+                <div class="provider-desc">Developer-first</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="email_provider" value="ses" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">☁️</div>
+                <div class="provider-name">Amazon SES</div>
+                <div class="provider-desc">AWS E-posta</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="email_provider" value="postmark" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📮</div>
+                <div class="provider-name">Postmark</div>
+                <div class="provider-desc">Transactional</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="email_provider" value="brevo" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">💙</div>
+                <div class="provider-name">Brevo</div>
+                <div class="provider-desc">Sendinblue</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="email_provider" value="mailchimp" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">🐒</div>
+                <div class="provider-name">Mailchimp</div>
+                <div class="provider-desc">Marketing</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="email_provider" value="other_email" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">⚙️</div>
+                <div class="provider-name">Diğer</div>
+                <div class="provider-desc">Belirtin</div>
+              </div>
+            </label>
+          </div>
+        </div>
+        <div class="field" id="email_other_wrap" style="display:none">
+          <label>E-posta Sağlayıcı Adı (Diğer)</label>
+          <input type="text" name="email_provider_other" placeholder="Sağlayıcı adını giriniz" />
+        </div>
+        <div class="field">
+          <label>Gönderici E-posta Adresi <span class="hint">(noreply@siteniz.com)</span></label>
+          <input type="email" name="email_from" placeholder="noreply@siteadi.com" />
+        </div>
+        <div class="field">
+          <label>E-posta API Anahtarı / SMTP Bilgileri <span class="hint">(opsiyonel)</span></label>
+          <textarea name="email_api_key" placeholder="API Key, SMTP host/port bilgileri veya erişim notları..."></textarea>
+        </div>
+        <div class="field">
+          <label>E-posta Kullanım Amaçları</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="email_use_transactional" /> İşlem E-postaları</label>
+            <label><input type="checkbox" name="email_use_welcome" /> Hoş Geldin</label>
+            <label><input type="checkbox" name="email_use_promo" /> Kampanya / Promosyon</label>
+            <label><input type="checkbox" name="email_use_kyc" /> KYC Bildirimleri</label>
+            <label><input type="checkbox" name="email_use_support" /> Destek</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Uyumluluk & Güvenlik -->
+    <div class="section" data-section="11">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">11</div>
+        <div class="section-title">
+          <h2>Uyumluluk &amp; Güvenlik</h2>
+          <p>KYC, AML ve dolandırıcılık önleme</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="grid2">
+          <div class="field">
+            <label>KYC (kimlik doğrulama) gerekli mi?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="kyc_required" value="yes" /> Evet</label>
+              <label><input type="radio" name="kyc_required" value="no" /> Hayır</label>
+            </div>
+          </div>
+          <div class="field">
+            <label>AML / Fraud önleme araçları gerekli mi?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="aml_required" value="yes" /> Evet</label>
+              <label><input type="radio" name="aml_required" value="no" /> Hayır</label>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>2FA (İki Faktörlü Kimlik Doğrulama) admin paneli için?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="two_fa" value="yes" /> Evet</label>
+            <label><input type="radio" name="two_fa" value="no" /> Hayır</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. Ek Talepler -->
+    <div class="section" data-section="12">
+      <div class="section-header" onclick="toggleSection(this)">
+        <div class="section-number">12</div>
+        <div class="section-title">
+          <h2>Ek Talepler</h2>
+          <p>Özel istek ve notlarınız</p>
+        </div>
+        <div class="section-chevron">▾</div>
+      </div>
+      <div class="section-body">
+        <div class="field">
+          <label>Özel İstekler veya İhtiyaçlar</label>
+          <textarea name="extra_requests" placeholder="Belirtmek istediğiniz özel gereksinimler, entegrasyonlar veya notlar..." style="min-height:120px;"></textarea>
+        </div>
+        <div class="grid2">
+          <div class="field">
+            <label>Tercih Edilen Lansman Tarihi</label>
+            <input type="text" name="launch_date" placeholder="örn. Temmuz 2025" />
+          </div>
+          <div class="field">
+            <label>İletişim Telefon <span class="hint">(opsiyonel)</span></label>
+            <input type="tel" name="contact_phone" placeholder="+90 5XX XXX XX XX" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit -->
+    <div class="submit-area">
+      <button type="submit" class="btn-submit">Formu Gönder →</button>
+      <p class="submit-note">Bilgileriniz ekibimize iletilecek ve en kısa sürede geri dönüş yapılacaktır.</p>
+    </div>
+
+  </form>
+</div>
+
+<!-- Success Overlay -->
+<div class="success-overlay" id="successOverlay">
+  <div class="success-card">
+    <div class="success-icon">✅</div>
+    <h2>Form Başarıyla Gönderildi!</h2>
+    <p>Bilgileriniz ekibimize ulaştı. Proje takviminiz hazırlandıktan sonra en kısa sürede sizinle iletişime geçeceğiz.</p>
+  </div>
+</div>
+
+<script>
+  const TOTAL = 12;
+
+  /* ── Progress bar init ── */
+  const stepsEl = document.getElementById('progressSteps');
+  for (let i = 1; i <= TOTAL; i++) {
+    const d = document.createElement('div');
+    d.className = 'step-pill';
+    d.dataset.step = i;
+    d.title = 'Bölüm ' + i;
+    d.onclick = () => scrollToSection(i);
+    stepsEl.appendChild(d);
+  }
+  updateProgress();
+
+  function updateProgress() {
+    const pills = document.querySelectorAll('.step-pill');
+    const openSections = document.querySelectorAll('.section-body.open');
+    const openNums = Array.from(openSections).map(b => +b.closest('.section').dataset.section);
+    pills.forEach(p => {
+      const n = +p.dataset.step;
+      p.classList.remove('active', 'done');
+      if (openNums.includes(n)) p.classList.add('active');
+    });
+    const label = openNums.length
+      ? `Bölüm ${Math.min(...openNums)} / ${TOTAL} açık`
+      : `Tüm bölümler kapalı`;
+    document.getElementById('progressLabel').textContent = label;
+  }
+
+  function scrollToSection(n) {
+    const sec = document.querySelector(`.section[data-section="${n}"]`);
+    if (sec) sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  /* ── Accordion ── */
+  function toggleSection(header) {
+    const body = header.nextElementSibling;
+    const chevron = header.querySelector('.section-chevron');
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    chevron.classList.toggle('open', !isOpen);
+    updateProgress();
+  }
+
+  /* ── Conditional sub-fields ── */
+  function toggleSub(id, value) {
+    const el = document.getElementById(id);
+    if (!el) return;
+
+    if (id === 'license_details') {
+      el.classList.toggle('visible', value === 'yes');
+      const supportWrap = document.getElementById('license_support_wrap');
+      if (supportWrap) supportWrap.style.display = value === 'no' ? 'block' : 'none';
+    } else if (id === 'cloudflare_details') {
+      el.classList.toggle('visible', value === 'yes');
+    } else if (id === 'prev_platform_details') {
+      el.classList.toggle('visible', value === 'yes');
+    } else if (id === 'psp_details') {
+      el.classList.toggle('visible', value === 'yes');
+      const pspOurs = document.getElementById('psp_use_ours');
+      if (pspOurs) pspOurs.style.display = value === 'no' ? 'block' : 'none';
+    }
+  }
+
+  /* ── SMS "Diğer" toggle ── */
+  document.querySelectorAll('input[name="sms_provider"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('sms_other_wrap').style.display =
+        r.value === 'other_sms' && r.checked ? 'block' : 'none';
+    });
+  });
+
+  /* ── Email "Diğer" toggle ── */
+  document.querySelectorAll('input[name="email_provider"]').forEach(r => {
+    r.addEventListener('change', () => {
+      document.getElementById('email_other_wrap').style.display =
+        r.value === 'other_email' && r.checked ? 'block' : 'none';
+    });
+  });
+
+  /* ── Submit — Netlify Forms (AJAX) ── */
+  document.getElementById('setupForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const btn = document.querySelector('.btn-submit');
+    const originalText = btn.textContent;
+    btn.textContent = 'Gönderiliyor...';
+    btn.disabled = true;
+
+    const formData = new FormData(this);
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (response.ok) {
+        document.getElementById('successOverlay').classList.add('show');
+        document.querySelectorAll('.step-pill').forEach(p => p.classList.add('done'));
+      } else {
+        alert('Bir hata oluştu. Lütfen tekrar deneyin.');
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }
+    } catch (err) {
+      alert('Bağlantı hatası. İnternet bağlantınızı kontrol edin.');
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
+  });
+
+  document.getElementById('successOverlay').addEventListener('click', function() {
+    this.classList.remove('show');
+  });
+</script>
+</body>
+</html>
