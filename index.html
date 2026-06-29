@@ -332,8 +332,12 @@
 </div>
 
 <div class="container">
-  <form id="setupForm" name="site-kurulum-formu" netlify netlify-honeypot="bot-field" novalidate>
-    <input type="hidden" name="form-name" value="site-kurulum-formu" />
+  <form id="setupForm" action="https://formsubmit.co/kelvin@tapking.com" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="Yeni Site Kurulum Formu — Tap King" />
+    <input type="hidden" name="_cc" value="support@tapking.com" />
+    <input type="hidden" name="_captcha" value="false" />
+    <input type="hidden" name="_template" value="table" />
+    <input type="hidden" name="_next" value="" />
     <p style="display:none"><input name="bot-field" /></p>
 
     <div class="info-note" data-i18n="info_note">💡 Tüm alanları doldurmak zorunlu değilsiniz — bildiğiniz kadarını doldurun, gerisini ekibimiz sizinle görüşerek tamamlar.</div>
@@ -1800,7 +1804,7 @@
     });
   });
 
-  /* ── Submit — Netlify Forms (AJAX) ── */
+  /* ── Submit — Formsubmit.co ── */
   document.getElementById('setupForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
@@ -1812,10 +1816,9 @@
     const formData = new FormData(this);
 
     try {
-      const response = await fetch('/', {
+      const response = await fetch('https://formsubmit.co/kelvin@tapking.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams(formData).toString()
+        body: formData
       });
 
       if (response.ok) {
