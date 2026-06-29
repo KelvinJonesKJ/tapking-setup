@@ -898,36 +898,117 @@
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
-        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Her içerik için mevcut durumu seçiniz:</p>
-        <div class="grid2">
-          <div class="field">
-            <label>Hakkımızda</label>
-            <div class="radio-group">
-              <label><input type="radio" name="content_about" value="ready" /> Hazır</label>
-              <label><input type="radio" name="content_about" value="need" /> Destek İstiyorum</label>
-            </div>
+        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Her içerik için mevcut durumu seçiniz. "Hazır" seçerseniz lütfen dosya/link paylaşın:</p>
+
+        <!-- Temel sayfalar -->
+        <div class="field">
+          <label>Hakkımızda</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_about" value="ready" /> Hazır</label>
+            <label><input type="radio" name="content_about" value="need" /> Destek İstiyorum</label>
           </div>
-          <div class="field">
-            <label>Şartlar &amp; Koşullar</label>
-            <div class="radio-group">
-              <label><input type="radio" name="content_terms" value="ready" /> Hazır</label>
-              <label><input type="radio" name="content_terms" value="need" /> Destek İstiyorum</label>
-            </div>
+          <input type="text" name="content_about_link" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
+        </div>
+
+        <div class="field">
+          <label>Şartlar &amp; Koşullar</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_terms" value="ready" /> Hazır</label>
+            <label><input type="radio" name="content_terms" value="need" /> Destek İstiyorum</label>
           </div>
-          <div class="field">
-            <label>Gizlilik Politikası</label>
-            <div class="radio-group">
-              <label><input type="radio" name="content_privacy" value="ready" /> Hazır</label>
-              <label><input type="radio" name="content_privacy" value="need" /> Destek İstiyorum</label>
-            </div>
+          <input type="text" name="content_terms_link" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
+        </div>
+
+        <div class="field">
+          <label>Gizlilik Politikası</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_privacy" value="ready" /> Hazır</label>
+            <label><input type="radio" name="content_privacy" value="need" /> Destek İstiyorum</label>
           </div>
-          <div class="field">
-            <label>Bonus Kuralları</label>
-            <div class="radio-group">
-              <label><input type="radio" name="content_bonus" value="ready" /> Hazır</label>
-              <label><input type="radio" name="content_bonus" value="need" /> Destek İstiyorum</label>
-            </div>
+          <input type="text" name="content_privacy_link" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
+        </div>
+
+        <div class="field">
+          <label>Sorumlu Kumar / Responsible Gambling <span class="hint">(lisans için genellikle zorunlu)</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_rg" value="ready" /> Hazır</label>
+            <label><input type="radio" name="content_rg" value="need" /> Destek İstiyorum</label>
+            <label><input type="radio" name="content_rg" value="none" /> Gerekmiyor</label>
           </div>
+          <input type="text" name="content_rg_link" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
+        </div>
+
+        <div class="field">
+          <label>SSS (Sıkça Sorulan Sorular)</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_faq" value="ready" /> Hazır</label>
+            <label><input type="radio" name="content_faq" value="need" /> Destek İstiyorum</label>
+            <label><input type="radio" name="content_faq" value="none" /> İstemiyorum</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>İletişim Sayfası</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_contact" value="ready" /> Hazır</label>
+            <label><input type="radio" name="content_contact" value="need" /> Destek İstiyorum</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Promosyonlar / Kampanyalar Sayfası</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_promo" value="ready" /> Hazır</label>
+            <label><input type="radio" name="content_promo" value="need" /> Destek İstiyorum</label>
+            <label><input type="radio" name="content_promo" value="none" /> İstemiyorum</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Blog / Haber Bölümü</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_blog" value="yes" /> Evet, istiyorum</label>
+            <label><input type="radio" name="content_blog" value="no" /> Hayır, istemiyorum</label>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- İçerik dili -->
+        <div class="field">
+          <label>İçerikler hangi dilde hazırlandı / hazırlanacak?</label>
+          <input type="text" name="content_language" placeholder="örn. Türkçe, İngilizce, her ikisi" />
+        </div>
+        <div class="field">
+          <label>Çeviri gerekiyor mu?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_translation" value="yes" /> Evet</label>
+            <label><input type="radio" name="content_translation" value="no" /> Hayır</label>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Bonus detayları -->
+        <div class="field">
+          <label>Bonus Türleri <span class="hint">(aktif etmek istediklerinizi seçin)</span></label>
+          <div class="check-group">
+            <label><input type="checkbox" name="bonus_welcome" /> Hoşgeldin Bonusu</label>
+            <label><input type="checkbox" name="bonus_deposit" /> Yatırım Bonusu</label>
+            <label><input type="checkbox" name="bonus_freespin" /> Freespin</label>
+            <label><input type="checkbox" name="bonus_cashback" /> Cashback</label>
+            <label><input type="checkbox" name="bonus_referral" /> Arkadaş Davet Bonusu</label>
+            <label><input type="checkbox" name="bonus_vip" /> VIP / Sadakat Programı</label>
+            <label><input type="checkbox" name="bonus_noDeposit" /> Yatırımsız Bonus</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Bonus kuralları / çevrim şartları hazır mı?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_bonus" value="ready" /> Hazır</label>
+            <label><input type="radio" name="content_bonus" value="need" /> Destek İstiyorum</label>
+          </div>
+          <input type="text" name="content_bonus_link" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
         </div>
       </div>
     </div>
