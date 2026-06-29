@@ -354,96 +354,96 @@
       </div>
       <div class="section-body open">
 
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Şirket Bilgileri</p>
+        <p data-i18n="sub_company_info" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Şirket Bilgileri</p>
         <div class="grid2">
           <div class="field">
-            <label>Şirket Adı <span class="req">*</span></label>
-            <input type="text" name="company_name" placeholder="örn. Acme Gaming Ltd." required />
+            <label data-i18n="lbl_company_name">Şirket Adı <span class="req">*</span></label>
+            <input type="text" name="company_name" data-ph-tr="örn. Acme Gaming Ltd." data-ph-en="e.g. Acme Gaming Ltd." placeholder="örn. Acme Gaming Ltd." required />
           </div>
           <div class="field">
-            <label>Kayıtlı Olduğu Ülke <span class="req">*</span></label>
-            <input type="text" name="company_country" placeholder="örn. Malta, Curacao, İngiltere" required />
+            <label data-i18n="lbl_company_country">Kayıtlı Olduğu Ülke <span class="req">*</span></label>
+            <input type="text" name="company_country" data-ph-tr="örn. Malta, Curacao, İngiltere" data-ph-en="e.g. Malta, Curacao, UK" placeholder="örn. Malta, Curacao, İngiltere" required />
           </div>
         </div>
         <div class="field">
-          <label>Şirket Kayıt Numarası <span class="hint">(varsa)</span></label>
-          <input type="text" name="company_reg_number" placeholder="örn. C-12345" />
+          <label data-i18n="lbl_company_reg">Şirket Kayıt Numarası <span class="hint" data-i18n="hint_if_applicable">(varsa)</span></label>
+          <input type="text" name="company_reg_number" data-ph-tr="örn. C-12345" data-ph-en="e.g. C-12345" placeholder="örn. C-12345" />
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Yetkili Kişi</p>
+        <p data-i18n="sub_authorized_person" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Yetkili Kişi</p>
         <div class="grid2">
           <div class="field">
-            <label>Ad Soyad <span class="req">*</span></label>
-            <input type="text" name="contact_name" placeholder="örn. Ahmet Yılmaz" required />
+            <label data-i18n="lbl_full_name">Ad Soyad <span class="req">*</span></label>
+            <input type="text" name="contact_name" data-ph-tr="örn. Ahmet Yılmaz" data-ph-en="e.g. John Smith" placeholder="örn. Ahmet Yılmaz" required />
           </div>
           <div class="field">
-            <label>Pozisyon / Unvan</label>
-            <input type="text" name="contact_title" placeholder="örn. CEO, Operasyon Müdürü" />
+            <label data-i18n="lbl_position">Pozisyon / Unvan</label>
+            <input type="text" name="contact_title" data-ph-tr="örn. CEO, Operasyon Müdürü" data-ph-en="e.g. CEO, Operations Manager" placeholder="örn. CEO, Operasyon Müdürü" />
           </div>
         </div>
         <div class="field">
-          <label>İletişim E-postası <span class="req">*</span></label>
+          <label data-i18n="lbl_contact_email">İletişim E-postası <span class="req">*</span></label>
           <input type="email" name="contact_email" placeholder="ornek@sirket.com" required />
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Lisans</p>
+        <p data-i18n="sub_license" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Lisans</p>
         <div class="field">
-          <label>Mevcut oyun lisansınız var mı? <span class="req">*</span></label>
+          <label data-i18n="lbl_has_license">Mevcut oyun lisansınız var mı? <span class="req">*</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="has_license" value="yes" onchange="toggleSub('license_details','yes')" /> Evet</label>
-            <label><input type="radio" name="has_license" value="no" onchange="toggleSub('license_details','no')" /> Hayır</label>
+            <label><input type="radio" name="has_license" value="yes" onchange="toggleSub('license_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="has_license" value="no" onchange="toggleSub('license_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
         <div class="sub-fields" id="license_details">
           <div class="grid2">
             <div class="field">
-              <label>Lisans Türü</label>
-              <input type="text" name="license_type" placeholder="örn. MGA, UKGC, Curacao" />
+              <label data-i18n="lbl_license_type">Lisans Türü</label>
+              <input type="text" name="license_type" data-ph-tr="örn. MGA, UKGC, Curacao" data-ph-en="e.g. MGA, UKGC, Curacao" placeholder="örn. MGA, UKGC, Curacao" />
             </div>
             <div class="field">
-              <label>Lisans Sağlayıcısı</label>
-              <input type="text" name="license_provider" placeholder="örn. Malta Gaming Authority" />
+              <label data-i18n="lbl_license_provider">Lisans Sağlayıcısı</label>
+              <input type="text" name="license_provider" data-ph-tr="örn. Malta Gaming Authority" data-ph-en="e.g. Malta Gaming Authority" placeholder="örn. Malta Gaming Authority" />
             </div>
           </div>
           <div class="grid2">
             <div class="field">
-              <label>Lisans Numarası</label>
-              <input type="text" name="license_number" placeholder="örn. MGA/B2C/123/2020" />
+              <label data-i18n="lbl_license_number">Lisans Numarası</label>
+              <input type="text" name="license_number" data-ph-tr="örn. MGA/B2C/123/2020" data-ph-en="e.g. MGA/B2C/123/2020" placeholder="örn. MGA/B2C/123/2020" />
             </div>
             <div class="field">
-              <label>Lisans Geçerlilik Tarihi</label>
-              <input type="text" name="license_expiry" placeholder="örn. 31/12/2026" />
+              <label data-i18n="lbl_license_expiry">Lisans Geçerlilik Tarihi</label>
+              <input type="text" name="license_expiry" data-ph-tr="örn. 31/12/2026" data-ph-en="e.g. 31/12/2026" placeholder="örn. 31/12/2026" />
             </div>
           </div>
           <div class="field" id="license_support_wrap" style="display:none">
-            <label>Lisans süreci için destek almak ister misiniz?</label>
+            <label data-i18n="lbl_license_support">Lisans süreci için destek almak ister misiniz?</label>
             <div class="radio-group">
-              <label><input type="radio" name="license_support" value="yes" /> Evet, destek istiyorum</label>
-              <label><input type="radio" name="license_support" value="no" /> Hayır, teşekkürler</label>
+              <label><input type="radio" name="license_support" value="yes" /> <span data-i18n="opt_yes_support">Evet, destek istiyorum</span></label>
+              <label><input type="radio" name="license_support" value="no" /> <span data-i18n="opt_no_thanks">Hayır, teşekkürler</span></label>
             </div>
           </div>
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
         <div class="field">
-          <label>Daha önce aktif bir platform işlettiniz mi?</label>
+          <label data-i18n="lbl_prev_platform">Daha önce aktif bir platform işlettiniz mi?</label>
           <div class="radio-group">
-            <label><input type="radio" name="prev_platform" value="yes" onchange="toggleSub('prev_platform_details','yes')" /> Evet</label>
-            <label><input type="radio" name="prev_platform" value="no" onchange="toggleSub('prev_platform_details','no')" /> Hayır, sıfırdan başlıyoruz</label>
+            <label><input type="radio" name="prev_platform" value="yes" onchange="toggleSub('prev_platform_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="prev_platform" value="no" onchange="toggleSub('prev_platform_details','no')" /> <span data-i18n="opt_no_fresh_start">Hayır, sıfırdan başlıyoruz</span></label>
           </div>
         </div>
         <div class="sub-fields" id="prev_platform_details">
           <div class="field">
-            <label>Platform Adı / URL <span class="hint">(eski platform)</span></label>
-            <input type="text" name="prev_platform_name" placeholder="örn. eskisite.com" />
+            <label data-i18n="lbl_prev_platform_name">Platform Adı / URL <span class="hint" data-i18n="hint_old_platform">(eski platform)</span></label>
+            <input type="text" name="prev_platform_name" data-ph-tr="örn. eskisite.com" data-ph-en="e.g. oldsite.com" placeholder="örn. eskisite.com" />
           </div>
           <div class="field">
-            <label>Veri / Oyuncu taşıması gerekiyor mu?</label>
+            <label data-i18n="lbl_migration_needed">Veri / Oyuncu taşıması gerekiyor mu?</label>
             <div class="radio-group">
-              <label><input type="radio" name="migration_needed" value="yes" /> Evet</label>
-              <label><input type="radio" name="migration_needed" value="no" /> Hayır</label>
+              <label><input type="radio" name="migration_needed" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="migration_needed" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
         </div>
@@ -463,97 +463,97 @@
       </div>
       <div class="section-body">
 
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Alan Adı</p>
+        <p data-i18n="sub_domain" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Alan Adı</p>
         <div class="grid2">
           <div class="field">
-            <label>Ana Domain <span class="req">*</span></label>
-            <input type="url" name="domain" placeholder="https://www.siteadi.com" required />
+            <label data-i18n="lbl_main_domain">Ana Domain <span class="req">*</span></label>
+            <input type="url" name="domain" data-ph-tr="https://www.siteadi.com" data-ph-en="https://www.yourdomain.com" placeholder="https://www.siteadi.com" required />
           </div>
           <div class="field">
-            <label>Domain Sağlayıcı</label>
-            <input type="text" name="domain_provider" placeholder="örn. GoDaddy, Namecheap, Cloudflare" />
+            <label data-i18n="lbl_domain_provider">Domain Sağlayıcı</label>
+            <input type="text" name="domain_provider" data-ph-tr="örn. GoDaddy, Namecheap, Cloudflare" data-ph-en="e.g. GoDaddy, Namecheap, Cloudflare" placeholder="örn. GoDaddy, Namecheap, Cloudflare" />
           </div>
         </div>
         <div class="grid2">
           <div class="field">
-            <label>Domain size mi ait?</label>
+            <label data-i18n="lbl_domain_owned">Domain size mi ait?</label>
             <div class="radio-group">
-              <label><input type="radio" name="domain_owned" value="yes" /> Evet</label>
-              <label><input type="radio" name="domain_owned" value="no" /> Hayır</label>
+              <label><input type="radio" name="domain_owned" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="domain_owned" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
           <div class="field">
-            <label>DNS erişimi sağlayabilir misiniz?</label>
+            <label data-i18n="lbl_dns_access">DNS erişimi sağlayabilir misiniz?</label>
             <div class="radio-group">
-              <label><input type="radio" name="dns_access" value="yes" /> Evet</label>
-              <label><input type="radio" name="dns_access" value="no" /> Hayır</label>
+              <label><input type="radio" name="dns_access" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="dns_access" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
         </div>
         <div class="field">
-          <label>Yedek Domain(ler) <span class="hint">(mirror — varsa)</span></label>
-          <input type="text" name="backup_domains" placeholder="örn. siteadi2.com, siteadi3.net" />
+          <label data-i18n="lbl_backup_domains">Yedek Domain(ler) <span class="hint" data-i18n="hint_mirror_if_any">(mirror — varsa)</span></label>
+          <input type="text" name="backup_domains" data-ph-tr="örn. siteadi2.com, siteadi3.net" data-ph-en="e.g. yourdomain2.com, yourdomain3.net" placeholder="örn. siteadi2.com, siteadi3.net" />
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Cloudflare</p>
+        <p data-i18n="sub_cloudflare" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Cloudflare</p>
         <div class="grid2">
           <div class="field">
-            <label>Cloudflare hesabınız var mı?</label>
+            <label data-i18n="lbl_cloudflare_account">Cloudflare hesabınız var mı?</label>
             <div class="radio-group">
-              <label><input type="radio" name="cloudflare" value="yes" onchange="toggleSub('cloudflare_details','yes')" /> Evet</label>
-              <label><input type="radio" name="cloudflare" value="no" onchange="toggleSub('cloudflare_details','no')" /> Hayır</label>
+              <label><input type="radio" name="cloudflare" value="yes" onchange="toggleSub('cloudflare_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="cloudflare" value="no" onchange="toggleSub('cloudflare_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
           <div class="field">
-            <label>Cloudflare'e geçiş yapılabilir mi?</label>
+            <label data-i18n="lbl_cloudflare_migrate">Cloudflare'e geçiş yapılabilir mi?</label>
             <div class="radio-group">
-              <label><input type="radio" name="cloudflare_migrate" value="yes" /> Evet</label>
-              <label><input type="radio" name="cloudflare_migrate" value="no" /> Hayır</label>
-              <label><input type="radio" name="cloudflare_migrate" value="already" /> Zaten kullanıyoruz</label>
+              <label><input type="radio" name="cloudflare_migrate" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="cloudflare_migrate" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="cloudflare_migrate" value="already" /> <span data-i18n="opt_already_using">Zaten kullanıyoruz</span></label>
             </div>
           </div>
         </div>
         <div class="sub-fields" id="cloudflare_details">
           <div class="field">
-            <label>Cloudflare Hesap E-postası</label>
+            <label data-i18n="lbl_cloudflare_email">Cloudflare Hesap E-postası</label>
             <input type="email" name="cloudflare_email" placeholder="cloudflare@sirket.com" />
           </div>
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Hosting</p>
+        <p data-i18n="sub_hosting" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Hosting</p>
         <div class="grid2">
           <div class="field">
-            <label>Hosting Sağlayıcı</label>
-            <input type="text" name="hosting_provider" placeholder="örn. AWS, Hetzner, DigitalOcean" />
+            <label data-i18n="lbl_hosting_provider">Hosting Sağlayıcı</label>
+            <input type="text" name="hosting_provider" data-ph-tr="örn. AWS, Hetzner, DigitalOcean" data-ph-en="e.g. AWS, Hetzner, DigitalOcean" placeholder="örn. AWS, Hetzner, DigitalOcean" />
           </div>
           <div class="field">
-            <label>Sunucu Lokasyonu</label>
+            <label data-i18n="lbl_server_location">Sunucu Lokasyonu</label>
             <select name="server_location">
-              <option value="">Seçiniz...</option>
-              <option>Avrupa (AB)</option>
-              <option>İngiltere</option>
-              <option>Amerika (US)</option>
-              <option>Asya</option>
-              <option>Orta Doğu</option>
-              <option>Fark etmez / Önerim yok</option>
+              <option value="" data-i18n="opt_select">Seçiniz...</option>
+              <option data-i18n="opt_europe">Avrupa (AB)</option>
+              <option data-i18n="opt_uk">İngiltere</option>
+              <option data-i18n="opt_usa">Amerika (US)</option>
+              <option data-i18n="opt_asia">Asya</option>
+              <option data-i18n="opt_middle_east">Orta Doğu</option>
+              <option data-i18n="opt_no_preference">Fark etmez / Önerim yok</option>
             </select>
           </div>
         </div>
         <div class="field">
-          <label>Mevcut hosting planı / kaynaklar <span class="hint">(varsa)</span></label>
-          <input type="text" name="hosting_plan" placeholder="örn. 4 vCPU, 8GB RAM, 100GB SSD" />
+          <label data-i18n="lbl_hosting_plan">Mevcut hosting planı / kaynaklar <span class="hint" data-i18n="hint_if_applicable">(varsa)</span></label>
+          <input type="text" name="hosting_plan" data-ph-tr="örn. 4 vCPU, 8GB RAM, 100GB SSD" data-ph-en="e.g. 4 vCPU, 8GB RAM, 100GB SSD" placeholder="örn. 4 vCPU, 8GB RAM, 100GB SSD" />
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">SSL & Güvenlik</p>
+        <p data-i18n="sub_ssl_security" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">SSL & Güvenlik</p>
         <div class="field">
-          <label>SSL sertifikanız var mı?</label>
+          <label data-i18n="lbl_ssl">SSL sertifikanız var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="ssl" value="yes" /> Evet, mevcut</label>
-            <label><input type="radio" name="ssl" value="no" /> Hayır, kurulum gerekiyor</label>
-            <label><input type="radio" name="ssl" value="cloudflare" /> Cloudflare üzerinden</label>
+            <label><input type="radio" name="ssl" value="yes" /> <span data-i18n="opt_ssl_yes">Evet, mevcut</span></label>
+            <label><input type="radio" name="ssl" value="no" /> <span data-i18n="opt_ssl_no">Hayır, kurulum gerekiyor</span></label>
+            <label><input type="radio" name="ssl" value="cloudflare" /> <span data-i18n="opt_ssl_cloudflare">Cloudflare üzerinden</span></label>
           </div>
         </div>
 
@@ -573,20 +573,20 @@
       <div class="section-body">
         <!-- Ödeme yöntemleri -->
         <div class="field">
-          <label>Sunmak istediğiniz ödeme yöntemleri</label>
+          <label data-i18n="lbl_payment_methods">Sunmak istediğiniz ödeme yöntemleri</label>
           <div class="check-group">
-            <label><input type="checkbox" name="payment_crypto" id="cb_crypto" onchange="toggleSub('crypto_details','yes')" /> Kripto Para</label>
-            <label><input type="checkbox" name="payment_bank" /> Banka Transferi</label>
-            <label><input type="checkbox" name="payment_card" /> Kredi / Banka Kartı</label>
-            <label><input type="checkbox" name="payment_ewallet" /> e-Cüzdan</label>
-            <label><input type="checkbox" name="payment_local" /> Lokal Ödeme</label>
+            <label><input type="checkbox" name="payment_crypto" id="cb_crypto" onchange="toggleSub('crypto_details','yes')" /> <span data-i18n="opt_crypto">Kripto Para</span></label>
+            <label><input type="checkbox" name="payment_bank" /> <span data-i18n="opt_bank_transfer">Banka Transferi</span></label>
+            <label><input type="checkbox" name="payment_card" /> <span data-i18n="opt_credit_card">Kredi / Banka Kartı</span></label>
+            <label><input type="checkbox" name="payment_ewallet" /> <span data-i18n="opt_ewallet">e-Cüzdan</span></label>
+            <label><input type="checkbox" name="payment_local" /> <span data-i18n="opt_local_payment">Lokal Ödeme</span></label>
           </div>
         </div>
 
         <!-- Kripto detayları -->
         <div class="sub-fields" id="crypto_details">
           <div class="field">
-            <label>Desteklemek istediğiniz kripto coinler</label>
+            <label data-i18n="lbl_crypto_coins">Desteklemek istediğiniz kripto coinler</label>
             <div class="check-group">
               <label><input type="checkbox" name="crypto_btc" /> BTC</label>
               <label><input type="checkbox" name="crypto_eth" /> ETH</label>
@@ -601,70 +601,70 @@
         </div>
 
         <div class="field">
-          <label>Lokal ödeme yöntemleri <span class="hint">(varsa belirtin)</span></label>
-          <input type="text" name="local_payments" placeholder="örn. Papara, Payfix, Havale" />
+          <label data-i18n="lbl_local_payments">Lokal ödeme yöntemleri <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
+          <input type="text" name="local_payments" data-ph-tr="örn. Papara, Payfix, Havale" data-ph-en="e.g. Papara, Payfix, Bank Transfer" placeholder="örn. Papara, Payfix, Havale" />
         </div>
 
         <hr class="divider" />
 
         <!-- Limitler -->
         <div class="field">
-          <label>Minimum yatırım limiti</label>
-          <input type="text" name="min_deposit" placeholder="örn. 50 TRY / 10 USD" />
+          <label data-i18n="lbl_min_deposit">Minimum yatırım limiti</label>
+          <input type="text" name="min_deposit" data-ph-tr="örn. 50 TRY / 10 USD" data-ph-en="e.g. 50 TRY / 10 USD" placeholder="örn. 50 TRY / 10 USD" />
         </div>
         <div class="field">
-          <label>Maksimum çekim limiti <span class="hint">(günlük)</span></label>
-          <input type="text" name="max_withdrawal_daily" placeholder="örn. 10.000 TRY / 1.000 USD" />
+          <label data-i18n="lbl_max_withdrawal">Maksimum çekim limiti <span class="hint" data-i18n="hint_daily">(günlük)</span></label>
+          <input type="text" name="max_withdrawal_daily" data-ph-tr="örn. 10.000 TRY / 1.000 USD" data-ph-en="e.g. 10,000 TRY / 1,000 USD" placeholder="örn. 10.000 TRY / 1.000 USD" />
         </div>
 
         <hr class="divider" />
 
         <!-- Ödeme akışı -->
         <div class="field">
-          <label>Para çekme onay süreci nasıl olsun?</label>
+          <label data-i18n="lbl_withdrawal_approval">Para çekme onay süreci nasıl olsun?</label>
           <div class="radio-group">
-            <label><input type="radio" name="withdrawal_approval" value="auto" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> Otomatik onay</label>
-            <label><input type="radio" name="withdrawal_approval" value="manual" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> Manuel onay (tüm çekimler)</label>
-            <label><input type="radio" name="withdrawal_approval" value="threshold" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='block'" /> Belirli bir tutarın üzeri manuel</label>
+            <label><input type="radio" name="withdrawal_approval" value="auto" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_auto_approval">Otomatik onay</span></label>
+            <label><input type="radio" name="withdrawal_approval" value="manual" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_manual_approval">Manuel onay (tüm çekimler)</span></label>
+            <label><input type="radio" name="withdrawal_approval" value="threshold" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='block'" /> <span data-i18n="opt_threshold_approval">Belirli bir tutarın üzeri manuel</span></label>
           </div>
         </div>
         <div id="withdrawal_threshold_wrap" style="display:none">
           <div class="field">
-            <label>Manuel onay eşiği</label>
-            <input type="text" name="withdrawal_threshold" placeholder="örn. 5.000 TRY üzeri manuel onay" />
+            <label data-i18n="lbl_manual_threshold">Manuel onay eşiği</label>
+            <input type="text" name="withdrawal_threshold" data-ph-tr="örn. 5.000 TRY üzeri manuel onay" data-ph-en="e.g. Manual approval above 5,000 TRY" placeholder="örn. 5.000 TRY üzeri manuel onay" />
           </div>
         </div>
 
         <div class="field">
-          <label>Fraud / Kötüye kullanım önleme kuralları <span class="hint">(varsa belirtin)</span></label>
-          <textarea name="fraud_rules" placeholder="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..."></textarea>
+          <label data-i18n="lbl_fraud_rules">Fraud / Kötüye kullanım önleme kuralları <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
+          <textarea name="fraud_rules" data-ph-tr="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..." data-ph-en="e.g. max 3 withdrawals per day from same IP, no withdrawal until bonus wagering requirement is met..." placeholder="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..."></textarea>
         </div>
 
         <hr class="divider" />
 
         <!-- PSP -->
         <div class="field">
-          <label>Mevcut bir ödeme sağlayıcınız (PSP) var mı?</label>
+          <label data-i18n="lbl_has_psp">Mevcut bir ödeme sağlayıcınız (PSP) var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="has_psp" value="yes" onchange="toggleSub('psp_details','yes')" /> Evet</label>
-            <label><input type="radio" name="has_psp" value="no" onchange="toggleSub('psp_details','no')" /> Hayır</label>
+            <label><input type="radio" name="has_psp" value="yes" onchange="toggleSub('psp_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="has_psp" value="no" onchange="toggleSub('psp_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
         <div class="sub-fields" id="psp_details">
           <div class="field">
-            <label>Sağlayıcı Adı</label>
-            <input type="text" name="psp_name" placeholder="örn. Stripe, Payguru, Praxis" />
+            <label data-i18n="lbl_psp_name">Sağlayıcı Adı</label>
+            <input type="text" name="psp_name" data-ph-tr="örn. Stripe, Payguru, Praxis" data-ph-en="e.g. Stripe, Payguru, Praxis" placeholder="örn. Stripe, Payguru, Praxis" />
           </div>
           <div class="field">
-            <label>API Dokümantasyonu / Erişim Bilgileri</label>
-            <textarea name="psp_api_info" placeholder="API endpoint, dokümantasyon linki veya erişim notu..."></textarea>
+            <label data-i18n="lbl_psp_api">API Dokümantasyonu / Erişim Bilgileri</label>
+            <textarea name="psp_api_info" data-ph-tr="API endpoint, dokümantasyon linki veya erişim notu..." data-ph-en="API endpoint, documentation link or access notes..." placeholder="API endpoint, dokümantasyon linki veya erişim notu..."></textarea>
           </div>
           <div id="psp_use_ours" style="display:none">
             <div class="field">
-              <label>Bizim ödeme çözümlerimizi kullanmak ister misiniz?</label>
+              <label data-i18n="lbl_use_our_psp">Bizim ödeme çözümlerimizi kullanmak ister misiniz?</label>
               <div class="radio-group">
-                <label><input type="radio" name="use_our_psp" value="yes" /> Evet</label>
-                <label><input type="radio" name="use_our_psp" value="no" /> Hayır</label>
+                <label><input type="radio" name="use_our_psp" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+                <label><input type="radio" name="use_our_psp" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
               </div>
             </div>
           </div>
@@ -685,28 +685,28 @@
       <div class="section-body">
         <div class="grid2">
           <div class="field">
-            <label>Hedef Ülke / Ülkeler <span class="req">*</span></label>
-            <input type="text" name="target_countries" placeholder="örn. Türkiye, Almanya, Hollanda" required />
+            <label data-i18n="lbl_target_countries">Hedef Ülke / Ülkeler <span class="req">*</span></label>
+            <input type="text" name="target_countries" data-ph-tr="örn. Türkiye, Almanya, Hollanda" data-ph-en="e.g. Turkey, Germany, Netherlands" placeholder="örn. Türkiye, Almanya, Hollanda" required />
           </div>
           <div class="field">
-            <label>Ana Dil <span class="req">*</span></label>
+            <label data-i18n="lbl_primary_language">Ana Dil <span class="req">*</span></label>
             <select name="primary_language" required>
-              <option value="">Seçiniz...</option>
-              <option>Türkçe</option>
-              <option>İngilizce</option>
-              <option>Almanca</option>
-              <option>Fransızca</option>
-              <option>İspanyolca</option>
-              <option>Rusça</option>
-              <option>Arapça</option>
-              <option>Portekizce</option>
-              <option>Diğer</option>
+              <option value="" data-i18n="opt_select">Seçiniz...</option>
+              <option data-i18n="opt_lang_tr">Türkçe</option>
+              <option data-i18n="opt_lang_en">İngilizce</option>
+              <option data-i18n="opt_lang_de">Almanca</option>
+              <option data-i18n="opt_lang_fr">Fransızca</option>
+              <option data-i18n="opt_lang_es">İspanyolca</option>
+              <option data-i18n="opt_lang_ru">Rusça</option>
+              <option data-i18n="opt_lang_ar">Arapça</option>
+              <option data-i18n="opt_lang_pt">Portekizce</option>
+              <option data-i18n="opt_other">Diğer</option>
             </select>
           </div>
         </div>
         <div class="field">
-          <label>Ek Diller <span class="hint">(varsa belirtin)</span></label>
-          <input type="text" name="extra_languages" placeholder="örn. İngilizce, Almanca" />
+          <label data-i18n="lbl_extra_languages">Ek Diller <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
+          <input type="text" name="extra_languages" data-ph-tr="örn. İngilizce, Almanca" data-ph-en="e.g. English, German" placeholder="örn. İngilizce, Almanca" />
         </div>
 
         <hr class="divider" />
@@ -714,29 +714,29 @@
         <!-- Para birimi & Zaman dilimi -->
         <div class="grid2">
           <div class="field">
-            <label>Para Birimi <span class="req">*</span></label>
+            <label data-i18n="lbl_currency">Para Birimi <span class="req">*</span></label>
             <select name="currency" required>
-              <option value="">Seçiniz...</option>
-              <option>TRY — Türk Lirası</option>
-              <option>EUR — Euro</option>
-              <option>USD — Amerikan Doları</option>
-              <option>GBP — İngiliz Sterlini</option>
-              <option>BRL — Brezilya Reali</option>
-              <option>AZN — Azerbaycan Manatı</option>
-              <option>Diğer</option>
+              <option value="" data-i18n="opt_select">Seçiniz...</option>
+              <option data-i18n="opt_try">TRY — Türk Lirası</option>
+              <option data-i18n="opt_eur">EUR — Euro</option>
+              <option data-i18n="opt_usd">USD — Amerikan Doları</option>
+              <option data-i18n="opt_gbp">GBP — İngiliz Sterlini</option>
+              <option data-i18n="opt_brl">BRL — Brezilya Reali</option>
+              <option data-i18n="opt_azn">AZN — Azerbaycan Manatı</option>
+              <option data-i18n="opt_other">Diğer</option>
             </select>
           </div>
           <div class="field">
-            <label>Zaman Dilimi <span class="req">*</span></label>
+            <label data-i18n="lbl_timezone">Zaman Dilimi <span class="req">*</span></label>
             <select name="timezone" required>
-              <option value="">Seçiniz...</option>
+              <option value="" data-i18n="opt_select">Seçiniz...</option>
               <option>UTC+3 — İstanbul / Ankara</option>
               <option>UTC+0 — Londra (GMT)</option>
               <option>UTC+1 — Berlin / Paris</option>
               <option>UTC+2 — Kahire / Atina</option>
               <option>UTC+4 — Bakü / Dubai</option>
               <option>UTC+5 — Karaçi / Taşkent</option>
-              <option>Diğer</option>
+              <option data-i18n="opt_other">Diğer</option>
             </select>
           </div>
         </div>
@@ -745,17 +745,17 @@
 
         <!-- Düzenleyici kısıtlamalar -->
         <div class="field">
-          <label>Hedef pazarda lisans / düzenleyici kısıtlama var mı?</label>
+          <label data-i18n="lbl_regulatory_restrictions">Hedef pazarda lisans / düzenleyici kısıtlama var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="regulatory_restrictions" value="yes" onchange="toggleSub('regulatory_details','yes')" /> Evet</label>
-            <label><input type="radio" name="regulatory_restrictions" value="no" onchange="toggleSub('regulatory_details','no')" /> Hayır</label>
-            <label><input type="radio" name="regulatory_restrictions" value="unknown" onchange="toggleSub('regulatory_details','no')" /> Bilmiyorum</label>
+            <label><input type="radio" name="regulatory_restrictions" value="yes" onchange="toggleSub('regulatory_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="regulatory_restrictions" value="no" onchange="toggleSub('regulatory_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="regulatory_restrictions" value="unknown" onchange="toggleSub('regulatory_details','no')" /> <span data-i18n="opt_dont_know">Bilmiyorum</span></label>
           </div>
         </div>
         <div class="sub-fields" id="regulatory_details">
           <div class="field">
-            <label>Kısıtlama detayları</label>
-            <textarea name="regulatory_details_text" placeholder="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..."></textarea>
+            <label data-i18n="lbl_restriction_details">Kısıtlama detayları</label>
+            <textarea name="regulatory_details_text" data-ph-tr="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..." data-ph-en="e.g. MGA license required, operating with offshore license in Turkey..." placeholder="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..."></textarea>
           </div>
         </div>
 
@@ -763,42 +763,42 @@
 
         <!-- Dil & İçerik -->
         <div class="field">
-          <label>Sağdan sola (RTL) dil desteği gerekiyor mu? <span class="hint">(Arapça, Farsça vb.)</span></label>
+          <label data-i18n="lbl_rtl_support">Sağdan sola (RTL) dil desteği gerekiyor mu? <span class="hint" data-i18n="hint_rtl">(Arapça, Farsça vb.)</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="rtl_support" value="yes" /> Evet</label>
-            <label><input type="radio" name="rtl_support" value="no" /> Hayır</label>
+            <label><input type="radio" name="rtl_support" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="rtl_support" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
         <div class="field">
-          <label>Çeviri nasıl sağlanacak?</label>
+          <label data-i18n="lbl_translation_provider">Çeviri nasıl sağlanacak?</label>
           <div class="radio-group">
-            <label><input type="radio" name="translation_provider" value="self" /> Kendimiz sağlayacağız</label>
-            <label><input type="radio" name="translation_provider" value="tapking" /> Tap King sağlasın</label>
-            <label><input type="radio" name="translation_provider" value="both" /> Birlikte halledelim</label>
+            <label><input type="radio" name="translation_provider" value="self" /> <span data-i18n="opt_translation_self">Kendimiz sağlayacağız</span></label>
+            <label><input type="radio" name="translation_provider" value="tapking" /> <span data-i18n="opt_translation_tapking">Tap King sağlasın</span></label>
+            <label><input type="radio" name="translation_provider" value="both" /> <span data-i18n="opt_translation_both">Birlikte halledelim</span></label>
           </div>
         </div>
         <div class="field">
-          <label>Müşteri hizmetleri dili / dilleri</label>
-          <input type="text" name="support_languages" placeholder="örn. Türkçe, İngilizce" />
+          <label data-i18n="lbl_support_languages">Müşteri hizmetleri dili / dilleri</label>
+          <input type="text" name="support_languages" data-ph-tr="örn. Türkçe, İngilizce" data-ph-en="e.g. Turkish, English" placeholder="örn. Türkçe, İngilizce" />
         </div>
 
         <hr class="divider" />
 
         <!-- Pazarlama -->
         <div class="field">
-          <label>Hedef kullanıcı kitlesi</label>
+          <label data-i18n="lbl_target_audience">Hedef kullanıcı kitlesi</label>
           <div class="check-group">
-            <label><input type="checkbox" name="audience_sports" /> Spor Bahisleri</label>
-            <label><input type="checkbox" name="audience_casino" /> Casino / Slot</label>
-            <label><input type="checkbox" name="audience_live" /> Canlı Casino</label>
-            <label><input type="checkbox" name="audience_poker" /> Poker</label>
-            <label><input type="checkbox" name="audience_virtual" /> Sanal Sporlar</label>
+            <label><input type="checkbox" name="audience_sports" /> <span data-i18n="opt_sports_betting">Spor Bahisleri</span></label>
+            <label><input type="checkbox" name="audience_casino" /> <span data-i18n="opt_casino_slot">Casino / Slot</span></label>
+            <label><input type="checkbox" name="audience_live" /> <span data-i18n="opt_live_casino">Canlı Casino</span></label>
+            <label><input type="checkbox" name="audience_poker" /> <span data-i18n="opt_poker">Poker</span></label>
+            <label><input type="checkbox" name="audience_virtual" /> <span data-i18n="opt_virtual_sports">Sanal Sporlar</span></label>
             <label><input type="checkbox" name="audience_esports" /> E-Sports</label>
           </div>
         </div>
         <div class="field">
-          <label>Rakip / referans siteler <span class="hint">(pazarda neyle rekabet edeceksiniz?)</span></label>
-          <textarea name="competitor_sites" placeholder="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..."></textarea>
+          <label data-i18n="lbl_competitor_sites">Rakip / referans siteler <span class="hint" data-i18n="hint_competitor">(pazarda neyle rekabet edeceksiniz?)</span></label>
+          <textarea name="competitor_sites" data-ph-tr="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..." data-ph-en="e.g. Bets10, Betsson, 1xBet — similar concept or sites you like..." placeholder="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..."></textarea>
         </div>
       </div>
     </div>
@@ -816,20 +816,20 @@
       <div class="section-body">
         <div class="grid2">
           <div class="field">
-            <label>Site Adı / Marka Adı <span class="req">*</span></label>
-            <input type="text" name="brand_name" placeholder="örn. OnlySpin" required />
+            <label data-i18n="lbl_brand_name">Site Adı / Marka Adı <span class="req">*</span></label>
+            <input type="text" name="brand_name" data-ph-tr="örn. OnlySpin" data-ph-en="e.g. OnlySpin" placeholder="örn. OnlySpin" required />
           </div>
           <div class="field">
-            <label>Logo <span class="hint">(PNG veya SVG)</span></label>
-            <input type="text" name="logo_link" placeholder="Dropbox / Drive linki veya 'Sonra göndereceğim'" />
+            <label data-i18n="lbl_logo">Logo <span class="hint" data-i18n="hint_png_svg">(PNG veya SVG)</span></label>
+            <input type="text" name="logo_link" data-ph-tr="Dropbox / Drive linki veya 'Sonra göndereceğim'" data-ph-en="Dropbox / Drive link or 'Will send later'" placeholder="Dropbox / Drive linki veya 'Sonra göndereceğim'" />
           </div>
         </div>
 
         <!-- Figma -->
         <div class="field">
-          <label>Figma Dosyası Linki</label>
+          <label data-i18n="lbl_figma_link">Figma Dosyası Linki</label>
           <input type="url" name="figma_link" placeholder="https://figma.com/file/..." />
-          <p style="margin-top:6px;font-size:13px;color:var(--muted);line-height:1.5;">
+          <p data-i18n="figma_note" style="margin-top:6px;font-size:13px;color:var(--muted);line-height:1.5;">
             ⚠️ Figma dosyası olmadan tasarım süreci başlatılamaz. Henüz hazır değilse taslak bir dosya paylaşmanız yeterlidir.
           </p>
         </div>
@@ -837,78 +837,78 @@
         <hr class="divider" />
 
         <div class="field">
-          <label>Tercih Edilen Renkler <span class="hint">(HEX veya renk adı)</span></label>
-          <input type="text" name="brand_colors" placeholder="örn. #E8491D (turuncu), #0d0d12 (siyah)" />
+          <label data-i18n="lbl_brand_colors">Tercih Edilen Renkler <span class="hint" data-i18n="hint_hex_or_name">(HEX veya renk adı)</span></label>
+          <input type="text" name="brand_colors" data-ph-tr="örn. #E8491D (turuncu), #0d0d12 (siyah)" data-ph-en="e.g. #E8491D (orange), #0d0d12 (black)" placeholder="örn. #E8491D (turuncu), #0d0d12 (siyah)" />
         </div>
 
         <div class="field">
-          <label>Slogan / Tagline <span class="hint">(varsa)</span></label>
+          <label data-i18n="lbl_brand_slogan">Slogan / Tagline <span class="hint" data-i18n="hint_if_any">(varsa)</span></label>
           <input type="text" name="brand_slogan" placeholder="örn. 'Play Smart, Win Big'" />
         </div>
 
         <div class="field">
-          <label>Marka tonu nasıl olsun?</label>
+          <label data-i18n="lbl_brand_tone">Marka tonu nasıl olsun?</label>
           <div class="radio-group">
-            <label><input type="radio" name="brand_tone" value="serious" /> Ciddi &amp; Profesyonel</label>
-            <label><input type="radio" name="brand_tone" value="friendly" /> Samimi &amp; Yakın</label>
-            <label><input type="radio" name="brand_tone" value="exciting" /> Heyecanlı &amp; Enerjik</label>
-            <label><input type="radio" name="brand_tone" value="luxury" /> Lüks &amp; Premium</label>
+            <label><input type="radio" name="brand_tone" value="serious" /> <span data-i18n="opt_tone_serious">Ciddi &amp; Profesyonel</span></label>
+            <label><input type="radio" name="brand_tone" value="friendly" /> <span data-i18n="opt_tone_friendly">Samimi &amp; Yakın</span></label>
+            <label><input type="radio" name="brand_tone" value="exciting" /> <span data-i18n="opt_tone_exciting">Heyecanlı &amp; Enerjik</span></label>
+            <label><input type="radio" name="brand_tone" value="luxury" /> <span data-i18n="opt_tone_luxury">Lüks &amp; Premium</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Genel stil tercihi</label>
+          <label data-i18n="lbl_design_style">Genel stil tercihi</label>
           <div class="radio-group">
-            <label><input type="radio" name="design_style" value="minimalist" /> Minimalist</label>
-            <label><input type="radio" name="design_style" value="bold" /> Bold &amp; Agresif</label>
-            <label><input type="radio" name="design_style" value="luxury" /> Lüks &amp; Zarif</label>
-            <label><input type="radio" name="design_style" value="fun" /> Eğlenceli &amp; Renkli</label>
+            <label><input type="radio" name="design_style" value="minimalist" /> <span data-i18n="opt_style_minimalist">Minimalist</span></label>
+            <label><input type="radio" name="design_style" value="bold" /> <span data-i18n="opt_style_bold">Bold &amp; Agresif</span></label>
+            <label><input type="radio" name="design_style" value="luxury" /> <span data-i18n="opt_style_luxury">Lüks &amp; Zarif</span></label>
+            <label><input type="radio" name="design_style" value="fun" /> <span data-i18n="opt_style_fun">Eğlenceli &amp; Renkli</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Tema tercihi</label>
+          <label data-i18n="lbl_theme">Tema tercihi</label>
           <div class="radio-group">
-            <label><input type="radio" name="theme_preference" value="dark" /> Karanlık tema</label>
-            <label><input type="radio" name="theme_preference" value="light" /> Açık tema</label>
-            <label><input type="radio" name="theme_preference" value="both" /> Her ikisi de olsun</label>
+            <label><input type="radio" name="theme_preference" value="dark" /> <span data-i18n="opt_theme_dark">Karanlık tema</span></label>
+            <label><input type="radio" name="theme_preference" value="light" /> <span data-i18n="opt_theme_light">Açık tema</span></label>
+            <label><input type="radio" name="theme_preference" value="both" /> <span data-i18n="opt_theme_both">Her ikisi de olsun</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Öncelik</label>
+          <label data-i18n="lbl_device_priority">Öncelik</label>
           <div class="radio-group">
-            <label><input type="radio" name="device_priority" value="mobile" /> Mobil öncelikli</label>
-            <label><input type="radio" name="device_priority" value="desktop" /> Masaüstü öncelikli</label>
-            <label><input type="radio" name="device_priority" value="equal" /> İkisi de eşit</label>
+            <label><input type="radio" name="device_priority" value="mobile" /> <span data-i18n="opt_mobile_first">Mobil öncelikli</span></label>
+            <label><input type="radio" name="device_priority" value="desktop" /> <span data-i18n="opt_desktop_first">Masaüstü öncelikli</span></label>
+            <label><input type="radio" name="device_priority" value="equal" /> <span data-i18n="opt_equal_priority">İkisi de eşit</span></label>
           </div>
         </div>
 
         <hr class="divider" />
 
         <div class="field">
-          <label>Favicon var mı?</label>
+          <label data-i18n="lbl_favicon">Favicon var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="has_favicon" value="yes" /> Evet, paylaşacağım</label>
-            <label><input type="radio" name="has_favicon" value="no" /> Hayır, sizden bekliyorum</label>
+            <label><input type="radio" name="has_favicon" value="yes" /> <span data-i18n="opt_favicon_yes">Evet, paylaşacağım</span></label>
+            <label><input type="radio" name="has_favicon" value="no" /> <span data-i18n="opt_favicon_no">Hayır, sizden bekliyorum</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Sosyal medya görselleri gerekiyor mu? <span class="hint">(OG image, Twitter card vb.)</span></label>
+          <label data-i18n="lbl_social_images">Sosyal medya görselleri gerekiyor mu? <span class="hint" data-i18n="hint_og_image">(OG image, Twitter card vb.)</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="social_images" value="yes" /> Evet</label>
-            <label><input type="radio" name="social_images" value="no" /> Hayır</label>
+            <label><input type="radio" name="social_images" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="social_images" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Yasaklı renkler veya görseller <span class="hint">(rakip markayla karışmaması için)</span></label>
-          <input type="text" name="forbidden_colors" placeholder="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." />
+          <label data-i18n="lbl_forbidden_colors">Yasaklı renkler veya görseller <span class="hint" data-i18n="hint_avoid_brand_conflict">(rakip markayla karışmaması için)</span></label>
+          <input type="text" name="forbidden_colors" data-ph-tr="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." data-ph-en="e.g. Avoid red, should not resemble brand X..." placeholder="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." />
         </div>
 
         <div class="field">
-          <label>Referans Site <span class="hint">(beğendiğiniz tasarım örneği)</span></label>
+          <label data-i18n="lbl_reference_site">Referans Site <span class="hint" data-i18n="hint_design_example">(beğendiğiniz tasarım örneği)</span></label>
           <input type="url" name="reference_site" placeholder="https://..." />
         </div>
       </div>
@@ -925,77 +925,77 @@
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
-        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Her içerik için mevcut durumu seçiniz. "Hazır" seçerseniz lütfen dosya/link paylaşın:</p>
+        <p data-i18n="sec6_instructions" style="font-size:13px;color:var(--muted);margin-bottom:16px;">Her içerik için mevcut durumu seçiniz. "Hazır" seçerseniz lütfen dosya/link paylaşın:</p>
 
         <!-- Temel sayfalar -->
         <div class="field">
-          <label>Hakkımızda</label>
+          <label data-i18n="lbl_content_about">Hakkımızda</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_about" value="ready" /> Hazır</label>
-            <label><input type="radio" name="content_about" value="need" /> Destek İstiyorum</label>
+            <label><input type="radio" name="content_about" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="content_about" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
-          <input type="text" name="content_about_link" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="content_about_link" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
         </div>
 
         <div class="field">
-          <label>Şartlar &amp; Koşullar</label>
+          <label data-i18n="lbl_content_terms">Şartlar &amp; Koşullar</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_terms" value="ready" /> Hazır</label>
-            <label><input type="radio" name="content_terms" value="need" /> Destek İstiyorum</label>
+            <label><input type="radio" name="content_terms" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="content_terms" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
-          <input type="text" name="content_terms_link" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="content_terms_link" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
         </div>
 
         <div class="field">
-          <label>Gizlilik Politikası</label>
+          <label data-i18n="lbl_content_privacy">Gizlilik Politikası</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_privacy" value="ready" /> Hazır</label>
-            <label><input type="radio" name="content_privacy" value="need" /> Destek İstiyorum</label>
+            <label><input type="radio" name="content_privacy" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="content_privacy" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
-          <input type="text" name="content_privacy_link" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="content_privacy_link" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
         </div>
 
         <div class="field">
-          <label>Sorumlu Kumar / Responsible Gambling <span class="hint">(lisans için genellikle zorunlu)</span></label>
+          <label data-i18n="lbl_content_rg">Sorumlu Kumar / Responsible Gambling <span class="hint" data-i18n="hint_license_required">(lisans için genellikle zorunlu)</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="content_rg" value="ready" /> Hazır</label>
-            <label><input type="radio" name="content_rg" value="need" /> Destek İstiyorum</label>
-            <label><input type="radio" name="content_rg" value="none" /> Gerekmiyor</label>
+            <label><input type="radio" name="content_rg" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="content_rg" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="content_rg" value="none" /> <span data-i18n="opt_not_needed">Gerekmiyor</span></label>
           </div>
-          <input type="text" name="content_rg_link" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="content_rg_link" data-ph-tr="İçerik linki (hazırsa)" data-ph-en="Content link (if ready)" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
         </div>
 
         <div class="field">
-          <label>SSS (Sıkça Sorulan Sorular)</label>
+          <label data-i18n="lbl_content_faq">SSS (Sıkça Sorulan Sorular)</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_faq" value="ready" /> Hazır</label>
-            <label><input type="radio" name="content_faq" value="need" /> Destek İstiyorum</label>
-            <label><input type="radio" name="content_faq" value="none" /> İstemiyorum</label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label>İletişim Sayfası</label>
-          <div class="radio-group">
-            <label><input type="radio" name="content_contact" value="ready" /> Hazır</label>
-            <label><input type="radio" name="content_contact" value="need" /> Destek İstiyorum</label>
+            <label><input type="radio" name="content_faq" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="content_faq" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="content_faq" value="none" /> <span data-i18n="opt_dont_want">İstemiyorum</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Promosyonlar / Kampanyalar Sayfası</label>
+          <label data-i18n="lbl_content_contact">İletişim Sayfası</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_promo" value="ready" /> Hazır</label>
-            <label><input type="radio" name="content_promo" value="need" /> Destek İstiyorum</label>
-            <label><input type="radio" name="content_promo" value="none" /> İstemiyorum</label>
+            <label><input type="radio" name="content_contact" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="content_contact" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Blog / Haber Bölümü</label>
+          <label data-i18n="lbl_content_promo">Promosyonlar / Kampanyalar Sayfası</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_blog" value="yes" /> Evet, istiyorum</label>
-            <label><input type="radio" name="content_blog" value="no" /> Hayır, istemiyorum</label>
+            <label><input type="radio" name="content_promo" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="content_promo" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="content_promo" value="none" /> <span data-i18n="opt_dont_want">İstemiyorum</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label data-i18n="lbl_content_blog">Blog / Haber Bölümü</label>
+          <div class="radio-group">
+            <label><input type="radio" name="content_blog" value="yes" /> <span data-i18n="opt_yes_want">Evet, istiyorum</span></label>
+            <label><input type="radio" name="content_blog" value="no" /> <span data-i18n="opt_no_dont_want">Hayır, istemiyorum</span></label>
           </div>
         </div>
 
@@ -1003,14 +1003,14 @@
 
         <!-- İçerik dili -->
         <div class="field">
-          <label>İçerikler hangi dilde hazırlandı / hazırlanacak?</label>
-          <input type="text" name="content_language" placeholder="örn. Türkçe, İngilizce, her ikisi" />
+          <label data-i18n="lbl_content_language">İçerikler hangi dilde hazırlandı / hazırlanacak?</label>
+          <input type="text" name="content_language" data-ph-tr="örn. Türkçe, İngilizce, her ikisi" data-ph-en="e.g. Turkish, English, both" placeholder="örn. Türkçe, İngilizce, her ikisi" />
         </div>
         <div class="field">
-          <label>Çeviri gerekiyor mu?</label>
+          <label data-i18n="lbl_content_translation">Çeviri gerekiyor mu?</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_translation" value="yes" /> Evet</label>
-            <label><input type="radio" name="content_translation" value="no" /> Hayır</label>
+            <label><input type="radio" name="content_translation" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="content_translation" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
@@ -1018,24 +1018,24 @@
 
         <!-- Bonus detayları -->
         <div class="field">
-          <label>Bonus Türleri <span class="hint">(aktif etmek istediklerinizi seçin)</span></label>
+          <label data-i18n="lbl_bonus_types">Bonus Türleri <span class="hint" data-i18n="hint_select_active">(aktif etmek istediklerinizi seçin)</span></label>
           <div class="check-group">
-            <label><input type="checkbox" name="bonus_welcome" /> Hoşgeldin Bonusu</label>
-            <label><input type="checkbox" name="bonus_deposit" /> Yatırım Bonusu</label>
+            <label><input type="checkbox" name="bonus_welcome" /> <span data-i18n="opt_welcome_bonus">Hoşgeldin Bonusu</span></label>
+            <label><input type="checkbox" name="bonus_deposit" /> <span data-i18n="opt_deposit_bonus">Yatırım Bonusu</span></label>
             <label><input type="checkbox" name="bonus_freespin" /> Freespin</label>
             <label><input type="checkbox" name="bonus_cashback" /> Cashback</label>
-            <label><input type="checkbox" name="bonus_referral" /> Arkadaş Davet Bonusu</label>
-            <label><input type="checkbox" name="bonus_vip" /> VIP / Sadakat Programı</label>
-            <label><input type="checkbox" name="bonus_noDeposit" /> Yatırımsız Bonus</label>
+            <label><input type="checkbox" name="bonus_referral" /> <span data-i18n="opt_referral_bonus">Arkadaş Davet Bonusu</span></label>
+            <label><input type="checkbox" name="bonus_vip" /> <span data-i18n="opt_vip_loyalty">VIP / Sadakat Programı</span></label>
+            <label><input type="checkbox" name="bonus_noDeposit" /> <span data-i18n="opt_no_deposit_bonus">Yatırımsız Bonus</span></label>
           </div>
         </div>
         <div class="field">
-          <label>Bonus kuralları / çevrim şartları hazır mı?</label>
+          <label data-i18n="lbl_bonus_rules">Bonus kuralları / çevrim şartları hazır mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_bonus" value="ready" /> Hazır</label>
-            <label><input type="radio" name="content_bonus" value="need" /> Destek İstiyorum</label>
+            <label><input type="radio" name="content_bonus" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="content_bonus" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
-          <input type="text" name="content_bonus_link" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="content_bonus_link" data-ph-tr="İçerik linki (hazırsa)" data-ph-en="Content link (if ready)" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
         </div>
       </div>
     </div>
@@ -1051,7 +1051,7 @@
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
-        <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Tap King aggregator üzerinden aktif etmek istediğiniz sağlayıcıları seçiniz:</p>
+        <p data-i18n="sec7_instructions" style="font-size:13px;color:var(--muted);margin-bottom:16px;">Tap King aggregator üzerinden aktif etmek istediğiniz sağlayıcıları seçiniz:</p>
 
         <!-- Tap King Originals -->
         <div class="field">
@@ -1067,7 +1067,7 @@
 
         <!-- Slot Sağlayıcılar -->
         <div class="field">
-          <label>🎰 Slot Sağlayıcılar</label>
+          <label data-i18n="lbl_slot_providers">🎰 Slot Sağlayıcılar</label>
           <div class="check-group">
             <label><input type="checkbox" name="prov_pragmatic" /> Pragmatic Play</label>
             <label><input type="checkbox" name="prov_bgaming" /> BGaming</label>
@@ -1128,7 +1128,7 @@
 
         <!-- Crash / Instant Games -->
         <div class="field">
-          <label>🚀 Crash &amp; Instant Games</label>
+          <label data-i18n="lbl_crash_providers">🚀 Crash &amp; Instant Games</label>
           <div class="check-group">
             <label><input type="checkbox" name="prov_spribe" /> Spribe (Aviator)</label>
             <label><input type="checkbox" name="prov_aviator_llc" /> AVIATOR LLC</label>
@@ -1143,7 +1143,7 @@
 
         <!-- Canlı Casino -->
         <div class="field">
-          <label>🃏 Canlı Casino Sağlayıcılar</label>
+          <label data-i18n="lbl_live_casino_providers">🃏 Canlı Casino Sağlayıcılar</label>
           <div class="check-group">
             <label><input type="checkbox" name="prov_vivo" /> Vivo Gaming</label>
             <label><input type="checkbox" name="prov_ezugi" /> Ezugi</label>
@@ -1161,7 +1161,7 @@
 
         <!-- Spor / Virtual / TV -->
         <div class="field">
-          <label>⚽ Spor, Virtual &amp; TV Oyunları</label>
+          <label data-i18n="lbl_sports_providers">⚽ Spor, Virtual &amp; TV Oyunları</label>
           <div class="check-group">
             <label><input type="checkbox" name="prov_goldenrace" /> Golden Race</label>
             <label><input type="checkbox" name="prov_tvbet" /> TvBet</label>
@@ -1172,33 +1172,33 @@
         <hr class="divider" />
 
         <div class="field">
-          <label>Demo mod istiyor musunuz? <span class="hint">(para yatırmadan oynama)</span></label>
+          <label data-i18n="lbl_demo_mode">Demo mod istiyor musunuz? <span class="hint" data-i18n="hint_play_without_deposit">(para yatırmadan oynama)</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="demo_mode" value="yes" /> Evet</label>
-            <label><input type="radio" name="demo_mode" value="no" /> Hayır</label>
+            <label><input type="radio" name="demo_mode" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="demo_mode" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Jackpot oyunları istiyor musunuz?</label>
+          <label data-i18n="lbl_jackpot">Jackpot oyunları istiyor musunuz?</label>
           <div class="radio-group">
-            <label><input type="radio" name="jackpot" value="yes" /> Evet</label>
-            <label><input type="radio" name="jackpot" value="no" /> Hayır</label>
+            <label><input type="radio" name="jackpot" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="jackpot" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Mevcut sağlayıcı sözleşmeniz var mı?</label>
+          <label data-i18n="lbl_existing_contracts">Mevcut sağlayıcı sözleşmeniz var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="existing_contracts" value="yes" /> Evet, kendi sözleşmemi getireceğim</label>
-            <label><input type="radio" name="existing_contracts" value="no" /> Hayır, Tap King üzerinden halledelim</label>
-            <label><input type="radio" name="existing_contracts" value="both" /> Her ikisi de var</label>
+            <label><input type="radio" name="existing_contracts" value="yes" /> <span data-i18n="opt_contracts_yes">Evet, kendi sözleşmemi getireceğim</span></label>
+            <label><input type="radio" name="existing_contracts" value="no" /> <span data-i18n="opt_contracts_tapking">Hayır, Tap King üzerinden halledelim</span></label>
+            <label><input type="radio" name="existing_contracts" value="both" /> <span data-i18n="opt_contracts_both">Her ikisi de var</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Ek notlar / özel talepler <span class="hint">(oyun sağlayıcıları ile ilgili)</span></label>
-          <textarea name="game_notes" placeholder="örn. Belirli oyunların kaldırılması, özel içerik talebi..."></textarea>
+          <label data-i18n="lbl_game_notes">Ek notlar / özel talepler <span class="hint" data-i18n="hint_game_providers">(oyun sağlayıcıları ile ilgili)</span></label>
+          <textarea name="game_notes" data-ph-tr="örn. Belirli oyunların kaldırılması, özel içerik talebi..." data-ph-en="e.g. Removal of specific games, custom content requests..." placeholder="örn. Belirli oyunların kaldırılması, özel içerik talebi..."></textarea>
         </div>
       </div>
     </div>
@@ -1216,15 +1216,15 @@
       <div class="section-body">
         <!-- Admin erişimi -->
         <div class="field">
-          <label>Admin Panel E-posta <span class="req">*</span></label>
-          <input type="email" name="admin_email" placeholder="admin@siteadi.com" required />
+          <label data-i18n="lbl_admin_email">Admin Panel E-posta <span class="req">*</span></label>
+          <input type="email" name="admin_email" data-ph-tr="admin@siteadi.com" data-ph-en="admin@yourdomain.com" placeholder="admin@siteadi.com" required />
         </div>
 
         <div class="grid2">
           <div class="field">
-            <label>Kaç admin kullanıcısı olacak?</label>
+            <label data-i18n="lbl_admin_count">Kaç admin kullanıcısı olacak?</label>
             <select name="admin_count">
-              <option value="">Seçiniz...</option>
+              <option value="" data-i18n="opt_select">Seçiniz...</option>
               <option>1</option>
               <option>2-5</option>
               <option>6-10</option>
@@ -1232,23 +1232,23 @@
             </select>
           </div>
           <div class="field">
-            <label>Rol bazlı yetki sistemi gerekiyor mu?</label>
+            <label data-i18n="lbl_role_based">Rol bazlı yetki sistemi gerekiyor mu?</label>
             <div class="radio-group">
-              <label><input type="radio" name="role_based" value="yes" /> Evet</label>
-              <label><input type="radio" name="role_based" value="no" /> Hayır</label>
+              <label><input type="radio" name="role_based" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="role_based" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
         </div>
 
         <div class="field">
-          <label>Hangi roller gerekli? <span class="hint">(birden fazla seçebilirsiniz)</span></label>
+          <label data-i18n="lbl_admin_roles">Hangi roller gerekli? <span class="hint" data-i18n="hint_multiple_select">(birden fazla seçebilirsiniz)</span></label>
           <div class="check-group">
-            <label><input type="checkbox" name="role_superadmin" /> Süper Admin</label>
-            <label><input type="checkbox" name="role_operator" /> Operatör</label>
-            <label><input type="checkbox" name="role_finance" /> Finans</label>
-            <label><input type="checkbox" name="role_cs" /> Müşteri Hizmetleri</label>
-            <label><input type="checkbox" name="role_affiliate" /> Affiliate Yöneticisi</label>
-            <label><input type="checkbox" name="role_marketing" /> Pazarlama</label>
+            <label><input type="checkbox" name="role_superadmin" /> <span data-i18n="opt_super_admin">Süper Admin</span></label>
+            <label><input type="checkbox" name="role_operator" /> <span data-i18n="opt_operator">Operatör</span></label>
+            <label><input type="checkbox" name="role_finance" /> <span data-i18n="opt_finance">Finans</span></label>
+            <label><input type="checkbox" name="role_cs" /> <span data-i18n="opt_customer_service">Müşteri Hizmetleri</span></label>
+            <label><input type="checkbox" name="role_affiliate" /> <span data-i18n="opt_affiliate_manager">Affiliate Yöneticisi</span></label>
+            <label><input type="checkbox" name="role_marketing" /> <span data-i18n="opt_marketing">Pazarlama</span></label>
           </div>
         </div>
 
@@ -1256,56 +1256,56 @@
 
         <!-- Operasyon -->
         <div class="field">
-          <label>Site çalışma saatleri</label>
+          <label data-i18n="lbl_working_hours">Site çalışma saatleri</label>
           <div class="radio-group">
-            <label><input type="radio" name="working_hours" value="247" /> 7/24 kesintisiz</label>
-            <label><input type="radio" name="working_hours" value="limited" /> Belirli saatler</label>
+            <label><input type="radio" name="working_hours" value="247" /> <span data-i18n="opt_247">7/24 kesintisiz</span></label>
+            <label><input type="radio" name="working_hours" value="limited" /> <span data-i18n="opt_limited_hours">Belirli saatler</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Müşteri destek kanalları</label>
+          <label data-i18n="lbl_support_channels">Müşteri destek kanalları</label>
           <div class="check-group">
-            <label><input type="checkbox" name="support_livechat" /> Canlı Chat</label>
-            <label><input type="checkbox" name="support_email" /> E-posta</label>
-            <label><input type="checkbox" name="support_phone" /> Telefon</label>
+            <label><input type="checkbox" name="support_livechat" /> <span data-i18n="opt_live_chat">Canlı Chat</span></label>
+            <label><input type="checkbox" name="support_email" /> <span data-i18n="opt_email">E-posta</span></label>
+            <label><input type="checkbox" name="support_phone" /> <span data-i18n="opt_phone">Telefon</span></label>
             <label><input type="checkbox" name="support_telegram" /> Telegram</label>
             <label><input type="checkbox" name="support_whatsapp" /> WhatsApp</label>
           </div>
         </div>
 
         <div class="field">
-          <label>Müşteri hizmetleri dili / dilleri</label>
-          <input type="text" name="support_lang" placeholder="örn. Türkçe, İngilizce" />
+          <label data-i18n="lbl_support_lang">Müşteri hizmetleri dili / dilleri</label>
+          <input type="text" name="support_lang" data-ph-tr="örn. Türkçe, İngilizce" data-ph-en="e.g. Turkish, English" placeholder="örn. Türkçe, İngilizce" />
         </div>
 
         <hr class="divider" />
 
         <!-- Raporlama & Entegrasyon -->
         <div class="field">
-          <label>Otomatik rapor e-postası istiyor musunuz?</label>
+          <label data-i18n="lbl_auto_report">Otomatik rapor e-postası istiyor musunuz?</label>
           <div class="check-group">
-            <label><input type="checkbox" name="report_daily" /> Günlük</label>
-            <label><input type="checkbox" name="report_weekly" /> Haftalık</label>
-            <label><input type="checkbox" name="report_monthly" /> Aylık</label>
+            <label><input type="checkbox" name="report_daily" /> <span data-i18n="opt_daily">Günlük</span></label>
+            <label><input type="checkbox" name="report_weekly" /> <span data-i18n="opt_weekly">Haftalık</span></label>
+            <label><input type="checkbox" name="report_monthly" /> <span data-i18n="opt_monthly">Aylık</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>CRM entegrasyonu gerekiyor mu?</label>
+          <label data-i18n="lbl_crm">CRM entegrasyonu gerekiyor mu?</label>
           <div class="radio-group">
-            <label><input type="radio" name="crm" value="yes" /> Evet</label>
-            <label><input type="radio" name="crm" value="no" /> Hayır</label>
-            <label><input type="radio" name="crm" value="discuss" /> Görüşelim</label>
+            <label><input type="radio" name="crm" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="crm" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="crm" value="discuss" /> <span data-i18n="opt_lets_discuss">Görüşelim</span></label>
           </div>
         </div>
 
         <div class="field">
-          <label>Affiliate / Ortaklık sistemi istiyor musunuz?</label>
+          <label data-i18n="lbl_affiliate">Affiliate / Ortaklık sistemi istiyor musunuz?</label>
           <div class="radio-group">
-            <label><input type="radio" name="affiliate" value="yes" /> Evet</label>
-            <label><input type="radio" name="affiliate" value="no" /> Hayır</label>
-            <label><input type="radio" name="affiliate" value="discuss" /> Görüşelim</label>
+            <label><input type="radio" name="affiliate" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="affiliate" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="affiliate" value="discuss" /> <span data-i18n="opt_lets_discuss">Görüşelim</span></label>
           </div>
         </div>
       </div>
@@ -1323,14 +1323,14 @@
       </div>
       <div class="section-body">
         <div class="field">
-          <label>SMS Sağlayıcı Seçimi</label>
+          <label data-i18n="lbl_sms_provider">SMS Sağlayıcı Seçimi</label>
           <div class="provider-grid">
             <label class="provider-card">
               <input type="radio" name="sms_provider" value="smsala" />
               <div class="provider-card-inner">
                 <div class="provider-icon">📱</div>
                 <div class="provider-name">SMSala</div>
-                <div class="provider-desc">Lokal sağlayıcı</div>
+                <div class="provider-desc" data-i18n="opt_local_provider">Lokal sağlayıcı</div>
               </div>
             </label>
             <label class="provider-card">
@@ -1338,34 +1338,34 @@
               <div class="provider-card-inner">
                 <div class="provider-icon">🚀</div>
                 <div class="provider-name">Getir SMS</div>
-                <div class="provider-desc">Lokal sağlayıcı</div>
+                <div class="provider-desc" data-i18n="opt_local_provider">Lokal sağlayıcı</div>
               </div>
             </label>
             <label class="provider-card">
               <input type="radio" name="sms_provider" value="other_sms" />
               <div class="provider-card-inner">
                 <div class="provider-icon">⚙️</div>
-                <div class="provider-name">Diğer</div>
-                <div class="provider-desc">Belirtin</div>
+                <div class="provider-name" data-i18n="opt_other_provider">Diğer</div>
+                <div class="provider-desc" data-i18n="opt_specify">Belirtin</div>
               </div>
             </label>
           </div>
         </div>
         <div class="field" id="sms_other_wrap" style="display:none">
-          <label>SMS Sağlayıcı Adı (Diğer)</label>
-          <input type="text" name="sms_provider_other" placeholder="Sağlayıcı adını giriniz" />
+          <label data-i18n="lbl_sms_other">SMS Sağlayıcı Adı (Diğer)</label>
+          <input type="text" name="sms_provider_other" data-ph-tr="Sağlayıcı adını giriniz" data-ph-en="Enter provider name" placeholder="Sağlayıcı adını giriniz" />
         </div>
         <div class="field">
-          <label>SMS API Anahtarı / Erişim Bilgileri <span class="hint">(opsiyonel — sonra paylaşılabilir)</span></label>
-          <textarea name="sms_api_key" placeholder="API Key veya ilgili erişim notları..."></textarea>
+          <label data-i18n="lbl_sms_api">SMS API Anahtarı / Erişim Bilgileri <span class="hint" data-i18n="hint_optional_later">(opsiyonel — sonra paylaşılabilir)</span></label>
+          <textarea name="sms_api_key" data-ph-tr="API Key veya ilgili erişim notları..." data-ph-en="API Key or relevant access notes..." placeholder="API Key veya ilgili erişim notları..."></textarea>
         </div>
         <div class="field">
-          <label>SMS Kullanım Amaçları</label>
+          <label data-i18n="lbl_sms_usage">SMS Kullanım Amaçları</label>
           <div class="check-group">
-            <label><input type="checkbox" name="sms_use_otp" /> OTP / Doğrulama</label>
-            <label><input type="checkbox" name="sms_use_promo" /> Kampanya / Promosyon</label>
-            <label><input type="checkbox" name="sms_use_transactional" /> İşlem Bildirimi</label>
-            <label><input type="checkbox" name="sms_use_support" /> Müşteri Destek</label>
+            <label><input type="checkbox" name="sms_use_otp" /> <span data-i18n="opt_sms_otp">OTP / Doğrulama</span></label>
+            <label><input type="checkbox" name="sms_use_promo" /> <span data-i18n="opt_sms_promo">Kampanya / Promosyon</span></label>
+            <label><input type="checkbox" name="sms_use_transactional" /> <span data-i18n="opt_sms_transactional">İşlem Bildirimi</span></label>
+            <label><input type="checkbox" name="sms_use_support" /> <span data-i18n="opt_sms_support">Müşteri Destek</span></label>
           </div>
         </div>
       </div>
@@ -1386,9 +1386,9 @@
           <label data-i18n="email_provider_label">E-posta Sağlayıcı</label>
           <select name="email_provider_status">
             <option value="">—</option>
-            <option value="undecided">Henüz karar verilmedi</option>
-            <option value="own">Kendi sağlayıcımız var</option>
-            <option value="suggest">Tap King önersin</option>
+            <option value="undecided" data-i18n="opt_email_undecided">Henüz karar verilmedi</option>
+            <option value="own" data-i18n="opt_email_own">Kendi sağlayıcımız var</option>
+            <option value="suggest" data-i18n="opt_email_suggest">Tap King önersin</option>
           </select>
         </div>
       </div>
@@ -1407,135 +1407,135 @@
       <div class="section-body">
 
         <!-- KYC -->
-        <div class="subsection-title">KYC — Kimlik Doğrulama</div>
+        <div class="subsection-title" data-i18n="sub_kyc">KYC — Kimlik Doğrulama</div>
         <div class="grid2">
           <div class="field">
-            <label>KYC zorunlu mu? <span class="req">*</span></label>
+            <label data-i18n="lbl_kyc_required">KYC zorunlu mu? <span class="req">*</span></label>
             <div class="radio-group">
-              <label><input type="radio" name="kyc_required" value="yes" onchange="toggleSub('kyc_details','yes','kyc_required')" /> Evet</label>
-              <label><input type="radio" name="kyc_required" value="no" onchange="toggleSub('kyc_details','yes','kyc_required')" /> Hayır</label>
+              <label><input type="radio" name="kyc_required" value="yes" onchange="toggleSub('kyc_details','yes','kyc_required')" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="kyc_required" value="no" onchange="toggleSub('kyc_details','yes','kyc_required')" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
           <div class="field">
-            <label>KYC Seviyesi</label>
+            <label data-i18n="lbl_kyc_level">KYC Seviyesi</label>
             <select name="kyc_level">
-              <option value="">Seçiniz</option>
-              <option value="basic">Temel (isim + doğum tarihi)</option>
-              <option value="advanced">Gelişmiş (kimlik belgesi)</option>
-              <option value="full">Tam (kimlik + adres + selfie)</option>
+              <option value="" data-i18n="opt_select_plain">Seçiniz</option>
+              <option value="basic" data-i18n="opt_kyc_basic">Temel (isim + doğum tarihi)</option>
+              <option value="advanced" data-i18n="opt_kyc_advanced">Gelişmiş (kimlik belgesi)</option>
+              <option value="full" data-i18n="opt_kyc_full">Tam (kimlik + adres + selfie)</option>
             </select>
           </div>
         </div>
         <div id="kyc_details" style="display:none">
           <div class="field">
-            <label>KYC Sağlayıcısı</label>
+            <label data-i18n="lbl_kyc_provider">KYC Sağlayıcısı</label>
             <div class="check-group">
               <label><input type="checkbox" name="kyc_jumio" /> Jumio</label>
               <label><input type="checkbox" name="kyc_onfido" /> Onfido</label>
               <label><input type="checkbox" name="kyc_veriff" /> Veriff</label>
               <label><input type="checkbox" name="kyc_sumsub" /> Sum&amp;Substance</label>
-              <label><input type="checkbox" name="kyc_manual" /> Manuel (dahili)</label>
-              <label><input type="checkbox" name="kyc_other" /> Diğer</label>
+              <label><input type="checkbox" name="kyc_manual" /> <span data-i18n="opt_kyc_manual">Manuel (dahili)</span></label>
+              <label><input type="checkbox" name="kyc_other" /> <span data-i18n="opt_other">Diğer</span></label>
             </div>
           </div>
           <div class="field">
-            <label>Kabul Edilen Belgeler</label>
+            <label data-i18n="lbl_accepted_docs">Kabul Edilen Belgeler</label>
             <div class="check-group">
-              <label><input type="checkbox" name="doc_id" /> Kimlik Kartı</label>
-              <label><input type="checkbox" name="doc_passport" /> Pasaport</label>
-              <label><input type="checkbox" name="doc_license" /> Ehliyet</label>
-              <label><input type="checkbox" name="doc_address" /> Adres Belgesi</label>
-              <label><input type="checkbox" name="doc_selfie" /> Selfie / Canlı Yüz</label>
+              <label><input type="checkbox" name="doc_id" /> <span data-i18n="opt_doc_id">Kimlik Kartı</span></label>
+              <label><input type="checkbox" name="doc_passport" /> <span data-i18n="opt_doc_passport">Pasaport</span></label>
+              <label><input type="checkbox" name="doc_license" /> <span data-i18n="opt_doc_license">Ehliyet</span></label>
+              <label><input type="checkbox" name="doc_address" /> <span data-i18n="opt_doc_address">Adres Belgesi</span></label>
+              <label><input type="checkbox" name="doc_selfie" /> <span data-i18n="opt_doc_selfie">Selfie / Canlı Yüz</span></label>
             </div>
           </div>
         </div>
 
         <!-- AML -->
-        <div class="subsection-title">AML — Kara Para Aklamayı Önleme</div>
+        <div class="subsection-title" data-i18n="sub_aml">AML — Kara Para Aklamayı Önleme</div>
         <div class="grid2">
           <div class="field">
-            <label>AML sistemi gerekli mi?</label>
+            <label data-i18n="lbl_aml_required">AML sistemi gerekli mi?</label>
             <div class="radio-group">
-              <label><input type="radio" name="aml_required" value="yes" /> Evet</label>
-              <label><input type="radio" name="aml_required" value="no" /> Hayır</label>
+              <label><input type="radio" name="aml_required" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="aml_required" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
           <div class="field">
-            <label>PEP &amp; Yaptırım Taraması</label>
+            <label data-i18n="lbl_pep_screening">PEP &amp; Yaptırım Taraması</label>
             <div class="radio-group">
-              <label><input type="radio" name="pep_screening" value="yes" /> Evet</label>
-              <label><input type="radio" name="pep_screening" value="no" /> Hayır</label>
+              <label><input type="radio" name="pep_screening" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="pep_screening" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
         </div>
         <div class="field">
-          <label>Şüpheli İşlem Bildirimi (STR) aktif mi?</label>
+          <label data-i18n="lbl_str">Şüpheli İşlem Bildirimi (STR) aktif mi?</label>
           <div class="radio-group">
-            <label><input type="radio" name="str_active" value="yes" /> Evet</label>
-            <label><input type="radio" name="str_active" value="no" /> Hayır</label>
-            <label><input type="radio" name="str_active" value="later" /> Sonra Eklenecek</label>
+            <label><input type="radio" name="str_active" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="str_active" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="str_active" value="later" /> <span data-i18n="opt_to_be_added">Sonra Eklenecek</span></label>
           </div>
         </div>
 
         <!-- Sorumlu Oyun -->
         <div class="subsection-title">Sorumlu Oyun (Responsible Gambling)</div>
         <div class="field">
-          <label>Hangi sorumlu oyun araçları gerekiyor?</label>
+          <label data-i18n="lbl_rg_tools">Hangi sorumlu oyun araçları gerekiyor?</label>
           <div class="check-group">
-            <label><input type="checkbox" name="rg_self_exclusion" /> Self-exclusion (kendi kendini dışlama)</label>
-            <label><input type="checkbox" name="rg_deposit_limit" /> Para yatırma limiti</label>
-            <label><input type="checkbox" name="rg_loss_limit" /> Kayıp limiti</label>
-            <label><input type="checkbox" name="rg_session_limit" /> Oturum süresi limiti</label>
-            <label><input type="checkbox" name="rg_cooling_off" /> Soğuma dönemi (cooling-off)</label>
-            <label><input type="checkbox" name="rg_reality_check" /> Reality check bildirimleri</label>
+            <label><input type="checkbox" name="rg_self_exclusion" /> <span data-i18n="opt_rg_self_exclusion">Self-exclusion (kendi kendini dışlama)</span></label>
+            <label><input type="checkbox" name="rg_deposit_limit" /> <span data-i18n="opt_rg_deposit_limit">Para yatırma limiti</span></label>
+            <label><input type="checkbox" name="rg_loss_limit" /> <span data-i18n="opt_rg_loss_limit">Kayıp limiti</span></label>
+            <label><input type="checkbox" name="rg_session_limit" /> <span data-i18n="opt_rg_session_limit">Oturum süresi limiti</span></label>
+            <label><input type="checkbox" name="rg_cooling_off" /> <span data-i18n="opt_rg_cooling_off">Soğuma dönemi (cooling-off)</span></label>
+            <label><input type="checkbox" name="rg_reality_check" /> <span data-i18n="opt_rg_reality_check">Reality check bildirimleri</span></label>
           </div>
         </div>
 
         <!-- Yaş & Ülke Kısıtlamaları -->
-        <div class="subsection-title">Yaş &amp; Ülke Kısıtlamaları</div>
+        <div class="subsection-title" data-i18n="sub_age_restrictions">Yaş &amp; Ülke Kısıtlamaları</div>
         <div class="grid2">
           <div class="field">
-            <label>Minimum Oyuncu Yaşı</label>
+            <label data-i18n="lbl_min_age">Minimum Oyuncu Yaşı</label>
             <select name="min_age">
-              <option value="">Seçiniz</option>
+              <option value="" data-i18n="opt_select_plain">Seçiniz</option>
               <option value="18">18</option>
               <option value="21">21</option>
-              <option value="other">Diğer</option>
+              <option value="other" data-i18n="opt_other">Diğer</option>
             </select>
           </div>
           <div class="field">
-            <label>Yaş Doğrulama Yöntemi</label>
+            <label data-i18n="lbl_age_verification">Yaş Doğrulama Yöntemi</label>
             <select name="age_verification">
-              <option value="">Seçiniz</option>
-              <option value="kyc">KYC belgesi ile</option>
-              <option value="declaration">Kullanıcı beyanı</option>
-              <option value="third_party">Üçüncü taraf servis</option>
+              <option value="" data-i18n="opt_select_plain">Seçiniz</option>
+              <option value="kyc" data-i18n="opt_age_kyc">KYC belgesi ile</option>
+              <option value="declaration" data-i18n="opt_age_declaration">Kullanıcı beyanı</option>
+              <option value="third_party" data-i18n="opt_age_third_party">Üçüncü taraf servis</option>
             </select>
           </div>
         </div>
         <div class="field">
-          <label>Yasaklı Ülkeler</label>
-          <textarea name="blocked_countries" placeholder="örn. ABD, İsrail, İngiltere (lisans kısıtlamaları), Fransa..." style="min-height:80px;"></textarea>
+          <label data-i18n="lbl_blocked_countries">Yasaklı Ülkeler</label>
+          <textarea name="blocked_countries" data-ph-tr="örn. ABD, İsrail, İngiltere (lisans kısıtlamaları), Fransa..." data-ph-en="e.g. USA, Israel, UK (license restrictions), France..." placeholder="örn. ABD, İsrail, İngiltere (lisans kısıtlamaları), Fransa..." style="min-height:80px;"></textarea>
         </div>
         <div class="field">
-          <label>IP Engelleme Aktif mi?</label>
+          <label data-i18n="lbl_ip_blocking">IP Engelleme Aktif mi?</label>
           <div class="radio-group">
-            <label><input type="radio" name="ip_blocking" value="yes" /> Evet</label>
-            <label><input type="radio" name="ip_blocking" value="no" /> Hayır</label>
+            <label><input type="radio" name="ip_blocking" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="ip_blocking" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
         <!-- Teknik Güvenlik -->
-        <div class="subsection-title">Teknik Güvenlik</div>
+        <div class="subsection-title" data-i18n="sub_tech_security">Teknik Güvenlik</div>
         <div class="field">
-          <label>Güvenlik önlemleri</label>
+          <label data-i18n="lbl_security_measures">Güvenlik önlemleri</label>
           <div class="check-group">
-            <label><input type="checkbox" name="sec_ssl" /> SSL Sertifikası (HTTPS)</label>
-            <label><input type="checkbox" name="sec_2fa" /> 2FA — Admin panel için zorunlu</label>
-            <label><input type="checkbox" name="sec_ddos" /> DDoS koruması</label>
+            <label><input type="checkbox" name="sec_ssl" /> <span data-i18n="opt_sec_ssl">SSL Sertifikası (HTTPS)</span></label>
+            <label><input type="checkbox" name="sec_2fa" /> <span data-i18n="opt_sec_2fa">2FA — Admin panel için zorunlu</span></label>
+            <label><input type="checkbox" name="sec_ddos" /> <span data-i18n="opt_sec_ddos">DDoS koruması</span></label>
             <label><input type="checkbox" name="sec_waf" /> Web Application Firewall (WAF)</label>
-            <label><input type="checkbox" name="sec_pentest" /> Penetrasyon testi</label>
-            <label><input type="checkbox" name="sec_ip_whitelist" /> IP whitelist (admin erişimi)</label>
+            <label><input type="checkbox" name="sec_pentest" /> <span data-i18n="opt_sec_pentest">Penetrasyon testi</span></label>
+            <label><input type="checkbox" name="sec_ip_whitelist" /> <span data-i18n="opt_sec_whitelist">IP whitelist (admin erişimi)</span></label>
           </div>
         </div>
 
@@ -1543,32 +1543,32 @@
         <div class="subsection-title">GDPR &amp; Veri Koruma</div>
         <div class="grid2">
           <div class="field">
-            <label>GDPR uyumu gerekli mi?</label>
+            <label data-i18n="lbl_gdpr_required">GDPR uyumu gerekli mi?</label>
             <div class="radio-group">
-              <label><input type="radio" name="gdpr_required" value="yes" /> Evet</label>
-              <label><input type="radio" name="gdpr_required" value="no" /> Hayır</label>
-              <label><input type="radio" name="gdpr_required" value="unknown" /> Bilmiyorum</label>
+              <label><input type="radio" name="gdpr_required" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="gdpr_required" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="gdpr_required" value="unknown" /> <span data-i18n="opt_dont_know">Bilmiyorum</span></label>
             </div>
           </div>
           <div class="field">
-            <label>Veri Saklama Süresi</label>
+            <label data-i18n="lbl_data_retention">Veri Saklama Süresi</label>
             <select name="data_retention">
-              <option value="">Seçiniz</option>
-              <option value="1y">1 Yıl</option>
-              <option value="2y">2 Yıl</option>
-              <option value="5y">5 Yıl</option>
-              <option value="7y">7 Yıl (yasal minimum)</option>
-              <option value="custom">Özel</option>
+              <option value="" data-i18n="opt_select_plain">Seçiniz</option>
+              <option value="1y" data-i18n="opt_1year">1 Yıl</option>
+              <option value="2y" data-i18n="opt_2years">2 Yıl</option>
+              <option value="5y" data-i18n="opt_5years">5 Yıl</option>
+              <option value="7y" data-i18n="opt_7years">7 Yıl (yasal minimum)</option>
+              <option value="custom" data-i18n="opt_custom">Özel</option>
             </select>
           </div>
         </div>
         <div class="field">
-          <label>Veri &amp; Gizlilik gereksinimleri</label>
+          <label data-i18n="lbl_data_privacy">Veri &amp; Gizlilik gereksinimleri</label>
           <div class="check-group">
-            <label><input type="checkbox" name="priv_cookie_policy" /> Çerez politikası sayfası</label>
-            <label><input type="checkbox" name="priv_privacy_policy" /> Gizlilik politikası sayfası</label>
-            <label><input type="checkbox" name="priv_consent" /> Kullanıcı veri işleme onayı (consent banner)</label>
-            <label><input type="checkbox" name="priv_right_delete" /> Kullanıcı verisi silme talebi hakkı</label>
+            <label><input type="checkbox" name="priv_cookie_policy" /> <span data-i18n="opt_cookie_policy">Çerez politikası sayfası</span></label>
+            <label><input type="checkbox" name="priv_privacy_policy" /> <span data-i18n="opt_privacy_policy">Gizlilik politikası sayfası</span></label>
+            <label><input type="checkbox" name="priv_consent" /> <span data-i18n="opt_data_consent">Kullanıcı veri işleme onayı (consent banner)</span></label>
+            <label><input type="checkbox" name="priv_right_delete" /> <span data-i18n="opt_right_to_delete">Kullanıcı verisi silme talebi hakkı</span></label>
           </div>
         </div>
 
@@ -1588,26 +1588,26 @@
       <div class="section-body">
 
         <!-- Proje & Zaman Çizelgesi -->
-        <div class="subsection-title">Proje &amp; Zaman Çizelgesi</div>
+        <div class="subsection-title" data-i18n="sub_project_timeline">Proje &amp; Zaman Çizelgesi</div>
         <div class="grid2">
           <div class="field">
-            <label>Tercih Edilen Lansman Tarihi</label>
-            <input type="text" name="launch_date" placeholder="örn. Eylül 2025" />
+            <label data-i18n="lbl_launch_date">Tercih Edilen Lansman Tarihi</label>
+            <input type="text" name="launch_date" data-ph-tr="örn. Eylül 2025" data-ph-en="e.g. September 2025" placeholder="örn. Eylül 2025" />
           </div>
           <div class="field">
-            <label>Proje Önceliği</label>
+            <label data-i18n="lbl_project_priority">Proje Önceliği</label>
             <select name="project_priority">
-              <option value="">Seçiniz</option>
-              <option value="urgent">Acil (1 ay içinde)</option>
-              <option value="normal">Normal (1–3 ay)</option>
-              <option value="flexible">Esnek (3+ ay)</option>
+              <option value="" data-i18n="opt_select_plain">Seçiniz</option>
+              <option value="urgent" data-i18n="opt_priority_urgent">Acil (1 ay içinde)</option>
+              <option value="normal" data-i18n="opt_priority_normal">Normal (1–3 ay)</option>
+              <option value="flexible" data-i18n="opt_priority_flexible">Esnek (3+ ay)</option>
             </select>
           </div>
         </div>
         <div class="field">
-          <label>Bütçe Aralığı <span class="hint">(opsiyonel)</span></label>
+          <label data-i18n="lbl_budget">Bütçe Aralığı <span class="hint" data-i18n="hint_optional">(opsiyonel)</span></label>
           <select name="budget_range">
-            <option value="">Belirtmek istemiyorum</option>
+            <option value="" data-i18n="opt_prefer_not_say">Belirtmek istemiyorum</option>
             <option value="under10k">$10.000 altı</option>
             <option value="10k_25k">$10.000 – $25.000</option>
             <option value="25k_50k">$25.000 – $50.000</option>
@@ -1617,89 +1617,89 @@
         </div>
 
         <!-- Platform & Göç -->
-        <div class="subsection-title">Platform &amp; Göç</div>
+        <div class="subsection-title" data-i18n="sub_platform_migration">Platform &amp; Göç</div>
         <div class="field">
-          <label>Bu proje nasıl bir kurulum? <span class="req">*</span></label>
+          <label data-i18n="lbl_project_type">Bu proje nasıl bir kurulum? <span class="req">*</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="project_type" value="new" /> Sıfırdan yeni platform</label>
-            <label><input type="radio" name="project_type" value="migration" /> Mevcut platformdan göç</label>
-            <label><input type="radio" name="project_type" value="redesign" /> Mevcut sitenin yeniden tasarımı</label>
+            <label><input type="radio" name="project_type" value="new" /> <span data-i18n="opt_new_platform">Sıfırdan yeni platform</span></label>
+            <label><input type="radio" name="project_type" value="migration" /> <span data-i18n="opt_migration">Mevcut platformdan göç</span></label>
+            <label><input type="radio" name="project_type" value="redesign" /> <span data-i18n="opt_redesign">Mevcut sitenin yeniden tasarımı</span></label>
           </div>
         </div>
         <div class="field">
-          <label>Mevcut platformunuz varsa adı nedir?</label>
-          <input type="text" name="current_platform" placeholder="örn. SoftSwiss, EveryMatrix, özel yazılım..." />
+          <label data-i18n="lbl_current_platform">Mevcut platformunuz varsa adı nedir?</label>
+          <input type="text" name="current_platform" data-ph-tr="örn. SoftSwiss, EveryMatrix, özel yazılım..." data-ph-en="e.g. SoftSwiss, EveryMatrix, custom software..." placeholder="örn. SoftSwiss, EveryMatrix, özel yazılım..." />
         </div>
         <div class="field">
-          <label>Özel API / üçüncü taraf entegrasyon ihtiyacı var mı?</label>
+          <label data-i18n="lbl_custom_api">Özel API / üçüncü taraf entegrasyon ihtiyacı var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="custom_api" value="yes" onchange="toggleSub('custom_api_detail','yes','custom_api')" /> Evet</label>
-            <label><input type="radio" name="custom_api" value="no" onchange="toggleSub('custom_api_detail','yes','custom_api')" /> Hayır</label>
+            <label><input type="radio" name="custom_api" value="yes" onchange="toggleSub('custom_api_detail','yes','custom_api')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="custom_api" value="no" onchange="toggleSub('custom_api_detail','yes','custom_api')" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
         <div id="custom_api_detail" style="display:none">
           <div class="field">
-            <label>Entegrasyon detayları</label>
-            <textarea name="custom_api_notes" placeholder="Hangi API veya sistemle entegrasyon gerekiyor? Detaylı açıklayınız..."></textarea>
+            <label data-i18n="lbl_integration_details">Entegrasyon detayları</label>
+            <textarea name="custom_api_notes" data-ph-tr="Hangi API veya sistemle entegrasyon gerekiyor? Detaylı açıklayınız..." data-ph-en="Which API or system needs to be integrated? Please describe in detail..." placeholder="Hangi API veya sistemle entegrasyon gerekiyor? Detaylı açıklayınız..."></textarea>
           </div>
         </div>
 
         <!-- Referans & İlham -->
-        <div class="subsection-title">Referans &amp; İlham</div>
+        <div class="subsection-title" data-i18n="sub_references">Referans &amp; İlham</div>
         <div class="field">
-          <label>Beğendiğiniz referans siteler</label>
-          <textarea name="reference_sites" placeholder="Tasarım veya işlevsellik olarak beğendiğiniz sitelerin URL'lerini yazınız..." style="min-height:80px;"></textarea>
+          <label data-i18n="lbl_reference_sites">Beğendiğiniz referans siteler</label>
+          <textarea name="reference_sites" data-ph-tr="Tasarım veya işlevsellik olarak beğendiğiniz sitelerin URL'lerini yazınız..." data-ph-en="Write the URLs of sites you like for their design or functionality..." placeholder="Tasarım veya işlevsellik olarak beğendiğiniz sitelerin URL'lerini yazınız..." style="min-height:80px;"></textarea>
         </div>
         <div class="field">
-          <label>Beğenmediğiniz tasarım / özellikler</label>
-          <textarea name="dislikes" placeholder="Kesinlikle istemediğiniz tasarım öğeleri veya özellikler..."></textarea>
+          <label data-i18n="lbl_dislikes">Beğenmediğiniz tasarım / özellikler</label>
+          <textarea name="dislikes" data-ph-tr="Kesinlikle istemediğiniz tasarım öğeleri veya özellikler..." data-ph-en="Design elements or features you definitely do not want..." placeholder="Kesinlikle istemediğiniz tasarım öğeleri veya özellikler..."></textarea>
         </div>
 
         <!-- Dosya Yükleme -->
-        <div class="subsection-title">Dosya &amp; Materyal</div>
+        <div class="subsection-title" data-i18n="sub_files_materials">Dosya &amp; Materyal</div>
         <div class="field">
-          <label>Mevcut marka materyalleri var mı?</label>
+          <label data-i18n="lbl_brand_materials">Mevcut marka materyalleri var mı?</label>
           <div class="check-group">
-            <label><input type="checkbox" name="asset_logo" /> Logo dosyaları (AI, SVG, PNG)</label>
-            <label><input type="checkbox" name="asset_brand_guide" /> Marka kılavuzu / Brand book</label>
-            <label><input type="checkbox" name="asset_figma" /> Figma / tasarım dosyası</label>
-            <label><input type="checkbox" name="asset_content" /> Hazır içerikler (metin, görsel)</label>
-            <label><input type="checkbox" name="asset_none" /> Henüz yok, Tap King hazırlayacak</label>
+            <label><input type="checkbox" name="asset_logo" /> <span data-i18n="opt_asset_logo">Logo dosyaları (AI, SVG, PNG)</span></label>
+            <label><input type="checkbox" name="asset_brand_guide" /> <span data-i18n="opt_asset_brand_guide">Marka kılavuzu / Brand book</span></label>
+            <label><input type="checkbox" name="asset_figma" /> <span data-i18n="opt_asset_figma">Figma / tasarım dosyası</span></label>
+            <label><input type="checkbox" name="asset_content" /> <span data-i18n="opt_asset_content">Hazır içerikler (metin, görsel)</span></label>
+            <label><input type="checkbox" name="asset_none" /> <span data-i18n="opt_asset_none">Henüz yok, Tap King hazırlayacak</span></label>
           </div>
         </div>
         <div class="field">
-          <label>Materyalleri nasıl ileteceksiniz?</label>
+          <label data-i18n="lbl_asset_delivery">Materyalleri nasıl ileteceksiniz?</label>
           <select name="asset_delivery">
-            <option value="">Seçiniz</option>
-            <option value="email">E-posta ile</option>
+            <option value="" data-i18n="opt_select_plain">Seçiniz</option>
+            <option value="email" data-i18n="opt_delivery_email">E-posta ile</option>
             <option value="drive">Google Drive / Dropbox</option>
-            <option value="figma">Figma linki paylaşımı</option>
-            <option value="meeting">Toplantı sırasında</option>
+            <option value="figma" data-i18n="opt_delivery_figma">Figma linki paylaşımı</option>
+            <option value="meeting" data-i18n="opt_delivery_meeting">Toplantı sırasında</option>
           </select>
         </div>
 
         <!-- İletişim & Notlar -->
-        <div class="subsection-title">İletişim &amp; Ek Notlar</div>
+        <div class="subsection-title" data-i18n="sub_contact_notes">İletişim &amp; Ek Notlar</div>
         <div class="grid2">
           <div class="field">
-            <label>İletişim Telefon <span class="hint">(opsiyonel)</span></label>
+            <label data-i18n="lbl_contact_phone">İletişim Telefon <span class="hint" data-i18n="hint_optional">(opsiyonel)</span></label>
             <input type="tel" name="contact_phone" placeholder="+90 5XX XXX XX XX" />
           </div>
           <div class="field">
-            <label>Tercih Edilen İletişim Kanalı</label>
+            <label data-i18n="lbl_preferred_contact">Tercih Edilen İletişim Kanalı</label>
             <select name="preferred_contact">
-              <option value="">Seçiniz</option>
-              <option value="email">E-posta</option>
+              <option value="" data-i18n="opt_select_plain">Seçiniz</option>
+              <option value="email" data-i18n="opt_email">E-posta</option>
               <option value="whatsapp">WhatsApp</option>
               <option value="telegram">Telegram</option>
-              <option value="phone">Telefon</option>
-              <option value="meeting">Video toplantı</option>
+              <option value="phone" data-i18n="opt_phone">Telefon</option>
+              <option value="meeting" data-i18n="opt_video_meeting">Video toplantı</option>
             </select>
           </div>
         </div>
         <div class="field">
-          <label>Özel İstekler veya Ek Notlar</label>
-          <textarea name="extra_requests" placeholder="Belirtmek istediğiniz özel gereksinimler, entegrasyonlar veya notlar..." style="min-height:120px;"></textarea>
+          <label data-i18n="lbl_extra_requests">Özel İstekler veya Ek Notlar</label>
+          <textarea name="extra_requests" data-ph-tr="Belirtmek istediğiniz özel gereksinimler, entegrasyonlar veya notlar..." data-ph-en="Special requirements, integrations or notes you want to mention..." placeholder="Belirtmek istediğiniz özel gereksinimler, entegrasyonlar veya notlar..." style="min-height:120px;"></textarea>
         </div>
 
       </div>
@@ -1858,16 +1858,199 @@
       sec10_title: 'E-posta Sağlayıcı', sec10_sub: 'Transactional ve pazarlama e-posta entegrasyonu',
       sec11_title: 'Uyumluluk & Güvenlik', sec11_sub: 'KYC, AML ve dolandırıcılık önleme',
       sec12_title: 'Ek Talepler', sec12_sub: 'Özel istek ve notlarınız',
-      // form header
       form_title: 'Site Kurulum Formu', form_sub: 'Lütfen aşağıdaki bilgileri eksiksiz doldurunuz',
-      // submit
       submit_btn: 'Formu Gönder →', submit_note: 'Bilgileriniz ekibimize iletilecek ve en kısa sürede geri dönüş yapılacaktır.',
-      // success
       success_title: 'Form Başarıyla Gönderildi!', success_msg: 'Bilgileriniz ekibimize ulaştı. Proje takviminiz hazırlandıktan sonra en kısa sürede sizinle iletişime geçeceğiz.',
-      // email provider
       email_provider_label: 'E-posta Sağlayıcı',
-      // progress
       progress_label: 'Bölüm', progress_open: 'açık',
+      // subsection headings
+      sub_company_info: 'Şirket Bilgileri', sub_authorized_person: 'Yetkili Kişi', sub_license: 'Lisans',
+      sub_domain: 'Alan Adı', sub_cloudflare: 'Cloudflare', sub_hosting: 'Hosting', sub_ssl_security: 'SSL & Güvenlik',
+      sub_kyc: 'KYC — Kimlik Doğrulama', sub_aml: 'AML — Kara Para Aklamayı Önleme',
+      sub_age_restrictions: 'Yaş & Ülke Kısıtlamaları', sub_tech_security: 'Teknik Güvenlik',
+      sub_project_timeline: 'Proje & Zaman Çizelgesi', sub_platform_migration: 'Platform & Göç',
+      sub_references: 'Referans & İlham', sub_files_materials: 'Dosya & Materyal', sub_contact_notes: 'İletişim & Ek Notlar',
+      // labels — sec1
+      lbl_company_name: 'Şirket Adı *', lbl_company_country: 'Kayıtlı Olduğu Ülke *',
+      lbl_company_reg: 'Şirket Kayıt Numarası', hint_if_applicable: '(varsa)',
+      lbl_full_name: 'Ad Soyad *', lbl_position: 'Pozisyon / Unvan', lbl_contact_email: 'İletişim E-postası *',
+      lbl_has_license: 'Mevcut oyun lisansınız var mı? *',
+      lbl_license_type: 'Lisans Türü', lbl_license_provider: 'Lisans Sağlayıcısı',
+      lbl_license_number: 'Lisans Numarası', lbl_license_expiry: 'Lisans Geçerlilik Tarihi',
+      lbl_license_support: 'Lisans süreci için destek almak ister misiniz?',
+      lbl_prev_platform: 'Daha önce aktif bir platform işlettiniz mi?',
+      lbl_prev_platform_name: 'Platform Adı / URL', hint_old_platform: '(eski platform)',
+      lbl_migration_needed: 'Veri / Oyuncu taşıması gerekiyor mu?',
+      // labels — sec2
+      lbl_main_domain: 'Ana Domain *', lbl_domain_provider: 'Domain Sağlayıcı',
+      lbl_domain_owned: 'Domain size mi ait?', lbl_dns_access: 'DNS erişimi sağlayabilir misiniz?',
+      lbl_backup_domains: 'Yedek Domain(ler)', hint_mirror_if_any: '(mirror — varsa)',
+      lbl_cloudflare_account: 'Cloudflare hesabınız var mı?', lbl_cloudflare_migrate: 'Cloudflare\'e geçiş yapılabilir mi?',
+      lbl_cloudflare_email: 'Cloudflare Hesap E-postası',
+      lbl_hosting_provider: 'Hosting Sağlayıcı', lbl_server_location: 'Sunucu Lokasyonu',
+      lbl_hosting_plan: 'Mevcut hosting planı / kaynaklar', lbl_ssl: 'SSL sertifikanız var mı?',
+      // labels — sec3
+      lbl_payment_methods: 'Sunmak istediğiniz ödeme yöntemleri', lbl_crypto_coins: 'Desteklemek istediğiniz kripto coinler',
+      lbl_local_payments: 'Lokal ödeme yöntemleri', hint_specify_if_any: '(varsa belirtin)',
+      lbl_min_deposit: 'Minimum yatırım limiti', lbl_max_withdrawal: 'Maksimum çekim limiti', hint_daily: '(günlük)',
+      lbl_withdrawal_approval: 'Para çekme onay süreci nasıl olsun?', lbl_manual_threshold: 'Manuel onay eşiği',
+      lbl_fraud_rules: 'Fraud / Kötüye kullanım önleme kuralları',
+      lbl_has_psp: 'Mevcut bir ödeme sağlayıcınız (PSP) var mı?', lbl_psp_name: 'Sağlayıcı Adı',
+      lbl_psp_api: 'API Dokümantasyonu / Erişim Bilgileri', lbl_use_our_psp: 'Bizim ödeme çözümlerimizi kullanmak ister misiniz?',
+      // labels — sec4
+      lbl_target_countries: 'Hedef Ülke / Ülkeler *', lbl_primary_language: 'Ana Dil *',
+      lbl_extra_languages: 'Ek Diller', lbl_currency: 'Para Birimi *', lbl_timezone: 'Zaman Dilimi *',
+      lbl_regulatory_restrictions: 'Hedef pazarda lisans / düzenleyici kısıtlama var mı?',
+      lbl_restriction_details: 'Kısıtlama detayları',
+      lbl_rtl_support: 'Sağdan sola (RTL) dil desteği gerekiyor mu?', hint_rtl: '(Arapça, Farsça vb.)',
+      lbl_translation_provider: 'Çeviri nasıl sağlanacak?',
+      lbl_support_languages: 'Müşteri hizmetleri dili / dilleri',
+      lbl_target_audience: 'Hedef kullanıcı kitlesi',
+      lbl_competitor_sites: 'Rakip / referans siteler', hint_competitor: '(pazarda neyle rekabet edeceksiniz?)',
+      // labels — sec5
+      lbl_brand_name: 'Site Adı / Marka Adı *', lbl_logo: 'Logo', hint_png_svg: '(PNG veya SVG)',
+      lbl_figma_link: 'Figma Dosyası Linki',
+      figma_note: '⚠️ Figma dosyası olmadan tasarım süreci başlatılamaz. Henüz hazır değilse taslak bir dosya paylaşmanız yeterlidir.',
+      lbl_brand_colors: 'Tercih Edilen Renkler', hint_hex_or_name: '(HEX veya renk adı)',
+      lbl_brand_slogan: 'Slogan / Tagline', hint_if_any: '(varsa)',
+      lbl_brand_tone: 'Marka tonu nasıl olsun?', lbl_design_style: 'Genel stil tercihi',
+      lbl_theme: 'Tema tercihi', lbl_device_priority: 'Öncelik',
+      lbl_favicon: 'Favicon var mı?', lbl_social_images: 'Sosyal medya görselleri gerekiyor mu?', hint_og_image: '(OG image, Twitter card vb.)',
+      lbl_forbidden_colors: 'Yasaklı renkler veya görseller', hint_avoid_brand_conflict: '(rakip markayla karışmaması için)',
+      lbl_reference_site: 'Referans Site', hint_design_example: '(beğendiğiniz tasarım örneği)',
+      // labels — sec6
+      sec6_instructions: 'Her içerik için mevcut durumu seçiniz. "Hazır" seçerseniz lütfen dosya/link paylaşın:',
+      lbl_content_about: 'Hakkımızda', lbl_content_terms: 'Şartlar & Koşullar',
+      lbl_content_privacy: 'Gizlilik Politikası',
+      lbl_content_rg: 'Sorumlu Kumar / Responsible Gambling', hint_license_required: '(lisans için genellikle zorunlu)',
+      lbl_content_faq: 'SSS (Sıkça Sorulan Sorular)', lbl_content_contact: 'İletişim Sayfası',
+      lbl_content_promo: 'Promosyonlar / Kampanyalar Sayfası', lbl_content_blog: 'Blog / Haber Bölümü',
+      lbl_content_language: 'İçerikler hangi dilde hazırlandı / hazırlanacak?',
+      lbl_content_translation: 'Çeviri gerekiyor mu?',
+      lbl_bonus_types: 'Bonus Türleri', hint_select_active: '(aktif etmek istediklerinizi seçin)',
+      lbl_bonus_rules: 'Bonus kuralları / çevrim şartları hazır mı?',
+      // labels — sec7
+      sec7_instructions: 'Tap King aggregator üzerinden aktif etmek istediğiniz sağlayıcıları seçiniz:',
+      lbl_slot_providers: '🎰 Slot Sağlayıcılar', lbl_crash_providers: '🚀 Crash & Instant Games',
+      lbl_live_casino_providers: '🃏 Canlı Casino Sağlayıcılar', lbl_sports_providers: '⚽ Spor, Virtual & TV Oyunları',
+      lbl_demo_mode: 'Demo mod istiyor musunuz?', hint_play_without_deposit: '(para yatırmadan oynama)',
+      lbl_jackpot: 'Jackpot oyunları istiyor musunuz?', lbl_existing_contracts: 'Mevcut sağlayıcı sözleşmeniz var mı?',
+      lbl_game_notes: 'Ek notlar / özel talepler', hint_game_providers: '(oyun sağlayıcıları ile ilgili)',
+      // labels — sec8
+      lbl_admin_email: 'Admin Panel E-posta *', lbl_admin_count: 'Kaç admin kullanıcısı olacak?',
+      lbl_role_based: 'Rol bazlı yetki sistemi gerekiyor mu?',
+      lbl_admin_roles: 'Hangi roller gerekli?', hint_multiple_select: '(birden fazla seçebilirsiniz)',
+      lbl_working_hours: 'Site çalışma saatleri', lbl_support_channels: 'Müşteri destek kanalları',
+      lbl_support_lang: 'Müşteri hizmetleri dili / dilleri',
+      lbl_auto_report: 'Otomatik rapor e-postası istiyor musunuz?',
+      lbl_crm: 'CRM entegrasyonu gerekiyor mu?', lbl_affiliate: 'Affiliate / Ortaklık sistemi istiyor musunuz?',
+      // labels — sec9
+      lbl_sms_provider: 'SMS Sağlayıcı Seçimi', lbl_sms_other: 'SMS Sağlayıcı Adı (Diğer)',
+      lbl_sms_api: 'SMS API Anahtarı / Erişim Bilgileri', hint_optional_later: '(opsiyonel — sonra paylaşılabilir)',
+      lbl_sms_usage: 'SMS Kullanım Amaçları',
+      // labels — sec11
+      lbl_kyc_required: 'KYC zorunlu mu? *', lbl_kyc_level: 'KYC Seviyesi',
+      lbl_kyc_provider: 'KYC Sağlayıcısı', lbl_accepted_docs: 'Kabul Edilen Belgeler',
+      lbl_aml_required: 'AML sistemi gerekli mi?', lbl_pep_screening: 'PEP & Yaptırım Taraması',
+      lbl_str: 'Şüpheli İşlem Bildirimi (STR) aktif mi?',
+      lbl_rg_tools: 'Hangi sorumlu oyun araçları gerekiyor?',
+      lbl_min_age: 'Minimum Oyuncu Yaşı', lbl_age_verification: 'Yaş Doğrulama Yöntemi',
+      lbl_blocked_countries: 'Yasaklı Ülkeler', lbl_ip_blocking: 'IP Engelleme Aktif mi?',
+      lbl_security_measures: 'Güvenlik önlemleri',
+      lbl_gdpr_required: 'GDPR uyumu gerekli mi?', lbl_data_retention: 'Veri Saklama Süresi',
+      lbl_data_privacy: 'Veri & Gizlilik gereksinimleri',
+      // labels — sec12
+      lbl_launch_date: 'Tercih Edilen Lansman Tarihi', lbl_project_priority: 'Proje Önceliği',
+      lbl_budget: 'Bütçe Aralığı', hint_optional: '(opsiyonel)',
+      lbl_project_type: 'Bu proje nasıl bir kurulum? *', lbl_current_platform: 'Mevcut platformunuz varsa adı nedir?',
+      lbl_custom_api: 'Özel API / üçüncü taraf entegrasyon ihtiyacı var mı?',
+      lbl_integration_details: 'Entegrasyon detayları',
+      lbl_reference_sites: 'Beğendiğiniz referans siteler', lbl_dislikes: 'Beğenmediğiniz tasarım / özellikler',
+      lbl_brand_materials: 'Mevcut marka materyalleri var mı?',
+      lbl_asset_delivery: 'Materyalleri nasıl ileteceksiniz?',
+      lbl_contact_phone: 'İletişim Telefon', lbl_preferred_contact: 'Tercih Edilen İletişim Kanalı',
+      lbl_extra_requests: 'Özel İstekler veya Ek Notlar',
+      // options — common
+      opt_yes: 'Evet', opt_no: 'Hayır', opt_select: 'Seçiniz...', opt_select_plain: 'Seçiniz',
+      opt_other: 'Diğer', opt_dont_know: 'Bilmiyorum', opt_ready: 'Hazır',
+      opt_need_support: 'Destek İstiyorum', opt_not_needed: 'Gerekmiyor', opt_dont_want: 'İstemiyorum',
+      opt_yes_want: 'Evet, istiyorum', opt_no_dont_want: 'Hayır, istemiyorum',
+      opt_yes_support: 'Evet, destek istiyorum', opt_no_thanks: 'Hayır, teşekkürler',
+      opt_no_fresh_start: 'Hayır, sıfırdan başlıyoruz',
+      // options — sec1
+      opt_license_type_q: 'Lisans türü nedir?',
+      // options — sec2
+      opt_already_using: 'Zaten kullanıyoruz',
+      opt_europe: 'Avrupa (AB)', opt_uk: 'İngiltere', opt_usa: 'Amerika (US)',
+      opt_asia: 'Asya', opt_middle_east: 'Orta Doğu', opt_no_preference: 'Fark etmez / Önerim yok',
+      opt_ssl_yes: 'Evet, mevcut', opt_ssl_no: 'Hayır, kurulum gerekiyor', opt_ssl_cloudflare: 'Cloudflare üzerinden',
+      // options — sec3
+      opt_crypto: 'Kripto Para', opt_bank_transfer: 'Banka Transferi',
+      opt_credit_card: 'Kredi / Banka Kartı', opt_ewallet: 'e-Cüzdan', opt_local_payment: 'Lokal Ödeme',
+      opt_auto_approval: 'Otomatik onay', opt_manual_approval: 'Manuel onay (tüm çekimler)',
+      opt_threshold_approval: 'Belirli bir tutarın üzeri manuel',
+      // options — sec4
+      opt_lang_tr: 'Türkçe', opt_lang_en: 'İngilizce', opt_lang_de: 'Almanca',
+      opt_lang_fr: 'Fransızca', opt_lang_es: 'İspanyolca', opt_lang_ru: 'Rusça',
+      opt_lang_ar: 'Arapça', opt_lang_pt: 'Portekizce',
+      opt_try: 'TRY — Türk Lirası', opt_eur: 'EUR — Euro', opt_usd: 'USD — Amerikan Doları',
+      opt_gbp: 'GBP — İngiliz Sterlini', opt_brl: 'BRL — Brezilya Reali', opt_azn: 'AZN — Azerbaycan Manatı',
+      opt_translation_self: 'Kendimiz sağlayacağız', opt_translation_tapking: 'Tap King sağlasın', opt_translation_both: 'Birlikte halledelim',
+      opt_sports_betting: 'Spor Bahisleri', opt_casino_slot: 'Casino / Slot',
+      opt_live_casino: 'Canlı Casino', opt_poker: 'Poker', opt_virtual_sports: 'Sanal Sporlar',
+      // options — sec5
+      opt_tone_serious: 'Ciddi & Profesyonel', opt_tone_friendly: 'Samimi & Yakın',
+      opt_tone_exciting: 'Heyecanlı & Enerjik', opt_tone_luxury: 'Lüks & Premium',
+      opt_style_minimalist: 'Minimalist', opt_style_bold: 'Bold & Agresif',
+      opt_style_luxury: 'Lüks & Zarif', opt_style_fun: 'Eğlenceli & Renkli',
+      opt_theme_dark: 'Karanlık tema', opt_theme_light: 'Açık tema', opt_theme_both: 'Her ikisi de olsun',
+      opt_mobile_first: 'Mobil öncelikli', opt_desktop_first: 'Masaüstü öncelikli', opt_equal_priority: 'İkisi de eşit',
+      opt_favicon_yes: 'Evet, paylaşacağım', opt_favicon_no: 'Hayır, sizden bekliyorum',
+      // options — sec6
+      opt_welcome_bonus: 'Hoşgeldin Bonusu', opt_deposit_bonus: 'Yatırım Bonusu',
+      opt_referral_bonus: 'Arkadaş Davet Bonusu', opt_vip_loyalty: 'VIP / Sadakat Programı', opt_no_deposit_bonus: 'Yatırımsız Bonus',
+      // options — sec7
+      opt_contracts_yes: 'Evet, kendi sözleşmemi getireceğim',
+      opt_contracts_tapking: 'Hayır, Tap King üzerinden halledelim', opt_contracts_both: 'Her ikisi de var',
+      // options — sec8
+      opt_super_admin: 'Süper Admin', opt_operator: 'Operatör', opt_finance: 'Finans',
+      opt_customer_service: 'Müşteri Hizmetleri', opt_affiliate_manager: 'Affiliate Yöneticisi', opt_marketing: 'Pazarlama',
+      opt_247: '7/24 kesintisiz', opt_limited_hours: 'Belirli saatler',
+      opt_live_chat: 'Canlı Chat', opt_email: 'E-posta', opt_phone: 'Telefon',
+      opt_daily: 'Günlük', opt_weekly: 'Haftalık', opt_monthly: 'Aylık',
+      opt_lets_discuss: 'Görüşelim',
+      // options — sec9
+      opt_local_provider: 'Lokal sağlayıcı', opt_other_provider: 'Diğer', opt_specify: 'Belirtin',
+      opt_sms_otp: 'OTP / Doğrulama', opt_sms_promo: 'Kampanya / Promosyon',
+      opt_sms_transactional: 'İşlem Bildirimi', opt_sms_support: 'Müşteri Destek',
+      // options — sec10
+      opt_email_undecided: 'Henüz karar verilmedi', opt_email_own: 'Kendi sağlayıcımız var', opt_email_suggest: 'Tap King önersin',
+      // options — sec11
+      opt_kyc_basic: 'Temel (isim + doğum tarihi)', opt_kyc_advanced: 'Gelişmiş (kimlik belgesi)', opt_kyc_full: 'Tam (kimlik + adres + selfie)',
+      opt_kyc_manual: 'Manuel (dahili)',
+      opt_doc_id: 'Kimlik Kartı', opt_doc_passport: 'Pasaport', opt_doc_license: 'Ehliyet',
+      opt_doc_address: 'Adres Belgesi', opt_doc_selfie: 'Selfie / Canlı Yüz',
+      opt_to_be_added: 'Sonra Eklenecek',
+      opt_rg_self_exclusion: 'Self-exclusion (kendi kendini dışlama)',
+      opt_rg_deposit_limit: 'Para yatırma limiti', opt_rg_loss_limit: 'Kayıp limiti',
+      opt_rg_session_limit: 'Oturum süresi limiti', opt_rg_cooling_off: 'Soğuma dönemi (cooling-off)',
+      opt_rg_reality_check: 'Reality check bildirimleri',
+      opt_age_kyc: 'KYC belgesi ile', opt_age_declaration: 'Kullanıcı beyanı', opt_age_third_party: 'Üçüncü taraf servis',
+      opt_sec_ssl: 'SSL Sertifikası (HTTPS)', opt_sec_2fa: '2FA — Admin panel için zorunlu',
+      opt_sec_ddos: 'DDoS koruması', opt_sec_pentest: 'Penetrasyon testi', opt_sec_whitelist: 'IP whitelist (admin erişimi)',
+      opt_1year: '1 Yıl', opt_2years: '2 Yıl', opt_5years: '5 Yıl',
+      opt_7years: '7 Yıl (yasal minimum)', opt_custom: 'Özel',
+      opt_cookie_policy: 'Çerez politikası sayfası', opt_privacy_policy: 'Gizlilik politikası sayfası',
+      opt_data_consent: 'Kullanıcı veri işleme onayı (consent banner)', opt_right_to_delete: 'Kullanıcı verisi silme talebi hakkı',
+      // options — sec12
+      opt_priority_urgent: 'Acil (1 ay içinde)', opt_priority_normal: 'Normal (1–3 ay)', opt_priority_flexible: 'Esnek (3+ ay)',
+      opt_prefer_not_say: 'Belirtmek istemiyorum',
+      opt_new_platform: 'Sıfırdan yeni platform', opt_migration: 'Mevcut platformdan göç', opt_redesign: 'Mevcut sitenin yeniden tasarımı',
+      opt_asset_logo: 'Logo dosyaları (AI, SVG, PNG)', opt_asset_brand_guide: 'Marka kılavuzu / Brand book',
+      opt_asset_figma: 'Figma / tasarım dosyası', opt_asset_content: 'Hazır içerikler (metin, görsel)',
+      opt_asset_none: 'Henüz yok, Tap King hazırlayacak',
+      opt_delivery_email: 'E-posta ile', opt_delivery_figma: 'Figma linki paylaşımı', opt_delivery_meeting: 'Toplantı sırasında',
+      opt_video_meeting: 'Video toplantı',
     },
     en: {
       info_note: '💡 You don\'t need to fill in every field — complete what you know, and our team will work through the rest with you.',
@@ -1884,16 +2067,197 @@
       sec10_title: 'Email Provider', sec10_sub: 'Transactional and marketing email integration',
       sec11_title: 'Compliance & Security', sec11_sub: 'KYC, AML and fraud prevention',
       sec12_title: 'Additional Requirements', sec12_sub: 'Your special requests and notes',
-      // form header
       form_title: 'Platform Setup Form', form_sub: 'Please fill in the details below as completely as possible',
-      // submit
       submit_btn: 'Submit Form →', submit_note: 'Your information will be sent to our team and we will get back to you as soon as possible.',
-      // success
       success_title: 'Form Submitted Successfully!', success_msg: 'Your information has reached our team. We will contact you as soon as your project timeline is prepared.',
-      // email provider
       email_provider_label: 'Email Provider',
-      // progress
       progress_label: 'Section', progress_open: 'open',
+      // subsection headings
+      sub_company_info: 'Company Information', sub_authorized_person: 'Authorized Person', sub_license: 'License',
+      sub_domain: 'Domain Name', sub_cloudflare: 'Cloudflare', sub_hosting: 'Hosting', sub_ssl_security: 'SSL & Security',
+      sub_kyc: 'KYC — Identity Verification', sub_aml: 'AML — Anti-Money Laundering',
+      sub_age_restrictions: 'Age & Country Restrictions', sub_tech_security: 'Technical Security',
+      sub_project_timeline: 'Project & Timeline', sub_platform_migration: 'Platform & Migration',
+      sub_references: 'References & Inspiration', sub_files_materials: 'Files & Materials', sub_contact_notes: 'Contact & Additional Notes',
+      // labels — sec1
+      lbl_company_name: 'Company Name *', lbl_company_country: 'Country of Registration *',
+      lbl_company_reg: 'Company Registration Number', hint_if_applicable: '(if applicable)',
+      lbl_full_name: 'Full Name *', lbl_position: 'Position / Title', lbl_contact_email: 'Contact Email *',
+      lbl_has_license: 'Do you have an existing gaming license? *',
+      lbl_license_type: 'License Type', lbl_license_provider: 'License Provider',
+      lbl_license_number: 'License Number', lbl_license_expiry: 'License Expiry Date',
+      lbl_license_support: 'Would you like support with the licensing process?',
+      lbl_prev_platform: 'Have you previously operated an active platform?',
+      lbl_prev_platform_name: 'Platform Name / URL', hint_old_platform: '(previous platform)',
+      lbl_migration_needed: 'Is data / player migration needed?',
+      // labels — sec2
+      lbl_main_domain: 'Main Domain *', lbl_domain_provider: 'Domain Provider',
+      lbl_domain_owned: 'Do you own the domain?', lbl_dns_access: 'Can you provide DNS access?',
+      lbl_backup_domains: 'Backup Domain(s)', hint_mirror_if_any: '(mirror — if any)',
+      lbl_cloudflare_account: 'Do you have a Cloudflare account?', lbl_cloudflare_migrate: 'Can you migrate to Cloudflare?',
+      lbl_cloudflare_email: 'Cloudflare Account Email',
+      lbl_hosting_provider: 'Hosting Provider', lbl_server_location: 'Server Location',
+      lbl_hosting_plan: 'Current hosting plan / resources', lbl_ssl: 'Do you have an SSL certificate?',
+      // labels — sec3
+      lbl_payment_methods: 'Payment methods you want to offer', lbl_crypto_coins: 'Cryptocurrencies you want to support',
+      lbl_local_payments: 'Local payment methods', hint_specify_if_any: '(specify if any)',
+      lbl_min_deposit: 'Minimum deposit limit', lbl_max_withdrawal: 'Maximum withdrawal limit', hint_daily: '(daily)',
+      lbl_withdrawal_approval: 'How should the withdrawal approval process work?', lbl_manual_threshold: 'Manual approval threshold',
+      lbl_fraud_rules: 'Fraud / abuse prevention rules',
+      lbl_has_psp: 'Do you have an existing payment provider (PSP)?', lbl_psp_name: 'Provider Name',
+      lbl_psp_api: 'API Documentation / Access Details', lbl_use_our_psp: 'Would you like to use our payment solutions?',
+      // labels — sec4
+      lbl_target_countries: 'Target Country / Countries *', lbl_primary_language: 'Primary Language *',
+      lbl_extra_languages: 'Additional Languages', lbl_currency: 'Currency *', lbl_timezone: 'Timezone *',
+      lbl_regulatory_restrictions: 'Are there license / regulatory restrictions in the target market?',
+      lbl_restriction_details: 'Restriction details',
+      lbl_rtl_support: 'Is RTL (right-to-left) language support needed?', hint_rtl: '(Arabic, Persian, etc.)',
+      lbl_translation_provider: 'How will translation be provided?',
+      lbl_support_languages: 'Customer service language(s)',
+      lbl_target_audience: 'Target audience',
+      lbl_competitor_sites: 'Competitor / reference sites', hint_competitor: '(who do you compete with in the market?)',
+      // labels — sec5
+      lbl_brand_name: 'Site Name / Brand Name *', lbl_logo: 'Logo', hint_png_svg: '(PNG or SVG)',
+      lbl_figma_link: 'Figma File Link',
+      figma_note: '⚠️ Design process cannot begin without a Figma file. A draft file is fine if the final isn\'t ready yet.',
+      lbl_brand_colors: 'Preferred Colors', hint_hex_or_name: '(HEX or color name)',
+      lbl_brand_slogan: 'Slogan / Tagline', hint_if_any: '(if any)',
+      lbl_brand_tone: 'What should the brand tone be?', lbl_design_style: 'General style preference',
+      lbl_theme: 'Theme preference', lbl_device_priority: 'Priority',
+      lbl_favicon: 'Do you have a favicon?', lbl_social_images: 'Are social media images needed?', hint_og_image: '(OG image, Twitter card, etc.)',
+      lbl_forbidden_colors: 'Forbidden colors or visuals', hint_avoid_brand_conflict: '(to avoid confusion with competitor brands)',
+      lbl_reference_site: 'Reference Site', hint_design_example: '(design example you like)',
+      // labels — sec6
+      sec6_instructions: 'Select the current status for each content item. If you select "Ready" please share the file/link:',
+      lbl_content_about: 'About Us', lbl_content_terms: 'Terms & Conditions',
+      lbl_content_privacy: 'Privacy Policy',
+      lbl_content_rg: 'Responsible Gambling', hint_license_required: '(usually required for license)',
+      lbl_content_faq: 'FAQ (Frequently Asked Questions)', lbl_content_contact: 'Contact Page',
+      lbl_content_promo: 'Promotions / Campaigns Page', lbl_content_blog: 'Blog / News Section',
+      lbl_content_language: 'In what language is/will content be prepared?',
+      lbl_content_translation: 'Is translation needed?',
+      lbl_bonus_types: 'Bonus Types', hint_select_active: '(select the ones you want to activate)',
+      lbl_bonus_rules: 'Are bonus rules / wagering requirements ready?',
+      // labels — sec7
+      sec7_instructions: 'Select the providers you want to activate through the Tap King aggregator:',
+      lbl_slot_providers: '🎰 Slot Providers', lbl_crash_providers: '🚀 Crash & Instant Games',
+      lbl_live_casino_providers: '🃏 Live Casino Providers', lbl_sports_providers: '⚽ Sports, Virtual & TV Games',
+      lbl_demo_mode: 'Do you want demo mode?', hint_play_without_deposit: '(play without depositing)',
+      lbl_jackpot: 'Do you want jackpot games?', lbl_existing_contracts: 'Do you have existing provider contracts?',
+      lbl_game_notes: 'Additional notes / special requests', hint_game_providers: '(related to game providers)',
+      // labels — sec8
+      lbl_admin_email: 'Admin Panel Email *', lbl_admin_count: 'How many admin users will there be?',
+      lbl_role_based: 'Is a role-based permission system needed?',
+      lbl_admin_roles: 'Which roles are needed?', hint_multiple_select: '(you can select multiple)',
+      lbl_working_hours: 'Site operating hours', lbl_support_channels: 'Customer support channels',
+      lbl_support_lang: 'Customer service language(s)',
+      lbl_auto_report: 'Do you want automated report emails?',
+      lbl_crm: 'Is CRM integration needed?', lbl_affiliate: 'Do you want an Affiliate / Partnership system?',
+      // labels — sec9
+      lbl_sms_provider: 'SMS Provider Selection', lbl_sms_other: 'SMS Provider Name (Other)',
+      lbl_sms_api: 'SMS API Key / Access Details', hint_optional_later: '(optional — can be shared later)',
+      lbl_sms_usage: 'SMS Usage Purposes',
+      // labels — sec11
+      lbl_kyc_required: 'Is KYC required? *', lbl_kyc_level: 'KYC Level',
+      lbl_kyc_provider: 'KYC Provider', lbl_accepted_docs: 'Accepted Documents',
+      lbl_aml_required: 'Is AML system required?', lbl_pep_screening: 'PEP & Sanctions Screening',
+      lbl_str: 'Is Suspicious Transaction Reporting (STR) active?',
+      lbl_rg_tools: 'Which responsible gambling tools are needed?',
+      lbl_min_age: 'Minimum Player Age', lbl_age_verification: 'Age Verification Method',
+      lbl_blocked_countries: 'Blocked Countries', lbl_ip_blocking: 'Is IP Blocking Active?',
+      lbl_security_measures: 'Security measures',
+      lbl_gdpr_required: 'Is GDPR compliance required?', lbl_data_retention: 'Data Retention Period',
+      lbl_data_privacy: 'Data & Privacy requirements',
+      // labels — sec12
+      lbl_launch_date: 'Preferred Launch Date', lbl_project_priority: 'Project Priority',
+      lbl_budget: 'Budget Range', hint_optional: '(optional)',
+      lbl_project_type: 'What type of project is this? *', lbl_current_platform: 'If you have an existing platform, what is it?',
+      lbl_custom_api: 'Do you need custom API / third-party integration?',
+      lbl_integration_details: 'Integration details',
+      lbl_reference_sites: 'Reference sites you like', lbl_dislikes: 'Design/features you dislike',
+      lbl_brand_materials: 'Do you have existing brand materials?',
+      lbl_asset_delivery: 'How will you deliver materials?',
+      lbl_contact_phone: 'Contact Phone', lbl_preferred_contact: 'Preferred Contact Channel',
+      lbl_extra_requests: 'Special Requests or Additional Notes',
+      // options — common
+      opt_yes: 'Yes', opt_no: 'No', opt_select: 'Select...', opt_select_plain: 'Select',
+      opt_other: 'Other', opt_dont_know: 'I don\'t know', opt_ready: 'Ready',
+      opt_need_support: 'Need Support', opt_not_needed: 'Not needed', opt_dont_want: 'Don\'t want it',
+      opt_yes_want: 'Yes, I want it', opt_no_dont_want: 'No, I don\'t want it',
+      opt_yes_support: 'Yes, I want support', opt_no_thanks: 'No, thank you',
+      opt_no_fresh_start: 'No, starting from scratch',
+      // options — sec2
+      opt_already_using: 'Already using it',
+      opt_europe: 'Europe (EU)', opt_uk: 'United Kingdom', opt_usa: 'Americas (US)',
+      opt_asia: 'Asia', opt_middle_east: 'Middle East', opt_no_preference: 'No preference',
+      opt_ssl_yes: 'Yes, already have it', opt_ssl_no: 'No, installation needed', opt_ssl_cloudflare: 'Via Cloudflare',
+      // options — sec3
+      opt_crypto: 'Cryptocurrency', opt_bank_transfer: 'Bank Transfer',
+      opt_credit_card: 'Credit / Debit Card', opt_ewallet: 'E-Wallet', opt_local_payment: 'Local Payment',
+      opt_auto_approval: 'Automatic approval', opt_manual_approval: 'Manual approval (all withdrawals)',
+      opt_threshold_approval: 'Manual above a certain amount',
+      // options — sec4
+      opt_lang_tr: 'Turkish', opt_lang_en: 'English', opt_lang_de: 'German',
+      opt_lang_fr: 'French', opt_lang_es: 'Spanish', opt_lang_ru: 'Russian',
+      opt_lang_ar: 'Arabic', opt_lang_pt: 'Portuguese',
+      opt_try: 'TRY — Turkish Lira', opt_eur: 'EUR — Euro', opt_usd: 'USD — US Dollar',
+      opt_gbp: 'GBP — British Pound', opt_brl: 'BRL — Brazilian Real', opt_azn: 'AZN — Azerbaijani Manat',
+      opt_translation_self: 'We will provide it ourselves', opt_translation_tapking: 'Let Tap King provide it', opt_translation_both: 'Let\'s sort it together',
+      opt_sports_betting: 'Sports Betting', opt_casino_slot: 'Casino / Slots',
+      opt_live_casino: 'Live Casino', opt_poker: 'Poker', opt_virtual_sports: 'Virtual Sports',
+      // options — sec5
+      opt_tone_serious: 'Serious & Professional', opt_tone_friendly: 'Friendly & Approachable',
+      opt_tone_exciting: 'Exciting & Energetic', opt_tone_luxury: 'Luxury & Premium',
+      opt_style_minimalist: 'Minimalist', opt_style_bold: 'Bold & Aggressive',
+      opt_style_luxury: 'Luxury & Elegant', opt_style_fun: 'Fun & Colorful',
+      opt_theme_dark: 'Dark theme', opt_theme_light: 'Light theme', opt_theme_both: 'Both',
+      opt_mobile_first: 'Mobile-first', opt_desktop_first: 'Desktop-first', opt_equal_priority: 'Both equal',
+      opt_favicon_yes: 'Yes, I\'ll share it', opt_favicon_no: 'No, I\'ll need one from you',
+      // options — sec6
+      opt_welcome_bonus: 'Welcome Bonus', opt_deposit_bonus: 'Deposit Bonus',
+      opt_referral_bonus: 'Friend Referral Bonus', opt_vip_loyalty: 'VIP / Loyalty Program', opt_no_deposit_bonus: 'No-Deposit Bonus',
+      // options — sec7
+      opt_contracts_yes: 'Yes, I\'ll bring my own contracts',
+      opt_contracts_tapking: 'No, let\'s handle it through Tap King', opt_contracts_both: 'Both exist',
+      // options — sec8
+      opt_super_admin: 'Super Admin', opt_operator: 'Operator', opt_finance: 'Finance',
+      opt_customer_service: 'Customer Service', opt_affiliate_manager: 'Affiliate Manager', opt_marketing: 'Marketing',
+      opt_247: '24/7 uninterrupted', opt_limited_hours: 'Specific hours',
+      opt_live_chat: 'Live Chat', opt_email: 'Email', opt_phone: 'Phone',
+      opt_daily: 'Daily', opt_weekly: 'Weekly', opt_monthly: 'Monthly',
+      opt_lets_discuss: 'Let\'s discuss',
+      // options — sec9
+      opt_local_provider: 'Local provider', opt_other_provider: 'Other', opt_specify: 'Specify',
+      opt_sms_otp: 'OTP / Verification', opt_sms_promo: 'Campaign / Promotion',
+      opt_sms_transactional: 'Transaction Notification', opt_sms_support: 'Customer Support',
+      // options — sec10
+      opt_email_undecided: 'Not decided yet', opt_email_own: 'We have our own provider', opt_email_suggest: 'Let Tap King suggest',
+      // options — sec11
+      opt_kyc_basic: 'Basic (name + date of birth)', opt_kyc_advanced: 'Advanced (ID document)', opt_kyc_full: 'Full (ID + address + selfie)',
+      opt_kyc_manual: 'Manual (in-house)',
+      opt_doc_id: 'ID Card', opt_doc_passport: 'Passport', opt_doc_license: 'Driver\'s License',
+      opt_doc_address: 'Proof of Address', opt_doc_selfie: 'Selfie / Live Face',
+      opt_to_be_added: 'To be added later',
+      opt_rg_self_exclusion: 'Self-exclusion',
+      opt_rg_deposit_limit: 'Deposit limit', opt_rg_loss_limit: 'Loss limit',
+      opt_rg_session_limit: 'Session time limit', opt_rg_cooling_off: 'Cooling-off period',
+      opt_rg_reality_check: 'Reality check notifications',
+      opt_age_kyc: 'Via KYC document', opt_age_declaration: 'User declaration', opt_age_third_party: 'Third-party service',
+      opt_sec_ssl: 'SSL Certificate (HTTPS)', opt_sec_2fa: '2FA — Mandatory for admin panel',
+      opt_sec_ddos: 'DDoS protection', opt_sec_pentest: 'Penetration testing', opt_sec_whitelist: 'IP whitelist (admin access)',
+      opt_1year: '1 Year', opt_2years: '2 Years', opt_5years: '5 Years',
+      opt_7years: '7 Years (legal minimum)', opt_custom: 'Custom',
+      opt_cookie_policy: 'Cookie policy page', opt_privacy_policy: 'Privacy policy page',
+      opt_data_consent: 'User data processing consent (consent banner)', opt_right_to_delete: 'Right to request data deletion',
+      // options — sec12
+      opt_priority_urgent: 'Urgent (within 1 month)', opt_priority_normal: 'Standard (1–3 months)', opt_priority_flexible: 'Flexible (3+ months)',
+      opt_prefer_not_say: 'Prefer not to say',
+      opt_new_platform: 'Brand new platform', opt_migration: 'Migration from existing platform', opt_redesign: 'Redesign of existing site',
+      opt_asset_logo: 'Logo files (AI, SVG, PNG)', opt_asset_brand_guide: 'Brand guidelines / Brand book',
+      opt_asset_figma: 'Figma / design file', opt_asset_content: 'Ready content (text, images)',
+      opt_asset_none: 'Not yet, Tap King will prepare',
+      opt_delivery_email: 'Via email', opt_delivery_figma: 'Figma link sharing', opt_delivery_meeting: 'During meeting',
+      opt_video_meeting: 'Video meeting',
     }
   };
 
@@ -1908,18 +2272,31 @@
     // Update all data-i18n elements
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.dataset.i18n;
-      if (i18n[lang][key]) el.textContent = i18n[lang][key];
+      if (!i18n[lang] || !i18n[lang][key]) return;
+      const tag = el.tagName.toLowerCase();
+      if (tag === 'label') {
+        // If label contains inputs → skip (radio/checkbox labels handled via inner spans)
+        if (el.querySelector('input, select, textarea')) return;
+        // If label contains child element nodes (req/hint spans), update only the first text node
+        const childEls = Array.from(el.childNodes).filter(n => n.nodeType === 1);
+        if (childEls.length > 0) {
+          const firstTextNode = Array.from(el.childNodes).find(n => n.nodeType === 3);
+          if (firstTextNode) {
+            // Strip trailing asterisk from translation value for text node (req span handles it)
+            firstTextNode.textContent = i18n[lang][key].replace(/ \*$/, '') + ' ';
+          }
+        } else {
+          el.textContent = i18n[lang][key];
+        }
+      } else {
+        // For option, span, p, div, h2, etc. — safe to set textContent
+        el.textContent = i18n[lang][key];
+      }
     });
     // Update placeholders
     document.querySelectorAll('[data-ph-tr]').forEach(el => {
       el.placeholder = lang === 'tr' ? el.dataset.phTr : (el.dataset.phEn || el.dataset.phTr);
     });
-    // Update progress label
-    const pill = document.querySelector('.progress-info');
-    if (pill) {
-      const open = document.querySelectorAll('.section-body.open').length;
-      pill.textContent = `${i18n[lang].progress_label} ... / 12 ${i18n[lang].progress_open}`;
-    }
     // Update html lang attribute
     document.documentElement.lang = lang;
   }
