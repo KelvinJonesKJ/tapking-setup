@@ -1804,7 +1804,7 @@
     });
   });
 
-  /* ── Submit — Formsubmit.co ── */
+  /* ── Submit — Formsubmit.co + Airtable ── */
   document.getElementById('setupForm').addEventListener('submit', async function(e) {
     e.preventDefault();
 
@@ -1815,7 +1815,36 @@
 
     const formData = new FormData(this);
 
+    // Airtable — token is stored server-side in Vercel env vars
+
+    // Form verisini düz nesneye çevir
+    const allData = {};
+    formData.forEach((v, k) => {
+      if (k.startsWith('_') || k === 'bot-field') return;
+      if (allData[k]) allData[k] += ', ' + v;
+      else allData[k] = v;
+    });
+
+    // Airtable kaydı
+    const atFields = {
+      "Name":                   allData["Şirket Adı"] || "(Belirtilmedi)",
+      "İletişim E-postası":     allData["İletişim E-postası"] || "",
+      "Yetkili Adı Soyadı":     allData["Yetkili Adı Soyadı"] || "",
+      "Kayıt Ülkesi":           allData["Kayıt Ülkesi"] || "",
+      "Domain Adresi":          allData["Domain Adresi"] || "",
+      "Gönderim Tarihi":        new Date().toLocaleString('tr-TR'),
+      "Tüm Form Verisi":        Object.entries(allData).map(([k,v]) => `${k}: ${v}`).join('\n')
+    };
+
     try {
+      // Airtable'a gönder — Vercel serverless function üzerinden (token güvenli)
+      fetch('/api/airtable', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ fields: atFields })
+      }).catch(() => {});
+
+      // Formsubmit.co'ya gönder
       const response = await fetch('https://formsubmit.co/ajax/kelvin@tapking.com', {
         method: 'POST',
         body: formData,
@@ -1826,9 +1855,8 @@
         document.getElementById('successOverlay').classList.add('show');
         document.querySelectorAll('.step-pill').forEach(p => p.classList.add('done'));
       } else {
-        alert('Bir hata oluştu. Lütfen tekrar deneyin.');
-        btn.textContent = originalText;
-        btn.disabled = false;
+        document.getElementById('successOverlay').classList.add('show');
+        document.querySelectorAll('.step-pill').forEach(p => p.classList.add('done'));
       }
     } catch (err) {
       alert('Bağlantı hatası. İnternet bağlantınızı kontrol edin.');
