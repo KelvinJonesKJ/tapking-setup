@@ -1862,6 +1862,21 @@
       "Tüm Form Verisi":        Object.entries(allData).map(([k,v]) => `${k}: ${v}`).join('\n')
     };
 
+    // E-posta için formatlanmış mesaj oluştur (yalnızca dolu alanlar)
+    const emailLines = ['YENİ MÜŞTERİ KURULUM FORMU\n'];
+    Object.entries(allData).forEach(([k, v]) => {
+      if (v && v.toString().trim()) emailLines.push(`${k}: ${v}`);
+    });
+    emailLines.push(`\nGönderim Tarihi: ${new Date().toLocaleString('tr-TR')}`);
+
+    const fsData = new FormData();
+    fsData.append('_subject', 'Yeni Site Kurulum Formu — Tap King');
+    fsData.append('_cc', 'support@tapking.com');
+    fsData.append('_captcha', 'false');
+    fsData.append('_template', 'basic');
+    fsData.append('Şirket Adı', allData['Şirket Adı'] || '');
+    fsData.append('message', emailLines.join('\n'));
+
     try {
       // Airtable'a gönder — Vercel serverless function üzerinden (token güvenli)
       fetch('/api/airtable', {
@@ -1870,10 +1885,10 @@
         body: JSON.stringify({ fields: atFields })
       }).catch(() => {});
 
-      // Formsubmit.co'ya gönder (Türkçe değerlerle)
+      // Formsubmit.co'ya gönder (formatlanmış mesaj)
       const response = await fetch('https://formsubmit.co/ajax/kelvin@tapking.com', {
         method: 'POST',
-        body: formDataTR,
+        body: fsData,
         headers: { 'Accept': 'application/json' }
       });
 
