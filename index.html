@@ -1817,9 +1817,35 @@
 
     // Airtable — token is stored server-side in Vercel env vars
 
+    // İngilizce value → Türkçe çevirisi
+    const valueTR = {
+      'yes': 'Evet', 'no': 'Hayır', 'already': 'Zaten kullanıyoruz',
+      'unknown': 'Bilmiyorum', 'later': 'Sonraya bırakalım',
+      'cloudflare': 'Cloudflare üzerinden',
+      'auto': 'Otomatik onay', 'manual': 'Manuel onay', 'threshold': 'Belirli tutar üzeri manuel',
+      'self': 'Kendimiz yapacağız', 'tapking': 'Tap King yapacak', 'both': 'Her ikisi de',
+      'serious': 'Ciddi / Profesyonel', 'friendly': 'Samimi / Arkadaşça',
+      'exciting': 'Heyecan verici / Enerjik', 'luxury': 'Lüks / Premium',
+      'minimalist': 'Minimalist', 'bold': 'Cesur / Dikkat çekici', 'fun': 'Eğlenceli',
+      'dark': 'Koyu tema', 'light': 'Açık tema',
+      'mobile': 'Mobil öncelikli', 'desktop': 'Masaüstü öncelikli', 'equal': 'Her ikisi eşit',
+      'ready': 'Hazır, paylaşacağız', 'need': 'Tap King hazırlasın', 'none': 'Gerek yok',
+      'discuss': 'Görüşelim',
+      '247': '7/24 kesintisiz', 'limited': 'Belirli saatler',
+      'smsala': 'SMSala', 'getir_sms': 'GetirSMS',
+      'other_sms': 'Diğer', 'other_email': 'Diğer', 'other_provider': 'Diğer',
+      'new': 'Yeni platform', 'migration': 'Mevcut platformdan geçiş', 'redesign': 'Mevcut sitenin yeniden tasarımı'
+    };
+
+    // Türkçe değerlerle yeni FormData oluştur
+    const formDataTR = new FormData();
+    formData.forEach((v, k) => {
+      formDataTR.append(k, valueTR[v] || v);
+    });
+
     // Form verisini düz nesneye çevir
     const allData = {};
-    formData.forEach((v, k) => {
+    formDataTR.forEach((v, k) => {
       if (k.startsWith('_') || k === 'bot-field') return;
       if (allData[k]) allData[k] += ', ' + v;
       else allData[k] = v;
@@ -1844,10 +1870,10 @@
         body: JSON.stringify({ fields: atFields })
       }).catch(() => {});
 
-      // Formsubmit.co'ya gönder
+      // Formsubmit.co'ya gönder (Türkçe değerlerle)
       const response = await fetch('https://formsubmit.co/ajax/kelvin@tapking.com', {
         method: 'POST',
-        body: formData,
+        body: formDataTR,
         headers: { 'Accept': 'application/json' }
       });
 
