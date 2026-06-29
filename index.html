@@ -544,21 +544,78 @@
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
+        <!-- Ödeme yöntemleri -->
         <div class="field">
           <label>Sunmak istediğiniz ödeme yöntemleri</label>
           <div class="check-group">
-            <label><input type="checkbox" name="payment_crypto" /> Kripto Para</label>
+            <label><input type="checkbox" name="payment_crypto" id="cb_crypto" onchange="toggleSub('crypto_details','yes')" /> Kripto Para</label>
             <label><input type="checkbox" name="payment_bank" /> Banka Transferi</label>
             <label><input type="checkbox" name="payment_card" /> Kredi / Banka Kartı</label>
             <label><input type="checkbox" name="payment_ewallet" /> e-Cüzdan</label>
             <label><input type="checkbox" name="payment_local" /> Lokal Ödeme</label>
           </div>
         </div>
+
+        <!-- Kripto detayları -->
+        <div class="sub-fields" id="crypto_details">
+          <div class="field">
+            <label>Desteklemek istediğiniz kripto coinler</label>
+            <div class="check-group">
+              <label><input type="checkbox" name="crypto_btc" /> BTC</label>
+              <label><input type="checkbox" name="crypto_eth" /> ETH</label>
+              <label><input type="checkbox" name="crypto_usdt" /> USDT (TRC-20)</label>
+              <label><input type="checkbox" name="crypto_usdc" /> USDC</label>
+              <label><input type="checkbox" name="crypto_ltc" /> LTC</label>
+              <label><input type="checkbox" name="crypto_bnb" /> BNB</label>
+              <label><input type="checkbox" name="crypto_trx" /> TRX</label>
+              <label><input type="checkbox" name="crypto_xrp" /> XRP</label>
+            </div>
+          </div>
+        </div>
+
         <div class="field">
           <label>Lokal ödeme yöntemleri <span class="hint">(varsa belirtin)</span></label>
           <input type="text" name="local_payments" placeholder="örn. Papara, Payfix, Havale" />
         </div>
+
         <hr class="divider" />
+
+        <!-- Limitler -->
+        <div class="field">
+          <label>Minimum yatırım limiti</label>
+          <input type="text" name="min_deposit" placeholder="örn. 50 TRY / 10 USD" />
+        </div>
+        <div class="field">
+          <label>Maksimum çekim limiti <span class="hint">(günlük)</span></label>
+          <input type="text" name="max_withdrawal_daily" placeholder="örn. 10.000 TRY / 1.000 USD" />
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Ödeme akışı -->
+        <div class="field">
+          <label>Para çekme onay süreci nasıl olsun?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="withdrawal_approval" value="auto" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> Otomatik onay</label>
+            <label><input type="radio" name="withdrawal_approval" value="manual" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> Manuel onay (tüm çekimler)</label>
+            <label><input type="radio" name="withdrawal_approval" value="threshold" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='block'" /> Belirli bir tutarın üzeri manuel</label>
+          </div>
+        </div>
+        <div id="withdrawal_threshold_wrap" style="display:none">
+          <div class="field">
+            <label>Manuel onay eşiği</label>
+            <input type="text" name="withdrawal_threshold" placeholder="örn. 5.000 TRY üzeri manuel onay" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Fraud / Kötüye kullanım önleme kuralları <span class="hint">(varsa belirtin)</span></label>
+          <textarea name="fraud_rules" placeholder="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..."></textarea>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- PSP -->
         <div class="field">
           <label>Mevcut bir ödeme sağlayıcınız (PSP) var mı?</label>
           <div class="radio-group">
