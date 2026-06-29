@@ -1187,38 +1187,99 @@
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
+        <!-- Admin erişimi -->
+        <div class="field">
+          <label>Admin Panel E-posta <span class="req">*</span></label>
+          <input type="email" name="admin_email" placeholder="admin@siteadi.com" required />
+        </div>
+
         <div class="grid2">
           <div class="field">
-            <label>Admin Panel E-posta <span class="req">*</span></label>
-            <input type="email" name="admin_email" placeholder="admin@siteadi.com" required />
-          </div>
-          <div class="field">
-            <label>Para Birimi <span class="req">*</span></label>
-            <select name="currency" required>
+            <label>Kaç admin kullanıcısı olacak?</label>
+            <select name="admin_count">
               <option value="">Seçiniz...</option>
-              <option>TRY — Türk Lirası</option>
-              <option>EUR — Euro</option>
-              <option>USD — Amerikan Doları</option>
-              <option>GBP — İngiliz Sterlini</option>
-              <option>BTC — Bitcoin</option>
-              <option>ETH — Ethereum</option>
-              <option>USDT — Tether</option>
-              <option>Diğer</option>
+              <option>1</option>
+              <option>2-5</option>
+              <option>6-10</option>
+              <option>10+</option>
             </select>
           </div>
+          <div class="field">
+            <label>Rol bazlı yetki sistemi gerekiyor mu?</label>
+            <div class="radio-group">
+              <label><input type="radio" name="role_based" value="yes" /> Evet</label>
+              <label><input type="radio" name="role_based" value="no" /> Hayır</label>
+            </div>
+          </div>
         </div>
+
         <div class="field">
-          <label>Zaman Dilimi</label>
-          <select name="timezone">
-            <option value="">Seçiniz...</option>
-            <option>UTC+3 — İstanbul / Moskova</option>
-            <option>UTC+0 — Londra</option>
-            <option>UTC+1 — Berlin / Paris</option>
-            <option>UTC+2 — Kahire / Atina</option>
-            <option>UTC+4 — Dubai</option>
-            <option>UTC-5 — New York</option>
-            <option>UTC-8 — Los Angeles</option>
-          </select>
+          <label>Hangi roller gerekli? <span class="hint">(birden fazla seçebilirsiniz)</span></label>
+          <div class="check-group">
+            <label><input type="checkbox" name="role_superadmin" /> Süper Admin</label>
+            <label><input type="checkbox" name="role_operator" /> Operatör</label>
+            <label><input type="checkbox" name="role_finance" /> Finans</label>
+            <label><input type="checkbox" name="role_cs" /> Müşteri Hizmetleri</label>
+            <label><input type="checkbox" name="role_affiliate" /> Affiliate Yöneticisi</label>
+            <label><input type="checkbox" name="role_marketing" /> Pazarlama</label>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Operasyon -->
+        <div class="field">
+          <label>Site çalışma saatleri</label>
+          <div class="radio-group">
+            <label><input type="radio" name="working_hours" value="247" /> 7/24 kesintisiz</label>
+            <label><input type="radio" name="working_hours" value="limited" /> Belirli saatler</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Müşteri destek kanalları</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="support_livechat" /> Canlı Chat</label>
+            <label><input type="checkbox" name="support_email" /> E-posta</label>
+            <label><input type="checkbox" name="support_phone" /> Telefon</label>
+            <label><input type="checkbox" name="support_telegram" /> Telegram</label>
+            <label><input type="checkbox" name="support_whatsapp" /> WhatsApp</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Müşteri hizmetleri dili / dilleri</label>
+          <input type="text" name="support_lang" placeholder="örn. Türkçe, İngilizce" />
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Raporlama & Entegrasyon -->
+        <div class="field">
+          <label>Otomatik rapor e-postası istiyor musunuz?</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="report_daily" /> Günlük</label>
+            <label><input type="checkbox" name="report_weekly" /> Haftalık</label>
+            <label><input type="checkbox" name="report_monthly" /> Aylık</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>CRM entegrasyonu gerekiyor mu?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="crm" value="yes" /> Evet</label>
+            <label><input type="radio" name="crm" value="no" /> Hayır</label>
+            <label><input type="radio" name="crm" value="discuss" /> Görüşelim</label>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Affiliate / Ortaklık sistemi istiyor musunuz?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="affiliate" value="yes" /> Evet</label>
+            <label><input type="radio" name="affiliate" value="no" /> Hayır</label>
+            <label><input type="radio" name="affiliate" value="discuss" /> Görüşelim</label>
+          </div>
         </div>
       </div>
     </div>
