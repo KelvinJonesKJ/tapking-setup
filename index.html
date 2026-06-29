@@ -358,16 +358,16 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_company_name">Şirket Adı <span class="req">*</span></label>
-            <input type="text" name="company_name" data-ph-tr="örn. Acme Gaming Ltd." data-ph-en="e.g. Acme Gaming Ltd." placeholder="örn. Acme Gaming Ltd." required />
+            <input type="text" name="Şirket Adı" data-ph-tr="örn. Acme Gaming Ltd." data-ph-en="e.g. Acme Gaming Ltd." placeholder="örn. Acme Gaming Ltd." required />
           </div>
           <div class="field">
             <label data-i18n="lbl_company_country">Kayıtlı Olduğu Ülke <span class="req">*</span></label>
-            <input type="text" name="company_country" data-ph-tr="örn. Malta, Curacao, İngiltere" data-ph-en="e.g. Malta, Curacao, UK" placeholder="örn. Malta, Curacao, İngiltere" required />
+            <input type="text" name="Kayıt Ülkesi" data-ph-tr="örn. Malta, Curacao, İngiltere" data-ph-en="e.g. Malta, Curacao, UK" placeholder="örn. Malta, Curacao, İngiltere" required />
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_company_reg">Şirket Kayıt Numarası <span class="hint" data-i18n="hint_if_applicable">(varsa)</span></label>
-          <input type="text" name="company_reg_number" data-ph-tr="örn. C-12345" data-ph-en="e.g. C-12345" placeholder="örn. C-12345" />
+          <input type="text" name="Şirket Kayıt Numarası" data-ph-tr="örn. C-12345" data-ph-en="e.g. C-12345" placeholder="örn. C-12345" />
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
@@ -375,16 +375,16 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_full_name">Ad Soyad <span class="req">*</span></label>
-            <input type="text" name="contact_name" data-ph-tr="örn. Ahmet Yılmaz" data-ph-en="e.g. John Smith" placeholder="örn. Ahmet Yılmaz" required />
+            <input type="text" name="Yetkili Adı Soyadı" data-ph-tr="örn. Ahmet Yılmaz" data-ph-en="e.g. John Smith" placeholder="örn. Ahmet Yılmaz" required />
           </div>
           <div class="field">
             <label data-i18n="lbl_position">Pozisyon / Unvan</label>
-            <input type="text" name="contact_title" data-ph-tr="örn. CEO, Operasyon Müdürü" data-ph-en="e.g. CEO, Operations Manager" placeholder="örn. CEO, Operasyon Müdürü" />
+            <input type="text" name="Pozisyon / Unvan" data-ph-tr="örn. CEO, Operasyon Müdürü" data-ph-en="e.g. CEO, Operations Manager" placeholder="örn. CEO, Operasyon Müdürü" />
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_contact_email">İletişim E-postası <span class="req">*</span></label>
-          <input type="email" name="contact_email" placeholder="ornek@sirket.com" required />
+          <input type="email" name="İletişim E-postası" placeholder="ornek@sirket.com" required />
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
@@ -392,36 +392,36 @@
         <div class="field">
           <label data-i18n="lbl_has_license">Mevcut oyun lisansınız var mı? <span class="req">*</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="has_license" value="yes" onchange="toggleSub('license_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="has_license" value="no" onchange="toggleSub('license_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="Lisans Var mı" value="yes" onchange="toggleSub('license_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Lisans Var mı" value="no" onchange="toggleSub('license_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
         <div class="sub-fields" id="license_details">
           <div class="grid2">
             <div class="field">
               <label data-i18n="lbl_license_type">Lisans Türü</label>
-              <input type="text" name="license_type" data-ph-tr="örn. MGA, UKGC, Curacao" data-ph-en="e.g. MGA, UKGC, Curacao" placeholder="örn. MGA, UKGC, Curacao" />
+              <input type="text" name="Lisans Türü" data-ph-tr="örn. MGA, UKGC, Curacao" data-ph-en="e.g. MGA, UKGC, Curacao" placeholder="örn. MGA, UKGC, Curacao" />
             </div>
             <div class="field">
               <label data-i18n="lbl_license_provider">Lisans Sağlayıcısı</label>
-              <input type="text" name="license_provider" data-ph-tr="örn. Malta Gaming Authority" data-ph-en="e.g. Malta Gaming Authority" placeholder="örn. Malta Gaming Authority" />
+              <input type="text" name="Lisans Sağlayıcı" data-ph-tr="örn. Malta Gaming Authority" data-ph-en="e.g. Malta Gaming Authority" placeholder="örn. Malta Gaming Authority" />
             </div>
           </div>
           <div class="grid2">
             <div class="field">
               <label data-i18n="lbl_license_number">Lisans Numarası</label>
-              <input type="text" name="license_number" data-ph-tr="örn. MGA/B2C/123/2020" data-ph-en="e.g. MGA/B2C/123/2020" placeholder="örn. MGA/B2C/123/2020" />
+              <input type="text" name="Lisans Numarası" data-ph-tr="örn. MGA/B2C/123/2020" data-ph-en="e.g. MGA/B2C/123/2020" placeholder="örn. MGA/B2C/123/2020" />
             </div>
             <div class="field">
               <label data-i18n="lbl_license_expiry">Lisans Geçerlilik Tarihi</label>
-              <input type="text" name="license_expiry" data-ph-tr="örn. 31/12/2026" data-ph-en="e.g. 31/12/2026" placeholder="örn. 31/12/2026" />
+              <input type="text" name="Lisans Bitiş Tarihi" data-ph-tr="örn. 31/12/2026" data-ph-en="e.g. 31/12/2026" placeholder="örn. 31/12/2026" />
             </div>
           </div>
           <div class="field" id="license_support_wrap" style="display:none">
             <label data-i18n="lbl_license_support">Lisans süreci için destek almak ister misiniz?</label>
             <div class="radio-group">
-              <label><input type="radio" name="license_support" value="yes" /> <span data-i18n="opt_yes_support">Evet, destek istiyorum</span></label>
-              <label><input type="radio" name="license_support" value="no" /> <span data-i18n="opt_no_thanks">Hayır, teşekkürler</span></label>
+              <label><input type="radio" name="Lisans Desteği" value="yes" /> <span data-i18n="opt_yes_support">Evet, destek istiyorum</span></label>
+              <label><input type="radio" name="Lisans Desteği" value="no" /> <span data-i18n="opt_no_thanks">Hayır, teşekkürler</span></label>
             </div>
           </div>
         </div>
@@ -430,20 +430,20 @@
         <div class="field">
           <label data-i18n="lbl_prev_platform">Daha önce aktif bir platform işlettiniz mi?</label>
           <div class="radio-group">
-            <label><input type="radio" name="prev_platform" value="yes" onchange="toggleSub('prev_platform_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="prev_platform" value="no" onchange="toggleSub('prev_platform_details','no')" /> <span data-i18n="opt_no_fresh_start">Hayır, sıfırdan başlıyoruz</span></label>
+            <label><input type="radio" name="Önceki Platform" value="yes" onchange="toggleSub('prev_platform_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Önceki Platform" value="no" onchange="toggleSub('prev_platform_details','no')" /> <span data-i18n="opt_no_fresh_start">Hayır, sıfırdan başlıyoruz</span></label>
           </div>
         </div>
         <div class="sub-fields" id="prev_platform_details">
           <div class="field">
             <label data-i18n="lbl_prev_platform_name">Platform Adı / URL <span class="hint" data-i18n="hint_old_platform">(eski platform)</span></label>
-            <input type="text" name="prev_platform_name" data-ph-tr="örn. eskisite.com" data-ph-en="e.g. oldsite.com" placeholder="örn. eskisite.com" />
+            <input type="text" name="Platform Adı" data-ph-tr="örn. eskisite.com" data-ph-en="e.g. oldsite.com" placeholder="örn. eskisite.com" />
           </div>
           <div class="field">
             <label data-i18n="lbl_migration_needed">Veri / Oyuncu taşıması gerekiyor mu?</label>
             <div class="radio-group">
-              <label><input type="radio" name="migration_needed" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="migration_needed" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="Veri Migrasyonu" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="Veri Migrasyonu" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
         </div>
@@ -467,32 +467,32 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_main_domain">Ana Domain <span class="req">*</span></label>
-            <input type="url" name="domain" data-ph-tr="https://www.siteadi.com" data-ph-en="https://www.yourdomain.com" placeholder="https://www.siteadi.com" required />
+            <input type="url" name="Domain Adresi" data-ph-tr="https://www.siteadi.com" data-ph-en="https://www.yourdomain.com" placeholder="https://www.siteadi.com" required />
           </div>
           <div class="field">
             <label data-i18n="lbl_domain_provider">Domain Sağlayıcı</label>
-            <input type="text" name="domain_provider" data-ph-tr="örn. GoDaddy, Namecheap, Cloudflare" data-ph-en="e.g. GoDaddy, Namecheap, Cloudflare" placeholder="örn. GoDaddy, Namecheap, Cloudflare" />
+            <input type="text" name="Domain Sağlayıcı" data-ph-tr="örn. GoDaddy, Namecheap, Cloudflare" data-ph-en="e.g. GoDaddy, Namecheap, Cloudflare" placeholder="örn. GoDaddy, Namecheap, Cloudflare" />
           </div>
         </div>
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_domain_owned">Domain size mi ait?</label>
             <div class="radio-group">
-              <label><input type="radio" name="domain_owned" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="domain_owned" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="Domain Sahipliği" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="Domain Sahipliği" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
           <div class="field">
             <label data-i18n="lbl_dns_access">DNS erişimi sağlayabilir misiniz?</label>
             <div class="radio-group">
-              <label><input type="radio" name="dns_access" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="dns_access" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="DNS Erişimi" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="DNS Erişimi" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_backup_domains">Yedek Domain(ler) <span class="hint" data-i18n="hint_mirror_if_any">(mirror — varsa)</span></label>
-          <input type="text" name="backup_domains" data-ph-tr="örn. siteadi2.com, siteadi3.net" data-ph-en="e.g. yourdomain2.com, yourdomain3.net" placeholder="örn. siteadi2.com, siteadi3.net" />
+          <input type="text" name="Yedek Domainler" data-ph-tr="örn. siteadi2.com, siteadi3.net" data-ph-en="e.g. yourdomain2.com, yourdomain3.net" placeholder="örn. siteadi2.com, siteadi3.net" />
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
@@ -501,23 +501,23 @@
           <div class="field">
             <label data-i18n="lbl_cloudflare_account">Cloudflare hesabınız var mı?</label>
             <div class="radio-group">
-              <label><input type="radio" name="cloudflare" value="yes" onchange="toggleSub('cloudflare_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="cloudflare" value="no" onchange="toggleSub('cloudflare_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="Cloudflare Kullanımı" value="yes" onchange="toggleSub('cloudflare_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="Cloudflare Kullanımı" value="no" onchange="toggleSub('cloudflare_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
           <div class="field">
             <label data-i18n="lbl_cloudflare_migrate">Cloudflare'e geçiş yapılabilir mi?</label>
             <div class="radio-group">
-              <label><input type="radio" name="cloudflare_migrate" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="cloudflare_migrate" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-              <label><input type="radio" name="cloudflare_migrate" value="already" /> <span data-i18n="opt_already_using">Zaten kullanıyoruz</span></label>
+              <label><input type="radio" name="Cloudflare Geçişi" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="Cloudflare Geçişi" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="Cloudflare Geçişi" value="already" /> <span data-i18n="opt_already_using">Zaten kullanıyoruz</span></label>
             </div>
           </div>
         </div>
         <div class="sub-fields" id="cloudflare_details">
           <div class="field">
             <label data-i18n="lbl_cloudflare_email">Cloudflare Hesap E-postası</label>
-            <input type="email" name="cloudflare_email" placeholder="cloudflare@sirket.com" />
+            <input type="email" name="Cloudflare E-postası" placeholder="cloudflare@sirket.com" />
           </div>
         </div>
 
@@ -526,11 +526,11 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_hosting_provider">Hosting Sağlayıcı</label>
-            <input type="text" name="hosting_provider" data-ph-tr="örn. AWS, Hetzner, DigitalOcean" data-ph-en="e.g. AWS, Hetzner, DigitalOcean" placeholder="örn. AWS, Hetzner, DigitalOcean" />
+            <input type="text" name="Hosting Sağlayıcı" data-ph-tr="örn. AWS, Hetzner, DigitalOcean" data-ph-en="e.g. AWS, Hetzner, DigitalOcean" placeholder="örn. AWS, Hetzner, DigitalOcean" />
           </div>
           <div class="field">
             <label data-i18n="lbl_server_location">Sunucu Lokasyonu</label>
-            <select name="server_location">
+            <select name="Sunucu Konumu">
               <option value="" data-i18n="opt_select">Seçiniz...</option>
               <option data-i18n="opt_europe">Avrupa (AB)</option>
               <option data-i18n="opt_uk">İngiltere</option>
@@ -543,7 +543,7 @@
         </div>
         <div class="field">
           <label data-i18n="lbl_hosting_plan">Mevcut hosting planı / kaynaklar <span class="hint" data-i18n="hint_if_applicable">(varsa)</span></label>
-          <input type="text" name="hosting_plan" data-ph-tr="örn. 4 vCPU, 8GB RAM, 100GB SSD" data-ph-en="e.g. 4 vCPU, 8GB RAM, 100GB SSD" placeholder="örn. 4 vCPU, 8GB RAM, 100GB SSD" />
+          <input type="text" name="Hosting Planı" data-ph-tr="örn. 4 vCPU, 8GB RAM, 100GB SSD" data-ph-en="e.g. 4 vCPU, 8GB RAM, 100GB SSD" placeholder="örn. 4 vCPU, 8GB RAM, 100GB SSD" />
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
@@ -551,9 +551,9 @@
         <div class="field">
           <label data-i18n="lbl_ssl">SSL sertifikanız var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="ssl" value="yes" /> <span data-i18n="opt_ssl_yes">Evet, mevcut</span></label>
-            <label><input type="radio" name="ssl" value="no" /> <span data-i18n="opt_ssl_no">Hayır, kurulum gerekiyor</span></label>
-            <label><input type="radio" name="ssl" value="cloudflare" /> <span data-i18n="opt_ssl_cloudflare">Cloudflare üzerinden</span></label>
+            <label><input type="radio" name="SSL Durumu" value="yes" /> <span data-i18n="opt_ssl_yes">Evet, mevcut</span></label>
+            <label><input type="radio" name="SSL Durumu" value="no" /> <span data-i18n="opt_ssl_no">Hayır, kurulum gerekiyor</span></label>
+            <label><input type="radio" name="SSL Durumu" value="cloudflare" /> <span data-i18n="opt_ssl_cloudflare">Cloudflare üzerinden</span></label>
           </div>
         </div>
 
@@ -575,11 +575,11 @@
         <div class="field">
           <label data-i18n="lbl_payment_methods">Sunmak istediğiniz ödeme yöntemleri</label>
           <div class="check-group">
-            <label><input type="checkbox" name="payment_crypto" id="cb_crypto" onchange="toggleSub('crypto_details','yes')" /> <span data-i18n="opt_crypto">Kripto Para</span></label>
-            <label><input type="checkbox" name="payment_bank" /> <span data-i18n="opt_bank_transfer">Banka Transferi</span></label>
-            <label><input type="checkbox" name="payment_card" /> <span data-i18n="opt_credit_card">Kredi / Banka Kartı</span></label>
-            <label><input type="checkbox" name="payment_ewallet" /> <span data-i18n="opt_ewallet">e-Cüzdan</span></label>
-            <label><input type="checkbox" name="payment_local" /> <span data-i18n="opt_local_payment">Lokal Ödeme</span></label>
+            <label><input type="checkbox" name="Ödeme - Kripto" id="cb_crypto" onchange="toggleSub('crypto_details','yes')" /> <span data-i18n="opt_crypto">Kripto Para</span></label>
+            <label><input type="checkbox" name="Ödeme - Banka Transferi" /> <span data-i18n="opt_bank_transfer">Banka Transferi</span></label>
+            <label><input type="checkbox" name="Ödeme - Kredi/Banka Kartı" /> <span data-i18n="opt_credit_card">Kredi / Banka Kartı</span></label>
+            <label><input type="checkbox" name="Ödeme - e-Cüzdan" /> <span data-i18n="opt_ewallet">e-Cüzdan</span></label>
+            <label><input type="checkbox" name="Ödeme - Lokal" /> <span data-i18n="opt_local_payment">Lokal Ödeme</span></label>
           </div>
         </div>
 
@@ -588,21 +588,21 @@
           <div class="field">
             <label data-i18n="lbl_crypto_coins">Desteklemek istediğiniz kripto coinler</label>
             <div class="check-group">
-              <label><input type="checkbox" name="crypto_btc" /> BTC</label>
-              <label><input type="checkbox" name="crypto_eth" /> ETH</label>
-              <label><input type="checkbox" name="crypto_usdt" /> USDT (TRC-20)</label>
-              <label><input type="checkbox" name="crypto_usdc" /> USDC</label>
-              <label><input type="checkbox" name="crypto_ltc" /> LTC</label>
-              <label><input type="checkbox" name="crypto_bnb" /> BNB</label>
-              <label><input type="checkbox" name="crypto_trx" /> TRX</label>
-              <label><input type="checkbox" name="crypto_xrp" /> XRP</label>
+              <label><input type="checkbox" name="Kripto - BTC" /> BTC</label>
+              <label><input type="checkbox" name="Kripto - ETH" /> ETH</label>
+              <label><input type="checkbox" name="Kripto - USDT" /> USDT (TRC-20)</label>
+              <label><input type="checkbox" name="Kripto - USDC" /> USDC</label>
+              <label><input type="checkbox" name="Kripto - LTC" /> LTC</label>
+              <label><input type="checkbox" name="Kripto - BNB" /> BNB</label>
+              <label><input type="checkbox" name="Kripto - TRX" /> TRX</label>
+              <label><input type="checkbox" name="Kripto - XRP" /> XRP</label>
             </div>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_local_payments">Lokal ödeme yöntemleri <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
-          <input type="text" name="local_payments" data-ph-tr="örn. Papara, Payfix, Havale" data-ph-en="e.g. Papara, Payfix, Bank Transfer" placeholder="örn. Papara, Payfix, Havale" />
+          <input type="text" name="Lokal Ödeme Yöntemleri" data-ph-tr="örn. Papara, Payfix, Havale" data-ph-en="e.g. Papara, Payfix, Bank Transfer" placeholder="örn. Papara, Payfix, Havale" />
         </div>
 
         <hr class="divider" />
@@ -610,11 +610,11 @@
         <!-- Limitler -->
         <div class="field">
           <label data-i18n="lbl_min_deposit">Minimum yatırım limiti</label>
-          <input type="text" name="min_deposit" data-ph-tr="örn. 50 TRY / 10 USD" data-ph-en="e.g. 50 TRY / 10 USD" placeholder="örn. 50 TRY / 10 USD" />
+          <input type="text" name="Min. Yatırım" data-ph-tr="örn. 50 TRY / 10 USD" data-ph-en="e.g. 50 TRY / 10 USD" placeholder="örn. 50 TRY / 10 USD" />
         </div>
         <div class="field">
           <label data-i18n="lbl_max_withdrawal">Maksimum çekim limiti <span class="hint" data-i18n="hint_daily">(günlük)</span></label>
-          <input type="text" name="max_withdrawal_daily" data-ph-tr="örn. 10.000 TRY / 1.000 USD" data-ph-en="e.g. 10,000 TRY / 1,000 USD" placeholder="örn. 10.000 TRY / 1.000 USD" />
+          <input type="text" name="Max. Günlük Çekim" data-ph-tr="örn. 10.000 TRY / 1.000 USD" data-ph-en="e.g. 10,000 TRY / 1,000 USD" placeholder="örn. 10.000 TRY / 1.000 USD" />
         </div>
 
         <hr class="divider" />
@@ -623,21 +623,21 @@
         <div class="field">
           <label data-i18n="lbl_withdrawal_approval">Para çekme onay süreci nasıl olsun?</label>
           <div class="radio-group">
-            <label><input type="radio" name="withdrawal_approval" value="auto" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_auto_approval">Otomatik onay</span></label>
-            <label><input type="radio" name="withdrawal_approval" value="manual" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_manual_approval">Manuel onay (tüm çekimler)</span></label>
-            <label><input type="radio" name="withdrawal_approval" value="threshold" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='block'" /> <span data-i18n="opt_threshold_approval">Belirli bir tutarın üzeri manuel</span></label>
+            <label><input type="radio" name="Çekim Onayı" value="auto" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_auto_approval">Otomatik onay</span></label>
+            <label><input type="radio" name="Çekim Onayı" value="manual" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_manual_approval">Manuel onay (tüm çekimler)</span></label>
+            <label><input type="radio" name="Çekim Onayı" value="threshold" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='block'" /> <span data-i18n="opt_threshold_approval">Belirli bir tutarın üzeri manuel</span></label>
           </div>
         </div>
         <div id="withdrawal_threshold_wrap" style="display:none">
           <div class="field">
             <label data-i18n="lbl_manual_threshold">Manuel onay eşiği</label>
-            <input type="text" name="withdrawal_threshold" data-ph-tr="örn. 5.000 TRY üzeri manuel onay" data-ph-en="e.g. Manual approval above 5,000 TRY" placeholder="örn. 5.000 TRY üzeri manuel onay" />
+            <input type="text" name="Çekim Limiti" data-ph-tr="örn. 5.000 TRY üzeri manuel onay" data-ph-en="e.g. Manual approval above 5,000 TRY" placeholder="örn. 5.000 TRY üzeri manuel onay" />
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_fraud_rules">Fraud / Kötüye kullanım önleme kuralları <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
-          <textarea name="fraud_rules" data-ph-tr="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..." data-ph-en="e.g. max 3 withdrawals per day from same IP, no withdrawal until bonus wagering requirement is met..." placeholder="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..."></textarea>
+          <textarea name="Fraud Kuralları" data-ph-tr="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..." data-ph-en="e.g. max 3 withdrawals per day from same IP, no withdrawal until bonus wagering requirement is met..." placeholder="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..."></textarea>
         </div>
 
         <hr class="divider" />
@@ -646,25 +646,25 @@
         <div class="field">
           <label data-i18n="lbl_has_psp">Mevcut bir ödeme sağlayıcınız (PSP) var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="has_psp" value="yes" onchange="toggleSub('psp_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="has_psp" value="no" onchange="toggleSub('psp_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="PSP Var mı" value="yes" onchange="toggleSub('psp_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="PSP Var mı" value="no" onchange="toggleSub('psp_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
         <div class="sub-fields" id="psp_details">
           <div class="field">
             <label data-i18n="lbl_psp_name">Sağlayıcı Adı</label>
-            <input type="text" name="psp_name" data-ph-tr="örn. Stripe, Payguru, Praxis" data-ph-en="e.g. Stripe, Payguru, Praxis" placeholder="örn. Stripe, Payguru, Praxis" />
+            <input type="text" name="PSP Adı" data-ph-tr="örn. Stripe, Payguru, Praxis" data-ph-en="e.g. Stripe, Payguru, Praxis" placeholder="örn. Stripe, Payguru, Praxis" />
           </div>
           <div class="field">
             <label data-i18n="lbl_psp_api">API Dokümantasyonu / Erişim Bilgileri</label>
-            <textarea name="psp_api_info" data-ph-tr="API endpoint, dokümantasyon linki veya erişim notu..." data-ph-en="API endpoint, documentation link or access notes..." placeholder="API endpoint, dokümantasyon linki veya erişim notu..."></textarea>
+            <textarea name="PSP API Bilgisi" data-ph-tr="API endpoint, dokümantasyon linki veya erişim notu..." data-ph-en="API endpoint, documentation link or access notes..." placeholder="API endpoint, dokümantasyon linki veya erişim notu..."></textarea>
           </div>
           <div id="psp_use_ours" style="display:none">
             <div class="field">
               <label data-i18n="lbl_use_our_psp">Bizim ödeme çözümlerimizi kullanmak ister misiniz?</label>
               <div class="radio-group">
-                <label><input type="radio" name="use_our_psp" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-                <label><input type="radio" name="use_our_psp" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+                <label><input type="radio" name="Tap King PSP" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+                <label><input type="radio" name="Tap King PSP" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
               </div>
             </div>
           </div>
@@ -686,11 +686,11 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_target_countries">Hedef Ülke / Ülkeler <span class="req">*</span></label>
-            <input type="text" name="target_countries" data-ph-tr="örn. Türkiye, Almanya, Hollanda" data-ph-en="e.g. Turkey, Germany, Netherlands" placeholder="örn. Türkiye, Almanya, Hollanda" required />
+            <input type="text" name="Hedef Ülkeler" data-ph-tr="örn. Türkiye, Almanya, Hollanda" data-ph-en="e.g. Turkey, Germany, Netherlands" placeholder="örn. Türkiye, Almanya, Hollanda" required />
           </div>
           <div class="field">
             <label data-i18n="lbl_primary_language">Ana Dil <span class="req">*</span></label>
-            <select name="primary_language" required>
+            <select name="Ana Dil" required>
               <option value="" data-i18n="opt_select">Seçiniz...</option>
               <option data-i18n="opt_lang_tr">Türkçe</option>
               <option data-i18n="opt_lang_en">İngilizce</option>
@@ -706,7 +706,7 @@
         </div>
         <div class="field">
           <label data-i18n="lbl_extra_languages">Ek Diller <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
-          <input type="text" name="extra_languages" data-ph-tr="örn. İngilizce, Almanca" data-ph-en="e.g. English, German" placeholder="örn. İngilizce, Almanca" />
+          <input type="text" name="Ek Diller" data-ph-tr="örn. İngilizce, Almanca" data-ph-en="e.g. English, German" placeholder="örn. İngilizce, Almanca" />
         </div>
 
         <hr class="divider" />
@@ -715,7 +715,7 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_currency">Para Birimi <span class="req">*</span></label>
-            <select name="currency" required>
+            <select name="Para Birimi" required>
               <option value="" data-i18n="opt_select">Seçiniz...</option>
               <option data-i18n="opt_try">TRY — Türk Lirası</option>
               <option data-i18n="opt_eur">EUR — Euro</option>
@@ -728,7 +728,7 @@
           </div>
           <div class="field">
             <label data-i18n="lbl_timezone">Zaman Dilimi <span class="req">*</span></label>
-            <select name="timezone" required>
+            <select name="Saat Dilimi" required>
               <option value="" data-i18n="opt_select">Seçiniz...</option>
               <option>UTC+3 — İstanbul / Ankara</option>
               <option>UTC+0 — Londra (GMT)</option>
@@ -747,15 +747,15 @@
         <div class="field">
           <label data-i18n="lbl_regulatory_restrictions">Hedef pazarda lisans / düzenleyici kısıtlama var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="regulatory_restrictions" value="yes" onchange="toggleSub('regulatory_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="regulatory_restrictions" value="no" onchange="toggleSub('regulatory_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
-            <label><input type="radio" name="regulatory_restrictions" value="unknown" onchange="toggleSub('regulatory_details','no')" /> <span data-i18n="opt_dont_know">Bilmiyorum</span></label>
+            <label><input type="radio" name="Düzenleyici Kısıtlamalar" value="yes" onchange="toggleSub('regulatory_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Düzenleyici Kısıtlamalar" value="no" onchange="toggleSub('regulatory_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="Düzenleyici Kısıtlamalar" value="unknown" onchange="toggleSub('regulatory_details','no')" /> <span data-i18n="opt_dont_know">Bilmiyorum</span></label>
           </div>
         </div>
         <div class="sub-fields" id="regulatory_details">
           <div class="field">
             <label data-i18n="lbl_restriction_details">Kısıtlama detayları</label>
-            <textarea name="regulatory_details_text" data-ph-tr="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..." data-ph-en="e.g. MGA license required, operating with offshore license in Turkey..." placeholder="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..."></textarea>
+            <textarea name="Kısıtlama Detayları" data-ph-tr="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..." data-ph-en="e.g. MGA license required, operating with offshore license in Turkey..." placeholder="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..."></textarea>
           </div>
         </div>
 
@@ -765,21 +765,21 @@
         <div class="field">
           <label data-i18n="lbl_rtl_support">Sağdan sola (RTL) dil desteği gerekiyor mu? <span class="hint" data-i18n="hint_rtl">(Arapça, Farsça vb.)</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="rtl_support" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="rtl_support" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="RTL Desteği" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="RTL Desteği" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_translation_provider">Çeviri nasıl sağlanacak?</label>
           <div class="radio-group">
-            <label><input type="radio" name="translation_provider" value="self" /> <span data-i18n="opt_translation_self">Kendimiz sağlayacağız</span></label>
-            <label><input type="radio" name="translation_provider" value="tapking" /> <span data-i18n="opt_translation_tapking">Tap King sağlasın</span></label>
-            <label><input type="radio" name="translation_provider" value="both" /> <span data-i18n="opt_translation_both">Birlikte halledelim</span></label>
+            <label><input type="radio" name="Çeviri Sağlayıcı" value="self" /> <span data-i18n="opt_translation_self">Kendimiz sağlayacağız</span></label>
+            <label><input type="radio" name="Çeviri Sağlayıcı" value="tapking" /> <span data-i18n="opt_translation_tapking">Tap King sağlasın</span></label>
+            <label><input type="radio" name="Çeviri Sağlayıcı" value="both" /> <span data-i18n="opt_translation_both">Birlikte halledelim</span></label>
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_support_languages">Müşteri hizmetleri dili / dilleri</label>
-          <input type="text" name="support_languages" data-ph-tr="örn. Türkçe, İngilizce" data-ph-en="e.g. Turkish, English" placeholder="örn. Türkçe, İngilizce" />
+          <input type="text" name="Destek Dilleri" data-ph-tr="örn. Türkçe, İngilizce" data-ph-en="e.g. Turkish, English" placeholder="örn. Türkçe, İngilizce" />
         </div>
 
         <hr class="divider" />
@@ -788,17 +788,17 @@
         <div class="field">
           <label data-i18n="lbl_target_audience">Hedef kullanıcı kitlesi</label>
           <div class="check-group">
-            <label><input type="checkbox" name="audience_sports" /> <span data-i18n="opt_sports_betting">Spor Bahisleri</span></label>
-            <label><input type="checkbox" name="audience_casino" /> <span data-i18n="opt_casino_slot">Casino / Slot</span></label>
-            <label><input type="checkbox" name="audience_live" /> <span data-i18n="opt_live_casino">Canlı Casino</span></label>
-            <label><input type="checkbox" name="audience_poker" /> <span data-i18n="opt_poker">Poker</span></label>
-            <label><input type="checkbox" name="audience_virtual" /> <span data-i18n="opt_virtual_sports">Sanal Sporlar</span></label>
-            <label><input type="checkbox" name="audience_esports" /> E-Sports</label>
+            <label><input type="checkbox" name="Hedef - Spor" /> <span data-i18n="opt_sports_betting">Spor Bahisleri</span></label>
+            <label><input type="checkbox" name="Hedef - Casino" /> <span data-i18n="opt_casino_slot">Casino / Slot</span></label>
+            <label><input type="checkbox" name="Hedef - Canlı" /> <span data-i18n="opt_live_casino">Canlı Casino</span></label>
+            <label><input type="checkbox" name="Hedef - Poker" /> <span data-i18n="opt_poker">Poker</span></label>
+            <label><input type="checkbox" name="Hedef - Sanal" /> <span data-i18n="opt_virtual_sports">Sanal Sporlar</span></label>
+            <label><input type="checkbox" name="Hedef - E-spor" /> E-Sports</label>
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_competitor_sites">Rakip / referans siteler <span class="hint" data-i18n="hint_competitor">(pazarda neyle rekabet edeceksiniz?)</span></label>
-          <textarea name="competitor_sites" data-ph-tr="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..." data-ph-en="e.g. Bets10, Betsson, 1xBet — similar concept or sites you like..." placeholder="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..."></textarea>
+          <textarea name="Rakip Siteler" data-ph-tr="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..." data-ph-en="e.g. Bets10, Betsson, 1xBet — similar concept or sites you like..." placeholder="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..."></textarea>
         </div>
       </div>
     </div>
@@ -817,18 +817,18 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_brand_name">Site Adı / Marka Adı <span class="req">*</span></label>
-            <input type="text" name="brand_name" data-ph-tr="örn. OnlySpin" data-ph-en="e.g. OnlySpin" placeholder="örn. OnlySpin" required />
+            <input type="text" name="Marka Adı" data-ph-tr="örn. OnlySpin" data-ph-en="e.g. OnlySpin" placeholder="örn. OnlySpin" required />
           </div>
           <div class="field">
             <label data-i18n="lbl_logo">Logo <span class="hint" data-i18n="hint_png_svg">(PNG veya SVG)</span></label>
-            <input type="text" name="logo_link" data-ph-tr="Dropbox / Drive linki veya 'Sonra göndereceğim'" data-ph-en="Dropbox / Drive link or 'Will send later'" placeholder="Dropbox / Drive linki veya 'Sonra göndereceğim'" />
+            <input type="text" name="Logo Linki" data-ph-tr="Dropbox / Drive linki veya 'Sonra göndereceğim'" data-ph-en="Dropbox / Drive link or 'Will send later'" placeholder="Dropbox / Drive linki veya 'Sonra göndereceğim'" />
           </div>
         </div>
 
         <!-- Figma -->
         <div class="field">
           <label data-i18n="lbl_figma_link">Figma Dosyası Linki</label>
-          <input type="url" name="figma_link" placeholder="https://figma.com/file/..." />
+          <input type="url" name="Figma Linki" placeholder="https://figma.com/file/..." />
           <p data-i18n="figma_note" style="margin-top:6px;font-size:13px;color:var(--muted);line-height:1.5;">
             ⚠️ Figma dosyası olmadan tasarım süreci başlatılamaz. Henüz hazır değilse taslak bir dosya paylaşmanız yeterlidir.
           </p>
@@ -838,49 +838,49 @@
 
         <div class="field">
           <label data-i18n="lbl_brand_colors">Tercih Edilen Renkler <span class="hint" data-i18n="hint_hex_or_name">(HEX veya renk adı)</span></label>
-          <input type="text" name="brand_colors" data-ph-tr="örn. #E8491D (turuncu), #0d0d12 (siyah)" data-ph-en="e.g. #E8491D (orange), #0d0d12 (black)" placeholder="örn. #E8491D (turuncu), #0d0d12 (siyah)" />
+          <input type="text" name="Marka Renkleri" data-ph-tr="örn. #E8491D (turuncu), #0d0d12 (siyah)" data-ph-en="e.g. #E8491D (orange), #0d0d12 (black)" placeholder="örn. #E8491D (turuncu), #0d0d12 (siyah)" />
         </div>
 
         <div class="field">
           <label data-i18n="lbl_brand_slogan">Slogan / Tagline <span class="hint" data-i18n="hint_if_any">(varsa)</span></label>
-          <input type="text" name="brand_slogan" placeholder="örn. 'Play Smart, Win Big'" />
+          <input type="text" name="Slogan" placeholder="örn. 'Play Smart, Win Big'" />
         </div>
 
         <div class="field">
           <label data-i18n="lbl_brand_tone">Marka tonu nasıl olsun?</label>
           <div class="radio-group">
-            <label><input type="radio" name="brand_tone" value="serious" /> <span data-i18n="opt_tone_serious">Ciddi &amp; Profesyonel</span></label>
-            <label><input type="radio" name="brand_tone" value="friendly" /> <span data-i18n="opt_tone_friendly">Samimi &amp; Yakın</span></label>
-            <label><input type="radio" name="brand_tone" value="exciting" /> <span data-i18n="opt_tone_exciting">Heyecanlı &amp; Enerjik</span></label>
-            <label><input type="radio" name="brand_tone" value="luxury" /> <span data-i18n="opt_tone_luxury">Lüks &amp; Premium</span></label>
+            <label><input type="radio" name="Marka Tonu" value="serious" /> <span data-i18n="opt_tone_serious">Ciddi &amp; Profesyonel</span></label>
+            <label><input type="radio" name="Marka Tonu" value="friendly" /> <span data-i18n="opt_tone_friendly">Samimi &amp; Yakın</span></label>
+            <label><input type="radio" name="Marka Tonu" value="exciting" /> <span data-i18n="opt_tone_exciting">Heyecanlı &amp; Enerjik</span></label>
+            <label><input type="radio" name="Marka Tonu" value="luxury" /> <span data-i18n="opt_tone_luxury">Lüks &amp; Premium</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_design_style">Genel stil tercihi</label>
           <div class="radio-group">
-            <label><input type="radio" name="design_style" value="minimalist" /> <span data-i18n="opt_style_minimalist">Minimalist</span></label>
-            <label><input type="radio" name="design_style" value="bold" /> <span data-i18n="opt_style_bold">Bold &amp; Agresif</span></label>
-            <label><input type="radio" name="design_style" value="luxury" /> <span data-i18n="opt_style_luxury">Lüks &amp; Zarif</span></label>
-            <label><input type="radio" name="design_style" value="fun" /> <span data-i18n="opt_style_fun">Eğlenceli &amp; Renkli</span></label>
+            <label><input type="radio" name="Tasarım Stili" value="minimalist" /> <span data-i18n="opt_style_minimalist">Minimalist</span></label>
+            <label><input type="radio" name="Tasarım Stili" value="bold" /> <span data-i18n="opt_style_bold">Bold &amp; Agresif</span></label>
+            <label><input type="radio" name="Tasarım Stili" value="luxury" /> <span data-i18n="opt_style_luxury">Lüks &amp; Zarif</span></label>
+            <label><input type="radio" name="Tasarım Stili" value="fun" /> <span data-i18n="opt_style_fun">Eğlenceli &amp; Renkli</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_theme">Tema tercihi</label>
           <div class="radio-group">
-            <label><input type="radio" name="theme_preference" value="dark" /> <span data-i18n="opt_theme_dark">Karanlık tema</span></label>
-            <label><input type="radio" name="theme_preference" value="light" /> <span data-i18n="opt_theme_light">Açık tema</span></label>
-            <label><input type="radio" name="theme_preference" value="both" /> <span data-i18n="opt_theme_both">Her ikisi de olsun</span></label>
+            <label><input type="radio" name="Tema Tercihi" value="dark" /> <span data-i18n="opt_theme_dark">Karanlık tema</span></label>
+            <label><input type="radio" name="Tema Tercihi" value="light" /> <span data-i18n="opt_theme_light">Açık tema</span></label>
+            <label><input type="radio" name="Tema Tercihi" value="both" /> <span data-i18n="opt_theme_both">Her ikisi de olsun</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_device_priority">Öncelik</label>
           <div class="radio-group">
-            <label><input type="radio" name="device_priority" value="mobile" /> <span data-i18n="opt_mobile_first">Mobil öncelikli</span></label>
-            <label><input type="radio" name="device_priority" value="desktop" /> <span data-i18n="opt_desktop_first">Masaüstü öncelikli</span></label>
-            <label><input type="radio" name="device_priority" value="equal" /> <span data-i18n="opt_equal_priority">İkisi de eşit</span></label>
+            <label><input type="radio" name="Cihaz Önceliği" value="mobile" /> <span data-i18n="opt_mobile_first">Mobil öncelikli</span></label>
+            <label><input type="radio" name="Cihaz Önceliği" value="desktop" /> <span data-i18n="opt_desktop_first">Masaüstü öncelikli</span></label>
+            <label><input type="radio" name="Cihaz Önceliği" value="equal" /> <span data-i18n="opt_equal_priority">İkisi de eşit</span></label>
           </div>
         </div>
 
@@ -889,27 +889,27 @@
         <div class="field">
           <label data-i18n="lbl_favicon">Favicon var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="has_favicon" value="yes" /> <span data-i18n="opt_favicon_yes">Evet, paylaşacağım</span></label>
-            <label><input type="radio" name="has_favicon" value="no" /> <span data-i18n="opt_favicon_no">Hayır, sizden bekliyorum</span></label>
+            <label><input type="radio" name="Favicon Var mı" value="yes" /> <span data-i18n="opt_favicon_yes">Evet, paylaşacağım</span></label>
+            <label><input type="radio" name="Favicon Var mı" value="no" /> <span data-i18n="opt_favicon_no">Hayır, sizden bekliyorum</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_social_images">Sosyal medya görselleri gerekiyor mu? <span class="hint" data-i18n="hint_og_image">(OG image, Twitter card vb.)</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="social_images" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="social_images" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="Sosyal Medya Görselleri" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Sosyal Medya Görselleri" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_forbidden_colors">Yasaklı renkler veya görseller <span class="hint" data-i18n="hint_avoid_brand_conflict">(rakip markayla karışmaması için)</span></label>
-          <input type="text" name="forbidden_colors" data-ph-tr="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." data-ph-en="e.g. Avoid red, should not resemble brand X..." placeholder="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." />
+          <input type="text" name="Yasak Renkler" data-ph-tr="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." data-ph-en="e.g. Avoid red, should not resemble brand X..." placeholder="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." />
         </div>
 
         <div class="field">
           <label data-i18n="lbl_reference_site">Referans Site <span class="hint" data-i18n="hint_design_example">(beğendiğiniz tasarım örneği)</span></label>
-          <input type="url" name="reference_site" placeholder="https://..." />
+          <input type="url" name="Referans Site" placeholder="https://..." />
         </div>
       </div>
     </div>
@@ -931,71 +931,71 @@
         <div class="field">
           <label data-i18n="lbl_content_about">Hakkımızda</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_about" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="content_about" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="Hakkımızda" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="Hakkımızda" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
-          <input type="text" name="content_about_link" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="Hakkımızda Linki" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
         </div>
 
         <div class="field">
           <label data-i18n="lbl_content_terms">Şartlar &amp; Koşullar</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_terms" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="content_terms" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="Şartlar ve Koşullar" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="Şartlar ve Koşullar" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
-          <input type="text" name="content_terms_link" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="Şartlar Linki" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
         </div>
 
         <div class="field">
           <label data-i18n="lbl_content_privacy">Gizlilik Politikası</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_privacy" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="content_privacy" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="Gizlilik Politikası" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="Gizlilik Politikası" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
-          <input type="text" name="content_privacy_link" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="Gizlilik Linki" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
         </div>
 
         <div class="field">
           <label data-i18n="lbl_content_rg">Sorumlu Kumar / Responsible Gambling <span class="hint" data-i18n="hint_license_required">(lisans için genellikle zorunlu)</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="content_rg" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="content_rg" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-            <label><input type="radio" name="content_rg" value="none" /> <span data-i18n="opt_not_needed">Gerekmiyor</span></label>
+            <label><input type="radio" name="Sorumlu Oyun İçeriği" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="Sorumlu Oyun İçeriği" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="Sorumlu Oyun İçeriği" value="none" /> <span data-i18n="opt_not_needed">Gerekmiyor</span></label>
           </div>
-          <input type="text" name="content_rg_link" data-ph-tr="İçerik linki (hazırsa)" data-ph-en="Content link (if ready)" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="Sorumlu Oyun Linki" data-ph-tr="İçerik linki (hazırsa)" data-ph-en="Content link (if ready)" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
         </div>
 
         <div class="field">
           <label data-i18n="lbl_content_faq">SSS (Sıkça Sorulan Sorular)</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_faq" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="content_faq" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-            <label><input type="radio" name="content_faq" value="none" /> <span data-i18n="opt_dont_want">İstemiyorum</span></label>
+            <label><input type="radio" name="SSS" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="SSS" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="SSS" value="none" /> <span data-i18n="opt_dont_want">İstemiyorum</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_content_contact">İletişim Sayfası</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_contact" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="content_contact" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="İletişim Sayfası" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="İletişim Sayfası" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_content_promo">Promosyonlar / Kampanyalar Sayfası</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_promo" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="content_promo" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-            <label><input type="radio" name="content_promo" value="none" /> <span data-i18n="opt_dont_want">İstemiyorum</span></label>
+            <label><input type="radio" name="Promosyon İçeriği" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="Promosyon İçeriği" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="Promosyon İçeriği" value="none" /> <span data-i18n="opt_dont_want">İstemiyorum</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_content_blog">Blog / Haber Bölümü</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_blog" value="yes" /> <span data-i18n="opt_yes_want">Evet, istiyorum</span></label>
-            <label><input type="radio" name="content_blog" value="no" /> <span data-i18n="opt_no_dont_want">Hayır, istemiyorum</span></label>
+            <label><input type="radio" name="Blog" value="yes" /> <span data-i18n="opt_yes_want">Evet, istiyorum</span></label>
+            <label><input type="radio" name="Blog" value="no" /> <span data-i18n="opt_no_dont_want">Hayır, istemiyorum</span></label>
           </div>
         </div>
 
@@ -1004,13 +1004,13 @@
         <!-- İçerik dili -->
         <div class="field">
           <label data-i18n="lbl_content_language">İçerikler hangi dilde hazırlandı / hazırlanacak?</label>
-          <input type="text" name="content_language" data-ph-tr="örn. Türkçe, İngilizce, her ikisi" data-ph-en="e.g. Turkish, English, both" placeholder="örn. Türkçe, İngilizce, her ikisi" />
+          <input type="text" name="İçerik Dili" data-ph-tr="örn. Türkçe, İngilizce, her ikisi" data-ph-en="e.g. Turkish, English, both" placeholder="örn. Türkçe, İngilizce, her ikisi" />
         </div>
         <div class="field">
           <label data-i18n="lbl_content_translation">Çeviri gerekiyor mu?</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_translation" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="content_translation" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="İçerik Çevirisi" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="İçerik Çevirisi" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
@@ -1020,22 +1020,22 @@
         <div class="field">
           <label data-i18n="lbl_bonus_types">Bonus Türleri <span class="hint" data-i18n="hint_select_active">(aktif etmek istediklerinizi seçin)</span></label>
           <div class="check-group">
-            <label><input type="checkbox" name="bonus_welcome" /> <span data-i18n="opt_welcome_bonus">Hoşgeldin Bonusu</span></label>
-            <label><input type="checkbox" name="bonus_deposit" /> <span data-i18n="opt_deposit_bonus">Yatırım Bonusu</span></label>
-            <label><input type="checkbox" name="bonus_freespin" /> Freespin</label>
-            <label><input type="checkbox" name="bonus_cashback" /> Cashback</label>
-            <label><input type="checkbox" name="bonus_referral" /> <span data-i18n="opt_referral_bonus">Arkadaş Davet Bonusu</span></label>
-            <label><input type="checkbox" name="bonus_vip" /> <span data-i18n="opt_vip_loyalty">VIP / Sadakat Programı</span></label>
+            <label><input type="checkbox" name="Bonus - Hoşgeldin" /> <span data-i18n="opt_welcome_bonus">Hoşgeldin Bonusu</span></label>
+            <label><input type="checkbox" name="Bonus - Yatırım" /> <span data-i18n="opt_deposit_bonus">Yatırım Bonusu</span></label>
+            <label><input type="checkbox" name="Bonus - Freespin" /> Freespin</label>
+            <label><input type="checkbox" name="Bonus - Cashback" /> Cashback</label>
+            <label><input type="checkbox" name="Bonus - Referral" /> <span data-i18n="opt_referral_bonus">Arkadaş Davet Bonusu</span></label>
+            <label><input type="checkbox" name="Bonus - VIP" /> <span data-i18n="opt_vip_loyalty">VIP / Sadakat Programı</span></label>
             <label><input type="checkbox" name="bonus_noDeposit" /> <span data-i18n="opt_no_deposit_bonus">Yatırımsız Bonus</span></label>
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_bonus_rules">Bonus kuralları / çevrim şartları hazır mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="content_bonus" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="content_bonus" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
+            <label><input type="radio" name="Bonus İçeriği" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
+            <label><input type="radio" name="Bonus İçeriği" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
           </div>
-          <input type="text" name="content_bonus_link" data-ph-tr="İçerik linki (hazırsa)" data-ph-en="Content link (if ready)" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
+          <input type="text" name="Bonus Linki" data-ph-tr="İçerik linki (hazırsa)" data-ph-en="Content link (if ready)" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
         </div>
       </div>
     </div>
@@ -1057,9 +1057,9 @@
         <div class="field">
           <label style="color:var(--brand);font-weight:700;">⭐ Tap King Originals</label>
           <div class="check-group">
-            <label><input type="checkbox" name="prov_tapking" /> TapKing</label>
-            <label><input type="checkbox" name="prov_tapking_originals" /> TapKing Originals</label>
-            <label><input type="checkbox" name="prov_tapking_lc" /> TapKing LC (Live)</label>
+            <label><input type="checkbox" name="Sağlayıcı - Tap King" /> TapKing</label>
+            <label><input type="checkbox" name="Sağlayıcı - Tap King Originals" /> TapKing Originals</label>
+            <label><input type="checkbox" name="Sağlayıcı - Tap King Live" /> TapKing LC (Live)</label>
           </div>
         </div>
 
@@ -1069,58 +1069,58 @@
         <div class="field">
           <label data-i18n="lbl_slot_providers">🎰 Slot Sağlayıcılar</label>
           <div class="check-group">
-            <label><input type="checkbox" name="prov_pragmatic" /> Pragmatic Play</label>
-            <label><input type="checkbox" name="prov_bgaming" /> BGaming</label>
-            <label><input type="checkbox" name="prov_betsoft" /> BetSoft</label>
-            <label><input type="checkbox" name="prov_hacksaw" /> Hacksaw</label>
-            <label><input type="checkbox" name="prov_pgsoft" /> PGSoft</label>
-            <label><input type="checkbox" name="prov_avatar_ux" /> Avatar UX</label>
+            <label><input type="checkbox" name="Sağlayıcı - Pragmatic Play" /> Pragmatic Play</label>
+            <label><input type="checkbox" name="Sağlayıcı - BGaming" /> BGaming</label>
+            <label><input type="checkbox" name="Sağlayıcı - Betsoft" /> BetSoft</label>
+            <label><input type="checkbox" name="Sağlayıcı - Hacksaw" /> Hacksaw</label>
+            <label><input type="checkbox" name="Sağlayıcı - PG Soft" /> PGSoft</label>
+            <label><input type="checkbox" name="Sağlayıcı - Avatar UX" /> Avatar UX</label>
             <label><input type="checkbox" name="prov_3oaks" /> 3Oaks</label>
-            <label><input type="checkbox" name="prov_amigo" /> Amigo Gaming</label>
-            <label><input type="checkbox" name="prov_tada" /> TADA</label>
-            <label><input type="checkbox" name="prov_fazi" /> Fazi</label>
-            <label><input type="checkbox" name="prov_spinocchio" /> Spinocchio</label>
-            <label><input type="checkbox" name="prov_egtd" /> EGTD</label>
-            <label><input type="checkbox" name="prov_amusnet" /> Amusnet</label>
-            <label><input type="checkbox" name="prov_xpg" /> XPG</label>
-            <label><input type="checkbox" name="prov_rubyplay" /> Ruby Play</label>
-            <label><input type="checkbox" name="prov_endorphina" /> Endorphina</label>
-            <label><input type="checkbox" name="prov_pateplay" /> PatePlay</label>
+            <label><input type="checkbox" name="Sağlayıcı - Amigo" /> Amigo Gaming</label>
+            <label><input type="checkbox" name="Sağlayıcı - Tada" /> TADA</label>
+            <label><input type="checkbox" name="Sağlayıcı - Fazi" /> Fazi</label>
+            <label><input type="checkbox" name="Sağlayıcı - Spinocchio" /> Spinocchio</label>
+            <label><input type="checkbox" name="Sağlayıcı - EGT Digital" /> EGTD</label>
+            <label><input type="checkbox" name="Sağlayıcı - Amusnet" /> Amusnet</label>
+            <label><input type="checkbox" name="Sağlayıcı - XPG" /> XPG</label>
+            <label><input type="checkbox" name="Sağlayıcı - Ruby Play" /> Ruby Play</label>
+            <label><input type="checkbox" name="Sağlayıcı - Endorphina" /> Endorphina</label>
+            <label><input type="checkbox" name="Sağlayıcı - Pateplay" /> PatePlay</label>
             <label><input type="checkbox" name="prov_77gaming" /> 77 Gaming</label>
-            <label><input type="checkbox" name="prov_ygg" /> Yggdrasil</label>
-            <label><input type="checkbox" name="prov_tomhorn" /> TomHorn</label>
-            <label><input type="checkbox" name="prov_kingmidas" /> King Midas</label>
-            <label><input type="checkbox" name="prov_spinomenal" /> Spinomenal</label>
-            <label><input type="checkbox" name="prov_playnetic" /> Playnetic</label>
-            <label><input type="checkbox" name="prov_caleta" /> Caleta</label>
-            <label><input type="checkbox" name="prov_fugaso" /> Fugaso</label>
-            <label><input type="checkbox" name="prov_turbo" /> Turbo Games</label>
+            <label><input type="checkbox" name="Sağlayıcı - Yggdrasil" /> Yggdrasil</label>
+            <label><input type="checkbox" name="Sağlayıcı - Tom Horn" /> TomHorn</label>
+            <label><input type="checkbox" name="Sağlayıcı - King Midas" /> King Midas</label>
+            <label><input type="checkbox" name="Sağlayıcı - Spinomenal" /> Spinomenal</label>
+            <label><input type="checkbox" name="Sağlayıcı - Playnetic" /> Playnetic</label>
+            <label><input type="checkbox" name="Sağlayıcı - Caleta" /> Caleta</label>
+            <label><input type="checkbox" name="Sağlayıcı - Fugaso" /> Fugaso</label>
+            <label><input type="checkbox" name="Sağlayıcı - Turbo Games" /> Turbo Games</label>
             <label><input type="checkbox" name="prov_cq9" /> CQ9</label>
-            <label><input type="checkbox" name="prov_shadylady" /> Shady Lady</label>
-            <label><input type="checkbox" name="prov_origami" /> Origami</label>
-            <label><input type="checkbox" name="prov_massive" /> Massive Gaming</label>
-            <label><input type="checkbox" name="prov_gameart" /> Gameart</label>
-            <label><input type="checkbox" name="prov_gamzix" /> Gamzix</label>
-            <label><input type="checkbox" name="prov_habanero" /> Habanero</label>
-            <label><input type="checkbox" name="prov_kagaming" /> KA Gaming</label>
-            <label><input type="checkbox" name="prov_cozmo" /> Cozmo Play</label>
-            <label><input type="checkbox" name="prov_ninja" /> Ninja Gaming</label>
-            <label><input type="checkbox" name="prov_darpha" /> Darpha Studios</label>
-            <label><input type="checkbox" name="prov_exa" /> Exa Gaming</label>
-            <label><input type="checkbox" name="prov_kalamba" /> Kalamba</label>
-            <label><input type="checkbox" name="prov_acegaming" /> Ace Gaming</label>
-            <label><input type="checkbox" name="prov_playson" /> Playson</label>
-            <label><input type="checkbox" name="prov_popok" /> PopOk</label>
-            <label><input type="checkbox" name="prov_bfgames" /> BF Games</label>
-            <label><input type="checkbox" name="prov_evoplay" /> Evoplay</label>
-            <label><input type="checkbox" name="prov_wicked" /> Wicked</label>
+            <label><input type="checkbox" name="Sağlayıcı - ShadyLady" /> Shady Lady</label>
+            <label><input type="checkbox" name="Sağlayıcı - Origami" /> Origami</label>
+            <label><input type="checkbox" name="Sağlayıcı - Massive" /> Massive Gaming</label>
+            <label><input type="checkbox" name="Sağlayıcı - GameArt" /> Gameart</label>
+            <label><input type="checkbox" name="Sağlayıcı - Gamzix" /> Gamzix</label>
+            <label><input type="checkbox" name="Sağlayıcı - Habanero" /> Habanero</label>
+            <label><input type="checkbox" name="Sağlayıcı - KA Gaming" /> KA Gaming</label>
+            <label><input type="checkbox" name="Sağlayıcı - Cozmo" /> Cozmo Play</label>
+            <label><input type="checkbox" name="Sağlayıcı - Ninja" /> Ninja Gaming</label>
+            <label><input type="checkbox" name="Sağlayıcı - Darpha" /> Darpha Studios</label>
+            <label><input type="checkbox" name="Sağlayıcı - Exa" /> Exa Gaming</label>
+            <label><input type="checkbox" name="Sağlayıcı - Kalamba" /> Kalamba</label>
+            <label><input type="checkbox" name="Sağlayıcı - Ace Gaming" /> Ace Gaming</label>
+            <label><input type="checkbox" name="Sağlayıcı - Playson" /> Playson</label>
+            <label><input type="checkbox" name="Sağlayıcı - Popok" /> PopOk</label>
+            <label><input type="checkbox" name="Sağlayıcı - BF Games" /> BF Games</label>
+            <label><input type="checkbox" name="Sağlayıcı - Evoplay" /> Evoplay</label>
+            <label><input type="checkbox" name="Sağlayıcı - Wicked" /> Wicked</label>
             <label><input type="checkbox" name="prov_peterSons" /> Peter &amp; Sons</label>
-            <label><input type="checkbox" name="prov_volent" /> VoltEnt</label>
-            <label><input type="checkbox" name="prov_revolver" /> Revolver</label>
-            <label><input type="checkbox" name="prov_bluejack" /> BlueJack</label>
-            <label><input type="checkbox" name="prov_redcarat" /> Red Carat</label>
-            <label><input type="checkbox" name="prov_pascal" /> Pascal</label>
-            <label><input type="checkbox" name="prov_novomatic" /> Novomatic</label>
+            <label><input type="checkbox" name="Sağlayıcı - Volent" /> VoltEnt</label>
+            <label><input type="checkbox" name="Sağlayıcı - Revolver" /> Revolver</label>
+            <label><input type="checkbox" name="Sağlayıcı - Bluejack" /> BlueJack</label>
+            <label><input type="checkbox" name="Sağlayıcı - Red Carat" /> Red Carat</label>
+            <label><input type="checkbox" name="Sağlayıcı - Pascal" /> Pascal</label>
+            <label><input type="checkbox" name="Sağlayıcı - Novomatic" /> Novomatic</label>
           </div>
         </div>
 
@@ -1130,12 +1130,12 @@
         <div class="field">
           <label data-i18n="lbl_crash_providers">🚀 Crash &amp; Instant Games</label>
           <div class="check-group">
-            <label><input type="checkbox" name="prov_spribe" /> Spribe (Aviator)</label>
-            <label><input type="checkbox" name="prov_aviator_llc" /> AVIATOR LLC</label>
-            <label><input type="checkbox" name="prov_aviatrix" /> Aviatrix</label>
-            <label><input type="checkbox" name="prov_inout" /> InOut</label>
-            <label><input type="checkbox" name="prov_smartsoft" /> Smartsoft</label>
-            <label><input type="checkbox" name="prov_marbles" /> 155io (Marbles)</label>
+            <label><input type="checkbox" name="Sağlayıcı - Spribe" /> Spribe (Aviator)</label>
+            <label><input type="checkbox" name="Sağlayıcı - Aviator LLC" /> AVIATOR LLC</label>
+            <label><input type="checkbox" name="Sağlayıcı - Aviatrix" /> Aviatrix</label>
+            <label><input type="checkbox" name="Sağlayıcı - InOut" /> InOut</label>
+            <label><input type="checkbox" name="Sağlayıcı - Smartsoft" /> Smartsoft</label>
+            <label><input type="checkbox" name="Sağlayıcı - Marbles" /> 155io (Marbles)</label>
           </div>
         </div>
 
@@ -1145,15 +1145,15 @@
         <div class="field">
           <label data-i18n="lbl_live_casino_providers">🃏 Canlı Casino Sağlayıcılar</label>
           <div class="check-group">
-            <label><input type="checkbox" name="prov_vivo" /> Vivo Gaming</label>
-            <label><input type="checkbox" name="prov_ezugi" /> Ezugi</label>
-            <label><input type="checkbox" name="prov_luckstreak" /> Lucky Streak</label>
-            <label><input type="checkbox" name="prov_pragmatic_lc" /> Pragmatic Play LC</label>
-            <label><input type="checkbox" name="prov_exa_lc" /> Exa Gaming LC</label>
-            <label><input type="checkbox" name="prov_ninja_lc" /> Ninja Gaming LC</label>
-            <label><input type="checkbox" name="prov_creedroomz" /> CreedRoomz</label>
-            <label><input type="checkbox" name="prov_imaginelive" /> Imagine Live</label>
-            <label><input type="checkbox" name="prov_accamax" /> Accamax</label>
+            <label><input type="checkbox" name="Sağlayıcı - Vivo Gaming" /> Vivo Gaming</label>
+            <label><input type="checkbox" name="Sağlayıcı - Ezugi" /> Ezugi</label>
+            <label><input type="checkbox" name="Sağlayıcı - Luckstreak" /> Lucky Streak</label>
+            <label><input type="checkbox" name="Sağlayıcı - Pragmatic Live" /> Pragmatic Play LC</label>
+            <label><input type="checkbox" name="Sağlayıcı - Exa Live" /> Exa Gaming LC</label>
+            <label><input type="checkbox" name="Sağlayıcı - Ninja Live" /> Ninja Gaming LC</label>
+            <label><input type="checkbox" name="Sağlayıcı - Creed Roomz" /> CreedRoomz</label>
+            <label><input type="checkbox" name="Sağlayıcı - Imagine Live" /> Imagine Live</label>
+            <label><input type="checkbox" name="Sağlayıcı - Accamax" /> Accamax</label>
           </div>
         </div>
 
@@ -1163,9 +1163,9 @@
         <div class="field">
           <label data-i18n="lbl_sports_providers">⚽ Spor, Virtual &amp; TV Oyunları</label>
           <div class="check-group">
-            <label><input type="checkbox" name="prov_goldenrace" /> Golden Race</label>
-            <label><input type="checkbox" name="prov_tvbet" /> TvBet</label>
-            <label><input type="checkbox" name="prov_betgames" /> Bet Games</label>
+            <label><input type="checkbox" name="Sağlayıcı - Golden Race" /> Golden Race</label>
+            <label><input type="checkbox" name="Sağlayıcı - TVBet" /> TvBet</label>
+            <label><input type="checkbox" name="Sağlayıcı - Betgames" /> Bet Games</label>
           </div>
         </div>
 
@@ -1174,31 +1174,31 @@
         <div class="field">
           <label data-i18n="lbl_demo_mode">Demo mod istiyor musunuz? <span class="hint" data-i18n="hint_play_without_deposit">(para yatırmadan oynama)</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="demo_mode" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="demo_mode" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="Demo Modu" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Demo Modu" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_jackpot">Jackpot oyunları istiyor musunuz?</label>
           <div class="radio-group">
-            <label><input type="radio" name="jackpot" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="jackpot" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="Jackpot" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Jackpot" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_existing_contracts">Mevcut sağlayıcı sözleşmeniz var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="existing_contracts" value="yes" /> <span data-i18n="opt_contracts_yes">Evet, kendi sözleşmemi getireceğim</span></label>
-            <label><input type="radio" name="existing_contracts" value="no" /> <span data-i18n="opt_contracts_tapking">Hayır, Tap King üzerinden halledelim</span></label>
-            <label><input type="radio" name="existing_contracts" value="both" /> <span data-i18n="opt_contracts_both">Her ikisi de var</span></label>
+            <label><input type="radio" name="Mevcut Sözleşmeler" value="yes" /> <span data-i18n="opt_contracts_yes">Evet, kendi sözleşmemi getireceğim</span></label>
+            <label><input type="radio" name="Mevcut Sözleşmeler" value="no" /> <span data-i18n="opt_contracts_tapking">Hayır, Tap King üzerinden halledelim</span></label>
+            <label><input type="radio" name="Mevcut Sözleşmeler" value="both" /> <span data-i18n="opt_contracts_both">Her ikisi de var</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_game_notes">Ek notlar / özel talepler <span class="hint" data-i18n="hint_game_providers">(oyun sağlayıcıları ile ilgili)</span></label>
-          <textarea name="game_notes" data-ph-tr="örn. Belirli oyunların kaldırılması, özel içerik talebi..." data-ph-en="e.g. Removal of specific games, custom content requests..." placeholder="örn. Belirli oyunların kaldırılması, özel içerik talebi..."></textarea>
+          <textarea name="Oyun Notları" data-ph-tr="örn. Belirli oyunların kaldırılması, özel içerik talebi..." data-ph-en="e.g. Removal of specific games, custom content requests..." placeholder="örn. Belirli oyunların kaldırılması, özel içerik talebi..."></textarea>
         </div>
       </div>
     </div>
@@ -1217,13 +1217,13 @@
         <!-- Admin erişimi -->
         <div class="field">
           <label data-i18n="lbl_admin_email">Admin Panel E-posta <span class="req">*</span></label>
-          <input type="email" name="admin_email" data-ph-tr="admin@siteadi.com" data-ph-en="admin@yourdomain.com" placeholder="admin@siteadi.com" required />
+          <input type="email" name="Admin E-postası" data-ph-tr="admin@siteadi.com" data-ph-en="admin@yourdomain.com" placeholder="admin@siteadi.com" required />
         </div>
 
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_admin_count">Kaç admin kullanıcısı olacak?</label>
-            <select name="admin_count">
+            <select name="Admin Sayısı">
               <option value="" data-i18n="opt_select">Seçiniz...</option>
               <option>1</option>
               <option>2-5</option>
@@ -1234,8 +1234,8 @@
           <div class="field">
             <label data-i18n="lbl_role_based">Rol bazlı yetki sistemi gerekiyor mu?</label>
             <div class="radio-group">
-              <label><input type="radio" name="role_based" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="role_based" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="Rol Bazlı Erişim" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="Rol Bazlı Erişim" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
         </div>
@@ -1243,12 +1243,12 @@
         <div class="field">
           <label data-i18n="lbl_admin_roles">Hangi roller gerekli? <span class="hint" data-i18n="hint_multiple_select">(birden fazla seçebilirsiniz)</span></label>
           <div class="check-group">
-            <label><input type="checkbox" name="role_superadmin" /> <span data-i18n="opt_super_admin">Süper Admin</span></label>
-            <label><input type="checkbox" name="role_operator" /> <span data-i18n="opt_operator">Operatör</span></label>
-            <label><input type="checkbox" name="role_finance" /> <span data-i18n="opt_finance">Finans</span></label>
-            <label><input type="checkbox" name="role_cs" /> <span data-i18n="opt_customer_service">Müşteri Hizmetleri</span></label>
-            <label><input type="checkbox" name="role_affiliate" /> <span data-i18n="opt_affiliate_manager">Affiliate Yöneticisi</span></label>
-            <label><input type="checkbox" name="role_marketing" /> <span data-i18n="opt_marketing">Pazarlama</span></label>
+            <label><input type="checkbox" name="Rol - Süper Admin" /> <span data-i18n="opt_super_admin">Süper Admin</span></label>
+            <label><input type="checkbox" name="Rol - Operatör" /> <span data-i18n="opt_operator">Operatör</span></label>
+            <label><input type="checkbox" name="Rol - Finans" /> <span data-i18n="opt_finance">Finans</span></label>
+            <label><input type="checkbox" name="Rol - Müşteri Hizmetleri" /> <span data-i18n="opt_customer_service">Müşteri Hizmetleri</span></label>
+            <label><input type="checkbox" name="Rol - Affiliate" /> <span data-i18n="opt_affiliate_manager">Affiliate Yöneticisi</span></label>
+            <label><input type="checkbox" name="Rol - Pazarlama" /> <span data-i18n="opt_marketing">Pazarlama</span></label>
           </div>
         </div>
 
@@ -1258,25 +1258,25 @@
         <div class="field">
           <label data-i18n="lbl_working_hours">Site çalışma saatleri</label>
           <div class="radio-group">
-            <label><input type="radio" name="working_hours" value="247" /> <span data-i18n="opt_247">7/24 kesintisiz</span></label>
-            <label><input type="radio" name="working_hours" value="limited" /> <span data-i18n="opt_limited_hours">Belirli saatler</span></label>
+            <label><input type="radio" name="Çalışma Saatleri" value="247" /> <span data-i18n="opt_247">7/24 kesintisiz</span></label>
+            <label><input type="radio" name="Çalışma Saatleri" value="limited" /> <span data-i18n="opt_limited_hours">Belirli saatler</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_support_channels">Müşteri destek kanalları</label>
           <div class="check-group">
-            <label><input type="checkbox" name="support_livechat" /> <span data-i18n="opt_live_chat">Canlı Chat</span></label>
-            <label><input type="checkbox" name="support_email" /> <span data-i18n="opt_email">E-posta</span></label>
-            <label><input type="checkbox" name="support_phone" /> <span data-i18n="opt_phone">Telefon</span></label>
-            <label><input type="checkbox" name="support_telegram" /> Telegram</label>
-            <label><input type="checkbox" name="support_whatsapp" /> WhatsApp</label>
+            <label><input type="checkbox" name="Canlı Destek" /> <span data-i18n="opt_live_chat">Canlı Chat</span></label>
+            <label><input type="checkbox" name="Destek E-postası" /> <span data-i18n="opt_email">E-posta</span></label>
+            <label><input type="checkbox" name="Destek Telefonu" /> <span data-i18n="opt_phone">Telefon</span></label>
+            <label><input type="checkbox" name="Destek Telegram" /> Telegram</label>
+            <label><input type="checkbox" name="Destek WhatsApp" /> WhatsApp</label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_support_lang">Müşteri hizmetleri dili / dilleri</label>
-          <input type="text" name="support_lang" data-ph-tr="örn. Türkçe, İngilizce" data-ph-en="e.g. Turkish, English" placeholder="örn. Türkçe, İngilizce" />
+          <input type="text" name="Destek Dili" data-ph-tr="örn. Türkçe, İngilizce" data-ph-en="e.g. Turkish, English" placeholder="örn. Türkçe, İngilizce" />
         </div>
 
         <hr class="divider" />
@@ -1285,27 +1285,27 @@
         <div class="field">
           <label data-i18n="lbl_auto_report">Otomatik rapor e-postası istiyor musunuz?</label>
           <div class="check-group">
-            <label><input type="checkbox" name="report_daily" /> <span data-i18n="opt_daily">Günlük</span></label>
-            <label><input type="checkbox" name="report_weekly" /> <span data-i18n="opt_weekly">Haftalık</span></label>
-            <label><input type="checkbox" name="report_monthly" /> <span data-i18n="opt_monthly">Aylık</span></label>
+            <label><input type="checkbox" name="Rapor - Günlük" /> <span data-i18n="opt_daily">Günlük</span></label>
+            <label><input type="checkbox" name="Rapor - Haftalık" /> <span data-i18n="opt_weekly">Haftalık</span></label>
+            <label><input type="checkbox" name="Rapor - Aylık" /> <span data-i18n="opt_monthly">Aylık</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_crm">CRM entegrasyonu gerekiyor mu?</label>
           <div class="radio-group">
-            <label><input type="radio" name="crm" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="crm" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-            <label><input type="radio" name="crm" value="discuss" /> <span data-i18n="opt_lets_discuss">Görüşelim</span></label>
+            <label><input type="radio" name="CRM" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="CRM" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="CRM" value="discuss" /> <span data-i18n="opt_lets_discuss">Görüşelim</span></label>
           </div>
         </div>
 
         <div class="field">
           <label data-i18n="lbl_affiliate">Affiliate / Ortaklık sistemi istiyor musunuz?</label>
           <div class="radio-group">
-            <label><input type="radio" name="affiliate" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="affiliate" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-            <label><input type="radio" name="affiliate" value="discuss" /> <span data-i18n="opt_lets_discuss">Görüşelim</span></label>
+            <label><input type="radio" name="Affiliate" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Affiliate" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="Affiliate" value="discuss" /> <span data-i18n="opt_lets_discuss">Görüşelim</span></label>
           </div>
         </div>
       </div>
@@ -1326,7 +1326,7 @@
           <label data-i18n="lbl_sms_provider">SMS Sağlayıcı Seçimi</label>
           <div class="provider-grid">
             <label class="provider-card">
-              <input type="radio" name="sms_provider" value="smsala" />
+              <input type="radio" name="SMS Sağlayıcı" value="smsala" />
               <div class="provider-card-inner">
                 <div class="provider-icon">📱</div>
                 <div class="provider-name">SMSala</div>
@@ -1334,7 +1334,7 @@
               </div>
             </label>
             <label class="provider-card">
-              <input type="radio" name="sms_provider" value="getir_sms" />
+              <input type="radio" name="SMS Sağlayıcı" value="getir_sms" />
               <div class="provider-card-inner">
                 <div class="provider-icon">🚀</div>
                 <div class="provider-name">Getir SMS</div>
@@ -1342,7 +1342,7 @@
               </div>
             </label>
             <label class="provider-card">
-              <input type="radio" name="sms_provider" value="other_sms" />
+              <input type="radio" name="SMS Sağlayıcı" value="other_sms" />
               <div class="provider-card-inner">
                 <div class="provider-icon">⚙️</div>
                 <div class="provider-name" data-i18n="opt_other_provider">Diğer</div>
@@ -1353,19 +1353,19 @@
         </div>
         <div class="field" id="sms_other_wrap" style="display:none">
           <label data-i18n="lbl_sms_other">SMS Sağlayıcı Adı (Diğer)</label>
-          <input type="text" name="sms_provider_other" data-ph-tr="Sağlayıcı adını giriniz" data-ph-en="Enter provider name" placeholder="Sağlayıcı adını giriniz" />
+          <input type="text" name="Diğer SMS Sağlayıcı" data-ph-tr="Sağlayıcı adını giriniz" data-ph-en="Enter provider name" placeholder="Sağlayıcı adını giriniz" />
         </div>
         <div class="field">
           <label data-i18n="lbl_sms_api">SMS API Anahtarı / Erişim Bilgileri <span class="hint" data-i18n="hint_optional_later">(opsiyonel — sonra paylaşılabilir)</span></label>
-          <textarea name="sms_api_key" data-ph-tr="API Key veya ilgili erişim notları..." data-ph-en="API Key or relevant access notes..." placeholder="API Key veya ilgili erişim notları..."></textarea>
+          <textarea name="SMS API Anahtarı" data-ph-tr="API Key veya ilgili erişim notları..." data-ph-en="API Key or relevant access notes..." placeholder="API Key veya ilgili erişim notları..."></textarea>
         </div>
         <div class="field">
           <label data-i18n="lbl_sms_usage">SMS Kullanım Amaçları</label>
           <div class="check-group">
-            <label><input type="checkbox" name="sms_use_otp" /> <span data-i18n="opt_sms_otp">OTP / Doğrulama</span></label>
-            <label><input type="checkbox" name="sms_use_promo" /> <span data-i18n="opt_sms_promo">Kampanya / Promosyon</span></label>
-            <label><input type="checkbox" name="sms_use_transactional" /> <span data-i18n="opt_sms_transactional">İşlem Bildirimi</span></label>
-            <label><input type="checkbox" name="sms_use_support" /> <span data-i18n="opt_sms_support">Müşteri Destek</span></label>
+            <label><input type="checkbox" name="SMS - OTP" /> <span data-i18n="opt_sms_otp">OTP / Doğrulama</span></label>
+            <label><input type="checkbox" name="SMS - Promosyon" /> <span data-i18n="opt_sms_promo">Kampanya / Promosyon</span></label>
+            <label><input type="checkbox" name="SMS - İşlem" /> <span data-i18n="opt_sms_transactional">İşlem Bildirimi</span></label>
+            <label><input type="checkbox" name="SMS - Destek" /> <span data-i18n="opt_sms_support">Müşteri Destek</span></label>
           </div>
         </div>
       </div>
@@ -1384,7 +1384,7 @@
       <div class="section-body">
         <div class="field">
           <label data-i18n="email_provider_label">E-posta Sağlayıcı</label>
-          <select name="email_provider_status">
+          <select name="E-posta Durumu">
             <option value="">—</option>
             <option value="undecided" data-i18n="opt_email_undecided">Henüz karar verilmedi</option>
             <option value="own" data-i18n="opt_email_own">Kendi sağlayıcımız var</option>
@@ -1412,13 +1412,13 @@
           <div class="field">
             <label data-i18n="lbl_kyc_required">KYC zorunlu mu? <span class="req">*</span></label>
             <div class="radio-group">
-              <label><input type="radio" name="kyc_required" value="yes" onchange="toggleSub('kyc_details','yes','kyc_required')" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="kyc_required" value="no" onchange="toggleSub('kyc_details','yes','kyc_required')" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="KYC Zorunlu mu" value="yes" onchange="toggleSub('kyc_details','yes','kyc_required')" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="KYC Zorunlu mu" value="no" onchange="toggleSub('kyc_details','yes','kyc_required')" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
           <div class="field">
             <label data-i18n="lbl_kyc_level">KYC Seviyesi</label>
-            <select name="kyc_level">
+            <select name="KYC Seviyesi">
               <option value="" data-i18n="opt_select_plain">Seçiniz</option>
               <option value="basic" data-i18n="opt_kyc_basic">Temel (isim + doğum tarihi)</option>
               <option value="advanced" data-i18n="opt_kyc_advanced">Gelişmiş (kimlik belgesi)</option>
@@ -1430,22 +1430,22 @@
           <div class="field">
             <label data-i18n="lbl_kyc_provider">KYC Sağlayıcısı</label>
             <div class="check-group">
-              <label><input type="checkbox" name="kyc_jumio" /> Jumio</label>
-              <label><input type="checkbox" name="kyc_onfido" /> Onfido</label>
-              <label><input type="checkbox" name="kyc_veriff" /> Veriff</label>
-              <label><input type="checkbox" name="kyc_sumsub" /> Sum&amp;Substance</label>
-              <label><input type="checkbox" name="kyc_manual" /> <span data-i18n="opt_kyc_manual">Manuel (dahili)</span></label>
-              <label><input type="checkbox" name="kyc_other" /> <span data-i18n="opt_other">Diğer</span></label>
+              <label><input type="checkbox" name="KYC - Jumio" /> Jumio</label>
+              <label><input type="checkbox" name="KYC - Onfido" /> Onfido</label>
+              <label><input type="checkbox" name="KYC - Veriff" /> Veriff</label>
+              <label><input type="checkbox" name="KYC - Sumsub" /> Sum&amp;Substance</label>
+              <label><input type="checkbox" name="KYC - Manuel" /> <span data-i18n="opt_kyc_manual">Manuel (dahili)</span></label>
+              <label><input type="checkbox" name="KYC - Diğer" /> <span data-i18n="opt_other">Diğer</span></label>
             </div>
           </div>
           <div class="field">
             <label data-i18n="lbl_accepted_docs">Kabul Edilen Belgeler</label>
             <div class="check-group">
-              <label><input type="checkbox" name="doc_id" /> <span data-i18n="opt_doc_id">Kimlik Kartı</span></label>
-              <label><input type="checkbox" name="doc_passport" /> <span data-i18n="opt_doc_passport">Pasaport</span></label>
-              <label><input type="checkbox" name="doc_license" /> <span data-i18n="opt_doc_license">Ehliyet</span></label>
-              <label><input type="checkbox" name="doc_address" /> <span data-i18n="opt_doc_address">Adres Belgesi</span></label>
-              <label><input type="checkbox" name="doc_selfie" /> <span data-i18n="opt_doc_selfie">Selfie / Canlı Yüz</span></label>
+              <label><input type="checkbox" name="Belge - Kimlik" /> <span data-i18n="opt_doc_id">Kimlik Kartı</span></label>
+              <label><input type="checkbox" name="Belge - Pasaport" /> <span data-i18n="opt_doc_passport">Pasaport</span></label>
+              <label><input type="checkbox" name="Belge - Lisans" /> <span data-i18n="opt_doc_license">Ehliyet</span></label>
+              <label><input type="checkbox" name="Belge - Adres" /> <span data-i18n="opt_doc_address">Adres Belgesi</span></label>
+              <label><input type="checkbox" name="Belge - Selfie" /> <span data-i18n="opt_doc_selfie">Selfie / Canlı Yüz</span></label>
             </div>
           </div>
         </div>
@@ -1456,24 +1456,24 @@
           <div class="field">
             <label data-i18n="lbl_aml_required">AML sistemi gerekli mi?</label>
             <div class="radio-group">
-              <label><input type="radio" name="aml_required" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="aml_required" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="AML Zorunlu mu" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="AML Zorunlu mu" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
           <div class="field">
             <label data-i18n="lbl_pep_screening">PEP &amp; Yaptırım Taraması</label>
             <div class="radio-group">
-              <label><input type="radio" name="pep_screening" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="pep_screening" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="PEP Taraması" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="PEP Taraması" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
             </div>
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_str">Şüpheli İşlem Bildirimi (STR) aktif mi?</label>
           <div class="radio-group">
-            <label><input type="radio" name="str_active" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="str_active" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-            <label><input type="radio" name="str_active" value="later" /> <span data-i18n="opt_to_be_added">Sonra Eklenecek</span></label>
+            <label><input type="radio" name="STR Aktif mi" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="STR Aktif mi" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="STR Aktif mi" value="later" /> <span data-i18n="opt_to_be_added">Sonra Eklenecek</span></label>
           </div>
         </div>
 
@@ -1482,12 +1482,12 @@
         <div class="field">
           <label data-i18n="lbl_rg_tools">Hangi sorumlu oyun araçları gerekiyor?</label>
           <div class="check-group">
-            <label><input type="checkbox" name="rg_self_exclusion" /> <span data-i18n="opt_rg_self_exclusion">Self-exclusion (kendi kendini dışlama)</span></label>
-            <label><input type="checkbox" name="rg_deposit_limit" /> <span data-i18n="opt_rg_deposit_limit">Para yatırma limiti</span></label>
-            <label><input type="checkbox" name="rg_loss_limit" /> <span data-i18n="opt_rg_loss_limit">Kayıp limiti</span></label>
-            <label><input type="checkbox" name="rg_session_limit" /> <span data-i18n="opt_rg_session_limit">Oturum süresi limiti</span></label>
-            <label><input type="checkbox" name="rg_cooling_off" /> <span data-i18n="opt_rg_cooling_off">Soğuma dönemi (cooling-off)</span></label>
-            <label><input type="checkbox" name="rg_reality_check" /> <span data-i18n="opt_rg_reality_check">Reality check bildirimleri</span></label>
+            <label><input type="checkbox" name="Sorumlu Oyun - Kendini Dışlama" /> <span data-i18n="opt_rg_self_exclusion">Self-exclusion (kendi kendini dışlama)</span></label>
+            <label><input type="checkbox" name="Sorumlu Oyun - Yatırım Limiti" /> <span data-i18n="opt_rg_deposit_limit">Para yatırma limiti</span></label>
+            <label><input type="checkbox" name="Sorumlu Oyun - Kayıp Limiti" /> <span data-i18n="opt_rg_loss_limit">Kayıp limiti</span></label>
+            <label><input type="checkbox" name="Sorumlu Oyun - Oturum Limiti" /> <span data-i18n="opt_rg_session_limit">Oturum süresi limiti</span></label>
+            <label><input type="checkbox" name="Sorumlu Oyun - Soğuma Süresi" /> <span data-i18n="opt_rg_cooling_off">Soğuma dönemi (cooling-off)</span></label>
+            <label><input type="checkbox" name="Sorumlu Oyun - Gerçeklik Kontrolü" /> <span data-i18n="opt_rg_reality_check">Reality check bildirimleri</span></label>
           </div>
         </div>
 
@@ -1496,7 +1496,7 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_min_age">Minimum Oyuncu Yaşı</label>
-            <select name="min_age">
+            <select name="Min. Yaş">
               <option value="" data-i18n="opt_select_plain">Seçiniz</option>
               <option value="18">18</option>
               <option value="21">21</option>
@@ -1505,7 +1505,7 @@
           </div>
           <div class="field">
             <label data-i18n="lbl_age_verification">Yaş Doğrulama Yöntemi</label>
-            <select name="age_verification">
+            <select name="Yaş Doğrulama">
               <option value="" data-i18n="opt_select_plain">Seçiniz</option>
               <option value="kyc" data-i18n="opt_age_kyc">KYC belgesi ile</option>
               <option value="declaration" data-i18n="opt_age_declaration">Kullanıcı beyanı</option>
@@ -1515,13 +1515,13 @@
         </div>
         <div class="field">
           <label data-i18n="lbl_blocked_countries">Yasaklı Ülkeler</label>
-          <textarea name="blocked_countries" data-ph-tr="örn. ABD, İsrail, İngiltere (lisans kısıtlamaları), Fransa..." data-ph-en="e.g. USA, Israel, UK (license restrictions), France..." placeholder="örn. ABD, İsrail, İngiltere (lisans kısıtlamaları), Fransa..." style="min-height:80px;"></textarea>
+          <textarea name="Engelli Ülkeler" data-ph-tr="örn. ABD, İsrail, İngiltere (lisans kısıtlamaları), Fransa..." data-ph-en="e.g. USA, Israel, UK (license restrictions), France..." placeholder="örn. ABD, İsrail, İngiltere (lisans kısıtlamaları), Fransa..." style="min-height:80px;"></textarea>
         </div>
         <div class="field">
           <label data-i18n="lbl_ip_blocking">IP Engelleme Aktif mi?</label>
           <div class="radio-group">
-            <label><input type="radio" name="ip_blocking" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="ip_blocking" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="IP Engelleme" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="IP Engelleme" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
@@ -1530,12 +1530,12 @@
         <div class="field">
           <label data-i18n="lbl_security_measures">Güvenlik önlemleri</label>
           <div class="check-group">
-            <label><input type="checkbox" name="sec_ssl" /> <span data-i18n="opt_sec_ssl">SSL Sertifikası (HTTPS)</span></label>
+            <label><input type="checkbox" name="Güvenlik - SSL" /> <span data-i18n="opt_sec_ssl">SSL Sertifikası (HTTPS)</span></label>
             <label><input type="checkbox" name="sec_2fa" /> <span data-i18n="opt_sec_2fa">2FA — Admin panel için zorunlu</span></label>
-            <label><input type="checkbox" name="sec_ddos" /> <span data-i18n="opt_sec_ddos">DDoS koruması</span></label>
-            <label><input type="checkbox" name="sec_waf" /> Web Application Firewall (WAF)</label>
-            <label><input type="checkbox" name="sec_pentest" /> <span data-i18n="opt_sec_pentest">Penetrasyon testi</span></label>
-            <label><input type="checkbox" name="sec_ip_whitelist" /> <span data-i18n="opt_sec_whitelist">IP whitelist (admin erişimi)</span></label>
+            <label><input type="checkbox" name="Güvenlik - DDoS" /> <span data-i18n="opt_sec_ddos">DDoS koruması</span></label>
+            <label><input type="checkbox" name="Güvenlik - WAF" /> Web Application Firewall (WAF)</label>
+            <label><input type="checkbox" name="Güvenlik - Pentest" /> <span data-i18n="opt_sec_pentest">Penetrasyon testi</span></label>
+            <label><input type="checkbox" name="Güvenlik - IP Whitelist" /> <span data-i18n="opt_sec_whitelist">IP whitelist (admin erişimi)</span></label>
           </div>
         </div>
 
@@ -1545,14 +1545,14 @@
           <div class="field">
             <label data-i18n="lbl_gdpr_required">GDPR uyumu gerekli mi?</label>
             <div class="radio-group">
-              <label><input type="radio" name="gdpr_required" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="gdpr_required" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-              <label><input type="radio" name="gdpr_required" value="unknown" /> <span data-i18n="opt_dont_know">Bilmiyorum</span></label>
+              <label><input type="radio" name="GDPR Zorunlu mu" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+              <label><input type="radio" name="GDPR Zorunlu mu" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              <label><input type="radio" name="GDPR Zorunlu mu" value="unknown" /> <span data-i18n="opt_dont_know">Bilmiyorum</span></label>
             </div>
           </div>
           <div class="field">
             <label data-i18n="lbl_data_retention">Veri Saklama Süresi</label>
-            <select name="data_retention">
+            <select name="Veri Saklama">
               <option value="" data-i18n="opt_select_plain">Seçiniz</option>
               <option value="1y" data-i18n="opt_1year">1 Yıl</option>
               <option value="2y" data-i18n="opt_2years">2 Yıl</option>
@@ -1565,10 +1565,10 @@
         <div class="field">
           <label data-i18n="lbl_data_privacy">Veri &amp; Gizlilik gereksinimleri</label>
           <div class="check-group">
-            <label><input type="checkbox" name="priv_cookie_policy" /> <span data-i18n="opt_cookie_policy">Çerez politikası sayfası</span></label>
-            <label><input type="checkbox" name="priv_privacy_policy" /> <span data-i18n="opt_privacy_policy">Gizlilik politikası sayfası</span></label>
-            <label><input type="checkbox" name="priv_consent" /> <span data-i18n="opt_data_consent">Kullanıcı veri işleme onayı (consent banner)</span></label>
-            <label><input type="checkbox" name="priv_right_delete" /> <span data-i18n="opt_right_to_delete">Kullanıcı verisi silme talebi hakkı</span></label>
+            <label><input type="checkbox" name="Çerez Politikası" /> <span data-i18n="opt_cookie_policy">Çerez politikası sayfası</span></label>
+            <label><input type="checkbox" name="Gizlilik Politikası Onayı" /> <span data-i18n="opt_privacy_policy">Gizlilik politikası sayfası</span></label>
+            <label><input type="checkbox" name="Açık Rıza" /> <span data-i18n="opt_data_consent">Kullanıcı veri işleme onayı (consent banner)</span></label>
+            <label><input type="checkbox" name="Silinme Hakkı" /> <span data-i18n="opt_right_to_delete">Kullanıcı verisi silme talebi hakkı</span></label>
           </div>
         </div>
 
@@ -1592,11 +1592,11 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_launch_date">Tercih Edilen Lansman Tarihi</label>
-            <input type="text" name="launch_date" data-ph-tr="örn. Eylül 2025" data-ph-en="e.g. September 2025" placeholder="örn. Eylül 2025" />
+            <input type="text" name="Yayın Tarihi" data-ph-tr="örn. Eylül 2025" data-ph-en="e.g. September 2025" placeholder="örn. Eylül 2025" />
           </div>
           <div class="field">
             <label data-i18n="lbl_project_priority">Proje Önceliği</label>
-            <select name="project_priority">
+            <select name="Proje Önceliği">
               <option value="" data-i18n="opt_select_plain">Seçiniz</option>
               <option value="urgent" data-i18n="opt_priority_urgent">Acil (1 ay içinde)</option>
               <option value="normal" data-i18n="opt_priority_normal">Normal (1–3 ay)</option>
@@ -1606,7 +1606,7 @@
         </div>
         <div class="field">
           <label data-i18n="lbl_budget">Bütçe Aralığı <span class="hint" data-i18n="hint_optional">(opsiyonel)</span></label>
-          <select name="budget_range">
+          <select name="Bütçe Aralığı">
             <option value="" data-i18n="opt_prefer_not_say">Belirtmek istemiyorum</option>
             <option value="under10k">$10.000 altı</option>
             <option value="10k_25k">$10.000 – $25.000</option>
@@ -1621,26 +1621,26 @@
         <div class="field">
           <label data-i18n="lbl_project_type">Bu proje nasıl bir kurulum? <span class="req">*</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="project_type" value="new" /> <span data-i18n="opt_new_platform">Sıfırdan yeni platform</span></label>
-            <label><input type="radio" name="project_type" value="migration" /> <span data-i18n="opt_migration">Mevcut platformdan göç</span></label>
-            <label><input type="radio" name="project_type" value="redesign" /> <span data-i18n="opt_redesign">Mevcut sitenin yeniden tasarımı</span></label>
+            <label><input type="radio" name="Proje Tipi" value="new" /> <span data-i18n="opt_new_platform">Sıfırdan yeni platform</span></label>
+            <label><input type="radio" name="Proje Tipi" value="migration" /> <span data-i18n="opt_migration">Mevcut platformdan göç</span></label>
+            <label><input type="radio" name="Proje Tipi" value="redesign" /> <span data-i18n="opt_redesign">Mevcut sitenin yeniden tasarımı</span></label>
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_current_platform">Mevcut platformunuz varsa adı nedir?</label>
-          <input type="text" name="current_platform" data-ph-tr="örn. SoftSwiss, EveryMatrix, özel yazılım..." data-ph-en="e.g. SoftSwiss, EveryMatrix, custom software..." placeholder="örn. SoftSwiss, EveryMatrix, özel yazılım..." />
+          <input type="text" name="Mevcut Platform" data-ph-tr="örn. SoftSwiss, EveryMatrix, özel yazılım..." data-ph-en="e.g. SoftSwiss, EveryMatrix, custom software..." placeholder="örn. SoftSwiss, EveryMatrix, özel yazılım..." />
         </div>
         <div class="field">
           <label data-i18n="lbl_custom_api">Özel API / üçüncü taraf entegrasyon ihtiyacı var mı?</label>
           <div class="radio-group">
-            <label><input type="radio" name="custom_api" value="yes" onchange="toggleSub('custom_api_detail','yes','custom_api')" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="custom_api" value="no" onchange="toggleSub('custom_api_detail','yes','custom_api')" /> <span data-i18n="opt_no">Hayır</span></label>
+            <label><input type="radio" name="Özel API" value="yes" onchange="toggleSub('custom_api_detail','yes','custom_api')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Özel API" value="no" onchange="toggleSub('custom_api_detail','yes','custom_api')" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
         <div id="custom_api_detail" style="display:none">
           <div class="field">
             <label data-i18n="lbl_integration_details">Entegrasyon detayları</label>
-            <textarea name="custom_api_notes" data-ph-tr="Hangi API veya sistemle entegrasyon gerekiyor? Detaylı açıklayınız..." data-ph-en="Which API or system needs to be integrated? Please describe in detail..." placeholder="Hangi API veya sistemle entegrasyon gerekiyor? Detaylı açıklayınız..."></textarea>
+            <textarea name="Özel API Notları" data-ph-tr="Hangi API veya sistemle entegrasyon gerekiyor? Detaylı açıklayınız..." data-ph-en="Which API or system needs to be integrated? Please describe in detail..." placeholder="Hangi API veya sistemle entegrasyon gerekiyor? Detaylı açıklayınız..."></textarea>
           </div>
         </div>
 
@@ -1648,11 +1648,11 @@
         <div class="subsection-title" data-i18n="sub_references">Referans &amp; İlham</div>
         <div class="field">
           <label data-i18n="lbl_reference_sites">Beğendiğiniz referans siteler</label>
-          <textarea name="reference_sites" data-ph-tr="Tasarım veya işlevsellik olarak beğendiğiniz sitelerin URL'lerini yazınız..." data-ph-en="Write the URLs of sites you like for their design or functionality..." placeholder="Tasarım veya işlevsellik olarak beğendiğiniz sitelerin URL'lerini yazınız..." style="min-height:80px;"></textarea>
+          <textarea name="Referans Siteler" data-ph-tr="Tasarım veya işlevsellik olarak beğendiğiniz sitelerin URL'lerini yazınız..." data-ph-en="Write the URLs of sites you like for their design or functionality..." placeholder="Tasarım veya işlevsellik olarak beğendiğiniz sitelerin URL'lerini yazınız..." style="min-height:80px;"></textarea>
         </div>
         <div class="field">
           <label data-i18n="lbl_dislikes">Beğenmediğiniz tasarım / özellikler</label>
-          <textarea name="dislikes" data-ph-tr="Kesinlikle istemediğiniz tasarım öğeleri veya özellikler..." data-ph-en="Design elements or features you definitely do not want..." placeholder="Kesinlikle istemediğiniz tasarım öğeleri veya özellikler..."></textarea>
+          <textarea name="Beğenilmeyenler" data-ph-tr="Kesinlikle istemediğiniz tasarım öğeleri veya özellikler..." data-ph-en="Design elements or features you definitely do not want..." placeholder="Kesinlikle istemediğiniz tasarım öğeleri veya özellikler..."></textarea>
         </div>
 
         <!-- Dosya Yükleme -->
@@ -1660,16 +1660,16 @@
         <div class="field">
           <label data-i18n="lbl_brand_materials">Mevcut marka materyalleri var mı?</label>
           <div class="check-group">
-            <label><input type="checkbox" name="asset_logo" /> <span data-i18n="opt_asset_logo">Logo dosyaları (AI, SVG, PNG)</span></label>
-            <label><input type="checkbox" name="asset_brand_guide" /> <span data-i18n="opt_asset_brand_guide">Marka kılavuzu / Brand book</span></label>
-            <label><input type="checkbox" name="asset_figma" /> <span data-i18n="opt_asset_figma">Figma / tasarım dosyası</span></label>
-            <label><input type="checkbox" name="asset_content" /> <span data-i18n="opt_asset_content">Hazır içerikler (metin, görsel)</span></label>
-            <label><input type="checkbox" name="asset_none" /> <span data-i18n="opt_asset_none">Henüz yok, Tap King hazırlayacak</span></label>
+            <label><input type="checkbox" name="Varlık - Logo" /> <span data-i18n="opt_asset_logo">Logo dosyaları (AI, SVG, PNG)</span></label>
+            <label><input type="checkbox" name="Varlık - Marka Kılavuzu" /> <span data-i18n="opt_asset_brand_guide">Marka kılavuzu / Brand book</span></label>
+            <label><input type="checkbox" name="Varlık - Figma" /> <span data-i18n="opt_asset_figma">Figma / tasarım dosyası</span></label>
+            <label><input type="checkbox" name="Varlık - İçerik" /> <span data-i18n="opt_asset_content">Hazır içerikler (metin, görsel)</span></label>
+            <label><input type="checkbox" name="Varlık - Yok" /> <span data-i18n="opt_asset_none">Henüz yok, Tap King hazırlayacak</span></label>
           </div>
         </div>
         <div class="field">
           <label data-i18n="lbl_asset_delivery">Materyalleri nasıl ileteceksiniz?</label>
-          <select name="asset_delivery">
+          <select name="Varlık Teslim">
             <option value="" data-i18n="opt_select_plain">Seçiniz</option>
             <option value="email" data-i18n="opt_delivery_email">E-posta ile</option>
             <option value="drive">Google Drive / Dropbox</option>
@@ -1683,11 +1683,11 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_contact_phone">İletişim Telefon <span class="hint" data-i18n="hint_optional">(opsiyonel)</span></label>
-            <input type="tel" name="contact_phone" placeholder="+90 5XX XXX XX XX" />
+            <input type="tel" name="İletişim Telefonu" placeholder="+90 5XX XXX XX XX" />
           </div>
           <div class="field">
             <label data-i18n="lbl_preferred_contact">Tercih Edilen İletişim Kanalı</label>
-            <select name="preferred_contact">
+            <select name="Tercih Edilen İletişim">
               <option value="" data-i18n="opt_select_plain">Seçiniz</option>
               <option value="email" data-i18n="opt_email">E-posta</option>
               <option value="whatsapp">WhatsApp</option>
@@ -1699,7 +1699,7 @@
         </div>
         <div class="field">
           <label data-i18n="lbl_extra_requests">Özel İstekler veya Ek Notlar</label>
-          <textarea name="extra_requests" data-ph-tr="Belirtmek istediğiniz özel gereksinimler, entegrasyonlar veya notlar..." data-ph-en="Special requirements, integrations or notes you want to mention..." placeholder="Belirtmek istediğiniz özel gereksinimler, entegrasyonlar veya notlar..." style="min-height:120px;"></textarea>
+          <textarea name="Ek Talepler" data-ph-tr="Belirtmek istediğiniz özel gereksinimler, entegrasyonlar veya notlar..." data-ph-en="Special requirements, integrations or notes you want to mention..." placeholder="Belirtmek istediğiniz özel gereksinimler, entegrasyonlar veya notlar..." style="min-height:120px;"></textarea>
         </div>
 
       </div>
@@ -1789,7 +1789,7 @@
   }
 
   /* ── SMS "Diğer" toggle ── */
-  document.querySelectorAll('input[name="sms_provider"]').forEach(r => {
+  document.querySelectorAll('input[name="SMS Sağlayıcı"]').forEach(r => {
     r.addEventListener('change', () => {
       document.getElementById('sms_other_wrap').style.display =
         r.value === 'other_sms' && r.checked ? 'block' : 'none';
@@ -1797,7 +1797,7 @@
   });
 
   /* ── Email "Diğer" toggle ── */
-  document.querySelectorAll('input[name="email_provider"]').forEach(r => {
+  document.querySelectorAll('input[name="E-posta Sağlayıcı"]').forEach(r => {
     r.addEventListener('change', () => {
       document.getElementById('email_other_wrap').style.display =
         r.value === 'other_email' && r.checked ? 'block' : 'none';
