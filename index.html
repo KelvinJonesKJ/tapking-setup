@@ -308,9 +308,30 @@
     .success-icon { font-size: 56px; margin-bottom: 16px; }
     .success-card h2 { font-size: 22px; margin-bottom: 8px; }
     .success-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+    /* ── View Mode ── */
+    #viewMode { display: none; max-width: 860px; margin: 0 auto; padding: 32px 20px 60px; }
+    #viewMode.active { display: block; }
+    .view-banner { background: var(--accent); color: #fff; border-radius: 12px; padding: 20px 28px; margin-bottom: 32px; display: flex; align-items: center; gap: 16px; }
+    .view-banner-icon { font-size: 36px; }
+    .view-banner h2 { font-size: 20px; font-weight: 700; margin: 0 0 4px; }
+    .view-banner p { margin: 0; font-size: 13px; opacity: .85; }
+    .view-section { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-bottom: 20px; }
+    .view-section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-bottom: 16px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+    .view-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; }
+    .view-field { padding: 8px 0; }
+    .view-field-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin-bottom: 4px; }
+    .view-field-value { font-size: 14px; color: var(--text); line-height: 1.5; word-break: break-word; }
+    .view-field-value:empty::after { content: '—'; color: var(--muted); }
+    .view-loading { text-align: center; padding: 80px 20px; color: var(--muted); font-size: 16px; }
+    .view-error { text-align: center; padding: 80px 20px; color: #e74c3c; font-size: 16px; }
+    @media (max-width: 600px) { .view-row { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
+
+<!-- ── View Mode ── -->
+<div id="viewMode"><div class="view-loading">⏳ Yükleniyor...</div></div>
 
 <!-- ── Header ── -->
 <div class="header">
@@ -1851,7 +1872,8 @@
       else allData[k] = v;
     });
 
-    // Airtable kaydı
+    // Airtable kaydı — sadece dolu alanlar
+    const formVeri = Object.entries(allData).filter(([,v]) => v && v.toString().trim()).map(([k,v]) => `${k}: ${v}`).join('\n');
     const atFields = {
       "Name":                   allData["Şirket Adı"] || "(Belirtilmedi)",
       "İletişim E-postası":     allData["İletişim E-postası"] || "",
@@ -1859,33 +1881,39 @@
       "Kayıt Ülkesi":           allData["Kayıt Ülkesi"] || "",
       "Domain Adresi":          allData["Domain Adresi"] || "",
       "Gönderim Tarihi":        new Date().toLocaleString('tr-TR'),
-      "Tüm Form Verisi":        Object.entries(allData).map(([k,v]) => `${k}: ${v}`).join('\n')
+      "Tüm Form Verisi":        formVeri
     };
 
-    // E-posta için formatlanmış mesaj oluştur (yalnızca dolu alanlar)
-    const emailLines = ['YENİ MÜŞTERİ KURULUM FORMU\n'];
-    Object.entries(allData).forEach(([k, v]) => {
-      if (v && v.toString().trim()) emailLines.push(`${k}: ${v}`);
-    });
-    emailLines.push(`\nGönderim Tarihi: ${new Date().toLocaleString('tr-TR')}`);
-
-    const fsData = new FormData();
-    fsData.append('_subject', 'Yeni Site Kurulum Formu — Tap King');
-    fsData.append('_cc', 'support@tapking.com');
-    fsData.append('_captcha', 'false');
-    fsData.append('_template', 'basic');
-    fsData.append('Şirket Adı', allData['Şirket Adı'] || '');
-    fsData.append('message', emailLines.join('\n'));
-
     try {
-      // Airtable'a gönder — Vercel serverless function üzerinden (token güvenli)
-      fetch('/api/airtable', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ fields: atFields })
-      }).catch(() => {});
+      // Airtable'a gönder — record ID'yi al (view linki için)
+      let viewLink = '';
+      try {
+        const atRes = await fetch('/api/airtable', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fields: atFields })
+        });
+        const atData = await atRes.json();
+        if (atData.id) viewLink = `\n\n🔗 Formu görüntüle: ${window.location.origin}/?view=${atData.id}`;
+      } catch(e) {}
 
-      // Formsubmit.co'ya gönder (formatlanmış mesaj)
+      // E-posta için formatlanmış mesaj
+      const emailLines = [`YENİ MÜŞTERİ KURULUM FORMU — ${allData["Şirket Adı"] || "(Belirtilmedi)"}\n`];
+      Object.entries(allData).forEach(([k, v]) => {
+        if (v && v.toString().trim()) emailLines.push(`${k}: ${v}`);
+      });
+      emailLines.push(`\nGönderim Tarihi: ${new Date().toLocaleString('tr-TR')}`);
+      if (viewLink) emailLines.push(viewLink);
+
+      const fsData = new FormData();
+      fsData.append('_subject', `Yeni Kurulum Formu — ${allData["Şirket Adı"] || "Tap King"}`);
+      fsData.append('_cc', 'support@tapking.com');
+      fsData.append('_captcha', 'false');
+      fsData.append('_template', 'basic');
+      fsData.append('Şirket Adı', allData['Şirket Adı'] || '');
+      fsData.append('message', emailLines.join('\n'));
+
+      // Formsubmit.co'ya gönder
       const response = await fetch('https://formsubmit.co/ajax/kelvin@tapking.com', {
         method: 'POST',
         body: fsData,
@@ -1909,6 +1937,90 @@
   document.getElementById('successOverlay').addEventListener('click', function() {
     this.classList.remove('show');
   });
+
+  /* ── View Mode ── */
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const viewId = params.get('view');
+    if (!viewId) return;
+
+    // Hide normal UI, show view mode
+    document.getElementById('viewMode').classList.add('active');
+    document.querySelector('.header').style.display = 'none';
+    document.querySelector('.container').style.display = 'none';
+    const langBtn = document.getElementById('langBtn');
+    if (langBtn) langBtn.style.display = 'none';
+
+    const sectionMap = [
+      { title: 'Şirket & Lisans', keys: ['Şirket Adı','Kayıt Ülkesi','Şirket Kayıt Numarası','Yetkili Adı Soyadı','Pozisyon / Unvan','İletişim E-postası','Lisans Var mı','Lisans Türü','Lisans Sağlayıcı','Lisans Numarası','Lisans Bitiş Tarihi','Lisans Desteği'] },
+      { title: 'Alan Adı & Hosting', keys: ['Platform Adı','Domain Adresi','Domain Sağlayıcı','Domain Sahipliği','DNS Erişimi','Önceki Platform','Veri Migrasyonu','Cloudflare Kullanımı','Cloudflare Geçişi','Hosting Tercihi','SSL Durumu','CDN Kullanımı','Sunucu Lokasyonu'] },
+      { title: 'Ödeme Yöntemleri', keys: ['PSP Var mı','PSP Sağlayıcı','Çekim Onayı','Çekim Limiti','Tap King PSP','Para Birimi','Para Birimi Diğer','Kripto','Düzenleyici Kısıtlamalar','Kısıtlı Ülkeler'] },
+      { title: 'Hedef Pazar & Diller', keys: ['Hedef Ülkeler','Site Dilleri','RTL Desteği','Çeviri Sağlayıcı','İçerik Çevirisi'] },
+      { title: 'Marka & Tasarım', keys: ['Marka Tonu','Tasarım Stili','Tema Tercihi','Cihaz Önceliği','Ana Renkler','İkincil Renkler','Font Tercihi','Logo Dosyaları','Favicon Var mı','Sosyal Medya Görselleri','Referans Siteler','Tasarım Notları'] },
+      { title: 'İçerik Yönetimi', keys: ['Hakkımızda','Şartlar ve Koşullar','Gizlilik Politikası','Sorumlu Oyun İçeriği','SSS','İletişim Sayfası','Promosyon İçeriği','Blog','Bonus İçeriği'] },
+      { title: 'Oyun & Sağlayıcılar', keys: ['Oyun Sağlayıcıları','Mevcut Sözleşmeler','Demo Modu','Jackpot','Öne Çıkan Oyunlar'] },
+      { title: 'Bonus & Promosyonlar', keys: ['Bonus Türleri','Bonus Notları'] },
+      { title: 'Admin & Operasyon', keys: ['Rol Bazlı Erişim','Admin Rolleri','Çalışma Saatleri','Destek Kanalları','Raporlama','CRM','Affiliate'] },
+      { title: 'SMS Entegrasyonu', keys: ['SMS Sağlayıcı','SMS Amaçları','SMS Diğer'] },
+      { title: 'E-posta Entegrasyonu', keys: ['E-posta Sağlayıcı','E-posta Sağlayıcı Diğer'] },
+      { title: 'KYC & Uyumluluk', keys: ['KYC Zorunlu mu','KYC Seviyesi','Kabul Edilen Belgeler','AML Zorunlu mu','PEP Taraması','STR Aktif mi','IP Engelleme','Yaş Doğrulama','Sorumlu Oyun Araçları','Veri Saklama','GDPR Zorunlu mu','GDPR Araçları'] },
+      { title: 'Proje & Zaman Çizelgesi', keys: ['Proje Tipi','Öncelik','Bütçe Aralığı','Lansman Tarihi','Özel API','Ek Notlar','Dijital Varlıklar','Varlık Teslim Yöntemi','İletişim Tercihi'] }
+    ];
+
+    fetch('/api/submission?id=' + encodeURIComponent(viewId))
+      .then(r => r.json())
+      .then(data => {
+        const fields = data.fields || {};
+        const rawData = fields['Tüm Form Verisi'] || '';
+        const companyName = fields['Name'] || 'Bilinmiyor';
+        const submitDate = fields['Gönderim Tarihi'] || '';
+
+        // Parse key-value
+        const values = {};
+        rawData.split('\n').forEach(line => {
+          const idx = line.indexOf(': ');
+          if (idx > -1) {
+            values[line.substring(0, idx).trim()] = line.substring(idx + 2).trim();
+          }
+        });
+
+        let html = `
+          <div class="view-banner">
+            <div class="view-banner-icon">📋</div>
+            <div>
+              <h2>${companyName} — Kurulum Formu</h2>
+              <p>Gönderim Tarihi: ${submitDate}</p>
+            </div>
+          </div>`;
+
+        // Render by sections
+        sectionMap.forEach(sec => {
+          const rows = sec.keys.filter(k => values[k]);
+          if (rows.length === 0) return;
+          html += `<div class="view-section"><div class="view-section-title">${sec.title}</div><div class="view-row">`;
+          rows.forEach(k => {
+            html += `<div class="view-field"><div class="view-field-label">${k}</div><div class="view-field-value">${values[k]}</div></div>`;
+          });
+          html += `</div></div>`;
+        });
+
+        // Any remaining unlisted keys
+        const listedKeys = sectionMap.flatMap(s => s.keys);
+        const extras = Object.entries(values).filter(([k]) => !listedKeys.includes(k));
+        if (extras.length) {
+          html += `<div class="view-section"><div class="view-section-title">Diğer</div><div class="view-row">`;
+          extras.forEach(([k, v]) => {
+            html += `<div class="view-field"><div class="view-field-label">${k}</div><div class="view-field-value">${v}</div></div>`;
+          });
+          html += `</div></div>`;
+        }
+
+        document.getElementById('viewMode').innerHTML = html;
+      })
+      .catch(() => {
+        document.getElementById('viewMode').innerHTML = '<div class="view-error">Form verisi yüklenemedi. Link geçersiz olabilir.</div>';
+      });
+  })();
 
   /* ── i18n Language Toggle ── */
   let currentLang = 'tr';
