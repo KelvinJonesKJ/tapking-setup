@@ -530,29 +530,14 @@
 
         <hr class="divider" />
 
-        <!-- Para birimi & Zaman dilimi -->
-        <div class="grid2">
-          <div class="field">
-            <label data-i18n="lbl_currency">Para Birimi <span class="req">*</span></label>
-            <div class="currency-wrap" id="currencyWrap">
-              <input type="text" id="currencySearch" placeholder="Ara... örn. USD, TRY, EUR" autocomplete="off" />
-              <div class="currency-dropdown" id="currencyDropdown"></div>
-            </div>
-            <input type="hidden" name="Para Birimi" id="currencyHidden" required />
+        <!-- Para birimi -->
+        <div class="field">
+          <label data-i18n="lbl_currency">Para Birimi <span class="req">*</span></label>
+          <div class="currency-wrap" id="currencyWrap">
+            <input type="text" id="currencySearch" placeholder="Ara... örn. USD, TRY, EUR" autocomplete="off" />
+            <div class="currency-dropdown" id="currencyDropdown"></div>
           </div>
-          <div class="field">
-            <label data-i18n="lbl_timezone">Zaman Dilimi <span class="req">*</span></label>
-            <select name="Saat Dilimi" required>
-              <option value="" data-i18n="opt_select">Seçiniz...</option>
-              <option>UTC+3 — İstanbul / Ankara</option>
-              <option>UTC+0 — Londra (GMT)</option>
-              <option>UTC+1 — Berlin / Paris</option>
-              <option>UTC+2 — Kahire / Atina</option>
-              <option>UTC+4 — Bakü / Dubai</option>
-              <option>UTC+5 — Karaçi / Taşkent</option>
-              <option data-i18n="opt_other">Diğer</option>
-            </select>
-          </div>
+          <input type="hidden" name="Para Birimi" id="currencyHidden" required />
         </div>
 
         <hr class="divider" />
