@@ -668,75 +668,10 @@
         </div>
 
         <div class="field">
-          <label data-i18n="lbl_brand_slogan">Slogan / Tagline <span class="hint" data-i18n="hint_if_any">(varsa)</span></label>
-          <input type="text" name="Slogan" placeholder="örn. 'Play Smart, Win Big'" />
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_brand_tone">Marka tonu nasıl olsun?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Marka Tonu" value="serious" /> <span data-i18n="opt_tone_serious">Ciddi &amp; Profesyonel</span></label>
-            <label><input type="radio" name="Marka Tonu" value="friendly" /> <span data-i18n="opt_tone_friendly">Samimi &amp; Yakın</span></label>
-            <label><input type="radio" name="Marka Tonu" value="exciting" /> <span data-i18n="opt_tone_exciting">Heyecanlı &amp; Enerjik</span></label>
-            <label><input type="radio" name="Marka Tonu" value="luxury" /> <span data-i18n="opt_tone_luxury">Lüks &amp; Premium</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_design_style">Genel stil tercihi</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Tasarım Stili" value="minimalist" /> <span data-i18n="opt_style_minimalist">Minimalist</span></label>
-            <label><input type="radio" name="Tasarım Stili" value="bold" /> <span data-i18n="opt_style_bold">Bold &amp; Agresif</span></label>
-            <label><input type="radio" name="Tasarım Stili" value="luxury" /> <span data-i18n="opt_style_luxury">Lüks &amp; Zarif</span></label>
-            <label><input type="radio" name="Tasarım Stili" value="fun" /> <span data-i18n="opt_style_fun">Eğlenceli &amp; Renkli</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_theme">Tema tercihi</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Tema Tercihi" value="dark" /> <span data-i18n="opt_theme_dark">Karanlık tema</span></label>
-            <label><input type="radio" name="Tema Tercihi" value="light" /> <span data-i18n="opt_theme_light">Açık tema</span></label>
-            <label><input type="radio" name="Tema Tercihi" value="both" /> <span data-i18n="opt_theme_both">Her ikisi de olsun</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_device_priority">Öncelik</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Cihaz Önceliği" value="mobile" /> <span data-i18n="opt_mobile_first">Mobil öncelikli</span></label>
-            <label><input type="radio" name="Cihaz Önceliği" value="desktop" /> <span data-i18n="opt_desktop_first">Masaüstü öncelikli</span></label>
-            <label><input type="radio" name="Cihaz Önceliği" value="equal" /> <span data-i18n="opt_equal_priority">İkisi de eşit</span></label>
-          </div>
-        </div>
-
-        <hr class="divider" />
-
-        <div class="field">
-          <label data-i18n="lbl_favicon">Favicon var mı?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Favicon Var mı" value="yes" /> <span data-i18n="opt_favicon_yes">Evet, paylaşacağım</span></label>
-            <label><input type="radio" name="Favicon Var mı" value="no" /> <span data-i18n="opt_favicon_no">Hayır, sizden bekliyorum</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_social_images">Sosyal medya görselleri gerekiyor mu? <span class="hint" data-i18n="hint_og_image">(OG image, Twitter card vb.)</span></label>
-          <div class="radio-group">
-            <label><input type="radio" name="Sosyal Medya Görselleri" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="Sosyal Medya Görselleri" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_forbidden_colors">Yasaklı renkler veya görseller <span class="hint" data-i18n="hint_avoid_brand_conflict">(rakip markayla karışmaması için)</span></label>
-          <input type="text" name="Yasak Renkler" data-ph-tr="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." data-ph-en="e.g. Avoid red, should not resemble brand X..." placeholder="örn. Kırmızı kullanmayın, X markasını çağrıştırmasın..." />
-        </div>
-
-        <div class="field">
           <label data-i18n="lbl_reference_site">Referans Site <span class="hint" data-i18n="hint_design_example">(beğendiğiniz tasarım örneği)</span></label>
           <input type="url" name="Referans Site" placeholder="https://..." />
         </div>
+
       </div>
     </div>
 
@@ -747,26 +682,12 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">4</div>
         <div class="section-title">
-          <h2>Diğer Hizmetler</h2>
-          <p>Ödeme, SMS, E-posta ve Call Center</p>
+          <h2 data-i18n="sec8_title">Diğer Hizmetler</h2>
+          <p data-i18n="sec8_sub">Ödeme, SMS, E-posta ve ek entegrasyonlar</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
-
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Ödeme Yöntemleri</p>
-        <!-- Ödeme yöntemleri -->
-        <div class="field">
-          <label data-i18n="lbl_payment_methods">Sunmak istediğiniz ödeme yöntemleri</label>
-          <div class="check-group">
-            <label><input type="checkbox" name="Ödeme - Kripto" id="cb_crypto" onchange="toggleSub('crypto_details','yes')" /> <span data-i18n="opt_crypto">Kripto Para</span></label>
-            <label><input type="checkbox" name="Ödeme - Banka Transferi" /> <span data-i18n="opt_bank_transfer">Banka Transferi</span></label>
-            <label><input type="checkbox" name="Ödeme - Kredi/Banka Kartı" /> <span data-i18n="opt_credit_card">Kredi / Banka Kartı</span></label>
-            <label><input type="checkbox" name="Ödeme - e-Cüzdan" /> <span data-i18n="opt_ewallet">e-Cüzdan</span></label>
-            <label><input type="checkbox" name="Ödeme - Lokal" /> <span data-i18n="opt_local_payment">Lokal Ödeme</span></label>
-          </div>
-        </div>
-
         <!-- Kripto detayları -->
         <div class="sub-fields" id="crypto_details">
           <div class="field">
@@ -1153,7 +1074,7 @@
     const sectionMap = [
       { title: 'Şirket & Lisans', keys: ['Site Adresi','Kayıt Ülkesi','Yetkili Adı Soyadı','Pozisyon / Unvan','İletişim E-postası','Lisans Var mı','Lisans Türü','Lisans Sağlayıcı','Lisans Numarası','Lisans Bitiş Tarihi','Lisans Desteği'] },
       { title: 'Hedef Pazar & Diller', keys: ['Hedef Ülkeler','Site Dilleri','RTL Desteği','İçerik Çevirisi'] },
-      { title: 'Marka & Tasarım', keys: ['Marka Tonu','Tasarım Stili','Tema Tercihi','Cihaz Önceliği','Ana Renkler','İkincil Renkler','Font Tercihi','Logo Dosyaları','Favicon Var mı','Sosyal Medya Görselleri','Referans Siteler','Tasarım Notları'] },
+      { title: 'Marka & Tasarım', keys: ['Ana Renkler','İkincil Renkler','Font Tercihi','Logo Dosyaları','Referans Siteler','Tasarım Notları'] },
       { title: 'Diğer Hizmetler', keys: ['PSP Var mı','PSP Sağlayıcı','Çekim Onayı','Çekim Limiti','Ödeme Yöntemleri','Kripto','SMS Sağlayıcı','SMS Amaçları','E-posta Sağlayıcı'] },
     ];
 
