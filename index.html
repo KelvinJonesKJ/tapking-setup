@@ -141,6 +141,28 @@
       transition: transform .2s;
     }
     .section-chevron.open { transform: rotate(180deg); }
+
+    /* ── Currency Search ── */
+    .currency-wrap { position: relative; }
+    .currency-wrap input[type="text"] {
+      width: 100%; padding: 10px 14px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius); color: var(--text); font-size: 14px;
+      outline: none;
+    }
+    .currency-wrap input[type="text"]:focus { border-color: var(--brand); }
+    .currency-dropdown {
+      display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius); max-height: 220px; overflow-y: auto;
+      z-index: 999; box-shadow: 0 8px 24px rgba(0,0,0,.4);
+    }
+    .currency-dropdown.open { display: block; }
+    .currency-opt {
+      padding: 9px 14px; font-size: 13px; cursor: pointer; color: var(--text);
+    }
+    .currency-opt:hover, .currency-opt.highlighted { background: var(--brand); color: #0d0d12; }
+    .currency-none { padding: 12px 14px; font-size: 13px; color: var(--muted); }
     .section-body { padding: 24px; display: none; }
     .section-body.open { display: block; }
 
@@ -512,16 +534,11 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_currency">Para Birimi <span class="req">*</span></label>
-            <select name="Para Birimi" required>
-              <option value="" data-i18n="opt_select">Seçiniz...</option>
-              <option data-i18n="opt_try">TRY — Türk Lirası</option>
-              <option data-i18n="opt_eur">EUR — Euro</option>
-              <option data-i18n="opt_usd">USD — Amerikan Doları</option>
-              <option data-i18n="opt_gbp">GBP — İngiliz Sterlini</option>
-              <option data-i18n="opt_brl">BRL — Brezilya Reali</option>
-              <option data-i18n="opt_azn">AZN — Azerbaycan Manatı</option>
-              <option data-i18n="opt_other">Diğer</option>
-            </select>
+            <div class="currency-wrap" id="currencyWrap">
+              <input type="text" id="currencySearch" placeholder="Ara... örn. USD, TRY, EUR" autocomplete="off" />
+              <div class="currency-dropdown" id="currencyDropdown"></div>
+            </div>
+            <input type="hidden" name="Para Birimi" id="currencyHidden" required />
           </div>
           <div class="field">
             <label data-i18n="lbl_timezone">Zaman Dilimi <span class="req">*</span></label>
@@ -1308,6 +1325,108 @@
       .catch(() => {
         document.getElementById('viewMode').innerHTML = '<div class="view-error">Form verisi yüklenemedi. Link geçersiz olabilir.</div>';
       });
+  })();
+
+  /* ── Currency Search ── */
+  (function() {
+    const CURRENCIES = [
+      'AED — Birleşik Arap Emirlikleri Dirhemi','AFN — Afgan Afganisi','ALL — Arnavut Leki',
+      'AMD — Ermeni Dramı','ANG — Hollanda Antilleri Guldeni','AOA — Angola Kvanzası',
+      'ARS — Arjantin Pesosu','AUD — Avustralya Doları','AWG — Aruba Florini',
+      'AZN — Azerbaycan Manatı','BAM — Bosna-Hersek Konvertibl Markı','BBD — Barbados Doları',
+      'BDT — Bangladeş Takası','BGN — Bulgar Levası','BHD — Bahreyn Dinarı',
+      'BIF — Burundi Frangı','BMD — Bermuda Doları','BND — Brunei Doları',
+      'BOB — Bolivya Bolivyanosu','BRL — Brezilya Reali','BSD — Bahamalar Doları',
+      'BTN — Bhutan Ngultrumu','BWP — Botsvana Pulası','BYN — Beyaz Rusya Rublesi',
+      'BZD — Belize Doları','CAD — Kanada Doları','CDF — Kongo Frangı',
+      'CHF — İsviçre Frangı','CLP — Şili Pesosu','CNY — Çin Yuanı',
+      'COP — Kolombiya Pesosu','CRC — Kosta Rika Kolonu','CUP — Küba Pesosu',
+      'CVE — Yeşil Burun Adaları Esküdosu','CZK — Çek Korunası','DJF — Cibuti Frangı',
+      'DKK — Danimarka Kronu','DOP — Dominik Pesosu','DZD — Cezayir Dinarı',
+      'EGP — Mısır Poundu','ERN — Eritre Nakfası','ETB — Etiyopya Birri',
+      'EUR — Euro','FJD — Fiji Doları','FKP — Falkland Adaları Poundu',
+      'GBP — İngiliz Sterlini','GEL — Gürcistan Larisi','GHS — Gana Sedisi',
+      'GIP — Cebelitarık Poundu','GMD — Gambiya Dalasisi','GNF — Gine Frangı',
+      'GTQ — Guatemala Quetzalı','GYD — Guyana Doları','HKD — Hong Kong Doları',
+      'HNL — Honduras Lempirası','HUF — Macar Forinti','IDR — Endonezya Rupiahı',
+      'ILS — İsrail Yeni Şekeli','INR — Hint Rupisi','IQD — Irak Dinarı',
+      'IRR — İran Riyali','ISK — İzlanda Kronası','JMD — Jamaika Doları',
+      'JOD — Ürdün Dinarı','JPY — Japon Yeni','KES — Kenya Şilini',
+      'KGS — Kırgızistan Somu','KHR — Kamboçya Rieli','KMF — Komorlar Frangı',
+      'KRW — Güney Kore Wonu','KWD — Kuveyt Dinarı','KYD — Cayman Adaları Doları',
+      'KZT — Kazakistan Tengesi','LAK — Laos Kipi','LBP — Lübnan Poundu',
+      'LKR — Sri Lanka Rupisi','LRD — Liberya Doları','LSL — Lesotho Lotisi',
+      'LYD — Libya Dinarı','MAD — Fas Dirhemi','MDL — Moldova Leyi',
+      'MGA — Madagaskar Ariarisi','MKD — Makedonya Dinarı','MMK — Myanmar Kyatı',
+      'MNT — Moğolistan Tugriki','MOP — Makao Patakası','MRU — Moritanya Ugiyası',
+      'MUR — Mauritius Rupisi','MVR — Maldiv Rufiyası','MWK — Malavi Kvaçası',
+      'MXN — Meksika Pesosu','MYR — Malezya Ringgiti','MZN — Mozambik Metikali',
+      'NAD — Namibya Doları','NGN — Nijeryalı Naira','NIO — Nikaragua Kordobası',
+      'NOK — Norveç Kronu','NPR — Nepal Rupisi','NZD — Yeni Zelanda Doları',
+      'OMR — Umman Riyali','PAB — Panama Balboası','PEN — Peru Solu',
+      'PGK — Papua Yeni Gine Kinası','PHP — Filipin Pesosu','PKR — Pakistan Rupisi',
+      'PLN — Polonya Zlotısı','PYG — Paraguay Guaranisi','QAR — Katar Riyali',
+      'RON — Rumen Leyi','RSD — Sırp Dinarı','RUB — Rus Rublesi',
+      'RWF — Ruanda Frangı','SAR — Suudi Arabistan Riyali','SBD — Solomon Adaları Doları',
+      'SCR — Seyşel Rupisi','SDG — Sudan Poundu','SEK — İsveç Kronu',
+      'SGD — Singapur Doları','SHP — Aziz Helena Poundu','SLL — Sierra Leone Leonesi',
+      'SOS — Somali Şilini','SRD — Surinam Doları','STN — São Tomé ve Príncipe Dobrası',
+      'SYP — Suriye Poundu','SZL — Svaziland Lilangenisi','THB — Tayland Bahtı',
+      'TJS — Tacikistan Somonisi','TMT — Türkmenistan Manatı','TND — Tunus Dinarı',
+      'TOP — Tonga Paangası','TRY — Türk Lirası','TTD — Trinidad ve Tobago Doları',
+      'TWD — Tayvan Yeni Doları','TZS — Tanzanya Şilini','UAH — Ukrayna Grivnası',
+      'UGX — Uganda Şilini','USD — ABD Doları','UYU — Uruguay Pesosu',
+      'UZS — Özbekistan Somu','VES — Venezuela Bolivarı','VND — Vietnam Dongu',
+      'VUV — Vanuatu Vatusu','WST — Samoa Talası','XAF — Orta Afrika CFA Frangı',
+      'XCD — Doğu Karayip Doları','XOF — Batı Afrika CFA Frangı','XPF — CFP Frangı',
+      'YER — Yemen Riyali','ZAR — Güney Afrika Randı','ZMW — Zambiya Kvaçası','ZWL — Zimbabve Doları'
+    ];
+
+    const searchEl = document.getElementById('currencySearch');
+    const dropdown = document.getElementById('currencyDropdown');
+    const hidden   = document.getElementById('currencyHidden');
+    if (!searchEl) return;
+
+    let hiIdx = -1;
+
+    function render(q) {
+      const lq = q.toLowerCase();
+      const filtered = CURRENCIES.filter(c => c.toLowerCase().includes(lq));
+      hiIdx = -1;
+      if (!filtered.length) {
+        dropdown.innerHTML = '<div class="currency-none">Sonuç bulunamadı</div>';
+      } else {
+        dropdown.innerHTML = filtered.map(c =>
+          `<div class="currency-opt" data-val="${c}">${c}</div>`
+        ).join('');
+        dropdown.querySelectorAll('.currency-opt').forEach(opt => {
+          opt.addEventListener('mousedown', e => {
+            e.preventDefault();
+            select(opt.dataset.val);
+          });
+        });
+      }
+      dropdown.classList.add('open');
+    }
+
+    function select(val) {
+      searchEl.value = val;
+      hidden.value   = val;
+      dropdown.classList.remove('open');
+    }
+
+    searchEl.addEventListener('input',  () => render(searchEl.value));
+    searchEl.addEventListener('focus',  () => render(searchEl.value));
+    searchEl.addEventListener('blur',   () => setTimeout(() => dropdown.classList.remove('open'), 150));
+    searchEl.addEventListener('keydown', e => {
+      const opts = dropdown.querySelectorAll('.currency-opt');
+      if (e.key === 'ArrowDown')  { e.preventDefault(); hiIdx = Math.min(hiIdx+1, opts.length-1); }
+      if (e.key === 'ArrowUp')    { e.preventDefault(); hiIdx = Math.max(hiIdx-1, 0); }
+      if (e.key === 'Enter' && hiIdx >= 0) { e.preventDefault(); select(opts[hiIdx].dataset.val); }
+      if (e.key === 'Escape') dropdown.classList.remove('open');
+      opts.forEach((o,i) => o.classList.toggle('highlighted', i === hiIdx));
+      if (hiIdx >= 0) opts[hiIdx].scrollIntoView({ block: 'nearest' });
+    });
   })();
 
   /* ── i18n Language Toggle ── */
