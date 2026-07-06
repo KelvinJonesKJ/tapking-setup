@@ -469,119 +469,10 @@
       </div>
     </div>
 
-    <!-- 2. Domain & Hosting -->
+    <!-- 2. Ödeme Yöntemleri -->
     <div class="section" data-section="2">
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">2</div>
-        <div class="section-title">
-          <h2 data-i18n="sec2_title">Alan Adı &amp; Hosting</h2>
-          <p data-i18n="sec2_sub">Teknik altyapı bilgileri</p>
-        </div>
-        <div class="section-chevron">▾</div>
-      </div>
-      <div class="section-body">
-
-        <p data-i18n="sub_domain" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Alan Adı</p>
-        <div class="grid2">
-          <div class="field">
-            <label data-i18n="lbl_main_domain">Ana Domain <span class="req">*</span></label>
-            <input type="url" name="Domain Adresi" data-ph-tr="https://www.siteadi.com" data-ph-en="https://www.yourdomain.com" placeholder="https://www.siteadi.com" required />
-          </div>
-          <div class="field">
-            <label data-i18n="lbl_domain_provider">Domain Sağlayıcı</label>
-            <input type="text" name="Domain Sağlayıcı" data-ph-tr="örn. GoDaddy, Namecheap, Cloudflare" data-ph-en="e.g. GoDaddy, Namecheap, Cloudflare" placeholder="örn. GoDaddy, Namecheap, Cloudflare" />
-          </div>
-        </div>
-        <div class="grid2">
-          <div class="field">
-            <label data-i18n="lbl_domain_owned">Domain size mi ait?</label>
-            <div class="radio-group">
-              <label><input type="radio" name="Domain Sahipliği" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="Domain Sahipliği" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-            </div>
-          </div>
-          <div class="field">
-            <label data-i18n="lbl_dns_access">DNS erişimi sağlayabilir misiniz?</label>
-            <div class="radio-group">
-              <label><input type="radio" name="DNS Erişimi" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="DNS Erişimi" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-            </div>
-          </div>
-        </div>
-        <div class="field">
-          <label data-i18n="lbl_backup_domains">Yedek Domain(ler) <span class="hint" data-i18n="hint_mirror_if_any">(mirror — varsa)</span></label>
-          <input type="text" name="Yedek Domainler" data-ph-tr="örn. siteadi2.com, siteadi3.net" data-ph-en="e.g. yourdomain2.com, yourdomain3.net" placeholder="örn. siteadi2.com, siteadi3.net" />
-        </div>
-
-        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
-        <p data-i18n="sub_cloudflare" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Cloudflare</p>
-        <div class="grid2">
-          <div class="field">
-            <label data-i18n="lbl_cloudflare_account">Cloudflare hesabınız var mı?</label>
-            <div class="radio-group">
-              <label><input type="radio" name="Cloudflare Kullanımı" value="yes" onchange="toggleSub('cloudflare_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="Cloudflare Kullanımı" value="no" onchange="toggleSub('cloudflare_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
-            </div>
-          </div>
-          <div class="field">
-            <label data-i18n="lbl_cloudflare_migrate">Cloudflare'e geçiş yapılabilir mi?</label>
-            <div class="radio-group">
-              <label><input type="radio" name="Cloudflare Geçişi" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-              <label><input type="radio" name="Cloudflare Geçişi" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-              <label><input type="radio" name="Cloudflare Geçişi" value="already" /> <span data-i18n="opt_already_using">Zaten kullanıyoruz</span></label>
-            </div>
-          </div>
-        </div>
-        <div class="sub-fields" id="cloudflare_details">
-          <div class="field">
-            <label data-i18n="lbl_cloudflare_email">Cloudflare Hesap E-postası</label>
-            <input type="email" name="Cloudflare E-postası" placeholder="cloudflare@sirket.com" />
-          </div>
-        </div>
-
-        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
-        <p data-i18n="sub_hosting" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Hosting</p>
-        <div class="grid2">
-          <div class="field">
-            <label data-i18n="lbl_hosting_provider">Hosting Sağlayıcı</label>
-            <input type="text" name="Hosting Sağlayıcı" data-ph-tr="örn. AWS, Hetzner, DigitalOcean" data-ph-en="e.g. AWS, Hetzner, DigitalOcean" placeholder="örn. AWS, Hetzner, DigitalOcean" />
-          </div>
-          <div class="field">
-            <label data-i18n="lbl_server_location">Sunucu Lokasyonu</label>
-            <select name="Sunucu Konumu">
-              <option value="" data-i18n="opt_select">Seçiniz...</option>
-              <option data-i18n="opt_europe">Avrupa (AB)</option>
-              <option data-i18n="opt_uk">İngiltere</option>
-              <option data-i18n="opt_usa">Amerika (US)</option>
-              <option data-i18n="opt_asia">Asya</option>
-              <option data-i18n="opt_middle_east">Orta Doğu</option>
-              <option data-i18n="opt_no_preference">Fark etmez / Önerim yok</option>
-            </select>
-          </div>
-        </div>
-        <div class="field">
-          <label data-i18n="lbl_hosting_plan">Mevcut hosting planı / kaynaklar <span class="hint" data-i18n="hint_if_applicable">(varsa)</span></label>
-          <input type="text" name="Hosting Planı" data-ph-tr="örn. 4 vCPU, 8GB RAM, 100GB SSD" data-ph-en="e.g. 4 vCPU, 8GB RAM, 100GB SSD" placeholder="örn. 4 vCPU, 8GB RAM, 100GB SSD" />
-        </div>
-
-        <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
-        <p data-i18n="sub_ssl_security" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">SSL & Güvenlik</p>
-        <div class="field">
-          <label data-i18n="lbl_ssl">SSL sertifikanız var mı?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="SSL Durumu" value="yes" /> <span data-i18n="opt_ssl_yes">Evet, mevcut</span></label>
-            <label><input type="radio" name="SSL Durumu" value="no" /> <span data-i18n="opt_ssl_no">Hayır, kurulum gerekiyor</span></label>
-            <label><input type="radio" name="SSL Durumu" value="cloudflare" /> <span data-i18n="opt_ssl_cloudflare">Cloudflare üzerinden</span></label>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- 3. Ödeme Yöntemleri -->
-    <div class="section" data-section="3">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">3</div>
         <div class="section-title">
           <h2 data-i18n="sec3_title">Ödeme Yöntemleri</h2>
           <p data-i18n="sec3_sub">Ödeme altyapısı ve entegrasyonları</p>
@@ -690,10 +581,10 @@
       </div>
     </div>
 
-    <!-- 4. Hedef Pazar & Diller -->
-    <div class="section" data-section="4">
+    <!-- 3. Hedef Pazar & Diller -->
+    <div class="section" data-section="3">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">4</div>
+        <div class="section-number">3</div>
         <div class="section-title">
           <h2 data-i18n="sec4_title">Hedef Pazar &amp; Diller</h2>
           <p data-i18n="sec4_sub">Pazarlama ve dil gereksinimleri</p>
@@ -821,10 +712,10 @@
       </div>
     </div>
 
-    <!-- 5. Marka & Tasarım -->
-    <div class="section" data-section="5">
+    <!-- 4. Marka & Tasarım -->
+    <div class="section" data-section="4">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">5</div>
+        <div class="section-number">4</div>
         <div class="section-title">
           <h2 data-i18n="sec5_title">Marka &amp; Tasarım</h2>
           <p data-i18n="sec5_sub">Görsel kimlik ve tasarım gereksinimleri</p>
@@ -932,10 +823,10 @@
       </div>
     </div>
 
-    <!-- 6. Site İçerikleri -->
-    <div class="section" data-section="6">
+    <!-- 5. Site İçerikleri -->
+    <div class="section" data-section="5">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">6</div>
+        <div class="section-number">5</div>
         <div class="section-title">
           <h2 data-i18n="sec6_title">Site İçerikleri</h2>
           <p data-i18n="sec6_sub">İçerik yapısı ve sayfalar</p>
@@ -1058,10 +949,10 @@
       </div>
     </div>
 
-    <!-- 7. Oyun Sağlayıcılar -->
-    <div class="section" data-section="7">
+    <!-- 6. Oyun Sağlayıcılar -->
+    <div class="section" data-section="6">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">7</div>
+        <div class="section-number">6</div>
         <div class="section-title">
           <h2 data-i18n="sec7_title">Oyun Sağlayıcıları</h2>
           <p data-i18n="sec7_sub">İstenen oyun içerikleri</p>
@@ -1221,10 +1112,10 @@
       </div>
     </div>
 
-    <!-- 8. Backoffice & Operasyon -->
-    <div class="section" data-section="8">
+    <!-- 7. Backoffice & Operasyon -->
+    <div class="section" data-section="7">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">8</div>
+        <div class="section-number">7</div>
         <div class="section-title">
           <h2 data-i18n="sec8_title">Backoffice &amp; Yönetim</h2>
           <p data-i18n="sec8_sub">Admin panel ve operasyon gereksinimleri</p>
@@ -1329,10 +1220,10 @@
       </div>
     </div>
 
-    <!-- 9. SMS Sağlayıcı -->
-    <div class="section" data-section="9">
+    <!-- 8. SMS Sağlayıcı -->
+    <div class="section" data-section="8">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">9</div>
+        <div class="section-number">8</div>
         <div class="section-title">
           <h2 data-i18n="sec9_title">SMS Sağlayıcı</h2>
           <p data-i18n="sec9_sub">SMS entegrasyonu</p>
@@ -1389,10 +1280,10 @@
       </div>
     </div>
 
-    <!-- 10. E-posta Sağlayıcı -->
-    <div class="section" data-section="10">
+    <!-- 9. E-posta Sağlayıcı -->
+    <div class="section" data-section="9">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">10</div>
+        <div class="section-number">9</div>
         <div class="section-title">
           <h2 data-i18n="sec10_title">E-posta Sağlayıcı</h2>
           <p data-i18n="sec10_sub">Transactional ve pazarlama e-posta entegrasyonu</p>
@@ -1412,10 +1303,10 @@
       </div>
     </div>
 
-    <!-- 11. Uyumluluk & Güvenlik -->
-    <div class="section" data-section="11">
+    <!-- 10. Uyumluluk & Güvenlik -->
+    <div class="section" data-section="10">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">11</div>
+        <div class="section-number">10</div>
         <div class="section-title">
           <h2 data-i18n="sec11_title">Uyumluluk &amp; Güvenlik</h2>
           <p data-i18n="sec11_sub">KYC, AML ve dolandırıcılık önleme</p>
@@ -1593,10 +1484,10 @@
       </div>
     </div>
 
-    <!-- 12. Ek Talepler -->
-    <div class="section" data-section="12">
+    <!-- 11. Ek Talepler -->
+    <div class="section" data-section="11">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">12</div>
+        <div class="section-number">11</div>
         <div class="section-title">
           <h2 data-i18n="sec12_title">Ek Talepler</h2>
           <p data-i18n="sec12_sub">Özel istek ve notlarınız</p>
@@ -1742,7 +1633,7 @@
 </div>
 
 <script>
-  const TOTAL = 12;
+  const TOTAL = 11;
 
   /* ── Progress bar init ── */
   const stepsEl = document.getElementById('progressSteps');
@@ -1950,7 +1841,6 @@
 
     const sectionMap = [
       { title: 'Şirket & Lisans', keys: ['Site Adresi','Kayıt Ülkesi','Yetkili Adı Soyadı','Pozisyon / Unvan','İletişim E-postası','Lisans Var mı','Lisans Türü','Lisans Sağlayıcı','Lisans Numarası','Lisans Bitiş Tarihi','Lisans Desteği'] },
-      { title: 'Alan Adı & Hosting', keys: ['Platform Adı','Domain Adresi','Domain Sağlayıcı','Domain Sahipliği','DNS Erişimi','Önceki Platform','Veri Migrasyonu','Cloudflare Kullanımı','Cloudflare Geçişi','Hosting Tercihi','SSL Durumu','CDN Kullanımı','Sunucu Lokasyonu'] },
       { title: 'Ödeme Yöntemleri', keys: ['PSP Var mı','PSP Sağlayıcı','Çekim Onayı','Çekim Limiti','Tap King PSP','Para Birimi','Para Birimi Diğer','Kripto','Düzenleyici Kısıtlamalar','Kısıtlı Ülkeler'] },
       { title: 'Hedef Pazar & Diller', keys: ['Hedef Ülkeler','Site Dilleri','RTL Desteği','Çeviri Sağlayıcı','İçerik Çevirisi'] },
       { title: 'Marka & Tasarım', keys: ['Marka Tonu','Tasarım Stili','Tema Tercihi','Cihaz Önceliği','Ana Renkler','İkincil Renkler','Font Tercihi','Logo Dosyaları','Favicon Var mı','Sosyal Medya Görselleri','Referans Siteler','Tasarım Notları'] },
@@ -2026,7 +1916,6 @@
       info_note: '💡 Tüm alanları doldurmak zorunlu değilsiniz — bildiğiniz kadarını doldurun, gerisini ekibimiz sizinle görüşerek tamamlar.',
       // section titles
       sec1_title: 'Şirket & Lisans Bilgileri', sec1_sub: 'Yasal kimlik ve lisans durumunuz',
-      sec2_title: 'Alan Adı & Hosting', sec2_sub: 'Teknik altyapı bilgileri',
       sec3_title: 'Ödeme Yöntemleri', sec3_sub: 'Ödeme altyapısı ve entegrasyonları',
       sec4_title: 'Hedef Pazar & Diller', sec4_sub: 'Pazarlama ve dil gereksinimleri',
       sec5_title: 'Marka & Tasarım', sec5_sub: 'Görsel kimlik ve tasarım gereksinimleri',
@@ -2059,14 +1948,6 @@
       lbl_prev_platform: 'Daha önce aktif bir site işlettiniz mi?',
       lbl_prev_platform_name: 'Platform Adı / URL', hint_old_platform: '(eski platform)',
       lbl_migration_needed: 'Veri / Oyuncu taşıması gerekiyor mu?',
-      // labels — sec2
-      lbl_main_domain: 'Ana Domain *', lbl_domain_provider: 'Domain Sağlayıcı',
-      lbl_domain_owned: 'Domain size mi ait?', lbl_dns_access: 'DNS erişimi sağlayabilir misiniz?',
-      lbl_backup_domains: 'Yedek Domain(ler)', hint_mirror_if_any: '(mirror — varsa)',
-      lbl_cloudflare_account: 'Cloudflare hesabınız var mı?', lbl_cloudflare_migrate: 'Cloudflare\'e geçiş yapılabilir mi?',
-      lbl_cloudflare_email: 'Cloudflare Hesap E-postası',
-      lbl_hosting_provider: 'Hosting Sağlayıcı', lbl_server_location: 'Sunucu Lokasyonu',
-      lbl_hosting_plan: 'Mevcut hosting planı / kaynaklar', lbl_ssl: 'SSL sertifikanız var mı?',
       // labels — sec3
       lbl_payment_methods: 'Sunmak istediğiniz ödeme yöntemleri', lbl_crypto_coins: 'Desteklemek istediğiniz kripto coinler',
       lbl_local_payments: 'Lokal ödeme yöntemleri', hint_specify_if_any: '(varsa belirtin)',
@@ -2234,7 +2115,6 @@
       info_note: '💡 You don\'t need to fill in every field — complete what you know, and our team will work through the rest with you.',
       // section titles
       sec1_title: 'Company & License Information', sec1_sub: 'Your legal identity and license status',
-      sec2_title: 'Domain & Hosting', sec2_sub: 'Technical infrastructure details',
       sec3_title: 'Payment Methods', sec3_sub: 'Payment infrastructure and integrations',
       sec4_title: 'Target Market & Languages', sec4_sub: 'Market and language requirements',
       sec5_title: 'Brand & Design', sec5_sub: 'Visual identity and design requirements',
@@ -2267,14 +2147,6 @@
       lbl_prev_platform: 'Have you previously operated an active site?',
       lbl_prev_platform_name: 'Platform Name / URL', hint_old_platform: '(previous platform)',
       lbl_migration_needed: 'Is data / player migration needed?',
-      // labels — sec2
-      lbl_main_domain: 'Main Domain *', lbl_domain_provider: 'Domain Provider',
-      lbl_domain_owned: 'Do you own the domain?', lbl_dns_access: 'Can you provide DNS access?',
-      lbl_backup_domains: 'Backup Domain(s)', hint_mirror_if_any: '(mirror — if any)',
-      lbl_cloudflare_account: 'Do you have a Cloudflare account?', lbl_cloudflare_migrate: 'Can you migrate to Cloudflare?',
-      lbl_cloudflare_email: 'Cloudflare Account Email',
-      lbl_hosting_provider: 'Hosting Provider', lbl_server_location: 'Server Location',
-      lbl_hosting_plan: 'Current hosting plan / resources', lbl_ssl: 'Do you have an SSL certificate?',
       // labels — sec3
       lbl_payment_methods: 'Payment methods you want to offer', lbl_crypto_coins: 'Cryptocurrencies you want to support',
       lbl_local_payments: 'Local payment methods', hint_specify_if_any: '(specify if any)',
