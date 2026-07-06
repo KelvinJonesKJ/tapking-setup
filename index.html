@@ -163,6 +163,46 @@
     }
     .currency-opt:hover, .currency-opt.highlighted { background: var(--brand); color: #0d0d12; }
     .currency-none { padding: 12px 14px; font-size: 13px; color: var(--muted); }
+    /* ── Country Multi-Select ── */
+    .country-wrap { position: relative; }
+    .country-tags {
+      display: flex; flex-wrap: wrap; gap: 6px;
+      padding: 6px 10px; min-height: 44px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius); cursor: text;
+      transition: border-color .2s;
+    }
+    .country-tags.focused { border-color: var(--brand); }
+    .country-tag {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--brand); color: #0d0d12;
+      font-size: 12px; font-weight: 600;
+      padding: 3px 8px; border-radius: 4px;
+    }
+    .country-tag button {
+      background: none; border: none; cursor: pointer;
+      color: #0d0d12; font-size: 14px; line-height: 1;
+      padding: 0; margin: 0;
+    }
+    .country-search-input {
+      border: none; outline: none; background: transparent;
+      color: var(--text); font-size: 14px;
+      min-width: 140px; flex: 1; padding: 4px 4px;
+    }
+    .country-dropdown {
+      display: none; position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: var(--radius); max-height: 220px; overflow-y: auto;
+      z-index: 999; box-shadow: 0 8px 24px rgba(0,0,0,.4);
+    }
+    .country-dropdown.open { display: block; }
+    .country-opt {
+      padding: 9px 14px; font-size: 13px; cursor: pointer; color: var(--text);
+    }
+    .country-opt:hover, .country-opt.highlighted { background: var(--brand); color: #0d0d12; }
+    .country-opt.selected { opacity: .4; pointer-events: none; }
+    .country-none { padding: 12px 14px; font-size: 13px; color: var(--muted); }
+
     .section-body { padding: 24px; display: none; }
     .section-body.open { display: block; }
 
@@ -505,7 +545,13 @@
         <div class="grid2">
           <div class="field">
             <label data-i18n="lbl_target_countries">Hedef Ülke / Ülkeler <span class="req">*</span></label>
-            <input type="text" name="Hedef Ülkeler" data-ph-tr="örn. Türkiye, Almanya, Hollanda" data-ph-en="e.g. Turkey, Germany, Netherlands" placeholder="örn. Türkiye, Almanya, Hollanda" required />
+            <div class="country-wrap" id="countryWrap">
+              <div class="country-tags" id="countryTags">
+                <input type="text" id="countrySearch" class="country-search-input" placeholder="Ülke ara... örn. Türkiye, Almanya" autocomplete="off" />
+              </div>
+              <div class="country-dropdown" id="countryDropdown"></div>
+            </div>
+            <input type="hidden" name="Hedef Ülkeler" id="countryHidden" required />
           </div>
           <div class="field">
             <label data-i18n="lbl_primary_language">Ana Dil <span class="req">*</span></label>
@@ -1262,6 +1308,132 @@
       if (e.key === 'ArrowUp')    { e.preventDefault(); hiIdx = Math.max(hiIdx-1, 0); }
       if (e.key === 'Enter' && hiIdx >= 0) { e.preventDefault(); select(opts[hiIdx].dataset.val); }
       if (e.key === 'Escape') dropdown.classList.remove('open');
+      opts.forEach((o,i) => o.classList.toggle('highlighted', i === hiIdx));
+      if (hiIdx >= 0) opts[hiIdx].scrollIntoView({ block: 'nearest' });
+    });
+  })();
+
+
+  /* ── Country Multi-Select ── */
+  (function() {
+    const COUNTRIES = [
+      'Afganistan','Arnavutluk','Cezayir','Andorra','Angola','Antigua ve Barbuda',
+      'Arjantin','Ermenistan','Avustralya','Avusturya','Azerbaycan',
+      'Bahamalar','Bahreyn','Bangladeş','Barbados','Belarus','Belçika',
+      'Belize','Benin','Bhutan','Bolivya','Bosna-Hersek','Botsvana',
+      'Brezilya','Brunei','Bulgaristan','Burkina Faso','Burundi',
+      'Kabo Verde','Kamboçya','Kamerun','Kanada','Orta Afrika Cumhuriyeti',
+      'Çad','Şili','Çin','Kolombiya','Komorlar','Kongo Cumhuriyeti',
+      'Demokratik Kongo Cumhuriyeti','Kosta Rika','Hırvatistan','Küba',
+      'Kıbrıs','Çek Cumhuriyeti','Danimarka','Cibuti','Dominika',
+      'Dominik Cumhuriyeti','Ekvador','Mısır','El Salvador',
+      'Ekvator Ginesi','Eritre','Estonya','Esvatini','Etiyopya',
+      'Fiji','Finlandiya','Fransa','Gabon','Gambiya','Gürcistan',
+      'Almanya','Gana','Yunanistan','Grenada','Guatemala','Gine',
+      'Gine-Bissau','Guyana','Haiti','Honduras','Macaristan','İzlanda',
+      'Hindistan','Endonezya','İran','Irak','İrlanda','İsrail','İtalya',
+      'Jamaika','Japonya','Ürdün','Kazakistan','Kenya','Kiribati',
+      'Kuzey Kore','Güney Kore','Kosova','Kuveyt','Kırgızistan',
+      'Laos','Letonya','Lübnan','Lesotho','Liberya','Libya',
+      'Lihtenştayn','Litvanya','Lüksemburg','Madagaskar','Malavi',
+      'Malezya','Maldivler','Mali','Malta','Marshall Adaları',
+      'Moritanya','Mauritius','Meksika','Mikronezya','Moldova',
+      'Monako','Moğolistan','Karadağ','Fas','Mozambik','Myanmar',
+      'Namibya','Nauru','Nepal','Hollanda','Yeni Zelanda','Nikaragua',
+      'Nijer','Nijerya','Kuzey Makedonya','Norveç','Umman',
+      'Pakistan','Palau','Panama','Papua Yeni Gine','Paraguay','Peru',
+      'Filipinler','Polonya','Portekiz','Katar','Romanya','Rusya',
+      'Ruanda','Saint Kitts ve Nevis','Saint Lucia',
+      'Saint Vincent ve Grenadinler','Samoa','San Marino',
+      'São Tomé ve Príncipe','Suudi Arabistan','Senegal','Sırbistan',
+      'Seyşeller','Sierra Leone','Singapur','Slovakya','Slovenya',
+      'Solomon Adaları','Somali','Güney Afrika','Güney Sudan',
+      'İspanya','Sri Lanka','Sudan','Surinam','İsveç','İsviçre',
+      'Suriye','Tayvan','Tacikistan','Tanzanya','Tayland','Doğu Timor',
+      'Togo','Tonga','Trinidad ve Tobago','Tunus','Türkiye',
+      'Türkmenistan','Tuvalu','Uganda','Ukrayna',
+      'Birleşik Arap Emirlikleri','Birleşik Krallık','Amerika Birleşik Devletleri',
+      'Uruguay','Özbekistan','Vanuatu','Venezuela','Vietnam',
+      'Yemen','Zambiya','Zimbabve'
+    ].sort((a,b) => a.localeCompare(b, 'tr'));
+
+    const wrap     = document.getElementById('countryWrap');
+    const tagsEl   = document.getElementById('countryTags');
+    const searchEl = document.getElementById('countrySearch');
+    const dropdown = document.getElementById('countryDropdown');
+    const hidden   = document.getElementById('countryHidden');
+    if (!searchEl) return;
+
+    let selected = [];
+    let hiIdx = -1;
+
+    function updateHidden() {
+      hidden.value = selected.join(', ');
+    }
+
+    function renderTags() {
+      tagsEl.querySelectorAll('.country-tag').forEach(t => t.remove());
+      selected.forEach(c => {
+        const tag = document.createElement('span');
+        tag.className = 'country-tag';
+        tag.innerHTML = `${c}<button type="button" aria-label="Kaldır">×</button>`;
+        tag.querySelector('button').addEventListener('mousedown', e => {
+          e.preventDefault();
+          selected = selected.filter(x => x !== c);
+          renderTags();
+          updateHidden();
+          renderDropdown(searchEl.value);
+        });
+        tagsEl.insertBefore(tag, searchEl);
+      });
+    }
+
+    function renderDropdown(q) {
+      const lq = q.toLowerCase();
+      const filtered = COUNTRIES.filter(c =>
+        c.toLowerCase().includes(lq) && !selected.includes(c)
+      );
+      hiIdx = -1;
+      if (!filtered.length) {
+        dropdown.innerHTML = '<div class="country-none">Sonuç bulunamadı</div>';
+      } else {
+        dropdown.innerHTML = filtered.map(c =>
+          `<div class="country-opt" data-val="${c}">${c}</div>`
+        ).join('');
+        dropdown.querySelectorAll('.country-opt').forEach(opt => {
+          opt.addEventListener('mousedown', e => {
+            e.preventDefault();
+            selectCountry(opt.dataset.val);
+          });
+        });
+      }
+      dropdown.classList.add('open');
+    }
+
+    function selectCountry(val) {
+      if (!selected.includes(val)) {
+        selected.push(val);
+        renderTags();
+        updateHidden();
+      }
+      searchEl.value = '';
+      renderDropdown('');
+      searchEl.focus();
+    }
+
+    tagsEl.addEventListener('click', () => searchEl.focus());
+    searchEl.addEventListener('input',  () => renderDropdown(searchEl.value));
+    searchEl.addEventListener('focus',  () => { tagsEl.classList.add('focused'); renderDropdown(searchEl.value); });
+    searchEl.addEventListener('blur',   () => { tagsEl.classList.remove('focused'); setTimeout(() => dropdown.classList.remove('open'), 150); });
+    searchEl.addEventListener('keydown', e => {
+      const opts = dropdown.querySelectorAll('.country-opt');
+      if (e.key === 'ArrowDown')  { e.preventDefault(); hiIdx = Math.min(hiIdx+1, opts.length-1); }
+      if (e.key === 'ArrowUp')    { e.preventDefault(); hiIdx = Math.max(hiIdx-1, 0); }
+      if (e.key === 'Enter' && hiIdx >= 0) { e.preventDefault(); selectCountry(opts[hiIdx].dataset.val); }
+      if (e.key === 'Escape') dropdown.classList.remove('open');
+      if (e.key === 'Backspace' && !searchEl.value && selected.length) {
+        selected.pop(); renderTags(); updateHidden(); renderDropdown('');
+      }
       opts.forEach((o,i) => o.classList.toggle('highlighted', i === hiIdx));
       if (hiIdx >= 0) opts[hiIdx].scrollIntoView({ block: 'nearest' });
     });
