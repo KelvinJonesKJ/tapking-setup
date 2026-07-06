@@ -310,6 +310,8 @@
     .success-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
     /* ── View Mode ── */
+    body.view-active .progress-wrap,
+    body.view-active .header { display: none !important; }
     #viewMode { display: none; max-width: 860px; margin: 0 auto; padding: 32px 20px 60px; }
     #viewMode.active { display: block; }
     .view-banner { background: var(--accent); color: #fff; border-radius: 12px; padding: 20px 28px; margin-bottom: 32px; display: flex; align-items: center; gap: 16px; }
@@ -378,19 +380,14 @@
         <p data-i18n="sub_company_info" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Şirket Bilgileri</p>
         <div class="grid2">
           <div class="field">
-            <label data-i18n="lbl_company_name">Şirket Adı <span class="req">*</span></label>
-            <input type="text" name="Şirket Adı" data-ph-tr="örn. Acme Gaming Ltd." data-ph-en="e.g. Acme Gaming Ltd." placeholder="örn. Acme Gaming Ltd." required />
+            <label data-i18n="lbl_company_name">Site Adresi <span class="req">*</span></label>
+            <input type="text" name="Site Adresi" data-ph-tr="örn. onlyspin.com" data-ph-en="e.g. onlyspin.com" placeholder="örn. onlyspin.com" required />
           </div>
           <div class="field">
             <label data-i18n="lbl_company_country">Kayıtlı Olduğu Ülke <span class="req">*</span></label>
             <input type="text" name="Kayıt Ülkesi" data-ph-tr="örn. Malta, Curacao, İngiltere" data-ph-en="e.g. Malta, Curacao, UK" placeholder="örn. Malta, Curacao, İngiltere" required />
           </div>
         </div>
-        <div class="field">
-          <label data-i18n="lbl_company_reg">Şirket Kayıt Numarası <span class="hint" data-i18n="hint_if_applicable">(varsa)</span></label>
-          <input type="text" name="Şirket Kayıt Numarası" data-ph-tr="örn. C-12345" data-ph-en="e.g. C-12345" placeholder="örn. C-12345" />
-        </div>
-
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
         <p data-i18n="sub_authorized_person" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Yetkili Kişi</p>
         <div class="grid2">
@@ -411,7 +408,7 @@
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
         <p data-i18n="sub_license" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Lisans</p>
         <div class="field">
-          <label data-i18n="lbl_has_license">Mevcut oyun lisansınız var mı? <span class="req">*</span></label>
+          <label data-i18n="lbl_has_license">Mevcut lisansınız var mı? <span class="req">*</span></label>
           <div class="radio-group">
             <label><input type="radio" name="Lisans Var mı" value="yes" onchange="toggleSub('license_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
             <label><input type="radio" name="Lisans Var mı" value="no" onchange="toggleSub('license_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
@@ -449,7 +446,7 @@
 
         <hr style="border:none;border-top:1px solid var(--border);margin:20px 0;" />
         <div class="field">
-          <label data-i18n="lbl_prev_platform">Daha önce aktif bir platform işlettiniz mi?</label>
+          <label data-i18n="lbl_prev_platform">Daha önce aktif bir site işlettiniz mi?</label>
           <div class="radio-group">
             <label><input type="radio" name="Önceki Platform" value="yes" onchange="toggleSub('prev_platform_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
             <label><input type="radio" name="Önceki Platform" value="no" onchange="toggleSub('prev_platform_details','no')" /> <span data-i18n="opt_no_fresh_start">Hayır, sıfırdan başlıyoruz</span></label>
@@ -1875,7 +1872,7 @@
     // Airtable kaydı — sadece dolu alanlar
     const formVeri = Object.entries(allData).filter(([,v]) => v && v.toString().trim()).map(([k,v]) => `${k}: ${v}`).join('\n');
     const atFields = {
-      "Name":                   allData["Şirket Adı"] || "(Belirtilmedi)",
+      "Name":                   allData["Site Adresi"] || "(Belirtilmedi)",
       "İletişim E-postası":     allData["İletişim E-postası"] || "",
       "Yetkili Adı Soyadı":     allData["Yetkili Adı Soyadı"] || "",
       "Kayıt Ülkesi":           allData["Kayıt Ülkesi"] || "",
@@ -1898,7 +1895,7 @@
       } catch(e) {}
 
       // E-posta için formatlanmış mesaj
-      const emailLines = [`YENİ MÜŞTERİ KURULUM FORMU — ${allData["Şirket Adı"] || "(Belirtilmedi)"}\n`];
+      const emailLines = [`YENİ MÜŞTERİ KURULUM FORMU — ${allData["Site Adresi"] || "(Belirtilmedi)"}\n`];
       Object.entries(allData).forEach(([k, v]) => {
         if (v && v.toString().trim()) emailLines.push(`${k}: ${v}`);
       });
@@ -1906,11 +1903,11 @@
       if (viewLink) emailLines.push(viewLink);
 
       const fsData = new FormData();
-      fsData.append('_subject', `Yeni Kurulum Formu — ${allData["Şirket Adı"] || "Tap King"}`);
+      fsData.append('_subject', `Yeni Kurulum Formu — ${allData["Site Adresi"] || "Tap King"}`);
       fsData.append('_cc', 'support@tapking.com');
       fsData.append('_captcha', 'false');
       fsData.append('_template', 'basic');
-      fsData.append('Şirket Adı', allData['Şirket Adı'] || '');
+      fsData.append('Şirket Adı', allData['Site Adresi'] || '');
       fsData.append('message', emailLines.join('\n'));
 
       // Formsubmit.co'ya gönder
@@ -1945,14 +1942,14 @@
     if (!viewId) return;
 
     // Hide normal UI, show view mode
+    document.body.classList.add('view-active');
     document.getElementById('viewMode').classList.add('active');
-    document.querySelector('.header').style.display = 'none';
     document.querySelector('.container').style.display = 'none';
     const langBtn = document.getElementById('langBtn');
     if (langBtn) langBtn.style.display = 'none';
 
     const sectionMap = [
-      { title: 'Şirket & Lisans', keys: ['Şirket Adı','Kayıt Ülkesi','Şirket Kayıt Numarası','Yetkili Adı Soyadı','Pozisyon / Unvan','İletişim E-postası','Lisans Var mı','Lisans Türü','Lisans Sağlayıcı','Lisans Numarası','Lisans Bitiş Tarihi','Lisans Desteği'] },
+      { title: 'Şirket & Lisans', keys: ['Site Adresi','Kayıt Ülkesi','Yetkili Adı Soyadı','Pozisyon / Unvan','İletişim E-postası','Lisans Var mı','Lisans Türü','Lisans Sağlayıcı','Lisans Numarası','Lisans Bitiş Tarihi','Lisans Desteği'] },
       { title: 'Alan Adı & Hosting', keys: ['Platform Adı','Domain Adresi','Domain Sağlayıcı','Domain Sahipliği','DNS Erişimi','Önceki Platform','Veri Migrasyonu','Cloudflare Kullanımı','Cloudflare Geçişi','Hosting Tercihi','SSL Durumu','CDN Kullanımı','Sunucu Lokasyonu'] },
       { title: 'Ödeme Yöntemleri', keys: ['PSP Var mı','PSP Sağlayıcı','Çekim Onayı','Çekim Limiti','Tap King PSP','Para Birimi','Para Birimi Diğer','Kripto','Düzenleyici Kısıtlamalar','Kısıtlı Ülkeler'] },
       { title: 'Hedef Pazar & Diller', keys: ['Hedef Ülkeler','Site Dilleri','RTL Desteği','Çeviri Sağlayıcı','İçerik Çevirisi'] },
@@ -2053,14 +2050,13 @@
       sub_project_timeline: 'Proje & Zaman Çizelgesi', sub_platform_migration: 'Platform & Göç',
       sub_references: 'Referans & İlham', sub_files_materials: 'Dosya & Materyal', sub_contact_notes: 'İletişim & Ek Notlar',
       // labels — sec1
-      lbl_company_name: 'Şirket Adı *', lbl_company_country: 'Kayıtlı Olduğu Ülke *',
-      lbl_company_reg: 'Şirket Kayıt Numarası', hint_if_applicable: '(varsa)',
+      lbl_company_name: 'Site Adresi *', lbl_company_country: 'Kayıtlı Olduğu Ülke *',
       lbl_full_name: 'Ad Soyad *', lbl_position: 'Pozisyon / Unvan', lbl_contact_email: 'İletişim E-postası *',
-      lbl_has_license: 'Mevcut oyun lisansınız var mı? *',
+      lbl_has_license: 'Mevcut lisansınız var mı? *',
       lbl_license_type: 'Lisans Türü', lbl_license_provider: 'Lisans Sağlayıcısı',
       lbl_license_number: 'Lisans Numarası', lbl_license_expiry: 'Lisans Geçerlilik Tarihi',
       lbl_license_support: 'Lisans süreci için destek almak ister misiniz?',
-      lbl_prev_platform: 'Daha önce aktif bir platform işlettiniz mi?',
+      lbl_prev_platform: 'Daha önce aktif bir site işlettiniz mi?',
       lbl_prev_platform_name: 'Platform Adı / URL', hint_old_platform: '(eski platform)',
       lbl_migration_needed: 'Veri / Oyuncu taşıması gerekiyor mu?',
       // labels — sec2
@@ -2262,14 +2258,13 @@
       sub_project_timeline: 'Project & Timeline', sub_platform_migration: 'Platform & Migration',
       sub_references: 'References & Inspiration', sub_files_materials: 'Files & Materials', sub_contact_notes: 'Contact & Additional Notes',
       // labels — sec1
-      lbl_company_name: 'Company Name *', lbl_company_country: 'Country of Registration *',
-      lbl_company_reg: 'Company Registration Number', hint_if_applicable: '(if applicable)',
+      lbl_company_name: 'Site Address *', lbl_company_country: 'Country of Registration *',
       lbl_full_name: 'Full Name *', lbl_position: 'Position / Title', lbl_contact_email: 'Contact Email *',
-      lbl_has_license: 'Do you have an existing gaming license? *',
+      lbl_has_license: 'Do you have an existing license? *',
       lbl_license_type: 'License Type', lbl_license_provider: 'License Provider',
       lbl_license_number: 'License Number', lbl_license_expiry: 'License Expiry Date',
       lbl_license_support: 'Would you like support with the licensing process?',
-      lbl_prev_platform: 'Have you previously operated an active platform?',
+      lbl_prev_platform: 'Have you previously operated an active site?',
       lbl_prev_platform_name: 'Platform Name / URL', hint_old_platform: '(previous platform)',
       lbl_migration_needed: 'Is data / player migration needed?',
       // labels — sec2
