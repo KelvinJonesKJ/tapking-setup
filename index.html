@@ -469,122 +469,10 @@
       </div>
     </div>
 
-    <!-- 2. Ödeme Yöntemleri -->
+    <!-- 2. Hedef Pazar & Diller -->
     <div class="section" data-section="2">
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">2</div>
-        <div class="section-title">
-          <h2 data-i18n="sec3_title">Ödeme Yöntemleri</h2>
-          <p data-i18n="sec3_sub">Ödeme altyapısı ve entegrasyonları</p>
-        </div>
-        <div class="section-chevron">▾</div>
-      </div>
-      <div class="section-body">
-        <!-- Ödeme yöntemleri -->
-        <div class="field">
-          <label data-i18n="lbl_payment_methods">Sunmak istediğiniz ödeme yöntemleri</label>
-          <div class="check-group">
-            <label><input type="checkbox" name="Ödeme - Kripto" id="cb_crypto" onchange="toggleSub('crypto_details','yes')" /> <span data-i18n="opt_crypto">Kripto Para</span></label>
-            <label><input type="checkbox" name="Ödeme - Banka Transferi" /> <span data-i18n="opt_bank_transfer">Banka Transferi</span></label>
-            <label><input type="checkbox" name="Ödeme - Kredi/Banka Kartı" /> <span data-i18n="opt_credit_card">Kredi / Banka Kartı</span></label>
-            <label><input type="checkbox" name="Ödeme - e-Cüzdan" /> <span data-i18n="opt_ewallet">e-Cüzdan</span></label>
-            <label><input type="checkbox" name="Ödeme - Lokal" /> <span data-i18n="opt_local_payment">Lokal Ödeme</span></label>
-          </div>
-        </div>
-
-        <!-- Kripto detayları -->
-        <div class="sub-fields" id="crypto_details">
-          <div class="field">
-            <label data-i18n="lbl_crypto_coins">Desteklemek istediğiniz kripto coinler</label>
-            <div class="check-group">
-              <label><input type="checkbox" name="Kripto - BTC" /> BTC</label>
-              <label><input type="checkbox" name="Kripto - ETH" /> ETH</label>
-              <label><input type="checkbox" name="Kripto - USDT" /> USDT (TRC-20)</label>
-              <label><input type="checkbox" name="Kripto - USDC" /> USDC</label>
-              <label><input type="checkbox" name="Kripto - LTC" /> LTC</label>
-              <label><input type="checkbox" name="Kripto - BNB" /> BNB</label>
-              <label><input type="checkbox" name="Kripto - TRX" /> TRX</label>
-              <label><input type="checkbox" name="Kripto - XRP" /> XRP</label>
-            </div>
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_local_payments">Lokal ödeme yöntemleri <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
-          <input type="text" name="Lokal Ödeme Yöntemleri" data-ph-tr="örn. Papara, Payfix, Havale" data-ph-en="e.g. Papara, Payfix, Bank Transfer" placeholder="örn. Papara, Payfix, Havale" />
-        </div>
-
-        <hr class="divider" />
-
-        <!-- Limitler -->
-        <div class="field">
-          <label data-i18n="lbl_min_deposit">Minimum yatırım limiti</label>
-          <input type="text" name="Min. Yatırım" data-ph-tr="örn. 50 TRY / 10 USD" data-ph-en="e.g. 50 TRY / 10 USD" placeholder="örn. 50 TRY / 10 USD" />
-        </div>
-        <div class="field">
-          <label data-i18n="lbl_max_withdrawal">Maksimum çekim limiti <span class="hint" data-i18n="hint_daily">(günlük)</span></label>
-          <input type="text" name="Max. Günlük Çekim" data-ph-tr="örn. 10.000 TRY / 1.000 USD" data-ph-en="e.g. 10,000 TRY / 1,000 USD" placeholder="örn. 10.000 TRY / 1.000 USD" />
-        </div>
-
-        <hr class="divider" />
-
-        <!-- Ödeme akışı -->
-        <div class="field">
-          <label data-i18n="lbl_withdrawal_approval">Para çekme onay süreci nasıl olsun?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Çekim Onayı" value="auto" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_auto_approval">Otomatik onay</span></label>
-            <label><input type="radio" name="Çekim Onayı" value="manual" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_manual_approval">Manuel onay (tüm çekimler)</span></label>
-            <label><input type="radio" name="Çekim Onayı" value="threshold" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='block'" /> <span data-i18n="opt_threshold_approval">Belirli bir tutarın üzeri manuel</span></label>
-          </div>
-        </div>
-        <div id="withdrawal_threshold_wrap" style="display:none">
-          <div class="field">
-            <label data-i18n="lbl_manual_threshold">Manuel onay eşiği</label>
-            <input type="text" name="Çekim Limiti" data-ph-tr="örn. 5.000 TRY üzeri manuel onay" data-ph-en="e.g. Manual approval above 5,000 TRY" placeholder="örn. 5.000 TRY üzeri manuel onay" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_fraud_rules">Fraud / Kötüye kullanım önleme kuralları <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
-          <textarea name="Fraud Kuralları" data-ph-tr="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..." data-ph-en="e.g. max 3 withdrawals per day from same IP, no withdrawal until bonus wagering requirement is met..." placeholder="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..."></textarea>
-        </div>
-
-        <hr class="divider" />
-
-        <!-- PSP -->
-        <div class="field">
-          <label data-i18n="lbl_has_psp">Mevcut bir ödeme sağlayıcınız (PSP) var mı?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="PSP Var mı" value="yes" onchange="toggleSub('psp_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="PSP Var mı" value="no" onchange="toggleSub('psp_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
-          </div>
-        </div>
-        <div class="sub-fields" id="psp_details">
-          <div class="field">
-            <label data-i18n="lbl_psp_name">Sağlayıcı Adı</label>
-            <input type="text" name="PSP Adı" data-ph-tr="örn. Stripe, Payguru, Praxis" data-ph-en="e.g. Stripe, Payguru, Praxis" placeholder="örn. Stripe, Payguru, Praxis" />
-          </div>
-          <div class="field">
-            <label data-i18n="lbl_psp_api">API Dokümantasyonu / Erişim Bilgileri</label>
-            <textarea name="PSP API Bilgisi" data-ph-tr="API endpoint, dokümantasyon linki veya erişim notu..." data-ph-en="API endpoint, documentation link or access notes..." placeholder="API endpoint, dokümantasyon linki veya erişim notu..."></textarea>
-          </div>
-          <div id="psp_use_ours" style="display:none">
-            <div class="field">
-              <label data-i18n="lbl_use_our_psp">Bizim ödeme çözümlerimizi kullanmak ister misiniz?</label>
-              <div class="radio-group">
-                <label><input type="radio" name="Tap King PSP" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-                <label><input type="radio" name="Tap King PSP" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3. Hedef Pazar & Diller -->
-    <div class="section" data-section="3">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">3</div>
         <div class="section-title">
           <h2 data-i18n="sec4_title">Hedef Pazar &amp; Diller</h2>
           <p data-i18n="sec4_sub">Pazarlama ve dil gereksinimleri</p>
@@ -712,10 +600,10 @@
       </div>
     </div>
 
-    <!-- 4. Marka & Tasarım -->
-    <div class="section" data-section="4">
+    <!-- 3. Marka & Tasarım -->
+    <div class="section" data-section="3">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">4</div>
+        <div class="section-number">3</div>
         <div class="section-title">
           <h2 data-i18n="sec5_title">Marka &amp; Tasarım</h2>
           <p data-i18n="sec5_sub">Görsel kimlik ve tasarım gereksinimleri</p>
@@ -823,10 +711,10 @@
       </div>
     </div>
 
-    <!-- 5. Site İçerikleri -->
-    <div class="section" data-section="5">
+    <!-- 4. Site İçerikleri -->
+    <div class="section" data-section="4">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">5</div>
+        <div class="section-number">4</div>
         <div class="section-title">
           <h2 data-i18n="sec6_title">Site İçerikleri</h2>
           <p data-i18n="sec6_sub">İçerik yapısı ve sayfalar</p>
@@ -949,17 +837,121 @@
       </div>
     </div>
 
-    <!-- 6. SMS Sağlayıcı -->
-    <div class="section" data-section="6">
+
+
+    <!-- 5. Diğer Hizmetler -->
+    <div class="section" data-section="5">
       <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">6</div>
+        <div class="section-number">5</div>
         <div class="section-title">
-          <h2 data-i18n="sec9_title">SMS Sağlayıcı</h2>
-          <p data-i18n="sec9_sub">SMS entegrasyonu</p>
+          <h2>Diğer Hizmetler</h2>
+          <p>Ödeme, SMS, E-posta ve Call Center</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
+
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Ödeme Yöntemleri</p>
+        <!-- Ödeme yöntemleri -->
+        <div class="field">
+          <label data-i18n="lbl_payment_methods">Sunmak istediğiniz ödeme yöntemleri</label>
+          <div class="check-group">
+            <label><input type="checkbox" name="Ödeme - Kripto" id="cb_crypto" onchange="toggleSub('crypto_details','yes')" /> <span data-i18n="opt_crypto">Kripto Para</span></label>
+            <label><input type="checkbox" name="Ödeme - Banka Transferi" /> <span data-i18n="opt_bank_transfer">Banka Transferi</span></label>
+            <label><input type="checkbox" name="Ödeme - Kredi/Banka Kartı" /> <span data-i18n="opt_credit_card">Kredi / Banka Kartı</span></label>
+            <label><input type="checkbox" name="Ödeme - e-Cüzdan" /> <span data-i18n="opt_ewallet">e-Cüzdan</span></label>
+            <label><input type="checkbox" name="Ödeme - Lokal" /> <span data-i18n="opt_local_payment">Lokal Ödeme</span></label>
+          </div>
+        </div>
+
+        <!-- Kripto detayları -->
+        <div class="sub-fields" id="crypto_details">
+          <div class="field">
+            <label data-i18n="lbl_crypto_coins">Desteklemek istediğiniz kripto coinler</label>
+            <div class="check-group">
+              <label><input type="checkbox" name="Kripto - BTC" /> BTC</label>
+              <label><input type="checkbox" name="Kripto - ETH" /> ETH</label>
+              <label><input type="checkbox" name="Kripto - USDT" /> USDT (TRC-20)</label>
+              <label><input type="checkbox" name="Kripto - USDC" /> USDC</label>
+              <label><input type="checkbox" name="Kripto - LTC" /> LTC</label>
+              <label><input type="checkbox" name="Kripto - BNB" /> BNB</label>
+              <label><input type="checkbox" name="Kripto - TRX" /> TRX</label>
+              <label><input type="checkbox" name="Kripto - XRP" /> XRP</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="field">
+          <label data-i18n="lbl_local_payments">Lokal ödeme yöntemleri <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
+          <input type="text" name="Lokal Ödeme Yöntemleri" data-ph-tr="örn. Papara, Payfix, Havale" data-ph-en="e.g. Papara, Payfix, Bank Transfer" placeholder="örn. Papara, Payfix, Havale" />
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Limitler -->
+        <div class="field">
+          <label data-i18n="lbl_min_deposit">Minimum yatırım limiti</label>
+          <input type="text" name="Min. Yatırım" data-ph-tr="örn. 50 TRY / 10 USD" data-ph-en="e.g. 50 TRY / 10 USD" placeholder="örn. 50 TRY / 10 USD" />
+        </div>
+        <div class="field">
+          <label data-i18n="lbl_max_withdrawal">Maksimum çekim limiti <span class="hint" data-i18n="hint_daily">(günlük)</span></label>
+          <input type="text" name="Max. Günlük Çekim" data-ph-tr="örn. 10.000 TRY / 1.000 USD" data-ph-en="e.g. 10,000 TRY / 1,000 USD" placeholder="örn. 10.000 TRY / 1.000 USD" />
+        </div>
+
+        <hr class="divider" />
+
+        <!-- Ödeme akışı -->
+        <div class="field">
+          <label data-i18n="lbl_withdrawal_approval">Para çekme onay süreci nasıl olsun?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="Çekim Onayı" value="auto" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_auto_approval">Otomatik onay</span></label>
+            <label><input type="radio" name="Çekim Onayı" value="manual" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='none'" /> <span data-i18n="opt_manual_approval">Manuel onay (tüm çekimler)</span></label>
+            <label><input type="radio" name="Çekim Onayı" value="threshold" onchange="document.getElementById('withdrawal_threshold_wrap').style.display='block'" /> <span data-i18n="opt_threshold_approval">Belirli bir tutarın üzeri manuel</span></label>
+          </div>
+        </div>
+        <div id="withdrawal_threshold_wrap" style="display:none">
+          <div class="field">
+            <label data-i18n="lbl_manual_threshold">Manuel onay eşiği</label>
+            <input type="text" name="Çekim Limiti" data-ph-tr="örn. 5.000 TRY üzeri manuel onay" data-ph-en="e.g. Manual approval above 5,000 TRY" placeholder="örn. 5.000 TRY üzeri manuel onay" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label data-i18n="lbl_fraud_rules">Fraud / Kötüye kullanım önleme kuralları <span class="hint" data-i18n="hint_specify_if_any">(varsa belirtin)</span></label>
+          <textarea name="Fraud Kuralları" data-ph-tr="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..." data-ph-en="e.g. max 3 withdrawals per day from same IP, no withdrawal until bonus wagering requirement is met..." placeholder="örn. aynı IP'den günlük max 3 çekim, bonus çevrim şartı tamamlanmadan çekim yapılamaz..."></textarea>
+        </div>
+
+        <hr class="divider" />
+
+        <!-- PSP -->
+        <div class="field">
+          <label data-i18n="lbl_has_psp">Mevcut bir ödeme sağlayıcınız (PSP) var mı?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="PSP Var mı" value="yes" onchange="toggleSub('psp_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="PSP Var mı" value="no" onchange="toggleSub('psp_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
+          </div>
+        </div>
+        <div class="sub-fields" id="psp_details">
+          <div class="field">
+            <label data-i18n="lbl_psp_name">Sağlayıcı Adı</label>
+            <input type="text" name="PSP Adı" data-ph-tr="örn. Stripe, Payguru, Praxis" data-ph-en="e.g. Stripe, Payguru, Praxis" placeholder="örn. Stripe, Payguru, Praxis" />
+          </div>
+          <div class="field">
+            <label data-i18n="lbl_psp_api">API Dokümantasyonu / Erişim Bilgileri</label>
+            <textarea name="PSP API Bilgisi" data-ph-tr="API endpoint, dokümantasyon linki veya erişim notu..." data-ph-en="API endpoint, documentation link or access notes..." placeholder="API endpoint, dokümantasyon linki veya erişim notu..."></textarea>
+          </div>
+          <div id="psp_use_ours" style="display:none">
+            <div class="field">
+              <label data-i18n="lbl_use_our_psp">Bizim ödeme çözümlerimizi kullanmak ister misiniz?</label>
+              <div class="radio-group">
+                <label><input type="radio" name="Tap King PSP" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
+                <label><input type="radio" name="Tap King PSP" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">SMS Sağlayıcısı</p>
         <div class="field">
           <label data-i18n="lbl_sms_provider">SMS Sağlayıcı Seçimi</label>
           <div class="provider-grid">
@@ -1006,20 +998,8 @@
             <label><input type="checkbox" name="SMS - Destek" /> <span data-i18n="opt_sms_support">Müşteri Destek</span></label>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- 7. E-posta Sağlayıcı -->
-    <div class="section" data-section="7">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">7</div>
-        <div class="section-title">
-          <h2 data-i18n="sec10_title">E-posta Sağlayıcı</h2>
-          <p data-i18n="sec10_sub">Transactional ve pazarlama e-posta entegrasyonu</p>
-        </div>
-        <div class="section-chevron">▾</div>
-      </div>
-      <div class="section-body">
+        <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">E-Posta Sağlayıcısı</p>
         <div class="field">
           <label data-i18n="email_provider_label">E-posta Sağlayıcı</label>
           <select name="E-posta Durumu">
@@ -1029,9 +1009,18 @@
             <option value="suggest" data-i18n="opt_email_suggest">Tap King önersin</option>
           </select>
         </div>
+        <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Call Center Sağlayıcısı</p>
+        <div class="info-box" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:16px 20px;display:flex;gap:12px;align-items:flex-start;">
+          <span style="font-size:20px;flex-shrink:0;">ℹ️</span>
+          <div>
+            <p style="font-size:14px;font-weight:600;margin-bottom:6px;">Bu hizmet Tap King tarafından sunulmamaktadır</p>
+            <p style="font-size:13px;color:var(--muted);line-height:1.6;">Call Center kurulumu ve yönetimi müşterimizin sorumluluğundadır. Bu konuda önerilecek çözüm ortakları için Tap King ekibiyle görüşebilirsiniz.</p>
+          </div>
+        </div>
+
       </div>
     </div>
-
 
     <!-- Submit -->
     <div class="submit-area">
@@ -1052,7 +1041,7 @@
 </div>
 
 <script>
-  const TOTAL = 7;
+  const TOTAL = 5;
 
   /* ── Progress bar init ── */
   const stepsEl = document.getElementById('progressSteps');
@@ -1260,12 +1249,10 @@
 
     const sectionMap = [
       { title: 'Şirket & Lisans', keys: ['Site Adresi','Kayıt Ülkesi','Yetkili Adı Soyadı','Pozisyon / Unvan','İletişim E-postası','Lisans Var mı','Lisans Türü','Lisans Sağlayıcı','Lisans Numarası','Lisans Bitiş Tarihi','Lisans Desteği'] },
-      { title: 'Ödeme Yöntemleri', keys: ['PSP Var mı','PSP Sağlayıcı','Çekim Onayı','Çekim Limiti','Tap King PSP','Para Birimi','Para Birimi Diğer','Kripto','Düzenleyici Kısıtlamalar','Kısıtlı Ülkeler'] },
       { title: 'Hedef Pazar & Diller', keys: ['Hedef Ülkeler','Site Dilleri','RTL Desteği','Çeviri Sağlayıcı','İçerik Çevirisi'] },
       { title: 'Marka & Tasarım', keys: ['Marka Tonu','Tasarım Stili','Tema Tercihi','Cihaz Önceliği','Ana Renkler','İkincil Renkler','Font Tercihi','Logo Dosyaları','Favicon Var mı','Sosyal Medya Görselleri','Referans Siteler','Tasarım Notları'] },
       { title: 'İçerik Yönetimi', keys: ['Hakkımızda','Şartlar ve Koşullar','Gizlilik Politikası','Sorumlu Oyun İçeriği','SSS','İletişim Sayfası','Promosyon İçeriği','Blog','Bonus İçeriği'] },
-      { title: 'SMS Entegrasyonu', keys: ['SMS Sağlayıcı','SMS Amaçları','SMS Diğer'] },
-      { title: 'E-posta Entegrasyonu', keys: ['E-posta Sağlayıcı','E-posta Sağlayıcı Diğer'] },
+      { title: 'Diğer Hizmetler', keys: ['PSP Var mı','PSP Sağlayıcı','Çekim Onayı','Çekim Limiti','Ödeme Yöntemleri','Kripto','SMS Sağlayıcı','SMS Amaçları','E-posta Sağlayıcı'] },
     ];
 
     fetch('/api/submission?id=' + encodeURIComponent(viewId))
