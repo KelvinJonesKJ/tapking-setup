@@ -693,138 +693,12 @@
       </div>
     </div>
 
-    <!-- 4. Site İçerikleri -->
+
+
+    <!-- 4. Diğer Hizmetler -->
     <div class="section" data-section="4">
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">4</div>
-        <div class="section-title">
-          <h2 data-i18n="sec6_title">Site İçerikleri</h2>
-          <p data-i18n="sec6_sub">İçerik yapısı ve sayfalar</p>
-        </div>
-        <div class="section-chevron">▾</div>
-      </div>
-      <div class="section-body">
-        <p data-i18n="sec6_instructions" style="font-size:13px;color:var(--muted);margin-bottom:16px;">Her içerik için mevcut durumu seçiniz. "Hazır" seçerseniz lütfen dosya/link paylaşın:</p>
-
-        <!-- Temel sayfalar -->
-        <div class="field">
-          <label data-i18n="lbl_content_about">Hakkımızda</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Hakkımızda" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="Hakkımızda" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-          </div>
-          <input type="text" name="Hakkımızda Linki" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_content_terms">Şartlar &amp; Koşullar</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Şartlar ve Koşullar" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="Şartlar ve Koşullar" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-          </div>
-          <input type="text" name="Şartlar Linki" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_content_privacy">Gizlilik Politikası</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Gizlilik Politikası" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="Gizlilik Politikası" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-          </div>
-          <input type="text" name="Gizlilik Linki" data-ph-tr="İçerik linki veya Drive/Dropbox adresi (hazırsa)" data-ph-en="Content link or Drive/Dropbox address (if ready)" placeholder="İçerik linki veya Drive/Dropbox adresi (hazırsa)" style="margin-top:8px" />
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_content_rg">Sorumlu Kumar / Responsible Gambling <span class="hint" data-i18n="hint_license_required">(lisans için genellikle zorunlu)</span></label>
-          <div class="radio-group">
-            <label><input type="radio" name="Sorumlu Oyun İçeriği" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="Sorumlu Oyun İçeriği" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-            <label><input type="radio" name="Sorumlu Oyun İçeriği" value="none" /> <span data-i18n="opt_not_needed">Gerekmiyor</span></label>
-          </div>
-          <input type="text" name="Sorumlu Oyun Linki" data-ph-tr="İçerik linki (hazırsa)" data-ph-en="Content link (if ready)" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_content_faq">SSS (Sıkça Sorulan Sorular)</label>
-          <div class="radio-group">
-            <label><input type="radio" name="SSS" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="SSS" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-            <label><input type="radio" name="SSS" value="none" /> <span data-i18n="opt_dont_want">İstemiyorum</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_content_contact">İletişim Sayfası</label>
-          <div class="radio-group">
-            <label><input type="radio" name="İletişim Sayfası" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="İletişim Sayfası" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_content_promo">Promosyonlar / Kampanyalar Sayfası</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Promosyon İçeriği" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="Promosyon İçeriği" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-            <label><input type="radio" name="Promosyon İçeriği" value="none" /> <span data-i18n="opt_dont_want">İstemiyorum</span></label>
-          </div>
-        </div>
-
-        <div class="field">
-          <label data-i18n="lbl_content_blog">Blog / Haber Bölümü</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Blog" value="yes" /> <span data-i18n="opt_yes_want">Evet, istiyorum</span></label>
-            <label><input type="radio" name="Blog" value="no" /> <span data-i18n="opt_no_dont_want">Hayır, istemiyorum</span></label>
-          </div>
-        </div>
-
-        <hr class="divider" />
-
-        <!-- İçerik dili -->
-        <div class="field">
-          <label data-i18n="lbl_content_language">İçerikler hangi dilde hazırlandı / hazırlanacak?</label>
-          <input type="text" name="İçerik Dili" data-ph-tr="örn. Türkçe, İngilizce, her ikisi" data-ph-en="e.g. Turkish, English, both" placeholder="örn. Türkçe, İngilizce, her ikisi" />
-        </div>
-        <div class="field">
-          <label data-i18n="lbl_content_translation">Çeviri gerekiyor mu?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="İçerik Çevirisi" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="İçerik Çevirisi" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-          </div>
-        </div>
-
-        <hr class="divider" />
-
-        <!-- Bonus detayları -->
-        <div class="field">
-          <label data-i18n="lbl_bonus_types">Bonus Türleri <span class="hint" data-i18n="hint_select_active">(aktif etmek istediklerinizi seçin)</span></label>
-          <div class="check-group">
-            <label><input type="checkbox" name="Bonus - Hoşgeldin" /> <span data-i18n="opt_welcome_bonus">Hoşgeldin Bonusu</span></label>
-            <label><input type="checkbox" name="Bonus - Yatırım" /> <span data-i18n="opt_deposit_bonus">Yatırım Bonusu</span></label>
-            <label><input type="checkbox" name="Bonus - Freespin" /> Freespin</label>
-            <label><input type="checkbox" name="Bonus - Cashback" /> Cashback</label>
-            <label><input type="checkbox" name="Bonus - Referral" /> <span data-i18n="opt_referral_bonus">Arkadaş Davet Bonusu</span></label>
-            <label><input type="checkbox" name="Bonus - VIP" /> <span data-i18n="opt_vip_loyalty">VIP / Sadakat Programı</span></label>
-            <label><input type="checkbox" name="bonus_noDeposit" /> <span data-i18n="opt_no_deposit_bonus">Yatırımsız Bonus</span></label>
-          </div>
-        </div>
-        <div class="field">
-          <label data-i18n="lbl_bonus_rules">Bonus kuralları / çevrim şartları hazır mı?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Bonus İçeriği" value="ready" /> <span data-i18n="opt_ready">Hazır</span></label>
-            <label><input type="radio" name="Bonus İçeriği" value="need" /> <span data-i18n="opt_need_support">Destek İstiyorum</span></label>
-          </div>
-          <input type="text" name="Bonus Linki" data-ph-tr="İçerik linki (hazırsa)" data-ph-en="Content link (if ready)" placeholder="İçerik linki (hazırsa)" style="margin-top:8px" />
-        </div>
-      </div>
-    </div>
-
-
-
-    <!-- 5. Diğer Hizmetler -->
-    <div class="section" data-section="5">
-      <div class="section-header" onclick="toggleSection(this)">
-        <div class="section-number">5</div>
         <div class="section-title">
           <h2>Diğer Hizmetler</h2>
           <p>Ödeme, SMS, E-posta ve Call Center</p>
@@ -1023,7 +897,7 @@
 </div>
 
 <script>
-  const TOTAL = 5;
+  const TOTAL = 4;
 
   /* ── Progress bar init ── */
   const stepsEl = document.getElementById('progressSteps');
@@ -1233,7 +1107,6 @@
       { title: 'Şirket & Lisans', keys: ['Site Adresi','Kayıt Ülkesi','Yetkili Adı Soyadı','Pozisyon / Unvan','İletişim E-postası','Lisans Var mı','Lisans Türü','Lisans Sağlayıcı','Lisans Numarası','Lisans Bitiş Tarihi','Lisans Desteği'] },
       { title: 'Hedef Pazar & Diller', keys: ['Hedef Ülkeler','Site Dilleri','RTL Desteği','İçerik Çevirisi'] },
       { title: 'Marka & Tasarım', keys: ['Marka Tonu','Tasarım Stili','Tema Tercihi','Cihaz Önceliği','Ana Renkler','İkincil Renkler','Font Tercihi','Logo Dosyaları','Favicon Var mı','Sosyal Medya Görselleri','Referans Siteler','Tasarım Notları'] },
-      { title: 'İçerik Yönetimi', keys: ['Hakkımızda','Şartlar ve Koşullar','Gizlilik Politikası','Sorumlu Oyun İçeriği','SSS','İletişim Sayfası','Promosyon İçeriği','Blog','Bonus İçeriği'] },
       { title: 'Diğer Hizmetler', keys: ['PSP Var mı','PSP Sağlayıcı','Çekim Onayı','Çekim Limiti','Ödeme Yöntemleri','Kripto','SMS Sağlayıcı','SMS Amaçları','E-posta Sağlayıcı'] },
     ];
 
