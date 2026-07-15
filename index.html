@@ -759,37 +759,107 @@
 
         <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">SMS Sağlayıcısı</p>
         <div class="field">
-          <label data-i18n="lbl_sms_provider">SMS Sağlayıcı Seçimi</label>
+          <label data-i18n="lbl_sms_provider">SMS Sağlayıcı Seçimi <span class="hint">(birden fazla seçilebilir)</span></label>
           <div class="provider-grid">
             <label class="provider-card">
-              <input type="radio" name="SMS Sağlayıcı" value="smsala" />
+              <input type="checkbox" name="SMS - Twilio" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Twilio</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - Clickatell" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Clickatell</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - Organik" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Organik</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - Disparo Pro" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Disparo Pro</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - Karix" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Karix</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - SMSala" />
               <div class="provider-card-inner">
                 <div class="provider-icon">📱</div>
                 <div class="provider-name">SMSala</div>
-                <div class="provider-desc" data-i18n="opt_local_provider">Lokal sağlayıcı</div>
               </div>
             </label>
             <label class="provider-card">
-              <input type="radio" name="SMS Sağlayıcı" value="getir_sms" />
+              <input type="checkbox" name="SMS - Plugni" />
               <div class="provider-card-inner">
-                <div class="provider-icon">🚀</div>
-                <div class="provider-name">Getir SMS</div>
-                <div class="provider-desc" data-i18n="opt_local_provider">Lokal sağlayıcı</div>
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Plugni</div>
               </div>
             </label>
             <label class="provider-card">
-              <input type="radio" name="SMS Sağlayıcı" value="other_sms" />
+              <input type="checkbox" name="SMS - Brevo" />
               <div class="provider-card-inner">
-                <div class="provider-icon">⚙️</div>
-                <div class="provider-name" data-i18n="opt_other_provider">Diğer</div>
-                <div class="provider-desc" data-i18n="opt_specify">Belirtin</div>
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Brevo</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - Giden SMS" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Giden SMS</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - Reve SMS" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Reve SMS</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - MMDSmart" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">MMDSmart</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - TurkeySMS" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">TurkeySMS</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - Laaffic" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">Laaffic</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="SMS - TikoSMS" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">📱</div>
+                <div class="provider-name">TikoSMS</div>
               </div>
             </label>
           </div>
-        </div>
-        <div class="field" id="sms_other_wrap" style="display:none">
-          <label data-i18n="lbl_sms_other">SMS Sağlayıcı Adı (Diğer)</label>
-          <input type="text" name="Diğer SMS Sağlayıcı" data-ph-tr="Sağlayıcı adını giriniz" data-ph-en="Enter provider name" placeholder="Sağlayıcı adını giriniz" />
         </div>
         <div class="field">
           <label data-i18n="lbl_sms_api">SMS API Anahtarı / Erişim Bilgileri <span class="hint" data-i18n="hint_optional_later">(opsiyonel — sonra paylaşılabilir)</span></label>
