@@ -922,6 +922,96 @@
       </div>
     </div>
 
+    <!-- Section 5: Oyun & Ürün Tercihleri -->
+    <div class="section" data-section="5">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div>
+          <h2 class="section-title">Oyun &amp; Ürün Tercihleri</h2>
+          <p class="section-sub">Platformunuzda sunmak istediğiniz ürünleri belirtin.</p>
+        </div>
+      </div>
+      <div class="section-body">
+
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Casino RTP</p>
+        <div class="field">
+          <label>RTP Tercihi <span class="hint">(isteğe bağlı)</span></label>
+          <div class="provider-grid">
+            <label class="provider-card">
+              <input type="radio" name="RTP Tercihi" value="92" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">🎲</div>
+                <div class="provider-name">%92</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="RTP Tercihi" value="94" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">🎰</div>
+                <div class="provider-name">%94</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="RTP Tercihi" value="96" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">💎</div>
+                <div class="provider-name">%96</div>
+              </div>
+            </label>
+            <label class="provider-card">
+              <input type="radio" name="RTP Tercihi" value="varsayilan" />
+              <div class="provider-card-inner">
+                <div class="provider-icon">⚙️</div>
+                <div class="provider-name">Varsayılan</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Sportsbook</p>
+        <div class="field">
+          <label>Sportsbook istiyor musunuz?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="Sportsbook" value="evet" onchange="toggleSub('sportsbook_providers','evet')" /> <span>Evet</span></label>
+            <label><input type="radio" name="Sportsbook" value="hayir" onchange="toggleSub('sportsbook_providers','hayir')" /> <span>Hayır</span></label>
+          </div>
+        </div>
+        <div class="sub-fields" id="sportsbook_providers">
+          <div class="field">
+            <label>Sportsbook Sağlayıcısı <span class="hint">(birden fazla seçilebilir)</span></label>
+            <div class="provider-grid">
+              <label class="provider-card">
+                <input type="checkbox" name="Sportsbook - GR8" value="GR8" />
+                <div class="provider-card-inner">
+                  <div class="provider-icon">🏆</div>
+                  <div class="provider-name">GR8</div>
+                </div>
+              </label>
+              <label class="provider-card">
+                <input type="checkbox" name="Sportsbook - Digitain" value="Digitain" />
+                <div class="provider-card-inner">
+                  <div class="provider-icon">⚽</div>
+                  <div class="provider-name">Digitain</div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
+        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Poker</p>
+        <div class="field">
+          <label>Poker istiyor musunuz?</label>
+          <div class="radio-group">
+            <label><input type="radio" name="Poker" value="evet" /> <span>Evet</span></label>
+            <label><input type="radio" name="Poker" value="hayir" /> <span>Hayır</span></label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <!-- Submit -->
     <div class="submit-area">
       <button type="submit" class="btn-submit" data-i18n="submit_btn">Formu Gönder →</button>
@@ -941,7 +1031,7 @@
 </div>
 
 <script>
-  const TOTAL = 4;
+  const TOTAL = 5;
 
   /* ── Progress bar init ── */
   const stepsEl = document.getElementById('progressSteps');
@@ -1002,6 +1092,8 @@
       el.classList.toggle('visible', value === 'yes');
       const pspOurs = document.getElementById('psp_use_ours');
       if (pspOurs) pspOurs.style.display = value === 'no' ? 'block' : 'none';
+    } else if (id === 'sportsbook_providers') {
+      el.classList.toggle('visible', value === 'evet');
     }
   }
 
@@ -1152,6 +1244,7 @@
       { title: 'Hedef Pazar & Diller', keys: ['Hedef Ülkeler','Site Dilleri','RTL Desteği','İçerik Çevirisi'] },
       { title: 'Marka & Tasarım', keys: ['Ana Renkler','İkincil Renkler','Font Tercihi','Logo Dosyaları','Referans Siteler','Tasarım Notları'] },
       { title: 'Diğer Hizmetler', keys: ['Ödeme Yöntemleri','Kripto','SMS Sağlayıcı','SMS Amaçları','E-posta Sağlayıcı'] },
+      { title: 'Oyun & Ürün Tercihleri', keys: ['RTP Tercihi','Sportsbook','Poker'] },
     ];
 
     fetch('/api/submission?id=' + encodeURIComponent(viewId))
