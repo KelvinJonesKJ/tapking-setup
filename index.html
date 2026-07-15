@@ -877,13 +877,25 @@
         <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
         <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">E-Posta Sağlayıcısı</p>
         <div class="field">
-          <label data-i18n="email_provider_label">E-posta Sağlayıcı</label>
-          <select name="E-posta Durumu">
-            <option value="">—</option>
-            <option value="undecided" data-i18n="opt_email_undecided">Henüz karar verilmedi</option>
-            <option value="own" data-i18n="opt_email_own">Kendi sağlayıcımız var</option>
-            <option value="suggest" data-i18n="opt_email_suggest">Tap King önersin</option>
-          </select>
+          <label>E-Posta Sağlayıcısı <span class="hint">(birden fazla seçilebilir)</span></label>
+          <div class="provider-grid">
+            <label class="provider-card">
+              <input type="checkbox" name="Email - SMTP" value="SMTP" />
+              <span class="provider-name">SMTP</span>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="Email - SendGrid" value="SendGrid" />
+              <span class="provider-name">SendGrid</span>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="Email - Elastic" value="Elastic" />
+              <span class="provider-name">Elastic</span>
+            </label>
+            <label class="provider-card">
+              <input type="checkbox" name="Email - Mailjet" value="Mailjet" />
+              <span class="provider-name">Mailjet</span>
+            </label>
+          </div>
         </div>
         <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
         <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Call Center Sağlayıcısı</p>
