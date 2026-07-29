@@ -706,6 +706,34 @@
       </div>
       <div class="section-body">
         <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Ödeme Sağlayıcısı</p>
+        <div class="grid2">
+          <div class="field">
+            <label>Min Yatırım Limiti</label>
+            <input type="text" name="Min Yatırım" placeholder="örn. 10 USD" />
+          </div>
+          <div class="field">
+            <label>Max Yatırım Limiti</label>
+            <input type="text" name="Max Yatırım" placeholder="örn. 10.000 USD" />
+          </div>
+          <div class="field">
+            <label>Min Çekim Limiti</label>
+            <input type="text" name="Min Çekim" placeholder="örn. 20 USD" />
+          </div>
+          <div class="field">
+            <label>Max Çekim Limiti</label>
+            <input type="text" name="Max Çekim" placeholder="örn. 50.000 USD" />
+          </div>
+        </div>
+        <div class="field">
+          <label>Çekim Onay Sayısı <span class="hint">(her çekim için kaç onay gerekiyor?)</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="Çekim Onay Sayısı" value="1" /> <span>1 Onay</span></label>
+            <label><input type="radio" name="Çekim Onay Sayısı" value="2" /> <span>2 Onay</span></label>
+          </div>
+        </div>
+
+        <hr class="divider" />
+
         <div class="field">
           <label>PSP / Ödeme Sağlayıcısı <span class="hint">(birden fazla seçilebilir)</span></label>
           <div class="provider-grid">
