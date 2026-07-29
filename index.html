@@ -585,45 +585,7 @@
           <input type="hidden" name="Para Birimi" id="currencyHidden" required />
         </div>
 
-        <hr class="divider" />
 
-        <!-- Düzenleyici kısıtlamalar -->
-        <div class="field">
-          <label data-i18n="lbl_regulatory_restrictions">Hedef pazarda lisans / düzenleyici kısıtlama var mı?</label>
-          <div class="radio-group">
-            <label><input type="radio" name="Düzenleyici Kısıtlamalar" value="yes" onchange="toggleSub('regulatory_details','yes')" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="Düzenleyici Kısıtlamalar" value="no" onchange="toggleSub('regulatory_details','no')" /> <span data-i18n="opt_no">Hayır</span></label>
-            <label><input type="radio" name="Düzenleyici Kısıtlamalar" value="unknown" onchange="toggleSub('regulatory_details','no')" /> <span data-i18n="opt_dont_know">Bilmiyorum</span></label>
-          </div>
-        </div>
-        <div class="sub-fields" id="regulatory_details">
-          <div class="field">
-            <label data-i18n="lbl_restriction_details">Kısıtlama detayları</label>
-            <textarea name="Kısıtlama Detayları" data-ph-tr="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..." data-ph-en="e.g. MGA license required, operating with offshore license in Turkey..." placeholder="örn. MGA lisansı gerekli, Türkiye'de offshore lisansla çalışılıyor..."></textarea>
-          </div>
-        </div>
-
-        <hr class="divider" />
-
-        <!-- Dil & İçerik -->
-        <div class="field">
-          <label data-i18n="lbl_rtl_support">Sağdan sola (RTL) dil desteği gerekiyor mu? <span class="hint" data-i18n="hint_rtl">(Arapça, Farsça vb.)</span></label>
-          <div class="radio-group">
-            <label><input type="radio" name="RTL Desteği" value="yes" /> <span data-i18n="opt_yes">Evet</span></label>
-            <label><input type="radio" name="RTL Desteği" value="no" /> <span data-i18n="opt_no">Hayır</span></label>
-          </div>
-        </div>
-        <div class="field">
-          <label data-i18n="lbl_support_languages">Müşteri hizmetleri dili / dilleri</label>
-          <input type="text" name="Destek Dilleri" data-ph-tr="örn. Türkçe, İngilizce" data-ph-en="e.g. Turkish, English" placeholder="örn. Türkçe, İngilizce" />
-        </div>
-
-        <hr class="divider" />
-
-        <div class="field">
-          <label data-i18n="lbl_competitor_sites">Rakip / referans siteler <span class="hint" data-i18n="hint_competitor">(pazarda neyle rekabet edeceksiniz?)</span></label>
-          <textarea name="Rakip Siteler" data-ph-tr="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..." data-ph-en="e.g. Bets10, Betsson, 1xBet — similar concept or sites you like..." placeholder="örn. Bets10, Betsson, 1xBet — benzer konsept veya beğendiğiniz siteler..."></textarea>
-        </div>
       </div>
     </div>
 
