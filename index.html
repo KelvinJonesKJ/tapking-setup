@@ -1087,9 +1087,11 @@
   updateProgress();
 
   function getT() {
-    return (typeof currentLang !== 'undefined' && typeof i18n !== 'undefined' && i18n[currentLang])
-      ? i18n[currentLang]
-      : { progress_label: 'Bölüm', progress_open: 'açık', str_all_closed: 'Tüm bölümler kapalı' };
+    try {
+      return i18n[currentLang] || i18n.tr;
+    } catch(e) {
+      return { progress_label: 'Bölüm', progress_open: 'açık', str_all_closed: 'Tüm bölümler kapalı' };
+    }
   }
 
   function updateProgress() {
