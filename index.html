@@ -466,7 +466,7 @@
           <input type="email" name="İletişim E-postası" placeholder="ornek@site.com" required />
         </div>
         <div class="field">
-          <label>Fatura E-postası <span class="hint">(finansal yazışmalar ve faturaların iletileceği adres)</span></label>
+          <label data-i18n="lbl_billing_email">Fatura E-postası <span class="hint" data-i18n="hint_billing_email">(finansal yazışmalar ve faturaların iletileceği adres)</span></label>
           <input type="email" name="Fatura E-postası" placeholder="ornek@site.com" />
         </div>
 
@@ -550,7 +550,7 @@
             <label data-i18n="lbl_target_countries">Hedef Ülke / Ülkeler <span class="req">*</span></label>
             <div class="country-wrap" id="countryWrap">
               <div class="country-tags" id="countryTags">
-                <input type="text" id="countrySearch" class="country-search-input" placeholder="Ülke ara... örn. Türkiye, Almanya" autocomplete="off" />
+                <input type="text" id="countrySearch" class="country-search-input" data-ph-tr="Ülke ara... örn. Türkiye, Almanya" data-ph-en="Search country... e.g. Turkey, Germany" placeholder="Ülke ara... örn. Türkiye, Almanya" autocomplete="off" />
               </div>
               <div class="country-dropdown" id="countryDropdown"></div>
             </div>
@@ -583,7 +583,7 @@
         <div class="field">
           <label data-i18n="lbl_currency">Para Birimi <span class="req">*</span></label>
           <div class="currency-wrap" id="currencyWrap">
-            <input type="text" id="currencySearch" placeholder="Ara... örn. USD, TRY, EUR" autocomplete="off" />
+            <input type="text" id="currencySearch" data-ph-tr="Ara... örn. USD, TRY, EUR" data-ph-en="Search... e.g. USD, EUR, GBP" placeholder="Ara... örn. USD, TRY, EUR" autocomplete="off" />
             <div class="currency-dropdown" id="currencyDropdown"></div>
           </div>
           <input type="hidden" name="Para Birimi" id="currencyHidden" required />
@@ -660,37 +660,37 @@
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Ödeme Sağlayıcısı</p>
+        <p data-i18n="sub_payment_provider" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Ödeme Sağlayıcısı</p>
         <div class="grid2">
           <div class="field">
-            <label>Min Yatırım Limiti</label>
+            <label data-i18n="lbl_min_deposit_limit">Min Yatırım Limiti</label>
             <input type="text" name="Min Yatırım" data-ph-tr="örn. 10 TRY" data-ph-en="e.g. 10 USD" placeholder="örn. 10 TRY" />
           </div>
           <div class="field">
-            <label>Max Yatırım Limiti</label>
+            <label data-i18n="lbl_max_deposit_limit">Max Yatırım Limiti</label>
             <input type="text" name="Max Yatırım" data-ph-tr="örn. 10.000 TRY" data-ph-en="e.g. 10,000 USD" placeholder="örn. 10.000 TRY" />
           </div>
           <div class="field">
-            <label>Min Çekim Limiti</label>
+            <label data-i18n="lbl_min_withdrawal_limit">Min Çekim Limiti</label>
             <input type="text" name="Min Çekim" data-ph-tr="örn. 20 TRY" data-ph-en="e.g. 20 USD" placeholder="örn. 20 TRY" />
           </div>
           <div class="field">
-            <label>Max Çekim Limiti</label>
+            <label data-i18n="lbl_max_withdrawal_limit">Max Çekim Limiti</label>
             <input type="text" name="Max Çekim" data-ph-tr="örn. 50.000 TRY" data-ph-en="e.g. 50,000 USD" placeholder="örn. 50.000 TRY" />
           </div>
         </div>
         <div class="field">
-          <label>Çekim Onay Sayısı <span class="hint">(her çekim için kaç onay gerekiyor?)</span></label>
+          <label data-i18n="lbl_withdrawal_approvals">Çekim Onay Sayısı <span class="hint" data-i18n="hint_withdrawal_approvals">(her çekim için kaç onay gerekiyor?)</span></label>
           <div class="radio-group">
-            <label><input type="radio" name="Çekim Onay Sayısı" value="1" /> <span>1 Onay</span></label>
-            <label><input type="radio" name="Çekim Onay Sayısı" value="2" /> <span>2 Onay</span></label>
+            <label><input type="radio" name="Çekim Onay Sayısı" value="1" /> <span data-i18n="opt_1_approval">1 Onay</span></label>
+            <label><input type="radio" name="Çekim Onay Sayısı" value="2" /> <span data-i18n="opt_2_approvals">2 Onay</span></label>
           </div>
         </div>
 
         <hr class="divider" />
 
         <div class="field">
-          <label>PSP / Ödeme Sağlayıcısı <span class="hint">(birden fazla seçilebilir)</span></label>
+          <label data-i18n="lbl_psp_provider">PSP / Ödeme Sağlayıcısı <span class="hint" data-i18n="hint_multi_select">(birden fazla seçilebilir)</span></label>
           <div class="provider-grid">
             <label class="provider-card">
               <input type="checkbox" name="PSP - AkPara" />
@@ -717,14 +717,14 @@
               <input type="checkbox" name="PSP - Kredi Karti" />
               <div class="provider-card-inner">
                 <div class="provider-icon">💳</div>
-                <div class="provider-name">Kredi Kartı</div>
+                <div class="provider-name" data-i18n="opt_credit_card_name">Kredi Kartı</div>
               </div>
             </label>
             <label class="provider-card">
               <input type="checkbox" name="PSP - Kripto Para" />
               <div class="provider-card-inner">
                 <div class="provider-icon">🪙</div>
-                <div class="provider-name">Kripto Para</div>
+                <div class="provider-name" data-i18n="opt_crypto_name">Kripto Para</div>
               </div>
             </label>
             <label class="provider-card">
@@ -759,7 +759,7 @@
           <input type="text" name="Lokal Ödeme Yöntemleri" data-ph-tr="örn. Papara, Payfix, Havale" data-ph-en="e.g. Papara, Payfix, Bank Transfer" placeholder="örn. Papara, Payfix, Havale" />
         </div>
 
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">SMS Sağlayıcısı</p>
+        <p data-i18n="sub_sms_provider" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">SMS Sağlayıcısı</p>
         <div class="field">
           <label data-i18n="lbl_sms_provider">SMS Sağlayıcı Seçimi <span class="hint">(birden fazla seçilebilir)</span></label>
           <div class="provider-grid">
@@ -877,9 +877,9 @@
           </div>
         </div>
         <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">E-Posta Sağlayıcısı</p>
+        <p data-i18n="sub_email_provider" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">E-Posta Sağlayıcısı</p>
         <div class="field">
-          <label>E-Posta Sağlayıcısı <span class="hint">(birden fazla seçilebilir)</span></label>
+          <label data-i18n="lbl_email_provider">E-Posta Sağlayıcısı <span class="hint" data-i18n="hint_multi_select">(birden fazla seçilebilir)</span></label>
           <div class="provider-grid">
             <label class="provider-card">
               <input type="checkbox" name="Email - SMTP" value="SMTP" />
@@ -913,60 +913,60 @@
         </div>
         <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
         <hr class="divider" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Oyuncu Doğrulama</p>
+        <p data-i18n="sub_player_verification" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Oyuncu Doğrulama</p>
         <div class="field">
-          <label>Oyuncu Doğrulama Stratejisi <span class="hint">(kayıt sonrası oyuncunun doğrulaması gereken bilgi)</span></label>
+          <label data-i18n="lbl_player_verification">Oyuncu Doğrulama Stratejisi <span class="hint" data-i18n="hint_player_verification">(kayıt sonrası oyuncunun doğrulaması gereken bilgi)</span></label>
           <div class="provider-grid">
             <label class="provider-card">
               <input type="radio" name="Player Verification" value="email" />
               <div class="provider-card-inner">
                 <div class="provider-icon">📧</div>
-                <div class="provider-name">E-posta</div>
-                <div class="provider-desc">Sadece e-posta doğrulama</div>
+                <div class="provider-name" data-i18n="pv_email_name">E-posta</div>
+                <div class="provider-desc" data-i18n="pv_email_desc">Sadece e-posta doğrulama</div>
               </div>
             </label>
             <label class="provider-card">
               <input type="radio" name="Player Verification" value="phone" />
               <div class="provider-card-inner">
                 <div class="provider-icon">📱</div>
-                <div class="provider-name">Telefon</div>
-                <div class="provider-desc">Sadece SMS doğrulama</div>
+                <div class="provider-name" data-i18n="pv_phone_name">Telefon</div>
+                <div class="provider-desc" data-i18n="pv_phone_desc">Sadece SMS doğrulama</div>
               </div>
             </label>
             <label class="provider-card">
               <input type="radio" name="Player Verification" value="both" />
               <div class="provider-card-inner">
                 <div class="provider-icon">✅</div>
-                <div class="provider-name">İkisi de</div>
-                <div class="provider-desc">E-posta ve telefon zorunlu</div>
+                <div class="provider-name" data-i18n="pv_both_name">İkisi de</div>
+                <div class="provider-desc" data-i18n="pv_both_desc">E-posta ve telefon zorunlu</div>
               </div>
             </label>
             <label class="provider-card">
               <input type="radio" name="Player Verification" value="either" />
               <div class="provider-card-inner">
                 <div class="provider-icon">🔀</div>
-                <div class="provider-name">Herhangi biri</div>
-                <div class="provider-desc">E-posta veya telefon (oyuncu seçer)</div>
+                <div class="provider-name" data-i18n="pv_either_name">Herhangi biri</div>
+                <div class="provider-desc" data-i18n="pv_either_desc">E-posta veya telefon (oyuncu seçer)</div>
               </div>
             </label>
             <label class="provider-card">
               <input type="radio" name="Player Verification" value="none" />
               <div class="provider-card-inner">
                 <div class="provider-icon">⚡</div>
-                <div class="provider-name">Otomatik</div>
-                <div class="provider-desc">Doğrulama gerekmez, otomatik onay</div>
+                <div class="provider-name" data-i18n="pv_auto_name">Otomatik</div>
+                <div class="provider-desc" data-i18n="pv_auto_desc">Doğrulama gerekmez, otomatik onay</div>
               </div>
             </label>
           </div>
         </div>
 
         <hr class="divider" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Call Center Sağlayıcısı</p>
+        <p data-i18n="sub_call_center" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Call Center Sağlayıcısı</p>
         <div class="info-box" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:16px 20px;display:flex;gap:12px;align-items:flex-start;">
           <span style="font-size:20px;flex-shrink:0;">ℹ️</span>
           <div>
-            <p style="font-size:14px;font-weight:600;margin-bottom:6px;">Bu hizmet Tap King tarafından sunulmamaktadır</p>
-            <p style="font-size:13px;color:var(--muted);line-height:1.6;">Call Center kurulumu ve yönetimi müşterimizin sorumluluğundadır. Bu konuda önerilecek çözüm ortakları için Tap King ekibiyle görüşebilirsiniz.</p>
+            <p data-i18n="call_center_title" style="font-size:14px;font-weight:600;margin-bottom:6px;">Bu hizmet Tap King tarafından sunulmamaktadır</p>
+            <p data-i18n="call_center_desc" style="font-size:13px;color:var(--muted);line-height:1.6;">Call Center kurulumu ve yönetimi müşterimizin sorumluluğundadır. Bu konuda önerilecek çözüm ortakları için Tap King ekibiyle görüşebilirsiniz.</p>
           </div>
         </div>
 
@@ -978,23 +978,23 @@
       <div class="section-header" onclick="toggleSection(this)">
         <div class="section-number">5</div>
         <div class="section-title">
-          <h2>Oyun &amp; Ürün Tercihleri</h2>
-          <p>Oyun ve ürün gereksinimleri</p>
+          <h2 data-i18n="sec5b_title">Oyun &amp; Ürün Tercihleri</h2>
+          <p data-i18n="sec5b_sub">Oyun ve ürün gereksinimleri</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
       <div class="section-body">
 
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Casino RTP</p>
+        <p data-i18n="sub_casino_rtp" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Casino RTP</p>
         <div class="field">
-          <label>RTP Tercihi <span class="hint">(isteğe bağlı)</span></label>
+          <label data-i18n="lbl_rtp_preference">RTP Tercihi <span class="hint" data-i18n="hint_rtp_optional">(isteğe bağlı)</span></label>
           <div class="provider-grid">
             <label class="provider-card">
               <input type="radio" name="RTP Tercihi" value="94" />
               <div class="provider-card-inner">
                 <div class="provider-icon">🎰</div>
                 <div class="provider-name">%94</div>
-                <div class="provider-desc">Düşük</div>
+                <div class="provider-desc" data-i18n="opt_rtp_low">Düşük</div>
               </div>
             </label>
             <label class="provider-card">
@@ -1002,25 +1002,25 @@
               <div class="provider-card-inner">
                 <div class="provider-icon">💎</div>
                 <div class="provider-name">%96</div>
-                <div class="provider-desc">Yüksek</div>
+                <div class="provider-desc" data-i18n="opt_rtp_high">Yüksek</div>
               </div>
             </label>
           </div>
-          <p style="font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6;">⚠️ Bazı sağlayıcı veya oyunlarda RTP seçenekleri değişkenlik gösterebilir veya yalnızca tek bir oran sunulabilir.</p>
+          <p data-i18n="rtp_disclaimer" style="font-size:12px;color:var(--muted);margin-top:12px;line-height:1.6;">⚠️ Bazı sağlayıcı veya oyunlarda RTP seçenekleri değişkenlik gösterebilir veya yalnızca tek bir oran sunulabilir.</p>
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Sportsbook</p>
+        <p data-i18n="sub_sportsbook" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Sportsbook</p>
         <div class="field">
-          <label>Sportsbook istiyor musunuz?</label>
+          <label data-i18n="lbl_want_sportsbook">Sportsbook istiyor musunuz?</label>
           <div class="radio-group">
-            <label><input type="radio" name="Sportsbook" value="evet" onchange="toggleSub('sportsbook_providers','evet')" /> <span>Evet</span></label>
-            <label><input type="radio" name="Sportsbook" value="hayir" onchange="toggleSub('sportsbook_providers','hayir')" /> <span>Hayır</span></label>
+            <label><input type="radio" name="Sportsbook" value="evet" onchange="toggleSub('sportsbook_providers','evet')" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Sportsbook" value="hayir" onchange="toggleSub('sportsbook_providers','hayir')" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
         <div class="sub-fields" id="sportsbook_providers">
           <div class="field">
-            <label>Sportsbook Sağlayıcısı <span class="hint">(birden fazla seçilebilir)</span></label>
+            <label data-i18n="lbl_sportsbook_provider">Sportsbook Sağlayıcısı <span class="hint" data-i18n="hint_multi_select">(birden fazla seçilebilir)</span></label>
             <div class="provider-grid">
               <label class="provider-card">
                 <input type="checkbox" name="Sportsbook - GR8" value="GR8" />
@@ -1041,12 +1041,12 @@
         </div>
 
         <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
-        <p style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Poker</p>
+        <p data-i18n="sub_poker" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Poker</p>
         <div class="field">
-          <label>Poker istiyor musunuz?</label>
+          <label data-i18n="lbl_want_poker">Poker istiyor musunuz?</label>
           <div class="radio-group">
-            <label><input type="radio" name="Poker" value="evet" /> <span>Evet</span></label>
-            <label><input type="radio" name="Poker" value="hayir" /> <span>Hayır</span></label>
+            <label><input type="radio" name="Poker" value="evet" /> <span data-i18n="opt_yes">Evet</span></label>
+            <label><input type="radio" name="Poker" value="hayir" /> <span data-i18n="opt_no">Hayır</span></label>
           </div>
         </div>
 
@@ -1096,8 +1096,8 @@
       if (openNums.includes(n)) p.classList.add('active');
     });
     const label = openNums.length
-      ? `Bölüm ${Math.min(...openNums)} / ${TOTAL} açık`
-      : `Tüm bölümler kapalı`;
+      ? `${(i18n[currentLang]||i18n.tr).progress_label} ${Math.min(...openNums)} / ${TOTAL} ${(i18n[currentLang]||i18n.tr).progress_open}`
+      : (i18n[currentLang]||i18n.tr).str_all_closed;
     document.getElementById('progressLabel').textContent = label;
   }
 
@@ -1160,7 +1160,7 @@
 
     const btn = document.querySelector('.btn-submit');
     const originalText = btn.textContent;
-    btn.textContent = 'Gönderiliyor...';
+    btn.textContent = (i18n[currentLang]||i18n.tr).str_submitting;
     btn.disabled = true;
 
     const formData = new FormData(this);
@@ -1257,7 +1257,7 @@
         document.querySelectorAll('.step-pill').forEach(p => p.classList.add('done'));
       }
     } catch (err) {
-      alert('Bağlantı hatası. İnternet bağlantınızı kontrol edin.');
+      alert((i18n[currentLang]||i18n.tr).str_conn_error);
       btn.textContent = originalText;
       btn.disabled = false;
     }
@@ -1527,7 +1527,7 @@
       );
       hiIdx = -1;
       if (!filtered.length) {
-        dropdown.innerHTML = '<div class="country-none">Sonuç bulunamadı</div>';
+        dropdown.innerHTML = '<div class="country-none">' + (i18n[currentLang]||i18n.tr).str_no_results + '</div>';
       } else {
         dropdown.innerHTML = filtered.map(c =>
           `<div class="country-opt" data-val="${c}">${c}</div>`
@@ -1583,7 +1583,7 @@
       sec5_title: 'Marka & Tasarım', sec5_sub: 'Görsel kimlik ve tasarım gereksinimleri',
       sec6_title: 'Site İçerikleri', sec6_sub: 'İçerik yapısı ve sayfalar',
       sec7_title: 'Oyun Sağlayıcıları', sec7_sub: 'İstenen oyun içerikleri',
-      sec8_title: 'Backoffice & Yönetim', sec8_sub: 'Admin panel ve operasyon gereksinimleri',
+      sec8_title: 'Diğer Hizmetler', sec8_sub: 'Ödeme, SMS, E-posta ve ek entegrasyonlar',
       sec9_title: 'SMS Sağlayıcı', sec9_sub: 'SMS entegrasyonu',
       sec10_title: 'E-posta Sağlayıcı', sec10_sub: 'Transactional ve pazarlama e-posta entegrasyonu',
       sec11_title: 'Uyumluluk & Güvenlik', sec11_sub: 'KYC, AML ve dolandırıcılık önleme',
@@ -1772,6 +1772,45 @@
       opt_asset_none: 'Henüz yok, Tap King hazırlayacak',
       opt_delivery_email: 'E-posta ile', opt_delivery_figma: 'Figma linki paylaşımı', opt_delivery_meeting: 'Toplantı sırasında',
       opt_video_meeting: 'Video toplantı',
+      // new keys — billing email
+      lbl_billing_email: 'Fatura E-postası', hint_billing_email: '(finansal yazışmalar ve faturaların iletileceği adres)',
+      // new keys — section 5
+      sec5b_title: 'Oyun & Ürün Tercihleri', sec5b_sub: 'Oyun ve ürün gereksinimleri',
+      // new keys — section 4 subsection headings
+      sub_payment_provider: 'Ödeme Sağlayıcısı', sub_sms_provider: 'SMS Sağlayıcısı',
+      sub_email_provider: 'E-Posta Sağlayıcısı', sub_player_verification: 'Oyuncu Doğrulama',
+      sub_call_center: 'Call Center Sağlayıcısı',
+      // new keys — payment limits
+      lbl_min_deposit_limit: 'Min Yatırım Limiti', lbl_max_deposit_limit: 'Max Yatırım Limiti',
+      lbl_min_withdrawal_limit: 'Min Çekim Limiti', lbl_max_withdrawal_limit: 'Max Çekim Limiti',
+      lbl_withdrawal_approvals: 'Çekim Onay Sayısı', hint_withdrawal_approvals: '(her çekim için kaç onay gerekiyor?)',
+      opt_1_approval: '1 Onay', opt_2_approvals: '2 Onay',
+      // new keys — PSP / email
+      lbl_psp_provider: 'PSP / Ödeme Sağlayıcısı', hint_multi_select: '(birden fazla seçilebilir)',
+      opt_credit_card_name: 'Kredi Kartı', opt_crypto_name: 'Kripto Para',
+      lbl_email_provider: 'E-Posta Sağlayıcısı',
+      // new keys — player verification
+      lbl_player_verification: 'Oyuncu Doğrulama Stratejisi',
+      hint_player_verification: '(kayıt sonrası oyuncunun doğrulaması gereken bilgi)',
+      pv_email_name: 'E-posta', pv_email_desc: 'Sadece e-posta doğrulama',
+      pv_phone_name: 'Telefon', pv_phone_desc: 'Sadece SMS doğrulama',
+      pv_both_name: 'İkisi de', pv_both_desc: 'E-posta ve telefon zorunlu',
+      pv_either_name: 'Herhangi biri', pv_either_desc: 'E-posta veya telefon (oyuncu seçer)',
+      pv_auto_name: 'Otomatik', pv_auto_desc: 'Doğrulama gerekmez, otomatik onay',
+      // new keys — call center
+      call_center_title: 'Bu hizmet Tap King tarafından sunulmamaktadır',
+      call_center_desc: 'Call Center kurulumu ve yönetimi müşterimizin sorumluluğundadır. Bu konuda önerilecek çözüm ortakları için Tap King ekibiyle görüşebilirsiniz.',
+      // new keys — section 5 (game/product)
+      sub_casino_rtp: 'Casino RTP', lbl_rtp_preference: 'RTP Tercihi',
+      hint_rtp_optional: '(isteğe bağlı)',
+      opt_rtp_low: 'Düşük', opt_rtp_high: 'Yüksek',
+      rtp_disclaimer: '⚠️ Bazı sağlayıcı veya oyunlarda RTP seçenekleri değişkenlik gösterebilir veya yalnızca tek bir oran sunulabilir.',
+      sub_sportsbook: 'Sportsbook', lbl_want_sportsbook: 'Sportsbook istiyor musunuz?',
+      lbl_sportsbook_provider: 'Sportsbook Sağlayıcısı',
+      sub_poker: 'Poker', lbl_want_poker: 'Poker istiyor musunuz?',
+      // new keys — runtime JS
+      str_submitting: 'Gönderiliyor...', str_conn_error: 'Bağlantı hatası. İnternet bağlantınızı kontrol edin.',
+      str_no_results: 'Sonuç bulunamadı', str_all_closed: 'Tüm bölümler kapalı',
     },
     en: {
       info_note: '💡 You don\'t need to fill in every field — complete what you know, and our team will work through the rest with you.',
@@ -1782,7 +1821,7 @@
       sec5_title: 'Brand & Design', sec5_sub: 'Visual identity and design requirements',
       sec6_title: 'Site Content', sec6_sub: 'Content structure and pages',
       sec7_title: 'Game Providers', sec7_sub: 'Requested game content',
-      sec8_title: 'Backoffice & Management', sec8_sub: 'Admin panel and operations requirements',
+      sec8_title: 'Other Services', sec8_sub: 'Payment, SMS, Email and additional integrations',
       sec9_title: 'SMS Provider', sec9_sub: 'SMS integration',
       sec10_title: 'Email Provider', sec10_sub: 'Transactional and marketing email integration',
       sec11_title: 'Compliance & Security', sec11_sub: 'KYC, AML and fraud prevention',
@@ -1969,6 +2008,45 @@
       opt_asset_none: 'Not yet, Tap King will prepare',
       opt_delivery_email: 'Via email', opt_delivery_figma: 'Figma link sharing', opt_delivery_meeting: 'During meeting',
       opt_video_meeting: 'Video meeting',
+      // new keys — billing email
+      lbl_billing_email: 'Billing Email', hint_billing_email: '(address for financial correspondence and invoices)',
+      // new keys — section 5
+      sec5b_title: 'Game & Product Preferences', sec5b_sub: 'Game and product requirements',
+      // new keys — section 4 subsection headings
+      sub_payment_provider: 'Payment Provider', sub_sms_provider: 'SMS Provider',
+      sub_email_provider: 'Email Provider', sub_player_verification: 'Player Verification',
+      sub_call_center: 'Call Center Provider',
+      // new keys — payment limits
+      lbl_min_deposit_limit: 'Min Deposit Limit', lbl_max_deposit_limit: 'Max Deposit Limit',
+      lbl_min_withdrawal_limit: 'Min Withdrawal Limit', lbl_max_withdrawal_limit: 'Max Withdrawal Limit',
+      lbl_withdrawal_approvals: 'Withdrawal Approvals', hint_withdrawal_approvals: '(how many approvals per withdrawal?)',
+      opt_1_approval: '1 Approval', opt_2_approvals: '2 Approvals',
+      // new keys — PSP / email
+      lbl_psp_provider: 'PSP / Payment Provider', hint_multi_select: '(multiple selections allowed)',
+      opt_credit_card_name: 'Credit Card', opt_crypto_name: 'Cryptocurrency',
+      lbl_email_provider: 'Email Provider',
+      // new keys — player verification
+      lbl_player_verification: 'Player Verification Strategy',
+      hint_player_verification: '(what a player must verify after registration)',
+      pv_email_name: 'Email', pv_email_desc: 'Email verification only',
+      pv_phone_name: 'Phone', pv_phone_desc: 'SMS verification only',
+      pv_both_name: 'Both', pv_both_desc: 'Email and phone required',
+      pv_either_name: 'Either', pv_either_desc: "Email or phone (player's choice)",
+      pv_auto_name: 'Automatic', pv_auto_desc: 'No verification required, auto-approved',
+      // new keys — call center
+      call_center_title: 'This service is not provided by Tap King',
+      call_center_desc: 'Call Center setup and management is the client\'s responsibility. Contact the Tap King team for recommended solution partners.',
+      // new keys — section 5 (game/product)
+      sub_casino_rtp: 'Casino RTP', lbl_rtp_preference: 'RTP Preference',
+      hint_rtp_optional: '(optional)',
+      opt_rtp_low: 'Low', opt_rtp_high: 'High',
+      rtp_disclaimer: '⚠️ RTP options may vary across some providers or games, or only a single rate may be available.',
+      sub_sportsbook: 'Sportsbook', lbl_want_sportsbook: 'Do you want Sportsbook?',
+      lbl_sportsbook_provider: 'Sportsbook Provider',
+      sub_poker: 'Poker', lbl_want_poker: 'Do you want Poker?',
+      // new keys — runtime JS
+      str_submitting: 'Submitting...', str_conn_error: 'Connection error. Please check your internet connection.',
+      str_no_results: 'No results found', str_all_closed: 'All sections closed',
     }
   };
 
