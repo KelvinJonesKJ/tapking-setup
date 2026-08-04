@@ -414,7 +414,7 @@
   <div class="progress-steps" id="progressSteps">
     <!-- filled by JS -->
   </div>
-  <div class="progress-label" id="progressLabel">Bölüm 1 / 10</div>
+  <div class="progress-label" id="progressLabel"></div>
 </div>
 
 <div class="container">
@@ -1080,11 +1080,17 @@
     const d = document.createElement('div');
     d.className = 'step-pill';
     d.dataset.step = i;
-    d.title = 'Bölüm ' + i;
+    d.title = getT().progress_label + ' ' + i;
     d.onclick = () => scrollToSection(i);
     stepsEl.appendChild(d);
   }
   updateProgress();
+
+  function getT() {
+    return (typeof currentLang !== 'undefined' && typeof i18n !== 'undefined' && i18n[currentLang])
+      ? i18n[currentLang]
+      : { progress_label: 'Bölüm', progress_open: 'açık', str_all_closed: 'Tüm bölümler kapalı' };
+  }
 
   function updateProgress() {
     const pills = document.querySelectorAll('.step-pill');
@@ -1095,9 +1101,10 @@
       p.classList.remove('active', 'done');
       if (openNums.includes(n)) p.classList.add('active');
     });
+    const t = getT();
     const label = openNums.length
-      ? `${(i18n[currentLang]||i18n.tr).progress_label} ${Math.min(...openNums)} / ${TOTAL} ${(i18n[currentLang]||i18n.tr).progress_open}`
-      : (i18n[currentLang]||i18n.tr).str_all_closed;
+      ? `${t.progress_label} ${Math.min(...openNums)} / ${TOTAL} ${t.progress_open}`
+      : t.str_all_closed;
     document.getElementById('progressLabel').textContent = label;
   }
 
