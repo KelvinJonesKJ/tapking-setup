@@ -661,33 +661,6 @@
       </div>
       <div class="section-body">
         <p data-i18n="sub_payment_provider" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Ödeme Sağlayıcısı</p>
-        <div class="grid2">
-          <div class="field">
-            <label data-i18n="lbl_min_deposit_limit">Min Yatırım Limiti</label>
-            <input type="text" name="Min Yatırım" data-ph-tr="örn. 10 TRY" data-ph-en="e.g. 10 USD" placeholder="örn. 10 TRY" />
-          </div>
-          <div class="field">
-            <label data-i18n="lbl_max_deposit_limit">Max Yatırım Limiti</label>
-            <input type="text" name="Max Yatırım" data-ph-tr="örn. 10.000 TRY" data-ph-en="e.g. 10,000 USD" placeholder="örn. 10.000 TRY" />
-          </div>
-          <div class="field">
-            <label data-i18n="lbl_min_withdrawal_limit">Min Çekim Limiti</label>
-            <input type="text" name="Min Çekim" data-ph-tr="örn. 20 TRY" data-ph-en="e.g. 20 USD" placeholder="örn. 20 TRY" />
-          </div>
-          <div class="field">
-            <label data-i18n="lbl_max_withdrawal_limit">Max Çekim Limiti</label>
-            <input type="text" name="Max Çekim" data-ph-tr="örn. 50.000 TRY" data-ph-en="e.g. 50,000 USD" placeholder="örn. 50.000 TRY" />
-          </div>
-        </div>
-        <div class="field">
-          <label data-i18n="lbl_withdrawal_approvals">Çekim Onay Sayısı <span class="hint" data-i18n="hint_withdrawal_approvals">(her çekim için kaç onay gerekiyor?)</span></label>
-          <div class="radio-group">
-            <label><input type="radio" name="Çekim Onay Sayısı" value="1" /> <span data-i18n="opt_1_approval">1 Onay</span></label>
-            <label><input type="radio" name="Çekim Onay Sayısı" value="2" /> <span data-i18n="opt_2_approvals">2 Onay</span></label>
-          </div>
-        </div>
-
-        <hr class="divider" />
 
         <div class="field">
           <label data-i18n="lbl_psp_provider">PSP / Ödeme Sağlayıcısı <span class="hint" data-i18n="hint_multi_select">(birden fazla seçilebilir)</span></label>
@@ -753,6 +726,36 @@
             </div>
           </div>
         </div>
+
+        <hr class="divider" />
+
+        <div class="grid2">
+          <div class="field">
+            <label data-i18n="lbl_min_deposit_limit">Min Yatırım Limiti</label>
+            <input type="text" name="Min Yatırım" data-ph-tr="örn. 10 TRY" data-ph-en="e.g. 10 USD" placeholder="örn. 10 TRY" />
+          </div>
+          <div class="field">
+            <label data-i18n="lbl_max_deposit_limit">Max Yatırım Limiti</label>
+            <input type="text" name="Max Yatırım" data-ph-tr="örn. 10.000 TRY" data-ph-en="e.g. 10,000 USD" placeholder="örn. 10.000 TRY" />
+          </div>
+          <div class="field">
+            <label data-i18n="lbl_min_withdrawal_limit">Min Çekim Limiti</label>
+            <input type="text" name="Min Çekim" data-ph-tr="örn. 20 TRY" data-ph-en="e.g. 20 USD" placeholder="örn. 20 TRY" />
+          </div>
+          <div class="field">
+            <label data-i18n="lbl_max_withdrawal_limit">Max Çekim Limiti</label>
+            <input type="text" name="Max Çekim" data-ph-tr="örn. 50.000 TRY" data-ph-en="e.g. 50,000 USD" placeholder="örn. 50.000 TRY" />
+          </div>
+        </div>
+        <div class="field">
+          <label data-i18n="lbl_withdrawal_approvals">Çekim Onay Sayısı <span class="hint" data-i18n="hint_withdrawal_approvals">(her çekim için kaç onay gerekiyor?)</span></label>
+          <div class="radio-group">
+            <label><input type="radio" name="Çekim Onay Sayısı" value="1" /> <span data-i18n="opt_1_approval">1 Onay</span></label>
+            <label><input type="radio" name="Çekim Onay Sayısı" value="2" /> <span data-i18n="opt_2_approvals">2 Onay</span></label>
+          </div>
+        </div>
+
+        <hr class="divider" />
 
         <p data-i18n="sub_sms_provider" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">SMS Sağlayıcısı</p>
         <div class="field">
