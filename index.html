@@ -663,67 +663,36 @@
         <p data-i18n="sub_payment_provider" style="font-size:12px;color:var(--muted);margin-bottom:16px;letter-spacing:.3px;text-transform:uppercase;">Ödeme Sağlayıcısı</p>
 
         <div class="field">
-          <label data-i18n="lbl_psp_provider">PSP / Ödeme Sağlayıcısı <span class="hint" data-i18n="hint_multi_select">(birden fazla seçilebilir)</span></label>
+          <label data-i18n="lbl_payment_methods">Sunmak istediğiniz ödeme yöntemleri <span class="hint" data-i18n="hint_multi_select">(birden fazla seçilebilir)</span></label>
           <div class="provider-grid">
             <label class="provider-card">
-              <input type="checkbox" name="PSP - AkPara" />
+              <input type="checkbox" name="Ödeme - E-Wallet" />
               <div class="provider-card-inner">
-                <div class="provider-icon">💳</div>
-                <div class="provider-name">AkPara</div>
+                <div class="provider-icon">👛</div>
+                <div class="provider-name">E-Wallet</div>
               </div>
             </label>
             <label class="provider-card">
-              <input type="checkbox" name="PSP - BankoPay" />
+              <input type="checkbox" name="Ödeme - Havale" />
               <div class="provider-card-inner">
                 <div class="provider-icon">🏦</div>
-                <div class="provider-name">BankoPay</div>
+                <div class="provider-name">Havale</div>
               </div>
             </label>
             <label class="provider-card">
-              <input type="checkbox" name="PSP - PeakPay" />
-              <div class="provider-card-inner">
-                <div class="provider-icon">⚡</div>
-                <div class="provider-name">PeakPay</div>
-              </div>
-            </label>
-            <label class="provider-card">
-              <input type="checkbox" name="PSP - Kredi Karti" />
+              <input type="checkbox" name="Ödeme - Kredi Kartı" />
               <div class="provider-card-inner">
                 <div class="provider-icon">💳</div>
-                <div class="provider-name" data-i18n="opt_credit_card_name">Kredi Kartı</div>
+                <div class="provider-name">Kredi Kartı</div>
               </div>
             </label>
             <label class="provider-card">
-              <input type="checkbox" name="PSP - Kripto Para" />
+              <input type="checkbox" name="Ödeme - Kripto" />
               <div class="provider-card-inner">
                 <div class="provider-icon">🪙</div>
-                <div class="provider-name" data-i18n="opt_crypto_name">Kripto Para</div>
+                <div class="provider-name">Kripto</div>
               </div>
             </label>
-            <label class="provider-card">
-              <input type="checkbox" name="PSP - NowRamp" />
-              <div class="provider-card-inner">
-                <div class="provider-icon">🚀</div>
-                <div class="provider-name">NowRamp</div>
-              </div>
-            </label>
-          </div>
-        </div>
-
-        <!-- Kripto detayları -->
-        <div class="sub-fields" id="crypto_details">
-          <div class="field">
-            <label data-i18n="lbl_crypto_coins">Desteklemek istediğiniz kripto coinler</label>
-            <div class="check-group">
-              <label><input type="checkbox" name="Kripto - BTC" /> BTC</label>
-              <label><input type="checkbox" name="Kripto - ETH" /> ETH</label>
-              <label><input type="checkbox" name="Kripto - USDT" /> USDT (TRC-20)</label>
-              <label><input type="checkbox" name="Kripto - USDC" /> USDC</label>
-              <label><input type="checkbox" name="Kripto - LTC" /> LTC</label>
-              <label><input type="checkbox" name="Kripto - BNB" /> BNB</label>
-              <label><input type="checkbox" name="Kripto - TRX" /> TRX</label>
-              <label><input type="checkbox" name="Kripto - XRP" /> XRP</label>
-            </div>
           </div>
         </div>
 
