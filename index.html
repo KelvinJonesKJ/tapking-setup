@@ -396,7 +396,7 @@
 <body>
 
 <!-- ── View Mode ── -->
-<div id="viewMode"><div class="view-loading">⏳ Yükleniyor...</div></div>
+<div id="viewMode"><div class="view-loading" data-i18n="str_loading">⏳ Yükleniyor...</div></div>
 
 <!-- ── Header ── -->
 <div class="header">
@@ -540,7 +540,7 @@
         <div class="section-number">2</div>
         <div class="section-title">
           <h2 data-i18n="sec4_title">Hedef Pazar &amp; Diller</h2>
-          <p data-i18n="sec4_sub">Pazarlama ve dil gereksinimleri</p>
+          <p data-i18n="sec4_sub">Pazar ve dil gereksinimleri</p>
         </div>
         <div class="section-chevron">▾</div>
       </div>
@@ -669,28 +669,28 @@
               <input type="checkbox" name="Ödeme - E-Wallet" />
               <div class="provider-card-inner">
                 <div class="provider-icon">📲</div>
-                <div class="provider-name">E-Wallet</div>
+                <div class="provider-name" data-i18n="pay_ewallet">E-Wallet</div>
               </div>
             </label>
             <label class="provider-card">
               <input type="checkbox" name="Ödeme - Havale" />
               <div class="provider-card-inner">
                 <div class="provider-icon">🏦</div>
-                <div class="provider-name">Havale</div>
+                <div class="provider-name" data-i18n="pay_havale">Havale</div>
               </div>
             </label>
             <label class="provider-card">
               <input type="checkbox" name="Ödeme - Kredi Kartı" />
               <div class="provider-card-inner">
                 <div class="provider-icon">💳</div>
-                <div class="provider-name">Kredi Kartı</div>
+                <div class="provider-name" data-i18n="pay_credit_card">Kredi Kartı</div>
               </div>
             </label>
             <label class="provider-card">
               <input type="checkbox" name="Ödeme - Kripto" />
               <div class="provider-card-inner">
                 <div class="provider-icon">🪙</div>
-                <div class="provider-name">Kripto</div>
+                <div class="provider-name" data-i18n="pay_crypto">Kripto</div>
               </div>
             </label>
           </div>
@@ -929,7 +929,7 @@
           <div>
             <p data-i18n="call_center_title" style="font-size:14px;font-weight:600;margin-bottom:6px;">Bu hizmet Tap King tarafından sunulmamaktadır</p>
             <p data-i18n="call_center_desc" style="font-size:13px;color:var(--muted);line-height:1.6;">Call Center kurulumu ve yönetimi müşterimizin sorumluluğundadır. Bu konuda önerilecek çözüm ortakları için Tap King ekibiyle görüşebilirsiniz.</p>
-            <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);"><strong style="color:var(--text);">Not:</strong> Call Center kurulumu için önerilen sağlayıcı <strong style="color:var(--text);">Telxi</strong>'dir. Sağlayıcı, sisteme IP-to-IP bağlantısı ile entegre olur (adres, kullanıcı adı, şifre ve varsa atanmış numaralar sağlayıcı tarafından aktivasyonda verilir). Numara ataması opsiyoneldir; boş bırakılırsa sağlayıcı aramanın yapılacağı numarayı kendisi seçer.</p>
+            <p style="font-size:13px;color:var(--muted);line-height:1.6;margin-top:10px;padding-top:10px;border-top:1px solid var(--border);"><strong style="color:var(--text);" data-i18n="call_center_note_label">Not:</strong><span data-i18n="call_center_note"> Call Center kurulumu için önerilen sağlayıcı Telxi'dir. Sağlayıcı, sisteme IP-to-IP bağlantısı ile entegre olur (adres, kullanıcı adı, şifre ve varsa atanmış numaralar sağlayıcı tarafından aktivasyonda verilir). Numara ataması opsiyoneldir; boş bırakılırsa sağlayıcı aramanın yapılacağı numarayı kendisi seçer.</span></p>
           </div>
         </div>
 
@@ -1551,7 +1551,7 @@
       // section titles
       sec1_title: 'Şirket & Lisans Bilgileri', sec1_sub: 'Yasal kimlik ve lisans durumunuz',
       sec3_title: 'Ödeme Yöntemleri', sec3_sub: 'Ödeme altyapısı ve entegrasyonları',
-      sec4_title: 'Hedef Pazar & Diller', sec4_sub: 'Pazarlama ve dil gereksinimleri',
+      sec4_title: 'Hedef Pazar & Diller', sec4_sub: 'Pazar ve dil gereksinimleri',
       sec5_title: 'Marka & Tasarım', sec5_sub: 'Görsel kimlik ve tasarım gereksinimleri',
       sec6_title: 'Site İçerikleri', sec6_sub: 'İçerik yapısı ve sayfalar',
       sec7_title: 'Oyun Sağlayıcıları', sec7_sub: 'İstenen oyun içerikleri',
@@ -1772,6 +1772,8 @@
       // new keys — call center
       call_center_title: 'Bu hizmet Tap King tarafından sunulmamaktadır',
       call_center_desc: 'Call Center kurulumu ve yönetimi müşterimizin sorumluluğundadır. Bu konuda önerilecek çözüm ortakları için Tap King ekibiyle görüşebilirsiniz.',
+      call_center_note_label: 'Not:',
+      call_center_note: " Call Center kurulumu için önerilen sağlayıcı Telxi'dir. Sağlayıcı, sisteme IP-to-IP bağlantısı ile entegre olur (adres, kullanıcı adı, şifre ve varsa atanmış numaralar sağlayıcı tarafından aktivasyonda verilir). Numara ataması opsiyoneldir; boş bırakılırsa sağlayıcı aramanın yapılacağı numarayı kendisi seçer.",
       // new keys — section 5 (game/product)
       sub_casino_rtp: 'Casino RTP', lbl_rtp_preference: 'RTP Tercihi',
       hint_rtp_optional: '(isteğe bağlı)',
@@ -1783,6 +1785,9 @@
       // new keys — runtime JS
       str_submitting: 'Gönderiliyor...', str_conn_error: 'Bağlantı hatası. İnternet bağlantınızı kontrol edin.',
       str_no_results: 'Sonuç bulunamadı', str_all_closed: 'Tüm bölümler kapalı',
+      str_loading: '⏳ Yükleniyor...',
+      // payment method card names
+      pay_ewallet: 'E-Wallet', pay_havale: 'Havale', pay_credit_card: 'Kredi Kartı', pay_crypto: 'Kripto',
     },
     en: {
       info_note: '💡 You don\'t need to fill in every field — complete what you know, and our team will work through the rest with you.',
@@ -1908,6 +1913,8 @@
       opt_yes_want: 'Yes, I want it', opt_no_dont_want: 'No, I don\'t want it',
       opt_yes_support: 'Yes, I want support', opt_no_thanks: 'No, thank you',
       opt_no_fresh_start: 'No, starting from scratch',
+      // options — sec1
+      opt_license_type_q: 'What is the license type?',
       // options — sec2
       opt_already_using: 'Already using it',
       opt_europe: 'Europe (EU)', opt_uk: 'United Kingdom', opt_usa: 'Americas (US)',
@@ -2008,6 +2015,8 @@
       // new keys — call center
       call_center_title: 'This service is not provided by Tap King',
       call_center_desc: 'Call Center setup and management is the client\'s responsibility. Contact the Tap King team for recommended solution partners.',
+      call_center_note_label: 'Note:',
+      call_center_note: ' The recommended provider for Call Center setup is Telxi. The provider integrates with the system via IP-to-IP connection (address, username, password, and any assigned numbers are provided at activation). Number assignment is optional; if left blank, the provider automatically selects the outgoing call number.',
       // new keys — section 5 (game/product)
       sub_casino_rtp: 'Casino RTP', lbl_rtp_preference: 'RTP Preference',
       hint_rtp_optional: '(optional)',
@@ -2019,6 +2028,9 @@
       // new keys — runtime JS
       str_submitting: 'Submitting...', str_conn_error: 'Connection error. Please check your internet connection.',
       str_no_results: 'No results found', str_all_closed: 'All sections closed',
+      str_loading: '⏳ Loading...',
+      // payment method card names
+      pay_ewallet: 'E-Wallet', pay_havale: 'Bank Transfer', pay_credit_card: 'Credit Card', pay_crypto: 'Crypto',
     }
   };
 
