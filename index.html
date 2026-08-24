@@ -563,7 +563,9 @@
         <div class="field">
           <label data-i18n="lbl_currency">Para Birimi <span class="req">*</span></label>
           <div class="currency-wrap" id="currencyWrap">
-            <input type="text" id="currencySearch" data-ph-tr="Ara... örn. USD, TRY, EUR" data-ph-en="Search... e.g. USD, EUR, GBP" placeholder="Ara... örn. USD, TRY, EUR" autocomplete="off" />
+            <div class="country-tags" id="currencyTags">
+              <input type="text" id="currencySearch" class="country-search-input" data-ph-tr="Ara... örn. USD, TRY, EUR" data-ph-en="Search... e.g. USD, EUR, GBP" placeholder="Ara... örn. USD, TRY, EUR" autocomplete="off" />
+            </div>
             <div class="currency-dropdown" id="currencyDropdown"></div>
           </div>
           <input type="hidden" name="Para Birimi" id="currencyHidden" required />
@@ -808,15 +810,6 @@
                 <div class="provider-name">TurkeySMS</div>
               </div>
             </label>
-          </div>
-        </div>
-        <div class="field">
-          <label data-i18n="lbl_sms_usage">SMS Kullanım Amaçları</label>
-          <div class="check-group">
-            <label><input type="checkbox" name="SMS - OTP" /> <span data-i18n="opt_sms_otp">OTP / Doğrulama</span></label>
-            <label><input type="checkbox" name="SMS - Promosyon" /> <span data-i18n="opt_sms_promo">Kampanya / Promosyon</span></label>
-            <label><input type="checkbox" name="SMS - İşlem" /> <span data-i18n="opt_sms_transactional">İşlem Bildirimi</span></label>
-            <label><input type="checkbox" name="SMS - Destek" /> <span data-i18n="opt_sms_support">Müşteri Destek</span></label>
           </div>
         </div>
         <hr style="border:none;border-top:1px solid var(--border);margin:24px 0;" />
@@ -1245,17 +1238,17 @@
       .then(data => {
         const fields = data.fields || {};
         const rawData = fields['Tüm Form Verisi'] || '';
-        const companyName = fields['Name'] || 'Bilinmiyor';
-        const submitDate = fields['Gönderim Tarihi'] || '';
-
-        // Parse key-value
+        // Parse key-value early so we can use it for fallbacks
         const values = {};
         rawData.split('\n').forEach(line => {
           const idx = line.indexOf(': ');
-          if (idx > -1) {
-            values[line.substring(0, idx).trim()] = line.substring(idx + 2).trim();
-          }
+          if (idx > -1) values[line.substring(0, idx).trim()] = line.substring(idx + 2).trim();
         });
+        const companyName = fields['Name'] && fields['Name'] !== '(Belirtilmedi)'
+          ? fields['Name']
+          : (values['Site Adresi'] || fields['İletişim E-postası'] || 'Bilinmiyor');
+        const submitDate = fields['Gönderim Tarihi'] || '';
+
 
         let html = `
           <div class="view-banner">
@@ -1295,7 +1288,7 @@
       });
   })();
 
-  /* ── Currency Search ── */
+  /* ── Currency Multi-Select ── */
   (function() {
     const CURRENCIES = [
       'AED — Birleşik Arap Emirlikleri Dirhemi','AFN — Afgan Afganisi','ALL — Arnavut Leki',
@@ -1350,19 +1343,38 @@
       'YER — Yemen Riyali','ZAR — Güney Afrika Randı','ZMW — Zambiya Kvaçası','ZWL — Zimbabve Doları'
     ];
 
+    const tagsEl   = document.getElementById('currencyTags');
     const searchEl = document.getElementById('currencySearch');
     const dropdown = document.getElementById('currencyDropdown');
     const hidden   = document.getElementById('currencyHidden');
     if (!searchEl) return;
 
+    let selected = [];
     let hiIdx = -1;
 
-    function render(q) {
+    function updateHidden() { hidden.value = selected.join(', '); }
+
+    function renderTags() {
+      tagsEl.querySelectorAll('.country-tag').forEach(t => t.remove());
+      selected.forEach(c => {
+        const tag = document.createElement('span');
+        tag.className = 'country-tag';
+        tag.innerHTML = `${c.split(' — ')[0]}<button type="button" aria-label="Kaldır">×</button>`;
+        tag.querySelector('button').addEventListener('mousedown', e => {
+          e.preventDefault();
+          selected = selected.filter(x => x !== c);
+          renderTags(); updateHidden(); renderDropdown(searchEl.value);
+        });
+        tagsEl.insertBefore(tag, searchEl);
+      });
+    }
+
+    function renderDropdown(q) {
       const lq = q.toLowerCase();
-      const filtered = CURRENCIES.filter(c => c.toLowerCase().includes(lq));
+      const filtered = CURRENCIES.filter(c => c.toLowerCase().includes(lq) && !selected.includes(c));
       hiIdx = -1;
       if (!filtered.length) {
-        dropdown.innerHTML = '<div class="currency-none">Sonuç bulunamadı</div>';
+        dropdown.innerHTML = '<div class="currency-none">' + (i18n[currentLang]||i18n.tr).str_no_results + '</div>';
       } else {
         dropdown.innerHTML = filtered.map(c =>
           `<div class="currency-opt" data-val="${c}">${c}</div>`
@@ -1370,28 +1382,34 @@
         dropdown.querySelectorAll('.currency-opt').forEach(opt => {
           opt.addEventListener('mousedown', e => {
             e.preventDefault();
-            select(opt.dataset.val);
+            if (!selected.includes(opt.dataset.val)) { selected.push(opt.dataset.val); }
+            renderTags(); updateHidden();
+            searchEl.value = '';
+            renderDropdown('');
+            searchEl.focus();
           });
         });
       }
       dropdown.classList.add('open');
     }
 
-    function select(val) {
-      searchEl.value = val;
-      hidden.value   = val;
-      dropdown.classList.remove('open');
-    }
-
-    searchEl.addEventListener('input',  () => render(searchEl.value));
-    searchEl.addEventListener('focus',  () => render(searchEl.value));
-    searchEl.addEventListener('blur',   () => setTimeout(() => dropdown.classList.remove('open'), 150));
+    tagsEl.addEventListener('click', () => searchEl.focus());
+    searchEl.addEventListener('input',  () => renderDropdown(searchEl.value));
+    searchEl.addEventListener('focus',  () => { tagsEl.classList.add('focused'); renderDropdown(searchEl.value); });
+    searchEl.addEventListener('blur',   () => { tagsEl.classList.remove('focused'); setTimeout(() => dropdown.classList.remove('open'), 150); });
     searchEl.addEventListener('keydown', e => {
       const opts = dropdown.querySelectorAll('.currency-opt');
       if (e.key === 'ArrowDown')  { e.preventDefault(); hiIdx = Math.min(hiIdx+1, opts.length-1); }
       if (e.key === 'ArrowUp')    { e.preventDefault(); hiIdx = Math.max(hiIdx-1, 0); }
-      if (e.key === 'Enter' && hiIdx >= 0) { e.preventDefault(); select(opts[hiIdx].dataset.val); }
+      if (e.key === 'Enter' && hiIdx >= 0) {
+        e.preventDefault();
+        if (!selected.includes(opts[hiIdx].dataset.val)) { selected.push(opts[hiIdx].dataset.val); }
+        renderTags(); updateHidden(); searchEl.value = ''; renderDropdown('');
+      }
       if (e.key === 'Escape') dropdown.classList.remove('open');
+      if (e.key === 'Backspace' && !searchEl.value && selected.length) {
+        selected.pop(); renderTags(); updateHidden(); renderDropdown('');
+      }
       opts.forEach((o,i) => o.classList.toggle('highlighted', i === hiIdx));
       if (hiIdx >= 0) opts[hiIdx].scrollIntoView({ block: 'nearest' });
     });
